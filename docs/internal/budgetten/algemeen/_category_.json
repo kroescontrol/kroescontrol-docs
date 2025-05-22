@@ -1,0 +1,14 @@
+{
+  "label": "Algemene Budgetinformatie",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Algemene Budgetinformatie",
+    "description": "Algemene informatie over budgetten"
+  },
+  "customProps": {
+    "description": "Algemene informatie over budgetten",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

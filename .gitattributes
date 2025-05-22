@@ -1,0 +1,40 @@
+# Markdown bestanden hebben LF line endings
+*.md text eol=lf
+*.mdx text eol=lf
+
+# Git-crypt configuratie voor versleutelde bestanden
+# Versleutel markdown in specifieke mappen
+/docs/internal/**/*.md filter=git-crypt diff=git-crypt
+/docs/internal/**/*.mdx filter=git-crypt diff=git-crypt
+/docs/operation/**/*.md filter=git-crypt diff=git-crypt
+/docs/operation/**/*.mdx filter=git-crypt diff=git-crypt
+/docs/finance/**/*.md filter=git-crypt diff=git-crypt
+/docs/finance/**/*.mdx filter=git-crypt diff=git-crypt
+
+# Versleutel .meta directories in gevoelige categorieën
+/docs/internal/**/.meta/** filter=git-crypt diff=git-crypt
+/docs/operation/**/.meta/** filter=git-crypt diff=git-crypt
+/docs/finance/**/.meta/** filter=git-crypt diff=git-crypt
+
+# Houd publieke markdown onversleuteld
+/docs/public/**/*.md !filter !diff
+/docs/public/**/*.mdx !filter !diff
+
+# Houd publieke .meta onversleuteld
+/docs/public/**/.meta/** !filter !diff
+
+# Versleutel eventuele gevoelige .env bestanden
+.env filter=git-crypt diff=git-crypt
+.env.example !filter !diff
+
+# Nooit versleutelen
+.gitattributes !filter !diff
+.gitignore !filter !diff
+README.md !filter !diff
+CLAUDE.md !filter !diff
+
+# Geen algemene _meta map meer in root
+
+# Laat git alle .md bestanden als tekst behandelen voor diff
+*.md diff=markdown
+*.mdx diff=markdown

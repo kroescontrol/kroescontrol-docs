@@ -1,0 +1,13 @@
+{
+  "label": "Algemeen",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "public/algemeen/introductie"
+  },
+  "customProps": {
+    "description": "Algemene informatie over Kroescontrol",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

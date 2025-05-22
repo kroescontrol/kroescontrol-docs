@@ -1,0 +1,14 @@
+{
+  "label": "Tools & Processen",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Tools & Processen",
+    "description": "Documentatie over dagelijkse werkmiddelen"
+  },
+  "customProps": {
+    "description": "Documentatie over dagelijkse werkmiddelen",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

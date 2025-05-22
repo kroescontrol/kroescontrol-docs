@@ -1,0 +1,14 @@
+{
+  "label": "Onboarding",
+  "position": 5,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Onboarding",
+    "description": "Alles voor nieuwe medewerkers"
+  },
+  "customProps": {
+    "description": "Alles voor nieuwe medewerkers",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

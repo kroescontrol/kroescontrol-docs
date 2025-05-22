@@ -1,0 +1,14 @@
+{
+  "label": "Tools & Processen",
+  "position": 5,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Tools & Processen",
+    "description": "Overzicht van tools en processen voor dagelijks gebruik"
+  },
+  "customProps": {
+    "description": "Overzicht van tools en processen voor dagelijks gebruik",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

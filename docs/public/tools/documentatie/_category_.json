@@ -1,0 +1,10 @@
+{
+  "label": "Documentatie",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Documentatie bij Kroescontrol",
+    "description": "Informatie over onze documentatieprocessen en toegang"
+  }
+}

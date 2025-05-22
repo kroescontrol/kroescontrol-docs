@@ -1,0 +1,14 @@
+{
+  "label": "Administratie",
+  "position": 6,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Administratie",
+    "description": "Administratieve processen en documenten"
+  },
+  "customProps": {
+    "description": "Administratieve processen en documenten",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

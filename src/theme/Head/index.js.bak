@@ -1,0 +1,40 @@
+/**
+ * Custom implementation of Docusaurus Head component to add name="image" meta tag
+ */
+import React from 'react';
+import Head from '@docusaurus/Head';
+import {useTitleFormatter} from '@docusaurus/theme-common';
+import {
+  useThemeConfig,
+  usePrismTheme,
+  useDocsPreferredVersion,
+} from '@docusaurus/theme-common/internal';
+
+export default function HeadCustom(props) {
+  const {
+    children,
+    ...customProps
+  } = props;
+  
+  // Extract image URL from OG image if present
+  const ogImageMeta = React.Children.toArray(children).find(
+    child => child?.props?.property === 'og:image'
+  );
+  
+  // Add extra meta tags
+  const extraTags = [];
+  
+  // Add name="image" tag if we have og:image
+  if (ogImageMeta) {
+    extraTags.push(
+      <meta key="image" name="image" content={ogImageMeta.props.content} />
+    );
+  }
+  
+  return (
+    <Head {...customProps}>
+      {children}
+      {extraTags}
+    </Head>
+  );
+}

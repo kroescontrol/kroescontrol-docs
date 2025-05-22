@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+sidebars.js
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary & deployment files
+temp-deploy
+temp-public-deploy
+docusaurus.config.js.bak
+.tijdelijk/
+
+# Project-specific directories
+/old/
+
+# Editor & system files
+.DS_Store
+.obsidian/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vercel

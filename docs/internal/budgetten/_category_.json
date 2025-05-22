@@ -1,0 +1,14 @@
+{
+  "label": "Budgetten in Detail",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Budgetten in Detail",
+    "description": "Diepgaande documentatie over budgetstructuren (secundaire arbeidsvoorwaarden)"
+  },
+  "customProps": {
+    "description": "Diepgaande documentatie over budgetstructuren (secundaire arbeidsvoorwaarden)",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "label": "Primaire Arbeidsvoorwaarden",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Primaire Arbeidsvoorwaarden",
+    "description": "Vaste arbeidsvoorwaarden voor medewerkers"
+  },
+  "customProps": {
+    "description": "Vaste arbeidsvoorwaarden voor medewerkers",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

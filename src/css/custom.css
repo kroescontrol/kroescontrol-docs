@@ -1,0 +1,736 @@
+/**
+ * Aangepaste CSS voor Kroescontrol huisstijl
+ * Aangepast op basis van de huisstijlgids met:
+ * - Poppins font voor alle tekst (origineel was voor headings)
+ * - Noto Sans font voor alle headings (origineel was voor tekst)
+ * - Kroescontrol kleuren zoals weergegeven in huisstijlgids
+ */
+
+:root {
+  /* Primaire kleuren uit Kroescontrol huisstijlgids */
+  --kc-navy: #222b5b;      /* CMYK: 100/94/36/25, RGB: 34/43/92, HEX: #222b5b */
+  --kc-pink: #c22757;      /* CMYK: 12/96/48/10, RGB: 195/39/87, HEX: #c22757 */
+
+  /* Uitgebreide kleuren */
+  --kc-coral: #e65760;     /* CMYK: 4/81/55/0, RGB: 231/88/97, HEX: #e65760 */
+  --kc-teal: #1c9c8e;      /* CMYK: 79/16/50/2, RGB: 28/156/143, HEX: #1c9c8e */
+  --kc-blue: #2050a3;      /* CMYK: 95/78/0/0, RGB: 33/81/163, HEX: #2050a3 */
+  --kc-gray: #8393a7;      /* CMYK: 49/33/21/5, RGB: 131/147/168, HEX: #8393a7 */
+
+  /* Docusaurus variabelen toewijzen aan Kroescontrol kleuren */
+  --ifm-color-primary: var(--kc-navy);
+  --ifm-color-primary-dark: #1e2651;
+  --ifm-color-primary-darker: #1c234c;
+  --ifm-color-primary-darkest: #171d3e;
+  --ifm-color-primary-light: #263065;
+  --ifm-color-primary-lighter: #28336a;
+  --ifm-color-primary-lightest: #2d3978;
+  
+  --ifm-color-secondary: var(--kc-pink);
+  --ifm-color-secondary-dark: #af234d;
+  --ifm-color-secondary-darker: #a52149;
+  --ifm-color-secondary-darkest: #881b3c;
+  --ifm-color-secondary-light: #d12b5f;
+  --ifm-color-secondary-lighter: #d53569;
+  --ifm-color-secondary-lightest: #dc5680;
+
+  --ifm-color-success: var(--kc-teal);
+  --ifm-color-info: var(--kc-blue);
+  --ifm-color-warning: var(--kc-coral);
+  --ifm-color-danger: var(--kc-pink);
+
+  /* Lettertype instellingen - omgewisseld zoals gevraagd */
+  --ifm-font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ifm-heading-font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Spacing en layout variabelen */
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-padding-vertical: 0.75rem;
+  --ifm-navbar-padding-horizontal: 1.5rem;
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  /* Primaire kleur in dark mode: kc-pink voor betere leesbaarheid */
+  --ifm-color-primary: var(--kc-pink);
+  --ifm-color-primary-dark: #af234d;
+  --ifm-color-primary-darker: #a52149;
+  --ifm-color-primary-darkest: #881b3c;
+  --ifm-color-primary-light: #d12b5f;
+  --ifm-color-primary-lighter: #d53569;
+  --ifm-color-primary-lightest: #dc5680;
+  
+  /* Secundaire kleur in dark mode: kc-coral voor accenten */
+  --ifm-color-secondary: var(--kc-coral);
+  
+  /* Donkere achtergrond gebaseerd op kc-navy maar donkerder voor comfort */
+  --ifm-background-color: #161a2d;
+  --ifm-background-surface-color: #222840;
+  
+  /* Aangepaste tekst kleur voor betere leesbaarheid */
+  --ifm-font-color-base: rgba(255, 255, 255, 0.9);
+  --ifm-heading-color: #ffffff;
+  
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Menu en card bg kleuren */
+  --ifm-menu-color: rgba(255, 255, 255, 0.8);
+  --ifm-card-background-color: var(--ifm-background-surface-color);
+}
+
+/* Heading typografie - Noto Sans */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Body typografie - Poppins */
+body {
+  font-family: var(--ifm-font-family-base);
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+/* Navbar styling - emphasize search and mobile navigation */
+.navbar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo styling in navbar and footer */
+.navbar__logo {
+  height: 2.2rem;
+}
+
+.footer__logo {
+  max-width: 240px;
+  margin-bottom: 1rem;
+}
+
+/* Enlarge and improve the navbar search */
+.navbar__search {
+  position: relative;
+}
+
+.navbar__search-input {
+  border-radius: 30px;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  width: 12rem;
+  transition: all 0.3s ease;
+}
+
+.navbar__search-input:focus {
+  width: 16rem;
+  background-color: white;
+  border-color: var(--kc-pink);
+  box-shadow: 0 0 0 2px rgba(194, 39, 87, 0.1);
+}
+
+/* Add search icon */
+.navbar__search:before {
+  content: "🔍";
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+/* Navbar links with better spacing and hover effect */
+.navbar__item {
+  margin: 0 0.3rem;
+}
+
+.navbar__link {
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  font-weight: 600;
+  color: var(--kc-pink);
+}
+
+/* Dark mode styling */
+[data-theme='dark'] .navbar {
+  background-color: var(--ifm-background-surface-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Larger logo in dark mode */
+[data-theme='dark'] .navbar__logo {
+  height: 2.6rem;
+}
+
+[data-theme='dark'] .footer__logo {
+  max-width: 260px;
+}
+
+/* Witte outline rond het logo in dark mode */
+[data-theme='dark'] .navbar__logo img,
+[data-theme='dark'] .footer__logo img,
+[data-theme='dark'] .hero__logo {
+  background-color: white;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Aanpassing voor navbar logo */
+[data-theme='dark'] .navbar__logo img {
+  padding: 4px;
+  border-radius: 6px;
+}
+
+/* Aanpassing voor hero logo */
+[data-theme='dark'] .hero__logo {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 430px !important;
+}
+
+/* Dark mode search styling */
+[data-theme='dark'] .navbar__search-input {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .navbar__search-input:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--kc-pink);
+  box-shadow: 0 0 0 2px rgba(194, 39, 87, 0.2);
+}
+
+/* Dark mode navbar items */
+[data-theme='dark'] .navbar__link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: var(--kc-pink);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .navbar__link--active {
+  color: var(--kc-pink);
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--kc-navy);
+  color: white;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #1a1e2e; /* Donkerder dan de Kroescontrol navy kleur, past bij dark mode */
+  --ifm-footer-title-color: #ffffff;
+  --ifm-footer-link-color: rgba(255, 255, 255, 0.8);
+  --ifm-footer-link-hover-color: var(--kc-pink);
+}
+
+/* Extra stylings voor de footer in dark mode */
+[data-theme='dark'] .footer {
+  background-color: #141824; /* Nog donkerder dan de gewone dark mode achtergrond */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar styling - meer zoals Dyte met neutrale kleuren */
+.menu {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* Top level categories default styling: subtle */
+.menu__list-item-collapsible {
+  color: var(--ifm-menu-color);
+  font-weight: 500;
+}
+
+/* Make all menu list items less aggressive */
+.menu__list {
+  transition: all 0.3s ease;
+}
+
+/* Reset background styling for all menu items */
+.menu__list-item--collapsed + .menu__list,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list,
+.menu__list-item-collapsible--active {
+  background-color: transparent;
+  border-radius: 0;
+  margin-left: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+/* Style the active menu category path */
+.menu__list-item-collapsible--active {
+  font-weight: 600;
+  color: var(--kc-navy);
+  background-color: rgba(34, 43, 92, 0.05); /* Lichte achtergrondkleur voor actieve categorieën */
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+/* Active page gets stronger accent color */
+.menu__link--active {
+  font-weight: 600;
+  color: var(--kc-pink);
+  background-color: rgba(194, 39, 87, 0.08);
+  border-radius: 4px;
+}
+
+/* Add a subtle left border for active section and a light background */
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left: 1px solid rgba(194, 39, 87, 0.2);
+  background-color: rgba(34, 43, 92, 0.02); /* Zeer lichte achtergrond voor de hele actieve sectie */
+  border-radius: 0 0 4px 4px;
+  margin-top: -2px;
+  padding-top: 4px;
+}
+
+/* Light hover effect for menu items */
+.menu__link:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--kc-pink);
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Subtle indicators for expand/collapse caret */
+.menu__caret:before, 
+.menu__link--sublist:after {
+  opacity: 0.5;
+}
+
+/* Dark mode styling */
+[data-theme='dark'] .menu__link--active {
+  color: var(--kc-pink);
+  background-color: rgba(194, 39, 87, 0.15);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  color: var(--kc-pink);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark mode sidebar category styling */
+[data-theme='dark'] .menu__link--sublist {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .menu__list-item-collapsible--active {
+  color: white;
+  background-color: rgba(194, 39, 87, 0.1); /* Donkere achtergrondkleur voor actieve categorieën */
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .menu__list-item-collapsible:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark mode active section */
+[data-theme='dark'] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left: 1px solid rgba(194, 39, 87, 0.3);
+  background-color: rgba(194, 39, 87, 0.03); /* Subtiele achtergrond voor actieve secties */
+  border-radius: 0 0 4px 4px;
+  margin-top: -2px;
+  padding-top: 4px;
+}
+
+/* Link styling */
+a {
+  color: var(--kc-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--kc-pink);
+  text-decoration: underline;
+}
+
+[data-theme='dark'] a {
+  color: var(--kc-pink);
+}
+
+[data-theme='dark'] a:hover {
+  color: #d53569;
+}
+
+/* Cards & admonitions styling */
+.alert {
+  border-radius: 0.5rem;
+  border-left-width: 6px;
+}
+
+.alert--secondary {
+  border-left-color: var(--kc-pink);
+}
+
+.alert--info {
+  border-left-color: var(--kc-blue);
+}
+
+.alert--success {
+  border-left-color: var(--kc-teal);
+}
+
+.alert--warning {
+  border-left-color: var(--kc-coral);
+}
+
+/* Dark mode admonitions */
+[data-theme='dark'] .alert--secondary {
+  background-color: rgba(194, 39, 87, 0.15);
+}
+
+[data-theme='dark'] .alert--info {
+  background-color: rgba(33, 81, 163, 0.15);
+}
+
+[data-theme='dark'] .alert--success {
+  background-color: rgba(28, 156, 143, 0.15);
+}
+
+[data-theme='dark'] .alert--warning {
+  background-color: rgba(231, 88, 97, 0.15);
+}
+
+.card {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] .card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons styling */
+.button {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.button--primary {
+  background-color: var(--kc-navy);
+  border-color: var(--kc-navy);
+  color: white; /* Zorg dat de tekst altijd wit is */
+}
+
+.button--primary:hover {
+  background-color: #2d3978;
+  border-color: #2d3978;
+  color: white;
+}
+
+.button--secondary {
+  background-color: var(--kc-pink);
+  border-color: var(--kc-pink);
+  color: white; /* Zorg dat de tekst altijd wit is */
+}
+
+.button--secondary:hover {
+  background-color: #d53569;
+  border-color: #d53569;
+  color: white;
+}
+
+[data-theme='dark'] .button--primary {
+  background-color: var(--kc-pink);
+  border-color: var(--kc-pink);
+  color: white;
+}
+
+[data-theme='dark'] .button--primary:hover {
+  background-color: #d53569;
+  border-color: #d53569;
+  color: white;
+}
+
+[data-theme='dark'] .button--secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+[data-theme='dark'] .button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Tabs component styling */
+.tabs {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tabs__item {
+  font-weight: 500;
+}
+
+.tabs__item--active {
+  color: var(--kc-navy);
+  border-bottom-color: var(--kc-pink);
+}
+
+[data-theme='dark'] .tabs__item--active {
+  color: white;
+  border-bottom-color: var(--kc-pink);
+}
+
+[data-theme='dark'] .tabs {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Pagination styling */
+.pagination-nav__link {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  background-color: var(--ifm-background-surface-color);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Code blocks */
+pre, code {
+  border-radius: 6px;
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] pre {
+  background-color: #1a1f32 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling for dark mode */
+[data-theme='dark'] *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme='dark'] *::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] *::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+[data-theme='dark'] *::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Tables */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+th {
+  background-color: var(--kc-navy);
+  color: white;
+  font-weight: 600;
+}
+
+[data-theme='dark'] th {
+  background-color: var(--kc-pink);
+  color: white;
+}
+
+[data-theme='dark'] table {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] tr {
+  background-color: var(--ifm-background-surface-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Chat component styling */
+.chat-container {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: var(--ifm-font-family-base);
+}
+
+.chat-message-user {
+  background-color: #f0f2f5;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.chat-message-bot {
+  background-color: var(--kc-navy);
+  color: white;
+  border-radius: 18px 18px 18px 4px;
+}
+
+[data-theme='dark'] .chat-container {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .chat-message-user {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] .chat-message-bot {
+  background-color: var(--kc-pink);
+  color: white;
+}
+
+/* Homepage styling */
+.hero__subtitle {
+  color: white !important;
+}
+
+.button.button--secondary {
+  color: white !important;
+}
+
+/* Hover styling for the secondary button */
+.button.button--secondary:hover {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsiveness tweaks */
+@media screen and (max-width: 996px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.7rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  /* Larger menu items for better touch targets on mobile */
+  .menu {
+    font-size: 1rem;
+  }
+  
+  .menu__link {
+    padding: 0.7rem 0.75rem;
+  }
+  
+  /* More spacing between menu items on mobile */
+  .menu__list-item {
+    margin: 4px 0;
+  }
+  
+  /* More defined active state on mobile */
+  .menu__link--active {
+    border-radius: 6px;
+  }
+  
+  /* Make the collapsed indicators more visible */
+  .menu__caret:before,
+  .menu__link--sublist:after {
+    opacity: 0.7;
+    font-size: 1.2em;
+  }
+  
+  /* Dark mode mobile menu improvements */
+  [data-theme='dark'] .navbar-sidebar {
+    background-color: var(--ifm-background-surface-color);
+  }
+  
+  [data-theme='dark'] .navbar-sidebar__backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  [data-theme='dark'] .menu__link {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Improved mobile sidebar navigation */
+  .navbar-sidebar {
+    width: 85%; /* Smaller sidebar on mobile */
+    max-width: 350px;
+  }
+  
+  /* Better borders for sections on mobile */
+  .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+    border-left-width: 2px;
+    margin-left: 0.75rem;
+  }
+}

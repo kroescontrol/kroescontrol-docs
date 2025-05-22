@@ -1,0 +1,14 @@
+{
+  "label": "Kroescontrol Budgetten",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Kroescontrol Budgetten",
+    "description": "Budgetstructuren binnen Kroescontrol"
+  },
+  "customProps": {
+    "description": "Budgetstructuren binnen Kroescontrol",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}

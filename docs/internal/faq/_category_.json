@@ -1,0 +1,14 @@
+{
+  "label": "Veelgestelde Vragen",
+  "position": 3,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Veelgestelde Vragen",
+    "description": "Antwoorden op veelgestelde vragen"
+  },
+  "customProps": {
+    "description": "Antwoorden op veelgestelde vragen",
+    "laatst_bijgewerkt": "2025-05-20"
+  }
+}
