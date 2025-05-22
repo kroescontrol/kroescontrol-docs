@@ -3,23 +3,31 @@
 *.mdx text eol=lf
 
 # Git-crypt configuratie voor versleutelde bestanden
-# Versleutel markdown in specifieke mappen
+# Default key: internal documenten (alle medewerkers)
 /docs/internal/**/*.md filter=git-crypt diff=git-crypt
 /docs/internal/**/*.mdx filter=git-crypt diff=git-crypt
-/docs/operation/**/*.md filter=git-crypt diff=git-crypt
-/docs/operation/**/*.mdx filter=git-crypt diff=git-crypt
-/docs/finance/**/*.md filter=git-crypt diff=git-crypt
-/docs/finance/**/*.mdx filter=git-crypt diff=git-crypt
+
+# Operation key: operation en finance documenten (selectieve toegang)
+/docs/operation/**/*.md filter=git-crypt-operation diff=git-crypt-operation
+/docs/operation/**/*.mdx filter=git-crypt-operation diff=git-crypt-operation
+/docs/finance/**/*.md filter=git-crypt-operation diff=git-crypt-operation
+/docs/finance/**/*.mdx filter=git-crypt-operation diff=git-crypt-operation
 
 # Versleutel _category_.json bestanden in gevoelige mappen
+# Default key: internal
 /docs/internal/**/_category_.json filter=git-crypt diff=git-crypt
-/docs/operation/**/_category_.json filter=git-crypt diff=git-crypt
-/docs/finance/**/_category_.json filter=git-crypt diff=git-crypt
+
+# Operation key: operation en finance
+/docs/operation/**/_category_.json filter=git-crypt-operation diff=git-crypt-operation
+/docs/finance/**/_category_.json filter=git-crypt-operation diff=git-crypt-operation
 
 # Versleutel .meta directories in gevoelige categorieën
+# Default key: internal
 /docs/internal/**/.meta/** filter=git-crypt diff=git-crypt
-/docs/operation/**/.meta/** filter=git-crypt diff=git-crypt
-/docs/finance/**/.meta/** filter=git-crypt diff=git-crypt
+
+# Operation key: operation en finance
+/docs/operation/**/.meta/** filter=git-crypt-operation diff=git-crypt-operation
+/docs/finance/**/.meta/** filter=git-crypt-operation diff=git-crypt-operation
 
 # Houd publieke markdown onversleuteld
 /docs/public/**/*.md !filter !diff
