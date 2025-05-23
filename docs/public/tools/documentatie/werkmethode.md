@@ -33,16 +33,28 @@ Onze documentatie vormt het fundament van onze organisatie. We hanteren hierbij 
 3. **Versiecontrole**: Alle documentatie valt onder Git versiebeheer
 4. **Community-gedreven**: Verbeteringen kunnen door iedereen worden voorgesteld
 
-### Toegangslagen
+### Toegangsniveaus
 
-We werken met verschillende toegangslagen voor onze documentatie:
+We werken met verschillende toegangsniveaus voor onze documentatie:
 
-| Toegangslaag | Beschrijving | Toegangsmethode |
-|--------------|--------------|-----------------|
-| Publiek | Algemene informatie, werken bij Kroescontrol, kennismaking | Openbare website |
-| Intern | Arbeidsvoorwaarden, budgetten, tools en processen | Inloggen via GitHub |
-| Finance | Financiële procedures en richtlijnen | Speciale toegang via GitHub |
-| Operations | Operationele processen en procedures | Speciale toegang via GitHub |
+| Toegangsniveau | Beschrijving | Toegangsmethode |
+|----------------|--------------|-----------------|
+| **Publiek** | Algemene informatie, werken bij Kroescontrol, kennismaking | Openbare website - geen login vereist |
+| **Intern** | Arbeidsvoorwaarden, budgetten, tools en processen | GitHub login + git-crypt voor repository toegang |
+| **Operationeel** | Operationele processen, planning, resource management | GitHub team: kroescontrol-operation |
+| **Financieel** | Financiële procedures, boekhouding, facturatie | GitHub team: kroescontrol-finance |
+
+#### Hoe toegang werkt
+
+**Repository niveau (git-crypt):**
+- Alle gevoelige documentatie is versleuteld in de repository
+- Git-crypt zorgt voor automatische versleuteling/ontsleuteling
+- Verschillende sleutels voor verschillende toegangsniveaus
+
+**Website niveau (team-based authorization):**
+- Inloggen via GitHub OAuth
+- Je GitHub teamlidmaatschap bepaalt welke content je ziet
+- Automatische doorverwijzing naar relevante secties
 
 ### Technische infrastructuur
 

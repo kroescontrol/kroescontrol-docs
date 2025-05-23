@@ -45,29 +45,36 @@ kroescontrol-docs/
 
 ### Toegangsniveaus
 
-We hebben twee primaire manieren om toegang te krijgen tot de documentatie:
+We werken met vier verschillende niveaus van documentatie toegang:
+
+| Niveau | Repository Pad | GitHub Team | Beschrijving |
+|--------|---------------|-------------|--------------|
+| **Publiek** | `/docs/public/` | - | Voor iedereen toegankelijk |
+| **Intern** | `/docs/internal/` | kroescontrol-engineers | Alle werknemers |
+| **Operationeel** | `/docs/operation/` | kroescontrol-operation | Operations team |
+| **Financieel** | `/docs/finance/` | kroescontrol-finance | Finance team |
 
 #### 1. GitHub Repository Toegang
 
 Voor developers en medewerkers die direct willen bijdragen aan de documentatie:
 
-- **Publieke content**: Iedereen kan de repository klonen en de publieke content bekijken
-- **Interne content**: Is versleuteld met git-crypt
-  - Vereist dat je GPG sleutel is toegevoegd aan het repository door een beheerder
-  - Na toevoeging kun je de versleutelde bestanden ontsleutelen met `git-crypt unlock`
+**Git-crypt versleuteling:**
+- **Publieke content**: Niet versleuteld - iedereen kan deze lezen
+- **Gevoelige content**: Versleuteld met git-crypt
+  - Verschillende sleutels per toegangsniveau
+  - Vereist GPG sleutel toegevoegd door beheerder
+  - Ontsleutelen met `git-crypt unlock` (en eventueel `-k operation` voor operationele documenten)
 
 #### 2. Website Toegang
 
 Voor dagelijks gebruik door alle medewerkers:
 
-- **Publieke content** (docs.kroescontrol.nl):
-  - Toegankelijk voor iedereen zonder login
-  - Bevat algemene informatie, kennismaking, etc.
-
-- **Interne content** (docs.kroescontrol.nl met login):
-  - Toegankelijk na inloggen met je GitHub account
-  - Authenticatie verloopt via GitHub OAuth
-  - Alleen toegankelijk voor leden van de Kroescontrol GitHub organisatie
+**Team-based authorization:**
+- **Publieke content**: Voor iedereen toegankelijk zonder login
+- **Beveiligde content**: Na inloggen met GitHub worden je teamlidmaatschappen gecontroleerd
+  - `kroescontrol-engineers`: Toegang tot interne documentatie
+  - `kroescontrol-operation`: Toegang tot operationele documentatie  
+  - `kroescontrol-finance`: Toegang tot financiële documentatie
 
 ### Beveiligingsmechanisme
 
@@ -92,10 +99,14 @@ Zie de [Git-Crypt Handleiding](./git-crypt-handleiding.md) voor gedetailleerde i
 #### Voor website toegang:
 
 1. Vraag toegang tot de Kroescontrol GitHub organisatie (als je die nog niet hebt)
-2. Ga naar docs.kroescontrol.nl
-3. Klik op "Inloggen met GitHub"
-4. Autoriseer de applicatie om je GitHub gegevens te lezen
-5. Na succesvolle authenticatie krijg je toegang tot de interne documentatie
+2. Vraag om toevoeging aan het juiste GitHub team:
+   - `kroescontrol-engineers` voor interne documentatie
+   - `kroescontrol-operation` voor operationele documentatie
+   - `kroescontrol-finance` voor financiële documentatie
+3. Ga naar docs.kroescontrol.nl
+4. Klik op "Inloggen met GitHub"
+5. Autoriseer de applicatie om je GitHub gegevens en teamlidmaatschappen te lezen
+6. Na succesvolle authenticatie krijg je toegang tot de documentatie die bij jouw teamlidmaatschappen hoort
 
 ## Voordelen van deze aanpak
 

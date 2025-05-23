@@ -29,11 +29,6 @@ const categories = [
     title: 'Arbeidsvoorwaarden',
     description: 'Informatie over onze primaire arbeidsvoorwaarden, contracten en vergoedingen.',
     link: '/public/werken-bij/voordelen'
-  },
-  {
-    title: 'AI Chat',
-    description: 'Praat met onze AI assistent voor directe hulp en informatie.',
-    link: '/chat'
   }
 ];
 

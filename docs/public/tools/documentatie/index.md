@@ -29,6 +29,10 @@ In deze sectie vind je de volgende informatie:
 
 - [**Git-Crypt Handleiding**](./git-crypt-handleiding.md) - Een stap-voor-stap handleiding voor het gebruik van git-crypt om veilig te werken met onze documentatie repository.
 
+- [**Hoe Git-Crypt Werkt**](./git-crypt-architectuur.md) - Uitleg van hoe git-crypt werkt in onze repository - transparante bestandsversleuteling voor veilige samenwerking.
+
+- [**Git-Crypt Problemen Oplossen**](./git-crypt-troubleshooting.md) - Praktische oplossingen voor veelvoorkomende git-crypt problemen en foutmeldingen.
+
 ## Voor wie is deze informatie?
 
 Deze documentatiepagina's zijn nuttig voor:
