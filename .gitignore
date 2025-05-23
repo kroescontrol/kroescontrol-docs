@@ -33,4 +33,6 @@ docusaurus.config.js.bak
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build-normal.log*
+build-public.log*
 .vercel
