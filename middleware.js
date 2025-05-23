@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 // Route protection middleware voor team-based authorization
 export function middleware(request) {
   const { pathname } = request.nextUrl;
@@ -17,11 +15,12 @@ export function middleware(request) {
   
   // Publieke content heeft geen authenticatie nodig
   if (accessLevel === 'public') {
-    return NextResponse.next();
+    return;
   }
 
   // Voor beveiligde content: controleer authenticatie
-  const authCookie = request.cookies.get('vercel-github-oauth-proxy');
+  const cookies = request.headers.get('cookie') || '';
+  const authCookie = cookies.includes('vercel-github-oauth-proxy');
   
   if (!authCookie) {
     // Niet ingelogd - redirect naar login
@@ -49,7 +48,7 @@ function redirectToLogin(request) {
   const loginUrl = new URL('/api/auth/login', request.url);
   loginUrl.searchParams.set('redirect', request.url);
   
-  return NextResponse.redirect(loginUrl);
+  return Response.redirect(loginUrl.toString());
 }
 
 async function checkTeamAccess(request, requiredLevel) {
@@ -75,7 +74,7 @@ async function checkTeamAccess(request, requiredLevel) {
     
     if (!hasAccess) {
       // Geen toegang - toon 403 pagina
-      return new NextResponse(
+      return new Response(
         getAccessDeniedHTML(requiredLevel),
         { 
           status: 403,
@@ -84,8 +83,8 @@ async function checkTeamAccess(request, requiredLevel) {
       );
     }
 
-    // Toegang toegestaan
-    return NextResponse.next();
+    // Toegang toegestaan - continue
+    return;
 
   } catch (error) {
     console.error('Middleware error:', error);
