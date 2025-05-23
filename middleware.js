@@ -32,13 +32,13 @@ export function middleware(request) {
 }
 
 function getRequiredAccessLevel(pathname) {
-  if (pathname.startsWith('/docs/finance/')) return 'finance';
-  if (pathname.startsWith('/docs/operation/')) return 'operation';
-  if (pathname.startsWith('/docs/internal/')) return 'internal';
-  if (pathname.startsWith('/docs/public/')) return 'public';
+  if (pathname.startsWith('/finance/')) return 'finance';
+  if (pathname.startsWith('/operation/')) return 'operation';
+  if (pathname.startsWith('/internal/')) return 'internal';
+  if (pathname.startsWith('/public/')) return 'public';
   
   // Root docs paths - behandel als public
-  if (pathname === '/docs' || pathname === '/docs/') return 'public';
+  if (pathname === '/' || pathname === '/docs' || pathname === '/docs/') return 'public';
   
   // Andere routes (homepage, etc.) - public
   return 'public';
@@ -150,7 +150,7 @@ function getAccessDeniedHTML(requiredLevel) {
           Contact je beheerder als je denkt dat dit een fout is.
         </div>
         <div class="actions">
-          <a href="/docs/public/" class="btn-primary">Publieke Documentatie</a>
+          <a href="/public/" class="btn-primary">Publieke Documentatie</a>
           <a href="/" class="btn-secondary">Homepage</a>
         </div>
       </div>
