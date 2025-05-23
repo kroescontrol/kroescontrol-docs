@@ -1,10 +1,28 @@
 require('dotenv').config();
+const { detectEncryptedDirectories, isEncrypted } = require('./src/utils/encryption-utils');
+
 // Boolean flags voor features
 const ENABLE_CHAT_PAGE = process.env.ENABLE_CHAT_PAGE === 'true';
 const PUBLIC_ONLY = process.env.PUBLIC_ONLY === 'true';
 const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; // Default uit tenzij expliciet aangezet
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
+
+// Check access to different documentation modules
+function hasAccess(modulePath) {
+  try {
+    const categoryPath = `./${modulePath}/_category_.json`;
+    return !isEncrypted(categoryPath);
+  } catch (e) {
+    return false;
+  }
+}
+
+const HAS_INTERNAL = hasAccess('docs-internal');
+const HAS_FINANCE = hasAccess('docs-finance'); 
+const HAS_OPERATION = hasAccess('docs-operation');
+
+console.log(`Access - Internal: ${HAS_INTERNAL ? 'YES' : 'NO'}, Finance: ${HAS_FINANCE ? 'YES' : 'NO'}, Operation: ${HAS_OPERATION ? 'YES' : 'NO'}`);
 console.log(`Chat page plugin: ${ENABLE_CHAT_PAGE ? 'ENABLED' : 'DISABLED'}`);
 console.log(`Public-only mode: ${PUBLIC_ONLY ? 'ENABLED' : 'DISABLED'}`);
 console.log(`Extra meta tags: ${ENABLE_EXTRA_META_TAGS ? 'ENABLED' : 'DISABLED'}`);
@@ -83,31 +101,111 @@ module.exports = {
     },
   ],
   
+  // Plugins
+  plugins: [
+    // LinkedIn meta tags plugin
+    [
+      require.resolve('./src/plugins/docusaurus-linkedin-tags'),
+      {
+        defaultImage: '/img/logo.svg',
+      },
+    ],
+    // Chat page plugin
+    ...(ENABLE_CHAT_PAGE ? [
+      [
+        "docusaurus-plugin-chat-page",
+        {
+          path: "chat",
+          openai: {
+            apiKey: process.env.OPENAI_API_KEY,
+            model: "gpt-4-turbo",
+          },
+          pageTitle: "Kroescontrol Assistant",
+          pageName: "Vraag het de Kroescontrol Assistant",
+          description: "Stel een vraag over de werkafspraken bij Kroescontrol",
+          prompt: "Je bent een behulpzame assistent voor Kroescontrol documentatie. Gebruik de gegeven context om vragen over werkafspraken, budgetten en processen te beantwoorden. Onderscheid duidelijk tussen Kroescontrol en Freelancecontrol wanneer van toepassing. Als je het antwoord niet weet of het niet in de documentatie staat, geef dit eerlijk aan en suggereer waar de gebruiker mogelijk meer informatie kan vinden.",
+          embeddings: {
+            chunking: {
+              maxChunkLength: 1500,
+              chunkOverlap: 100,
+            },
+          },
+        },
+      ]
+    ] : []),
+    // Redirect plugin
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Since the root URL is already occupied, we'll set up other redirects if needed
+        redirects: [
+          // Example: redirect from old paths to new paths if needed in the future
+          // {
+          //   from: '/old-path',
+          //   to: '/new-path',
+          // },
+        ],
+      },
+    ],
+    // Multiple docs plugins based on access
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'public',
+        path: 'docs-public',
+        routeBasePath: '/',
+        include: ['**/*.md', '**/*.mdx'],
+        exclude: ["_meta/", '_meta/'],
+        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarItemsGenerator: async function () {
+          // Disable auto-generation - we use our own sidebar generator
+          return [];
+        },
+        editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
+      },
+    ],
+    ...(HAS_INTERNAL ? [[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'internal',
+        path: 'docs-internal',
+        routeBasePath: '/internal',
+        include: ['**/*.md', '**/*.mdx'],
+        exclude: ["_meta/", '_meta/'],
+        editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
+      },
+    ]] : []),
+    ...(HAS_FINANCE ? [[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'finance',
+        path: 'docs-finance',
+        routeBasePath: '/finance',
+        include: ['**/*.md', '**/*.mdx'],
+        exclude: ["_meta/", '_meta/'],
+        editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
+      },
+    ]] : []),
+    ...(HAS_OPERATION ? [[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'operation',
+        path: 'docs-operation',
+        routeBasePath: '/operation',
+        include: ['**/*.md', '**/*.mdx'],
+        exclude: ["_meta/", '_meta/'],
+        editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
+      },
+    ]] : []),
+  ],
+  
   // Presets
   presets: [
     [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          path: 'docs',
-          routeBasePath: '/',
-          include: ['**/*.md', '**/*.mdx'],
-          exclude: [
-            "_meta/", 
-            '_meta/',
-            ...(PUBLIC_ONLY ? [
-              // In public-only modus, excluderen we specifieke mappen die we niet willen tonen
-              'internal/**', 
-              'operation/**',
-              'finance/**',
-              // Behoud public map, submappen en root index
-              // LET OP: Geen wildcard exclusie zoals '**/*.md' want dat blokkeert alles!
-            ] : [])
-          ],
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
-        },
+        docs: false, // Disable default docs, we use custom plugins above
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
