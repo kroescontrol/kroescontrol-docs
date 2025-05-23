@@ -16,7 +16,7 @@
     "clear": "docusaurus clear && rm -rf .docusaurus && rm -rf node_modules/.cache",
     "swizzle": "docusaurus swizzle",
     "deploy": "node generate-sidebar.js && docusaurus deploy",
-    "deploy:public": "./deploy-public.sh",
+    "deploy:public": "./deploy-public-only.sh",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"

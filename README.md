@@ -24,23 +24,49 @@ De documentatie is opgedeeld in een publiek gedeelte (toegankelijk voor iedereen
 - Automatische sidebar-generatie
 - Responsief ontwerp voor alle apparaten
 
+### Omgevingsvariabelen
+
+Kopieer `.env.example` naar `.env` en pas aan:
+
+```bash
+# OpenAI API Key voor documentatie generatie (optioneel)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Deployment configuratie
+PUBLIC_ONLY=false           # Default: false (alle content), true = alleen publieke content
+ENABLE_CHAT_PAGE=false      # Default: false, true = chatbot inschakelen  
+ENABLE_EXTRA_META_TAGS=false # Default: false, true = extra LinkedIn meta tags
+BASE_URL=/                  # Default: '/', voor GitHub Pages: '/repository-name/'
+```
+
+**Defaults bij ontbrekende variabelen:**
+- `PUBLIC_ONLY`: `false` (volledige site met interne + publieke content)
+- `OPENAI_API_KEY`: Geen default, chatbot werkt niet zonder
+- `ENABLE_CHAT_PAGE`: `false` (chatbot uitgeschakeld)
+- `ENABLE_EXTRA_META_TAGS`: `false` (basis meta tags)
+- `BASE_URL`: `'/'` (root path)
+
 ### Ontwikkeling
 
 ```bash
 # Installeer dependencies
 npm install
 
-# Start lokale ontwikkelingsserver
+# Start lokale ontwikkelingsserver (volledige site)
 npm start
 
 # Publieke versie starten
 npm run start:public
 
-# Bouwen voor productie
+# Bouwen voor productie (volledige site)
 npm run build
 
 # Alleen publieke versie bouwen
 npm run build:public
+
+# Deployment
+npm run deploy              # Default: volledige site deployment
+npm run deploy:public       # Publieke site deployment naar GitHub Pages
 ```
 
 ### Bezoek de website
