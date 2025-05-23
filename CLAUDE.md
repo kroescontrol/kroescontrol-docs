@@ -22,24 +22,24 @@ De huidige migratieplannen zijn gedocumenteerd in de `.tijdelijk/` directory (ni
 
 ## Repository Structuur
 
-- `/docs-public/`: Bevat publieke documentatie-inhoud
-  - `/algemeen/`: Algemene informatie over Kroescontrol
-  - `/werken-bij/`: Informatie voor potentiële werknemers
-  - `/kennismaking/`: Introductie tot Kroescontrol-functies
-  - `/branding/`: Logo's, kleuren en huisstijl informatie
-  - `/tools/`: Publieke documentatie over tools
-  - `/freelancecontrol/`: Informatie over FreelanceControl
-- `/docs-internal/`: Interne documentatie voor medewerkers (beveiligd met git-crypt)
-  - `/primaire-arbeidsvoorwaarden/`: Informatie over contracten, pensioen, etc.
-  - `/budgetten/`: Details over Engineer Budget, Mobility Budget, etc.
-  - `/tools/`: Documentatie voor interne tools en systemen
-  - `/onboarding/`: Proces voor nieuwe medewerkers
-  - `/faq/`: Veelgestelde vragen
-  - `/administratie/`: HR en administratieve zaken
-- `/docs-operation/`: Operationele documentatie (beveiligd met git-crypt)
-  - Planning, resource management en klantcommunicatie
-- `/docs-finance/`: Financiële documentatie (beveiligd met git-crypt)
-  - Boekhouding, facturatie, BTW
+- `/docs/`: Bevat alle documentatie-inhoud georganiseerd in categorieën
+  - `/public/`: Openbare informatie
+    - `/algemeen/`: Algemene informatie over Kroescontrol
+    - `/werken-bij/`: Informatie voor potentiële werknemers
+    - `/kennismaking/`: Introductie tot Kroescontrol-functies
+    - `/branding/`: Logo's, kleuren en huisstijl informatie
+    - `/tools/`: Publieke documentatie over tools
+  - `/internal/`: Interne documentatie voor medewerkers (beveiligd met git-crypt)
+    - `/primaire-arbeidsvoorwaarden/`: Informatie over contracten, pensioen, etc.
+    - `/budgetten/`: Details over Engineer Budget, Mobility Budget, etc.
+    - `/tools/`: Documentatie voor interne tools en systemen
+    - `/onboarding/`: Proces voor nieuwe medewerkers
+    - `/faq/`: Veelgestelde vragen
+  - `/operation/`: Operationele documentatie (beveiligd met git-crypt)
+    - Planning, resource management en klantcommunicatie
+  - `/finance/`: Financiële documentatie (beveiligd met git-crypt)
+    - Boekhouding, facturatie, BTW
+  - `/_meta/`: Bevat prompts en richtlijnen voor AI-contentgeneratie (spiegelt de docs-structuur)
 - `/old/`: Bevat bronmateriaal voor documentatiegeneratie (niet ingecheckt in git)
   - `/primaireshiz/`: Templates en handboeken
   - `/werkafspraken2.0/`: Werkafspraken en budgetstructuren
@@ -91,36 +91,36 @@ npm run deploy
 ```
 Bouwt de site en deploy deze (inclusief het uitvoeren van generate-sidebar.js).
 
-## Het .meta Directory Workflow
+## Het _meta Directory Workflow
 
-De `.meta`-directories zijn een cruciaal onderdeel van de documentatieworkflow. Deze bevinden zich binnen elke docs-directory en bevatten promptbestanden die worden gebruikt om AI-contentgeneratie te sturen voor corresponderende documenten.
+De `_meta`-directory is een cruciaal onderdeel van de documentatieworkflow. Het bevat promptbestanden die worden gebruikt om AI-contentgeneratie te sturen voor corresponderende documenten in de hoofddocumentstructuur.
 
 ### Structuur en Doel
-- Elke docs-directory heeft een `.meta`-subdirectory die de documentstructuur weergeeft
-- Elk document kan een bijbehorend promptbestand hebben in de corresponderende `.meta`-directory
+- De `_meta`-directory weerspiegelt de structuur van de `/docs`-directory
+- Elk document in `/docs` kan een bijbehorend promptbestand hebben in `/_meta`
 - Deze promptbestanden bieden context en instructies voor AI bij het genereren van content
 
-### Gebruik van .meta Bestanden
-1. **Het juiste .meta bestand vinden**: 
-   - Bijvoorbeeld, om `/docs-internal/budgetten/kroescontrol/engineer-budget.md` bij te werken, zoek naar `/docs-internal/.meta/budgetten/kroescontrol/engineer-budget.md`
+### Gebruik van _meta Bestanden
+1. **Het juiste _meta bestand vinden**: 
+   - Bijvoorbeeld, om `/docs/internal/budgetten/kroescontrol/engineer-budget.md` bij te werken, zoek naar `/_meta/internal/budgetten/kroescontrol/engineer-budget.md`
 
-2. **.meta bestandsstructuur begrijpen**:
-   - Elk .meta bestand bevat:
+2. **_meta bestandsstructuur begrijpen**:
+   - Elk _meta bestand bevat:
      - Een titel die overeenkomt met de documenttitel
      - Een promptsectie tussen backticks (```) die specifieke instructies bevat
      - Een "Bronnen"-sectie die verwijst naar bronmaterialen in de `/old/`-directory
      - Een "Aantekeningen"-sectie met aanvullende context
 
 3. **Content bijwerken**:
-   - Werk de prompt in het .meta bestand bij met specifieke instructies
+   - Werk de prompt in het _meta bestand bij met specifieke instructies
    - Verwijs naar de exacte bronbestanden in `/old/` die moeten worden gebruikt
    - Vraag AI om content te genereren op basis van de bijgewerkte prompt
    - De AI zal zowel de prompt als de gerefereerde bronmaterialen gebruiken
 
 ### Belangrijk
-- **Behoud altijd zowel de `/old/` als de `.meta/` directories** - ze werken samen voor AI-contentgeneratie
+- **Behoud altijd zowel de `/old/` als de `/_meta/` directories** - ze werken samen voor AI-contentgeneratie
 - De `/old/`-directory bevat bronmaterialen die niet moeten worden gewijzigd
-- De `.meta/`-directories bevatten prompts die kunnen worden bijgewerkt
+- De `/_meta/`-directory bevat prompts die kunnen worden bijgewerkt
 
 ## Content Conventies
 
@@ -165,8 +165,8 @@ Dit script:
 
 ### Git-crypt voor Beveiliging
 Voor beveiliging van gevoelige interne documentatie gebruiken we git-crypt:
-- Zie `/docs-public/tools/documentatie/git-crypt-handleiding.md` voor gedetailleerde instructies
-- Alle documenten in `/docs-internal/`, `/docs-operation/` en `/docs-finance/` worden versleuteld
+- Zie `/docs/public/tools/documentatie/git-crypt-handleiding.md` voor gedetailleerde instructies
+- Alle documenten in `/docs/internal/`, `/docs/operation/` en `/docs/finance/` worden versleuteld
 - Nieuwe gebruikers moeten hun GPG sleutel delen met een repository beheerder
 
 ## Geheugennotities
