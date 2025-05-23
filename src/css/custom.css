@@ -183,6 +183,10 @@ p {
 .navbar__link--active {
   font-weight: 600;
   color: var(--kc-pink);
+  background-color: rgba(194, 39, 87, 0.1);
+  border: 2px solid var(--kc-pink);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(194, 39, 87, 0.2);
 }
 
 /* Dark mode styling */
@@ -252,6 +256,10 @@ p {
 
 [data-theme='dark'] .navbar__link--active {
   color: var(--kc-pink);
+  background-color: rgba(194, 39, 87, 0.15);
+  border: 2px solid var(--kc-pink);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(194, 39, 87, 0.3);
 }
 
 /* Footer styling */

@@ -18,9 +18,9 @@ function hasAccess(modulePath) {
   }
 }
 
-const HAS_INTERNAL = hasAccess('docs-internal');
-const HAS_FINANCE = hasAccess('docs-finance'); 
-const HAS_OPERATION = hasAccess('docs-operation');
+const HAS_INTERNAL = !PUBLIC_ONLY && hasAccess('docs-internal');
+const HAS_FINANCE = !PUBLIC_ONLY && hasAccess('docs-finance'); 
+const HAS_OPERATION = !PUBLIC_ONLY && hasAccess('docs-operation');
 
 console.log(`Access - Internal: ${HAS_INTERNAL ? 'YES' : 'NO'}, Finance: ${HAS_FINANCE ? 'YES' : 'NO'}, Operation: ${HAS_OPERATION ? 'YES' : 'NO'}`);
 console.log(`Chat page plugin: ${ENABLE_CHAT_PAGE ? 'ENABLED' : 'DISABLED'}`);
@@ -147,7 +147,7 @@ module.exports = {
         ],
       },
     ],
-    // Multiple docs plugins based on access
+    // Public docs plugin - route depends on mode
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -157,10 +157,6 @@ module.exports = {
         include: ['**/*.md', '**/*.mdx'],
         exclude: ["_meta/", '_meta/'],
         sidebarPath: require.resolve('./sidebars.js'),
-        sidebarItemsGenerator: async function () {
-          // Disable auto-generation - we use our own sidebar generator
-          return [];
-        },
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ],
@@ -172,6 +168,7 @@ module.exports = {
         routeBasePath: '/internal',
         include: ['**/*.md', '**/*.mdx'],
         exclude: ["_meta/", '_meta/'],
+        // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ]] : []),
@@ -183,6 +180,7 @@ module.exports = {
         routeBasePath: '/finance',
         include: ['**/*.md', '**/*.mdx'],
         exclude: ["_meta/", '_meta/'],
+        // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ]] : []),
@@ -194,6 +192,7 @@ module.exports = {
         routeBasePath: '/operation',
         include: ['**/*.md', '**/*.mdx'],
         exclude: ["_meta/", '_meta/'],
+        // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ]] : []),
@@ -243,12 +242,27 @@ module.exports = {
           {
             to: '/home',
             position: 'left',
-            label: 'Werkafspraken',
+            label: PUBLIC_ONLY ? 'Welkom' : 'Public',
           },
+          ...(HAS_INTERNAL ? [{
+            to: '/internal',
+            position: 'left',
+            label: 'Internal',
+          }] : []),
+          ...(HAS_OPERATION ? [{
+            to: '/operation',
+            position: 'left',
+            label: 'Operations',
+          }] : []),
+          ...(HAS_FINANCE ? [{
+            to: '/finance',
+            position: 'left',
+            label: 'Finance',
+          }] : []),
           ...(ENABLE_CHAT_PAGE ? [
             {
               to: '/chat',
-              label: 'AI Assistant Pagina',
+              label: 'AI Assistant',
               position: 'right',
             }
           ] : []),
