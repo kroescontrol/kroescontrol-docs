@@ -58,19 +58,94 @@ function getAvailableDocsDirs() {
   // Altijd public
   if (fs.existsSync('docs-public')) dirs.push('docs-public');
   
-  // Check access voor andere modules
-  if (fs.existsSync('docs-internal') && !isEncrypted('./docs-internal/_category_.json')) {
-    dirs.push('docs-internal');
+  // Check access voor andere modules - zowel _category_.json als enkele documenten
+  if (fs.existsSync('docs-internal')) {
+    const hasAccessToInternal = hasRealAccessToDirectory('./docs-internal');
+    if (hasAccessToInternal) {
+      dirs.push('docs-internal');
+    } else {
+      console.log('docs-internal detected but encrypted - skipping');
+    }
   }
-  if (fs.existsSync('docs-finance') && !isEncrypted('./docs-finance/_category_.json')) {
-    dirs.push('docs-finance');
+  
+  if (fs.existsSync('docs-finance')) {
+    const hasAccessToFinance = hasRealAccessToDirectory('./docs-finance');
+    if (hasAccessToFinance) {
+      dirs.push('docs-finance');
+    } else {
+      console.log('docs-finance detected but encrypted - skipping');
+    }
   }
-  if (fs.existsSync('docs-operation') && !isEncrypted('./docs-operation/_category_.json')) {
-    dirs.push('docs-operation');
+  
+  if (fs.existsSync('docs-operation')) {
+    const hasAccessToOperation = hasRealAccessToDirectory('./docs-operation');
+    if (hasAccessToOperation) {
+      dirs.push('docs-operation');
+    } else {
+      console.log('docs-operation detected but encrypted - skipping');
+    }
   }
   
   console.log(`Available docs directories: ${dirs.join(', ')}`);
   return dirs;
+}
+
+// Helper functie om te controleren of we echt toegang hebben tot een directory
+function hasRealAccessToDirectory(dirPath) {
+  try {
+    // Check _category_.json
+    const categoryPath = path.join(dirPath, '_category_.json');
+    if (isEncrypted(categoryPath)) {
+      return false;
+    }
+    
+    // Check een paar willekeurige .md bestanden in de directory
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+    let checkedFiles = 0;
+    const maxChecks = 3; // Check max 3 bestanden
+    
+    for (const entry of entries) {
+      if (checkedFiles >= maxChecks) break;
+      
+      if (entry.name.endsWith('.md')) {
+        const filePath = path.join(dirPath, entry.name);
+        if (isEncrypted(filePath)) {
+          return false;
+        }
+        checkedFiles++;
+      } else if (entry.isDirectory()) {
+        // Check ook subdirectories
+        const subDirPath = path.join(dirPath, entry.name);
+        const subCategoryPath = path.join(subDirPath, '_category_.json');
+        if (fs.existsSync(subCategoryPath) && isEncrypted(subCategoryPath)) {
+          return false;
+        }
+        
+        // Check een .md bestand in subdirectory
+        try {
+          const subEntries = fs.readdirSync(subDirPath, { withFileTypes: true });
+          for (const subEntry of subEntries) {
+            if (subEntry.name.endsWith('.md')) {
+              const subFilePath = path.join(subDirPath, subEntry.name);
+              if (isEncrypted(subFilePath)) {
+                return false;
+              }
+              checkedFiles++;
+              break; // Stop na eerste bestand in subdirectory
+            }
+          }
+        } catch (e) {
+          // Als we subdirectory niet kunnen lezen, waarschijnlijk encrypted
+          return false;
+        }
+      }
+    }
+    
+    return true; // Als alle checks slagen, hebben we toegang
+  } catch (e) {
+    console.log(`Error checking access to ${dirPath}:`, e.message);
+    return false;
+  }
 }
 
 // Structuur opbouwen op basis van mapstructuur
@@ -143,15 +218,35 @@ function buildCategoryStructure(dir, rootDir = dir) {
       if (!isAllowed) continue;
     }
 
-    if (entry.isDirectory()) {
-      const subCategory = buildCategoryStructure(fullPath, rootDir);
+    if (entry.isDirectory() || entry.isSymbolicLink()) {
+      // Check if symlink points to a directory
+      let isDir = entry.isDirectory();
+      if (entry.isSymbolicLink()) {
+        try {
+          const stat = fs.statSync(fullPath);
+          isDir = stat.isDirectory();
+        } catch (e) {
+          console.log(`Warning: Could not stat symlink ${fullPath}: ${e.message}`);
+          continue;
+        }
+      }
+      
+      if (isDir) {
+        const subCategory = buildCategoryStructure(fullPath, rootDir);
 
-      if (subCategory.items.length > 0) {
-        // Ensure category has correct type
-        subCategory.type = 'category';
-        folders.push(subCategory);
+        if (subCategory.items.length > 0) {
+          // Ensure category has correct type
+          subCategory.type = 'category';
+          folders.push(subCategory);
+        }
       }
     } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
+      // Check of bestand encrypted is
+      if (isEncrypted(fullPath)) {
+        console.log(`Skipping encrypted file: ${relativePath}`);
+        continue;
+      }
+      
       // Maak document ID van relative path zonder extensie
       const docId = relativePath.replace(/\.(md|mdx)$/, '').replace(/\\/g, '/');
       
@@ -188,91 +283,25 @@ function buildCategoryStructure(dir, rootDir = dir) {
 if (PUBLIC_ONLY) {
   generatePublicOnlySidebar();
 } else {
-  // Genereer sidebar voor multiple docs directories  
-  function generateSidebar() {
-    const availableDirs = getAvailableDocsDirs();
-    
-    if (availableDirs.length === 0) {
-      console.warn('Geen toegankelijke docs directories gevonden! Falling back to public-only...');
-      // Fallback naar alleen public als geen access tot andere modules
-      if (fs.existsSync('docs-public')) {
-        const structure = buildCategoryStructure('docs-public');
-        const sidebarContent = `/**
- * Auto-gegenereerd door sidebar-generator.js (fallback mode)
+  // In normal mode, only generate sidebar for the public docs (main route)
+  // Other modules (internal, finance, operation) use auto-generated sidebars
+  console.log('Generating sidebar for public docs only (main route)');
+  
+  if (!fs.existsSync('docs-public')) {
+    console.error('docs-public directory niet gevonden!');
+    process.exit(1);
+  }
+  
+  const structure = buildCategoryStructure('docs-public');
+  
+  const sidebarContent = `/**
+ * Auto-gegenereerd door sidebar-generator.js
  * Laatste update: ${new Date().toISOString()}
  */
 module.exports = {
   "docs": ${JSON.stringify(structure.items, null, 2)}
 };`;
-        fs.writeFileSync('./sidebars.js', sidebarContent);
-        console.log('✅ Sidebar succesvol gegenereerd (public-only fallback)!');
-        return;
-      } else {
-        console.error('Geen docs directories beschikbaar!');
-        return;
-      }
-    }
-    
-    // Combineer alle beschikbare directories
-    const allItems = [];
-    const nonPublicDirs = availableDirs.filter(dir => dir !== 'docs-public');
-    
-    // Als er maar 1 totale module is (alleen public), flatten de structuur
-    if (availableDirs.length === 1 && availableDirs[0] === 'docs-public') {
-      console.log('Only public docs available - flattening structure');
-      const structure = buildCategoryStructure('docs-public');
-      allItems.push(...structure.items);
-    }
-    // Als er maar 1 extra module is naast public, flatten die module
-    else if (nonPublicDirs.length === 1) {
-      console.log(`Only one additional module (${nonPublicDirs[0]}) - flattening structure`);
-      
-      // Voeg eerst public items toe
-      const publicStructure = buildCategoryStructure('docs-public');
-      allItems.push(...publicStructure.items);
-      
-      // Voeg items van de ene extra module direct toe (niet in wrapper category)
-      const moduleStructure = buildCategoryStructure(nonPublicDirs[0]);
-      allItems.push(...moduleStructure.items);
-    }
-    // Anders, gebruik category wrappers voor duidelijkheid
-    else {
-      console.log(`Multiple modules available - using category structure`);
-      
-      for (const dir of availableDirs) {
-        const structure = buildCategoryStructure(dir);
-        
-        // Voor docs-public: voeg items direct toe (root level)
-        if (dir === 'docs-public') {
-          allItems.push(...structure.items);
-        } else {
-          // Voor andere modules: voeg toe als category met module naam
-          const moduleName = dir.replace('docs-', '').charAt(0).toUpperCase() + dir.replace('docs-', '').slice(1);
-          allItems.push({
-            type: 'category',
-            label: moduleName,
-            items: structure.items,
-            collapsed: true
-          });
-        }
-      }
-    }
-    
-    const structure = { items: allItems };
-    console.log('Gegenereerde gecombineerde structuur:', JSON.stringify(structure, null, 2));
-    
-    // Write sidebar
-    const sidebarContent = `/**
-   * Auto-gegenereerd door sidebar-generator.js
-   * Laatste update: ${new Date().toISOString()}
-   */
-  module.exports = {
-    "docs": ${JSON.stringify(structure.items, null, 2)}
-  };`;
 
-    fs.writeFileSync('./sidebars.js', sidebarContent);
-    console.log('✅ Sidebar succesvol gegenereerd!');
-  }
-
-  generateSidebar();
+  fs.writeFileSync('./sidebars.js', sidebarContent);
+  console.log('✅ Sidebar succesvol gegenereerd voor publieke docs!');
 }

@@ -6,9 +6,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // Simpele categoriegegevens
 const categories = [
   {
-    title: 'Algemene Informatie',
+    title: 'Welkom bij Kroescontrol',
     description: 'Leer meer over onze werkprocessen, onboarding en bedrijfscultuur.',
-    link: '/public/algemeen/introductie'
+    link: '/home'
   },
   {
     title: 'Werken bij Kroescontrol',
@@ -49,9 +49,12 @@ export default function Home() {
           <div className="padding-vert--md">
             <Link
               className="button button--lg button--secondary"
-              to="/public/">
-              Bekijk documentatie
+              to="/public/tools/documentatie">
+              Documentatie bij Kroescontrol
             </Link>
+            <p className="margin-top--sm text--center">
+              Documentatieoverzicht van Kroescontrol
+            </p>
           </div>
         </div>
       </div>
