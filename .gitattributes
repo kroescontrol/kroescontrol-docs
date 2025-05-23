@@ -4,37 +4,37 @@
 
 # Git-crypt configuratie voor versleutelde bestanden
 # Default key: internal documenten (alle medewerkers)
-/docs/internal/**/*.md filter=git-crypt diff=git-crypt
-/docs/internal/**/*.mdx filter=git-crypt diff=git-crypt
+/docs-internal/**/*.md filter=git-crypt diff=git-crypt
+/docs-internal/**/*.mdx filter=git-crypt diff=git-crypt
 
 # Temporary: use default key for operation en finance (same as internal)
-/docs/operation/**/*.md filter=git-crypt diff=git-crypt
-/docs/operation/**/*.mdx filter=git-crypt diff=git-crypt
-/docs/finance/**/*.md filter=git-crypt diff=git-crypt
-/docs/finance/**/*.mdx filter=git-crypt diff=git-crypt
+/docs-operation/**/*.md filter=git-crypt diff=git-crypt
+/docs-operation/**/*.mdx filter=git-crypt diff=git-crypt
+/docs-finance/**/*.md filter=git-crypt diff=git-crypt
+/docs-finance/**/*.mdx filter=git-crypt diff=git-crypt
 
 # Versleutel _category_.json bestanden in gevoelige mappen
 # Default key: internal
-/docs/internal/**/_category_.json filter=git-crypt diff=git-crypt
+/docs-internal/**/_category_.json filter=git-crypt diff=git-crypt
 
 # Temporary: use default key for operation en finance
-/docs/operation/**/_category_.json filter=git-crypt diff=git-crypt
-/docs/finance/**/_category_.json filter=git-crypt diff=git-crypt
+/docs-operation/**/_category_.json filter=git-crypt diff=git-crypt
+/docs-finance/**/_category_.json filter=git-crypt diff=git-crypt
 
 # Versleutel .meta directories in gevoelige categorieën
 # Default key: internal
-/docs/internal/**/.meta/** filter=git-crypt diff=git-crypt
+/docs-internal/**/.meta/** filter=git-crypt diff=git-crypt
 
 # Temporary: use default key for operation en finance
-/docs/operation/**/.meta/** filter=git-crypt diff=git-crypt
-/docs/finance/**/.meta/** filter=git-crypt diff=git-crypt
+/docs-operation/**/.meta/** filter=git-crypt diff=git-crypt
+/docs-finance/**/.meta/** filter=git-crypt diff=git-crypt
 
 # Houd publieke markdown onversleuteld
-/docs/public/**/*.md !filter !diff
-/docs/public/**/*.mdx !filter !diff
+/docs-public/**/*.md !filter !diff
+/docs-public/**/*.mdx !filter !diff
 
 # Houd publieke .meta onversleuteld
-/docs/public/**/.meta/** !filter !diff
+/docs-public/**/.meta/** !filter !diff
 
 # Versleutel eventuele gevoelige .env bestanden
 .env filter=git-crypt diff=git-crypt
