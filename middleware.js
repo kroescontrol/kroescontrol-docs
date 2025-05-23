@@ -1,6 +1,9 @@
 // Route protection middleware voor team-based authorization
 export function middleware(request) {
   const { pathname } = request.nextUrl;
+  
+  // Debug logging
+  console.log('🔒 Middleware triggered for:', pathname);
 
   // Skip middleware voor API routes en statische bestanden
   if (pathname.startsWith('/api/') || 
@@ -12,9 +15,11 @@ export function middleware(request) {
 
   // Bepaal welke toegang vereist is op basis van het pad
   const accessLevel = getRequiredAccessLevel(pathname);
+  console.log('🔐 Access level required:', accessLevel);
   
   // Publieke content heeft geen authenticatie nodig
   if (accessLevel === 'public') {
+    console.log('✅ Public route, allowing access');
     return;
   }
 
