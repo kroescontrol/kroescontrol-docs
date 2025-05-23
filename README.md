@@ -30,17 +30,29 @@ De documentatie is opgedeeld in een publiek gedeelte (toegankelijk voor iedereen
 # Installeer dependencies
 npm install
 
-# Start lokale ontwikkelingsserver
+# Start lokale ontwikkelingsserver (volledige site)
 npm start
 
-# Publieke versie starten
+# Start alleen publieke versie
 npm run start:public
 
-# Bouwen voor productie
+# Bouwen voor productie (volledige site)
 npm run build
 
-# Alleen publieke versie bouwen
+# Bouwen alleen publieke versie
 npm run build:public
+
+# Cache wissen
+npm run clear
+
+# Controleer git-crypt status van interne content
+npm run check-access
+
+# Deploy publieke site naar GitHub Pages
+./deploy-public-only.sh
+
+# Serveer gebouwde site lokaal
+npm run serve
 ```
 
 ### Bezoek de website
@@ -61,11 +73,26 @@ The site is divided into a public section (accessible to everyone) and an intern
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (full site)
 npm start
 
-# Build for production
+# Start public version only
+npm run start:public
+
+# Build for production (full site)
 npm run build
+
+# Build public version only
+npm run build:public
+
+# Clear cache
+npm run clear
+
+# Check git-crypt status
+npm run check-access
+
+# Deploy public site to GitHub Pages
+./deploy-public-only.sh
 ```
 
 ### License
