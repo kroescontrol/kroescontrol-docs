@@ -8,6 +8,20 @@
       "runtime": "@vercel/node@3.2.21"
     }
   },
+  "rewrites": [
+    {
+      "source": "/internal/:path*",
+      "destination": "/internal/:path*"
+    },
+    {
+      "source": "/operation/:path*", 
+      "destination": "/operation/:path*"
+    },
+    {
+      "source": "/finance/:path*",
+      "destination": "/finance/:path*"
+    }
+  ],
   "env": {
     "OAUTH_CLIENT_ID": "$OAUTH_CLIENT_ID",
     "OAUTH_CLIENT_SECRET": "$OAUTH_CLIENT_SECRET", 
