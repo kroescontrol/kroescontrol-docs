@@ -23,7 +23,7 @@ Bij Kroescontrol geloven we in een open en transparante cultuur. Daarom is onze 
 
 In deze sectie vind je de volgende informatie:
 
-- [**Werkmethode Kroescontrol**](./werkmethode.md) - Een globaal overzicht van hoe we bij Kroescontrol werken en onze filosofie rondom documentatie.
+- [**Werkmethode Kroescontrol**](./werkmethode.md) - Een globaal overzicht van hoe we bij Kroescontrol werken en onze filosofie in werkafspraken.
 
 - [**Repository en Toegang**](./repository-toegang.md) - Uitleg over hoe onze documentatie is gestructureerd, waar deze is opgeslagen, en hoe toegang wordt beheerd tot zowel publieke als interne informatie.
 

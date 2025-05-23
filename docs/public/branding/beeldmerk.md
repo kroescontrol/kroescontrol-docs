@@ -28,15 +28,15 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '250px'}}>
     <h3>Primaire beeldmerk - Gradient Kleur</h3>
     <p>Dit is de standaard en aanbevolen versie van het Kroescontrol beeldmerk voor de meeste toepassingen op witte of lichte achtergronden.</p>
-    <div style={{padding: '30px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee'}}>
+    <div style={{padding: '30px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Kroescontrol Beeldmerk - Gradient Kleur" style={{maxWidth: '100px'}} />
     </div>
   </div>
   
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '250px'}}>
     <h3>Gradient Zwart-Wit</h3>
-    <p>De zwart-wit gradient versie is ideaal voor toepassingen waar kleur beperkt is, maar een visueel onderscheidend element gewenst is.</p>
-    <div style={{padding: '30px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee'}}>
+    <p>De zwart-wit gradient versie is ideaal voor donkere achtergronden waar geen kleur nodig is maar wel een onderscheidend element gewenst is.</p>
+    <div style={{padding: '30px', backgroundColor: 'rgb(51, 51, 51)', textAlign: 'center', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Kroescontrol Beeldmerk - Gradient Zwart-Wit" style={{maxWidth: '100px'}} />
     </div>
   </div>
@@ -77,57 +77,82 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
 
 ## Beeldmerk vergelijking op verschillende achtergronden
 
-<div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '20px'}}>
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '200px', maxWidth: '300px'}}>
-    <h3>Op witte achtergrond</h3>
-    <div style={{backgroundColor: 'white', padding: '15px', borderRadius: '5px', border: '1px solid #eee'}}>
-      <div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center'}}>
-        <div style={{textAlign: 'center', flex: '1 1 calc(33% - 10px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Gradient Kleur op wit" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px'}}>Gradient Kleur</p>
-        </div>
-        <div style={{textAlign: 'center', flex: '1 1 calc(33% - 10px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient BW op wit" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px'}}>Gradient Z/W</p>
-        </div>
-        <div style={{textAlign: 'center', flex: '1 1 calc(33% - 10px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-zwart.png" alt="Zwart op wit" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px'}}>Zwart</p>
-        </div>
-      </div>
+### Op witte achtergrond
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px'}}>
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Gradient Kleur op wit" style={{maxWidth: '60px', width: '100%'}} />
     </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0'}}>Gradient Kleur</p>
   </div>
   
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '200px'}}>
-    <h3>Op zwarte achtergrond</h3>
-    <div style={{backgroundColor: 'black', padding: '15px', borderRadius: '5px'}}>
-      <div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center'}}>
-        <div style={{textAlign: 'center', flex: '1 1 calc(50% - 8px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" alt="Wit op zwart" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px', color: 'white'}}>Wit</p>
-        </div>
-        <div style={{textAlign: 'center', flex: '1 1 calc(50% - 8px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient Zwart-Wit op zwart" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px', color: 'white'}}>Gradient Z/W</p>
-        </div>
-      </div>
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient BW op wit" style={{maxWidth: '60px', width: '100%'}} />
     </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0'}}>Gradient Z/W</p>
   </div>
   
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '200px'}}>
-    <h3>Op gekleurde achtergrond</h3>
-    <div style={{backgroundColor: '#0057B8', padding: '15px', borderRadius: '5px'}}>
-      <div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center'}}>
-        <div style={{textAlign: 'center', flex: '1 1 calc(50% - 8px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" alt="Wit op blauw" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px', color: 'white'}}>Wit</p>
-        </div>
-        <div style={{textAlign: 'center', flex: '1 1 calc(50% - 8px)', minWidth: '60px', maxWidth: '80px'}}>
-          <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient Zwart-Wit op blauw" style={{width: '100%'}} />
-          <p style={{fontSize: '0.8em', marginTop: '5px', color: 'white'}}>Gradient Z/W</p>
-        </div>
-      </div>
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-zwart.png" alt="Zwart op wit" style={{maxWidth: '60px', width: '100%'}} />
     </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0'}}>Zwart</p>
+  </div>
+</div>
+
+### Op zwarte achtergrond
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px'}}>
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Gradient Kleur op zwart" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Kleur</p>
+  </div>
+  
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient BW op zwart" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
+  </div>
+  
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" alt="Wit op zwart" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Wit</p>
+  </div>
+</div>
+
+### Op gekleurde achtergrond
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px'}}>
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Gradient Kleur op blauw" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Kleur</p>
+  </div>
+  
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Gradient BW op blauw" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
+  </div>
+  
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" alt="Wit op blauw" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Wit</p>
+  </div>
+  
+  <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '120px', maxWidth: '150px'}}>
+    <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-zwart.png" alt="Zwart op blauw" style={{maxWidth: '60px', width: '100%'}} />
+    </div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Zwart</p>
   </div>
 </div>
 
