@@ -98,6 +98,10 @@ This branch contains the built public documentation for Kroescontrol.
 The documentation site is available at https://public.kroescontrol.nl
 " > README.md
 
+# Configureer git user voor deployment
+git config user.name "${GIT_USER:-github-actions[bot]}"
+git config user.email "${GIT_EMAIL:-github-actions[bot]@users.noreply.github.com}"
+
 # Commit en push
 echo "💾 Committing and pushing to kroescontrol-public repository..."
 git add .
