@@ -11,15 +11,15 @@
   "rewrites": [
     {
       "source": "/internal/:path*",
-      "destination": "/internal/:path*"
+      "destination": "/api/secure-proxy?path=/internal/:path*"
     },
     {
       "source": "/operation/:path*", 
-      "destination": "/operation/:path*"
+      "destination": "/api/secure-proxy?path=/operation/:path*"
     },
     {
       "source": "/finance/:path*",
-      "destination": "/finance/:path*"
+      "destination": "/api/secure-proxy?path=/finance/:path*"
     }
   ],
   "env": {
