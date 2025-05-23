@@ -1,0 +1,16 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "installCommand": "npm ci",
+  "framework": null,
+  "functions": {
+    "api/auth.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "OAUTH_CLIENT_ID": "@oauth_client_id",
+    "OAUTH_CLIENT_SECRET": "@oauth_client_secret", 
+    "ACCESS_TOKEN": "@access_token"
+  }
+}
