@@ -7,7 +7,7 @@ export function middleware(request) {
       pathname.startsWith('/_next/') || 
       pathname.startsWith('/static/') ||
       pathname.includes('.')) {
-    return NextResponse.next();
+    return;
   }
 
   // Bepaal welke toegang vereist is op basis van het pad
