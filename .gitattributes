@@ -21,26 +21,13 @@
 /docs-operation/**/_category_.json filter=git-crypt diff=git-crypt
 /docs-finance/**/_category_.json filter=git-crypt diff=git-crypt
 
-# Versleutel .meta directories en bestanden in gevoelige categorieën  
-# Default key: internal
-/docs-internal/**/.meta/** filter=git-crypt diff=git-crypt
-/docs-internal/**/.meta/*.md filter=git-crypt diff=git-crypt
-/docs-internal/**/.meta/*.mdx filter=git-crypt diff=git-crypt
+# Versleutel .meta directories en bestanden in gevoelige categorieën
+# Gebruik expliciete patterns omdat git-crypt problemen heeft met complexe wildcards
+/docs-internal/.meta/** filter=git-crypt diff=git-crypt
+/docs-operation/.meta/** filter=git-crypt diff=git-crypt  
+/docs-finance/.meta/** filter=git-crypt diff=git-crypt
 
-# Temporary: use default key for operation en finance
-/docs-operation/**/.meta/** filter=git-crypt diff=git-crypt
-/docs-operation/**/.meta/*.md filter=git-crypt diff=git-crypt
-/docs-operation/**/.meta/*.mdx filter=git-crypt diff=git-crypt
-/docs-finance/**/.meta/** filter=git-crypt diff=git-crypt
-/docs-finance/**/.meta/*.md filter=git-crypt diff=git-crypt
-/docs-finance/**/.meta/*.mdx filter=git-crypt diff=git-crypt
-
-# Houd publieke markdown onversleuteld
-/docs-public/**/*.md !filter !diff
-/docs-public/**/*.mdx !filter !diff
-
-# Houd publieke .meta onversleuteld
-/docs-public/**/.meta/** !filter !diff
+# docs-public bestanden zijn standaard niet versleuteld (geen expliciete regels nodig)
 
 # Versleutel eventuele gevoelige .env bestanden
 .env filter=git-crypt diff=git-crypt
@@ -51,9 +38,3 @@
 .gitignore !filter !diff
 README.md !filter !diff
 CLAUDE.md !filter !diff
-
-# Geen algemene _meta map meer in root
-
-# Laat git alle .md bestanden als tekst behandelen voor diff
-*.md diff=markdown
-*.mdx diff=markdown
