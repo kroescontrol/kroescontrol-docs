@@ -14,12 +14,24 @@
       "destination": "/api/secure-proxy?path=/internal/:path*"
     },
     {
+      "source": "/internal",
+      "destination": "/api/secure-proxy?path=/internal"
+    },
+    {
       "source": "/operation/:path*", 
       "destination": "/api/secure-proxy?path=/operation/:path*"
     },
     {
+      "source": "/operation",
+      "destination": "/api/secure-proxy?path=/operation"
+    },
+    {
       "source": "/finance/:path*",
       "destination": "/api/secure-proxy?path=/finance/:path*"
+    },
+    {
+      "source": "/finance",
+      "destination": "/api/secure-proxy?path=/finance"
     }
   ],
   "env": {
