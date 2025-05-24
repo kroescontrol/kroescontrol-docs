@@ -4,6 +4,8 @@ export function middleware(request) {
   
   // Debug logging
   console.log('🔒 Middleware triggered for:', pathname);
+  console.log('🔗 Full URL:', request.url);
+  console.log('🍪 Cookies:', request.headers.get('cookie'));
 
   // Skip middleware voor API routes en statische bestanden
   if (pathname.startsWith('/api/') || 
@@ -27,10 +29,16 @@ export function middleware(request) {
   const cookies = request.headers.get('cookie') || '';
   const authCookie = cookies.includes('vercel-github-oauth-proxy');
   
+  console.log('🍪 Auth cookie present:', authCookie);
+  console.log('🔑 All cookies:', cookies);
+  
   if (!authCookie) {
     // Niet ingelogd - redirect naar login
+    console.log('❌ No auth cookie - redirecting to login');
     return redirectToLogin(request);
   }
+  
+  console.log('✅ Auth cookie found - checking team access');
 
   // Haal team membership op (met caching)
   return checkTeamAccess(request, accessLevel);
@@ -59,6 +67,7 @@ function redirectToLogin(request) {
   const loginUrl = new URL('/api/auth/login', request.url);
   loginUrl.searchParams.set('redirect', request.url);
   
+  console.log('🔄 Redirecting to login:', loginUrl.toString());
   return Response.redirect(loginUrl.toString());
 }
 
@@ -67,6 +76,8 @@ async function checkTeamAccess(request, requiredLevel) {
     // Haal team membership op via onze team-check service
     const teamCheckUrl = new URL('/api/team-check', request.url);
     
+    console.log('🔍 Checking team access via:', teamCheckUrl.toString());
+    
     // Forward de auth cookie naar onze API
     const response = await fetch(teamCheckUrl.toString(), {
       headers: {
@@ -74,17 +85,24 @@ async function checkTeamAccess(request, requiredLevel) {
       }
     });
 
+    console.log('📡 Team check response status:', response.status);
+
     if (!response.ok) {
+      console.log('❌ Team check failed, redirecting to login');
       return redirectToLogin(request);
     }
 
     const { teams } = await response.json();
+    console.log('👥 User teams:', teams);
     
     // Check of gebruiker toegang heeft tot het gevraagde niveau
     const hasAccess = checkAccessPermission(teams, requiredLevel);
     
+    console.log('🔐 Access check - Required:', requiredLevel, 'Has access:', hasAccess);
+    
     if (!hasAccess) {
       // Geen toegang - toon 403 pagina
+      console.log('🚫 Access denied - showing 403');
       return new Response(
         getAccessDeniedHTML(requiredLevel),
         { 
@@ -95,6 +113,7 @@ async function checkTeamAccess(request, requiredLevel) {
     }
 
     // Toegang toegestaan - continue
+    console.log('✅ Access granted - proceeding');
     return;
 
   } catch (error) {
