@@ -8,6 +8,7 @@ export default async function handler(req, res) {
       githubOrgName: 'kroescontrol',
       githubOrgAdminToken: process.env.ACCESS_TOKEN,
       cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
+      paths: ['/api/auth', '/secure-internal', '/secure-finance', '/secure-operation'], // Required paths
     });
     
     return await authHandler(req, res);
