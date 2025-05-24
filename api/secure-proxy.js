@@ -56,6 +56,10 @@ function getRequiredAccessLevel(pathname) {
   if (pathname.startsWith('/finance/') || pathname === '/finance') return 'finance';
   if (pathname.startsWith('/operation/') || pathname === '/operation') return 'operation';
   if (pathname.startsWith('/internal/') || pathname === '/internal') return 'internal';
+  
+  // TEST ROUTES
+  if (pathname.startsWith('/test-auth/') || pathname === '/test-auth') return 'internal';
+  
   return 'public';
 }
 
