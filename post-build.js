@@ -5,6 +5,13 @@ const path = require('path');
 
 console.log('🔧 Post-build: Securing protected directories...');
 
+// Debug environment variables
+console.log('🔍 Environment check:');
+console.log('  KROESCONTROL_LOCAL_DEV:', process.env.KROESCONTROL_LOCAL_DEV);
+console.log('  VERCEL:', process.env.VERCEL);
+console.log('  CI:', process.env.CI);
+console.log('  NODE_ENV:', process.env.NODE_ENV);
+
 // Only remove directories in production (when KROESCONTROL_LOCAL_DEV is not set)
 const isLocalDev = process.env.KROESCONTROL_LOCAL_DEV === 'true';
 const isVercelBuild = process.env.VERCEL || process.env.CI;
