@@ -18,6 +18,7 @@
     "deploy": "node generate-sidebar.js && docusaurus deploy",
     "deploy:public": "./deploy-public.sh",
     "serve": "docusaurus serve",
+    "post-build": "node post-build.js",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
