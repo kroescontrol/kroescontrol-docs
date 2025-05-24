@@ -9,7 +9,7 @@ const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; //
 const BASE_URL = process.env.BASE_URL || '/';
 
 // Environment-specific routing
-const isLocalDevelopment = !process.env.VERCEL; // npm start lokaal
+const isLocalDevelopment = !process.env.VERCEL_OIDC_TOKEN; // npm start lokaal
 console.log(`Environment: ${isLocalDevelopment ? 'LOCAL DEVELOPMENT' : 'VERCEL DEPLOYMENT'}`);
 console.log(`Using ${isLocalDevelopment ? 'direct' : 'secure-*'} route paths`);
 
