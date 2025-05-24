@@ -1,57 +1,13 @@
 {
-  "buildCommand": "npm run build && rm -rf build/internal build/finance build/operation || true",
+  "buildCommand": "npm run build",
   "outputDirectory": "build", 
   "installCommand": "npm ci",
   "framework": null,
+  "routes": [{ "src": "/(.*)", "dest": "/api/" }],
   "functions": {
     "api/index.js": {
-      "runtime": "@vercel/node@3.2.21"
+      "runtime": "@vercel/node@3.2.21",
+      "includeFiles": "build/**"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/login/oauth/authorize",
-      "destination": "/api/"
-    },
-    {
-      "source": "/login/oauth/error",
-      "destination": "/api/"
-    },
-    {
-      "source": "/login/oauth/error-membership", 
-      "destination": "/api/"
-    },
-    {
-      "source": "/internal/:path*",
-      "destination": "/api/secure-proxy?path=/internal/:path*"
-    },
-    {
-      "source": "/internal",
-      "destination": "/api/secure-proxy?path=/internal/"
-    },
-    {
-      "source": "/operation/:path*", 
-      "destination": "/api/secure-proxy?path=/operation/:path*"
-    },
-    {
-      "source": "/operation",
-      "destination": "/api/secure-proxy?path=/operation/"
-    },
-    {
-      "source": "/finance/:path*",
-      "destination": "/api/secure-proxy?path=/finance/:path*"
-    },
-    {
-      "source": "/finance",
-      "destination": "/api/secure-proxy?path=/finance/"
-    },
-    {
-      "source": "/secure-test-auth/:path*",
-      "destination": "/api/secure-proxy?path=/test-auth/:path*"
-    },
-    {
-      "source": "/secure-test-auth",
-      "destination": "/api/secure-proxy?path=/test-auth/"
-    }
-  ]
+  }
 }
