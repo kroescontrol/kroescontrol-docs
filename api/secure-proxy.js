@@ -150,9 +150,12 @@ function redirectToLogin(res, returnUrl) {
 
 function serveStaticContent(req, res, requestedPath) {
   try {
+    // requestedPath is nu al de juiste path dankzij vercel.json rewrite
+    let actualPath = requestedPath;
+    
     // Bepaal file path in build directory
     const buildDir = path.join(process.cwd(), 'build');
-    let filePath = path.join(buildDir, requestedPath);
+    let filePath = path.join(buildDir, actualPath);
     
     // Als het een directory is, probeer index.html
     if (fs.lstatSync(filePath).isDirectory()) {
