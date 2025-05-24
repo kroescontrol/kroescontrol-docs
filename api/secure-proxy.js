@@ -53,9 +53,9 @@ export default async function handler(req, res) {
 }
 
 function getRequiredAccessLevel(pathname) {
-  if (pathname.startsWith('/finance/')) return 'finance';
-  if (pathname.startsWith('/operation/')) return 'operation';
-  if (pathname.startsWith('/internal/')) return 'internal';
+  if (pathname.startsWith('/finance/') || pathname === '/finance') return 'finance';
+  if (pathname.startsWith('/operation/') || pathname === '/operation') return 'operation';
+  if (pathname.startsWith('/internal/') || pathname === '/internal') return 'internal';
   return 'public';
 }
 
