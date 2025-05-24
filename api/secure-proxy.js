@@ -150,25 +150,38 @@ function redirectToLogin(res, returnUrl) {
 
 function serveStaticContent(req, res, requestedPath) {
   try {
-    // requestedPath is nu al de juiste path dankzij vercel.json rewrite
-    let actualPath = requestedPath;
+    // In Vercel deployment is build output in de root, niet in /build
+    const isVercel = process.env.VERCEL === '1';
+    const buildDir = isVercel ? process.cwd() : path.join(process.cwd(), 'build');
     
-    // Bepaal file path in build directory
-    const buildDir = path.join(process.cwd(), 'build');
-    let filePath = path.join(buildDir, actualPath);
+    console.log('📁 Build directory:', buildDir);
+    console.log('📄 Requested path:', requestedPath);
+    
+    let filePath = path.join(buildDir, requestedPath);
     
     // Als het een directory is, probeer index.html
-    if (fs.lstatSync(filePath).isDirectory()) {
-      filePath = path.join(filePath, 'index.html');
+    try {
+      if (fs.lstatSync(filePath).isDirectory()) {
+        filePath = path.join(filePath, 'index.html');
+      }
+    } catch (e) {
+      // Als het pad niet bestaat als directory, probeer direct als bestand
+      if (!requestedPath.includes('.')) {
+        filePath = path.join(buildDir, requestedPath, 'index.html');
+      }
     }
     
+    console.log('🎯 Final file path:', filePath);
+    
     if (!fs.existsSync(filePath)) {
+      console.log('❌ File not found:', filePath);
       return res.status(404).json({ error: 'Pagina niet gevonden' });
     }
 
     const content = fs.readFileSync(filePath);
     const contentType = filePath.endsWith('.html') ? 'text/html' : 'text/plain';
     
+    console.log('✅ Serving content, type:', contentType);
     res.setHeader('Content-Type', contentType);
     res.send(content);
     
