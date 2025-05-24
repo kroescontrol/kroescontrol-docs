@@ -9,9 +9,13 @@ const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; //
 const BASE_URL = process.env.BASE_URL || '/';
 
 // Environment-specific routing
-const isLocalDevelopment = !process.env.VERCEL_OIDC_TOKEN; // npm start lokaal
-console.log(`Environment: ${isLocalDevelopment ? 'LOCAL DEVELOPMENT' : 'VERCEL DEPLOYMENT'}`);
-console.log(`Using ${isLocalDevelopment ? 'direct' : 'secure-*'} route paths`);
+// SECURE BY DEFAULT: alleen expliciet lokaal development gebruikt directe routes
+const isExplicitLocalDev = process.env.KROESCONTROL_LOCAL_DEV === 'true';
+const isSecureMode = !isExplicitLocalDev; // Default: altijd secure behalve expliciet lokaal
+
+console.log(`Environment: ${isExplicitLocalDev ? 'LOCAL DEVELOPMENT' : 'SECURE DEPLOYMENT'}`);
+console.log(`Using ${isSecureMode ? 'secure-*' : 'direct'} route paths`);
+console.log(`KROESCONTROL_LOCAL_DEV: ${process.env.KROESCONTROL_LOCAL_DEV || 'undefined'}`);
 
 // Check access to different documentation modules
 function hasAccess(modulePath) {
@@ -169,7 +173,7 @@ module.exports = {
       {
         id: 'internal',
         path: 'docs-internal',
-        routeBasePath: isLocalDevelopment ? '/internal' : '/secure-internal',
+        routeBasePath: isExplicitLocalDev ? '/internal' : '/secure-internal',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
@@ -180,7 +184,7 @@ module.exports = {
       {
         id: 'finance',
         path: 'docs-finance',
-        routeBasePath: isLocalDevelopment ? '/finance' : '/secure-finance',
+        routeBasePath: isExplicitLocalDev ? '/finance' : '/secure-finance',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
@@ -191,7 +195,7 @@ module.exports = {
       {
         id: 'operation',
         path: 'docs-operation',
-        routeBasePath: isLocalDevelopment ? '/operation' : '/secure-operation',
+        routeBasePath: isExplicitLocalDev ? '/operation' : '/secure-operation',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
