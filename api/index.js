@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   try {
     const authHandler = createLambdaProxyAuthHandler({
       cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
-      staticDir: 'build', // Docusaurus output directory
+      staticDir: '.', // In Vercel is build output in root directory
       githubOrgName: 'kroescontrol',
       githubClientId: process.env.OAUTH_CLIENT_ID,
       githubClientSecret: process.env.OAUTH_CLIENT_SECRET,
