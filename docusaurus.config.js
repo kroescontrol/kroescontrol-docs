@@ -9,13 +9,9 @@ const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; //
 const BASE_URL = process.env.BASE_URL || '/';
 
 // Environment-specific routing
-// SECURE BY DEFAULT: alleen expliciet lokaal development gebruikt directe routes
-const isExplicitLocalDev = process.env.KROESCONTROL_LOCAL_DEV === 'true';
-const isSecureMode = !isExplicitLocalDev; // Default: altijd secure behalve expliciet lokaal
-
-console.log(`Environment: ${isExplicitLocalDev ? 'LOCAL DEVELOPMENT' : 'SECURE DEPLOYMENT'}`);
-console.log(`Using ${isSecureMode ? 'secure-*' : 'direct'} route paths`);
 console.log(`KROESCONTROL_LOCAL_DEV: ${process.env.KROESCONTROL_LOCAL_DEV || 'undefined'}`);
+console.log(`Build environment: ${process.env.VERCEL ? 'VERCEL' : 'LOCAL'}`);
+console.log(`Using direct route paths - post-build will secure production`);
 
 // Check access to different documentation modules
 function hasAccess(modulePath) {
@@ -173,7 +169,7 @@ module.exports = {
       {
         id: 'internal',
         path: 'docs-internal',
-        routeBasePath: isExplicitLocalDev ? '/internal' : '/secure-internal',
+        routeBasePath: '/internal',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
@@ -184,7 +180,7 @@ module.exports = {
       {
         id: 'finance',
         path: 'docs-finance',
-        routeBasePath: isExplicitLocalDev ? '/finance' : '/secure-finance',
+        routeBasePath: '/finance',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
@@ -195,7 +191,7 @@ module.exports = {
       {
         id: 'operation',
         path: 'docs-operation',
-        routeBasePath: isExplicitLocalDev ? '/operation' : '/secure-operation',
+        routeBasePath: '/operation',
         include: ['**/*.md', '**/*.mdx'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
