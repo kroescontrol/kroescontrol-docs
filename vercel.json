@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && npm run post-build",
+  "buildCommand": "npm run build && rm -rf build/internal build/finance build/operation || true",
   "outputDirectory": "build", 
   "installCommand": "npm ci",
   "framework": null,
