@@ -143,7 +143,19 @@ async function getTeamMemberships(username) {
 }
 
 function redirectToLogin(res, returnUrl) {
-  const loginUrl = `/api/?redirect=${encodeURIComponent(returnUrl)}`;
+  // Clean de return URL - verwijder ?path= parameters die door secure-proxy zijn toegevoegd
+  let cleanUrl = returnUrl;
+  if (returnUrl.includes('?path=')) {
+    // Extract de originele path zonder ?path= parameter
+    const pathMatch = returnUrl.match(/\?path=([^&]+)/);
+    if (pathMatch) {
+      cleanUrl = decodeURIComponent(pathMatch[1]);
+    }
+  }
+  
+  console.log('🔄 Redirecting to login - Original:', returnUrl, 'Cleaned:', cleanUrl);
+  
+  const loginUrl = `/api/?redirect=${encodeURIComponent(cleanUrl)}`;
   res.writeHead(302, { Location: loginUrl });
   res.end();
 }
