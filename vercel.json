@@ -53,11 +53,5 @@
       "source": "/secure-test-auth",
       "destination": "/api/secure-proxy?path=/test-auth/"
     }
-  ],
-  "env": {
-    "OAUTH_CLIENT_ID": "$OAUTH_CLIENT_ID",
-    "OAUTH_CLIENT_SECRET": "$OAUTH_CLIENT_SECRET", 
-    "ACCESS_TOKEN": "$ACCESS_TOKEN",
-    "CRYPTO_SECRET": "$OAUTH_CLIENT_SECRET"
-  }
+  ]
 }
