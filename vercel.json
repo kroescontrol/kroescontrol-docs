@@ -10,6 +10,18 @@
   },
   "rewrites": [
     {
+      "source": "/login/oauth/authorize",
+      "destination": "/api/"
+    },
+    {
+      "source": "/login/oauth/error",
+      "destination": "/api/"
+    },
+    {
+      "source": "/login/oauth/error-membership", 
+      "destination": "/api/"
+    },
+    {
       "source": "/internal/:path*",
       "destination": "/api/secure-proxy?path=/internal/:path*"
     },
