@@ -3,12 +3,12 @@ import { createLambdaProxyAuthHandler } from "vercel-github-oauth-proxy";
 export default async function handler(req, res) {
   try {
     const authHandler = createLambdaProxyAuthHandler({
+      cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
+      staticDir: 'build', // Docusaurus output directory
+      githubOrgName: 'kroescontrol',
       githubClientId: process.env.OAUTH_CLIENT_ID,
       githubClientSecret: process.env.OAUTH_CLIENT_SECRET,
-      githubOrgName: 'kroescontrol',
       githubOrgAdminToken: process.env.ACCESS_TOKEN,
-      cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
-      paths: ['/api/auth', '/secure-internal', '/secure-finance', '/secure-operation'], // Required paths
     });
     
     return await authHandler(req, res);
