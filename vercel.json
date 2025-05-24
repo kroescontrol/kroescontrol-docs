@@ -11,27 +11,27 @@
   "rewrites": [
     {
       "source": "/internal/:path*",
-      "destination": "/api/secure-proxy?path=/secure-internal/:path*"
+      "destination": "/api/secure-proxy?path=/internal/:path*"
     },
     {
       "source": "/internal",
-      "destination": "/api/secure-proxy?path=/secure-internal/"
+      "destination": "/api/secure-proxy?path=/internal/"
     },
     {
       "source": "/operation/:path*", 
-      "destination": "/api/secure-proxy?path=/secure-operation/:path*"
+      "destination": "/api/secure-proxy?path=/operation/:path*"
     },
     {
       "source": "/operation",
-      "destination": "/api/secure-proxy?path=/secure-operation/"
+      "destination": "/api/secure-proxy?path=/operation/"
     },
     {
       "source": "/finance/:path*",
-      "destination": "/api/secure-proxy?path=/secure-finance/:path*"
+      "destination": "/api/secure-proxy?path=/finance/:path*"
     },
     {
       "source": "/finance",
-      "destination": "/api/secure-proxy?path=/secure-finance/"
+      "destination": "/api/secure-proxy?path=/finance/"
     },
     {
       "source": "/secure-test-auth/:path*",
