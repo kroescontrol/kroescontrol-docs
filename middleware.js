@@ -45,10 +45,10 @@ export function middleware(request) {
 }
 
 function getRequiredAccessLevel(pathname) {
-  // Vercel rewrites: /internal/, /finance/, /operation/ worden naar secure-proxy gestuurd
-  if (pathname.startsWith('/finance/')) return 'finance';
-  if (pathname.startsWith('/operation/')) return 'operation';
-  if (pathname.startsWith('/internal/')) return 'internal';
+  // Legacy direct routes (these should be protected)
+  if (pathname.startsWith('/finance/') || pathname === '/finance') return 'finance';
+  if (pathname.startsWith('/operation/') || pathname === '/operation') return 'operation';
+  if (pathname.startsWith('/internal/') || pathname === '/internal') return 'internal';
   
   // Docusaurus routes (voor directe toegang)
   if (pathname.startsWith('/docs-finance/')) return 'finance';
@@ -67,7 +67,7 @@ function getRequiredAccessLevel(pathname) {
 }
 
 function redirectToLogin(request) {
-  const loginUrl = new URL('/api/auth/login', request.url);
+  const loginUrl = new URL('/api/', request.url);
   loginUrl.searchParams.set('redirect', request.url);
   
   console.log('🔄 Redirecting to login:', loginUrl.toString());
