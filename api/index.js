@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     
     const authHandler = createLambdaProxyAuthHandler({
       cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
-      staticDir: '.', // Vercel build output directory
+      staticDir: 'build', // Build directory contains the actual site files
       githubOrgName: 'kroescontrol',
       githubClientId: process.env.OAUTH_CLIENT_ID,
       githubClientSecret: process.env.OAUTH_CLIENT_SECRET,
