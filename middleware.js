@@ -1,6 +1,4 @@
 // Route protection middleware voor team-based authorization
-import { NextResponse } from 'next/server';
-
 export function middleware(request) {
   const { pathname } = request.nextUrl;
   
@@ -24,11 +22,7 @@ export function middleware(request) {
   // Publieke content heeft geen authenticatie nodig
   if (accessLevel === 'public') {
     console.log('✅ Public route, allowing access');
-    // Debug header voor publieke routes
-    const response = NextResponse.next();
-    response.headers.set('X-Debug-Access-Level', 'public');
-    response.headers.set('X-Debug-Middleware', 'passed-public');
-    return response;
+    return; // Passthrough voor publieke routes
   }
 
   // Voor beveiligde content: controleer authenticatie
