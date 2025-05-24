@@ -56,6 +56,9 @@ function getRequiredAccessLevel(pathname) {
   if (pathname.startsWith('/docs-internal/')) return 'internal';
   if (pathname.startsWith('/docs-public/')) return 'public';
   
+  // TEST ROUTES
+  if (pathname.startsWith('/test-auth/') || pathname === '/test-auth') return 'internal';
+  
   // Docusaurus URL routes (na routing)
   if (pathname.startsWith('/public/')) return 'public';
   

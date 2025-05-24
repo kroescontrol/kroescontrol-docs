@@ -32,6 +32,14 @@
     {
       "source": "/finance",
       "destination": "/api/secure-proxy?path=/secure-finance/"
+    },
+    {
+      "source": "/secure-test-auth/:path*",
+      "destination": "/api/secure-proxy?path=/test-auth/:path*"
+    },
+    {
+      "source": "/secure-test-auth",
+      "destination": "/api/secure-proxy?path=/test-auth/"
     }
   ],
   "env": {
