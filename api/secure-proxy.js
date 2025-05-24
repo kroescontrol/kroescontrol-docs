@@ -139,7 +139,7 @@ async function getTeamMemberships(username) {
 }
 
 function redirectToLogin(res, returnUrl) {
-  const loginUrl = `/api/auth/login?redirect=${encodeURIComponent(returnUrl)}`;
+  const loginUrl = `/api/?redirect=${encodeURIComponent(returnUrl)}`;
   res.writeHead(302, { Location: loginUrl });
   res.end();
 }
