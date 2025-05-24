@@ -37,6 +37,12 @@ export function middleware(request) {
 }
 
 function getRequiredAccessLevel(pathname) {
+  if (pathname.startsWith('/docs-finance/')) return 'finance';
+  if (pathname.startsWith('/docs-operation/')) return 'operation';
+  if (pathname.startsWith('/docs-internal/')) return 'internal';
+  if (pathname.startsWith('/docs-public/')) return 'public';
+  
+  // Legacy routes (fallback)
   if (pathname.startsWith('/finance/')) return 'finance';
   if (pathname.startsWith('/operation/')) return 'operation';
   if (pathname.startsWith('/internal/')) return 'internal';
