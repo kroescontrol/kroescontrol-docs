@@ -10,33 +10,34 @@
   },
   "rewrites": [
     {
-      "source": "/internal/:path*",
+      "source": "/secure-internal/:path*",
       "destination": "/api/secure-proxy?path=/internal/:path*"
     },
     {
-      "source": "/internal",
-      "destination": "/api/secure-proxy?path=/internal"
+      "source": "/secure-internal",
+      "destination": "/api/secure-proxy?path=/internal/"
     },
     {
-      "source": "/operation/:path*", 
+      "source": "/secure-operation/:path*", 
       "destination": "/api/secure-proxy?path=/operation/:path*"
     },
     {
-      "source": "/operation",
-      "destination": "/api/secure-proxy?path=/operation"
+      "source": "/secure-operation",
+      "destination": "/api/secure-proxy?path=/operation/"
     },
     {
-      "source": "/finance/:path*",
+      "source": "/secure-finance/:path*",
       "destination": "/api/secure-proxy?path=/finance/:path*"
     },
     {
-      "source": "/finance",
-      "destination": "/api/secure-proxy?path=/finance"
+      "source": "/secure-finance",
+      "destination": "/api/secure-proxy?path=/finance/"
     }
   ],
   "env": {
     "OAUTH_CLIENT_ID": "$OAUTH_CLIENT_ID",
     "OAUTH_CLIENT_SECRET": "$OAUTH_CLIENT_SECRET", 
-    "ACCESS_TOKEN": "$ACCESS_TOKEN"
+    "ACCESS_TOKEN": "$ACCESS_TOKEN",
+    "CRYPTO_SECRET": "$OAUTH_CLIENT_SECRET"
   }
 }
