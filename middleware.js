@@ -1,4 +1,6 @@
 // Route protection middleware voor team-based authorization
+import { NextResponse } from 'next/server';
+
 export function middleware(request) {
   const { pathname } = request.nextUrl;
   
@@ -22,7 +24,11 @@ export function middleware(request) {
   // Publieke content heeft geen authenticatie nodig
   if (accessLevel === 'public') {
     console.log('✅ Public route, allowing access');
-    return;
+    // Debug header voor publieke routes
+    const response = NextResponse.next();
+    response.headers.set('X-Debug-Access-Level', 'public');
+    response.headers.set('X-Debug-Middleware', 'passed-public');
+    return response;
   }
 
   // Voor beveiligde content: controleer authenticatie
@@ -45,16 +51,16 @@ export function middleware(request) {
 }
 
 function getRequiredAccessLevel(pathname) {
+  // Vercel rewrites: /internal/, /finance/, /operation/ worden naar secure-proxy gestuurd
+  if (pathname.startsWith('/finance/')) return 'finance';
+  if (pathname.startsWith('/operation/')) return 'operation';
+  if (pathname.startsWith('/internal/')) return 'internal';
+  
+  // Docusaurus routes (voor directe toegang)
   if (pathname.startsWith('/docs-finance/')) return 'finance';
   if (pathname.startsWith('/docs-operation/')) return 'operation';
   if (pathname.startsWith('/docs-internal/')) return 'internal';
   if (pathname.startsWith('/docs-public/')) return 'public';
-  
-  // Legacy routes (fallback)
-  if (pathname.startsWith('/finance/')) return 'finance';
-  if (pathname.startsWith('/operation/')) return 'operation';
-  if (pathname.startsWith('/internal/')) return 'internal';
-  if (pathname.startsWith('/public/')) return 'public';
   
   // Root docs paths - behandel als public
   if (pathname === '/' || pathname === '/docs' || pathname === '/docs/') return 'public';
