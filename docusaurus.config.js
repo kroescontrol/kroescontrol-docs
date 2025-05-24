@@ -8,6 +8,11 @@ const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; //
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
 
+// Environment-specific routing
+const isLocalDevelopment = !process.env.VERCEL; // npm start lokaal
+console.log(`Environment: ${isLocalDevelopment ? 'LOCAL DEVELOPMENT' : 'VERCEL DEPLOYMENT'}`);
+console.log(`Using ${isLocalDevelopment ? 'direct' : 'secure-*'} route paths`);
+
 // Check access to different documentation modules
 function hasAccess(modulePath) {
   try {
@@ -155,7 +160,6 @@ module.exports = {
         path: 'docs-public',
         routeBasePath: '/',
         include: ['**/*.md', '**/*.mdx'],
-        exclude: ["_meta/", '_meta/'],
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -165,9 +169,8 @@ module.exports = {
       {
         id: 'internal',
         path: 'docs-internal',
-        routeBasePath: '/internal',
+        routeBasePath: isLocalDevelopment ? '/internal' : '/secure-internal',
         include: ['**/*.md', '**/*.mdx'],
-        exclude: ["_meta/", '_meta/'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -177,9 +180,8 @@ module.exports = {
       {
         id: 'finance',
         path: 'docs-finance',
-        routeBasePath: '/finance',
+        routeBasePath: isLocalDevelopment ? '/finance' : '/secure-finance',
         include: ['**/*.md', '**/*.mdx'],
-        exclude: ["_meta/", '_meta/'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -189,9 +191,8 @@ module.exports = {
       {
         id: 'operation',
         path: 'docs-operation',
-        routeBasePath: '/operation',
+        routeBasePath: isLocalDevelopment ? '/operation' : '/secure-operation',
         include: ['**/*.md', '**/*.mdx'],
-        exclude: ["_meta/", '_meta/'],
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
