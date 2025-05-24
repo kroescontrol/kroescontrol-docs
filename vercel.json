@@ -10,28 +10,28 @@
   },
   "rewrites": [
     {
-      "source": "/secure-internal/:path*",
-      "destination": "/api/secure-proxy?path=/internal/:path*"
+      "source": "/internal/:path*",
+      "destination": "/api/secure-proxy?path=/secure-internal/:path*"
     },
     {
-      "source": "/secure-internal",
-      "destination": "/api/secure-proxy?path=/internal/"
+      "source": "/internal",
+      "destination": "/api/secure-proxy?path=/secure-internal/"
     },
     {
-      "source": "/secure-operation/:path*", 
-      "destination": "/api/secure-proxy?path=/operation/:path*"
+      "source": "/operation/:path*", 
+      "destination": "/api/secure-proxy?path=/secure-operation/:path*"
     },
     {
-      "source": "/secure-operation",
-      "destination": "/api/secure-proxy?path=/operation/"
+      "source": "/operation",
+      "destination": "/api/secure-proxy?path=/secure-operation/"
     },
     {
-      "source": "/secure-finance/:path*",
-      "destination": "/api/secure-proxy?path=/finance/:path*"
+      "source": "/finance/:path*",
+      "destination": "/api/secure-proxy?path=/secure-finance/:path*"
     },
     {
-      "source": "/secure-finance",
-      "destination": "/api/secure-proxy?path=/finance/"
+      "source": "/finance",
+      "destination": "/api/secure-proxy?path=/secure-finance/"
     }
   ],
   "env": {
