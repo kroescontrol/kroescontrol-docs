@@ -22,11 +22,11 @@ jobs:
           
           # Operation key (docs-operation)  
           echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | base64 -d > /tmp/git-crypt-operation-key
-          git-crypt unlock -k operation /tmp/git-crypt-operation-key
+          git-crypt unlock /tmp/git-crypt-operation-key
           
           # Finance key (docs-finance)
           echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | base64 -d > /tmp/git-crypt-finance-key
-          git-crypt unlock -k finance /tmp/git-crypt-finance-key
+          git-crypt unlock /tmp/git-crypt-finance-key
           
           # Cleanup
           rm /tmp/git-crypt-*-key
