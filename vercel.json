@@ -4,6 +4,7 @@
   "installCommand": "npm ci",
   "framework": null,
   "routes": [
+    { "src": "/api/debug", "dest": "/api/debug" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "/api/?path=$1" }
   ],
