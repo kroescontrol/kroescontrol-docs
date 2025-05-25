@@ -1,10 +1,16 @@
 require('dotenv').config();
 const { detectEncryptedDirectories, isEncrypted } = require('./src/utils/encryption-utils');
+const { getBuildConfig, shouldIncludeDirectory, generateExcludePatterns, debugBuildConfig } = require('./src/utils/build-exclusion-utils');
 
 // Boolean flags voor features
 const ENABLE_CHAT_PAGE = process.env.ENABLE_CHAT_PAGE === 'true';
 const PUBLIC_ONLY = process.env.PUBLIC_ONLY === 'true';
 const ENABLE_EXTRA_META_TAGS = process.env.ENABLE_EXTRA_META_TAGS === 'true'; // Default uit tenzij expliciet aangezet
+
+// Build configuration
+const buildConfig = getBuildConfig();
+debugBuildConfig();
+
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
 
@@ -16,6 +22,12 @@ console.log(`Using direct route paths - post-build will secure production`);
 // Check access to different documentation modules
 function hasAccess(modulePath) {
   try {
+    // Check build type inclusion
+    if (!shouldIncludeDirectory(modulePath)) {
+      return false;
+    }
+    
+    // Check git-crypt encryption (fallback to old behavior)
     const categoryPath = `./${modulePath}/_category_.json`;
     return !isEncrypted(categoryPath);
   } catch (e) {
@@ -23,6 +35,7 @@ function hasAccess(modulePath) {
   }
 }
 
+// Determine which modules should be included based on build config and encryption
 const HAS_INTERNAL = !PUBLIC_ONLY && hasAccess('docs-internal');
 const HAS_FINANCE = !PUBLIC_ONLY && hasAccess('docs-finance'); 
 const HAS_OPERATION = !PUBLIC_ONLY && hasAccess('docs-operation');
@@ -160,6 +173,7 @@ module.exports = {
         path: 'docs-public',
         routeBasePath: '/',
         include: ['**/*.md', '**/*.mdx'],
+        exclude: generateExcludePatterns(),
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -171,6 +185,7 @@ module.exports = {
         path: 'docs-internal',
         routeBasePath: '/internal',
         include: ['**/*.md', '**/*.mdx'],
+        exclude: generateExcludePatterns(),
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -182,6 +197,7 @@ module.exports = {
         path: 'docs-finance',
         routeBasePath: '/finance',
         include: ['**/*.md', '**/*.mdx'],
+        exclude: generateExcludePatterns(),
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
@@ -193,6 +209,7 @@ module.exports = {
         path: 'docs-operation',
         routeBasePath: '/operation',
         include: ['**/*.md', '**/*.mdx'],
+        exclude: generateExcludePatterns(),
         // Auto-generate sidebar based on file structure
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
