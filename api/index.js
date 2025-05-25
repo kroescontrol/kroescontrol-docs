@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         const authHandler = createLambdaProxyAuthHandler({
           cryptoSecret: process.env.OAUTH_CLIENT_SECRET,
           staticDir: 'build',
-          githubOrgName: 'kroescontrol', // Keep org check, but fake auth
+          githubOrgName: null, // Disable org check for public routes
           githubClientId: process.env.OAUTH_CLIENT_ID,
           githubClientSecret: process.env.OAUTH_CLIENT_SECRET,
           githubOrgAdminToken: process.env.ACCESS_TOKEN,
