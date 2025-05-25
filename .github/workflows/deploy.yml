@@ -17,15 +17,15 @@ jobs:
       - name: Unlock git-crypt (all keys)
         run: |
           # Default key (docs-internal)
-          echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d > /tmp/git-crypt-default-key
+          echo "${{ secrets.GIT_CRYPT_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-default-key
           git-crypt unlock /tmp/git-crypt-default-key
           
           # Operation key (docs-operation)  
-          echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | base64 -d > /tmp/git-crypt-operation-key
+          echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-operation-key
           git-crypt unlock /tmp/git-crypt-operation-key
           
           # Finance key (docs-finance)
-          echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | base64 -d > /tmp/git-crypt-finance-key
+          echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-finance-key
           git-crypt unlock /tmp/git-crypt-finance-key
           
           # Cleanup
