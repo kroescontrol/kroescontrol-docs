@@ -197,6 +197,17 @@ module.exports = {
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ]] : []),
+    // TEST AUTH plugin
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'test-auth',
+        path: 'docs-test-auth',
+        routeBasePath: '/test-auth',
+        include: ['**/*.md', '**/*.mdx'],
+        editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
+      },
+    ],
   ],
   
   // Presets
@@ -260,6 +271,12 @@ module.exports = {
             position: 'left',
             label: 'Finance',
           }] : []),
+          // TEST AUTH navigation item
+          {
+            to: '/test-auth',
+            position: 'left',
+            label: 'Test Auth',
+          },
           ...(ENABLE_CHAT_PAGE ? [
             {
               to: '/chat',
