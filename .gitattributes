@@ -3,37 +3,39 @@
 *.mdx text eol=lf
 
 # Git-crypt configuratie voor versleutelde bestanden
-# Default key: internal documenten (alle medewerkers)
+
+# ============================================================================
+# DEFAULT KEY (docs-internal) - Alle medewerkers
+# ============================================================================
 /docs-internal/**/*.md filter=git-crypt diff=git-crypt
 /docs-internal/**/*.mdx filter=git-crypt diff=git-crypt
-
-# Temporary: use default key for operation en finance (same as internal)
-/docs-operation/**/*.md filter=git-crypt diff=git-crypt
-/docs-operation/**/*.mdx filter=git-crypt diff=git-crypt
-/docs-finance/**/*.md filter=git-crypt-finance diff=git-crypt-finance
-/docs-finance/**/*.mdx filter=git-crypt-finance diff=git-crypt-finance
-
-# Versleutel _category_.json bestanden in gevoelige mappen
-# Default key: internal
 /docs-internal/**/_category_.json filter=git-crypt diff=git-crypt
-
-# Temporary: use default key for operation en finance
-/docs-operation/**/_category_.json filter=git-crypt diff=git-crypt
-/docs-finance/**/_category_.json filter=git-crypt-finance diff=git-crypt-finance
-
-# Versleutel .meta directories en bestanden in gevoelige categorieën
-# Gebruik expliciete patterns omdat git-crypt problemen heeft met complexe wildcards
 /docs-internal/.meta/** filter=git-crypt diff=git-crypt
-/docs-operation/.meta/** filter=git-crypt diff=git-crypt  
-/docs-finance/.meta/** filter=git-crypt-finance diff=git-crypt-finance
-
-# docs-public bestanden zijn standaard niet versleuteld (geen expliciete regels nodig)
 
 # Versleutel eventuele gevoelige .env bestanden
 .env filter=git-crypt diff=git-crypt
-.env.example !filter !diff
 
-# Nooit versleutelen
+# ============================================================================
+# OPERATION KEY (docs-operation) - Management team
+# ============================================================================
+/docs-operation/**/*.md filter=git-crypt-operation diff=git-crypt-operation
+/docs-operation/**/*.mdx filter=git-crypt-operation diff=git-crypt-operation
+/docs-operation/**/_category_.json filter=git-crypt-operation diff=git-crypt-operation
+/docs-operation/.meta/** filter=git-crypt-operation diff=git-crypt-operation
+
+# ============================================================================
+# FINANCE KEY (docs-finance) - Finance team
+# ============================================================================
+/docs-finance/**/*.md filter=git-crypt-finance diff=git-crypt-finance
+/docs-finance/**/*.mdx filter=git-crypt-finance diff=git-crypt-finance
+/docs-finance/**/_category_.json filter=git-crypt-finance diff=git-crypt-finance
+/docs-finance/.meta/** filter=git-crypt-finance diff=git-crypt-finance
+
+# ============================================================================
+# NIET VERSLEUTELEN
+# ============================================================================
+# docs-public bestanden zijn standaard niet versleuteld (geen expliciete regels nodig)
+.env.example !filter !diff
 .gitattributes !filter !diff
 .gitignore !filter !diff
 README.md !filter !diff
