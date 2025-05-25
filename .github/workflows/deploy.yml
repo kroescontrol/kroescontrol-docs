@@ -14,22 +14,23 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y git-crypt
       
-      - name: Unlock git-crypt (all keys)
+      - name: Unlock git-crypt (default key)
         run: |
-          # Default key (docs-internal)
-          echo "${{ secrets.GIT_CRYPT_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-default-key
-          git-crypt unlock /tmp/git-crypt-default-key
-          
-          # Operation key (docs-operation)  
-          echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-operation-key
-          git-crypt unlock /tmp/git-crypt-operation-key
-          
-          # Finance key (docs-finance)
-          echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | tr -d '\n' | base64 -d > /tmp/git-crypt-finance-key
-          git-crypt unlock /tmp/git-crypt-finance-key
-          
-          # Cleanup
-          rm /tmp/git-crypt-*-key
+          echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d > /tmp/git-crypt-key
+          git-crypt unlock /tmp/git-crypt-key
+          rm /tmp/git-crypt-key
+      
+      - name: Unlock git-crypt (operation key)
+        run: |
+          echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | base64 -d > /tmp/git-crypt-key
+          git-crypt unlock /tmp/git-crypt-key
+          rm /tmp/git-crypt-key
+      
+      - name: Unlock git-crypt (finance key)
+        run: |
+          echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | base64 -d > /tmp/git-crypt-key
+          git-crypt unlock /tmp/git-crypt-key
+          rm /tmp/git-crypt-key
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
