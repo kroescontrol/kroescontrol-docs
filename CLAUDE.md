@@ -91,7 +91,32 @@ npm run deploy
 ```
 Bouwt de site en deploy deze (inclusief het uitvoeren van generate-sidebar.js).
 
-## Het _meta Directory Workflow
+## Het Gelaagde Promptmodel
+
+Deze repository gebruikt een gelaagd promptmodel voor AI-contentgeneratie met drie lagen:
+
+### Laag 1: Basis (.meta/ in root van docs-internal)
+- **CLAUDE_basis.md**: Schrijfstijl, terminologie en tone-of-voice
+- **CLAUDE_structuur.md**: Directory structuur en organisatie
+- **CLAUDE_toegangsniveaus.md**: Toegangsniveaus en beveiliging
+- **CLAUDE_perspectieven.md**: Verschillende perspectieven (medewerker, manager, etc.)
+
+### Laag 2: Categorie (.meta/ in elke categorie directory)
+- Specifieke instructies voor die documentatiecategorie
+- Verwijzingen naar relevante bronmaterialen
+- Categorie-specifieke structuren en conventies
+
+### Laag 3: Document (.meta/[document].md)
+- Document-specifieke prompts en instructies
+- Verwijzingen naar bronbestanden in `/old/` directory
+- Specifieke context en requirements voor dat document
+
+### Gebruik van het Gelaagde Model
+1. **Basis prompts**: Deze worden altijd toegepast en definiëren de fundamentele schrijfstijl
+2. **Categorie prompts**: Deze verfijnen de basis voor specifieke documenttypes
+3. **Document prompts**: Deze geven specifieke instructies voor individuele documenten
+
+### Het _meta Directory Workflow
 
 De `_meta`-directory is een cruciaal onderdeel van de documentatieworkflow. Het bevat promptbestanden die worden gebruikt om AI-contentgeneratie te sturen voor corresponderende documenten in de hoofddocumentstructuur.
 
