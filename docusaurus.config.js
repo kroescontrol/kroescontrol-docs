@@ -6,10 +6,25 @@ const { getBuildConfig, shouldIncludeDirectory, generateExcludePatterns, debugBu
 // Build informatie voor footer
 function getBuildInfo() {
   try {
+    // Probeer eerst Vercel environment variables
+    if (process.env.VERCEL) {
+      const branchName = process.env.VERCEL_GIT_COMMIT_REF || 'unknown';
+      const commitHash = process.env.VERCEL_GIT_COMMIT_SHA ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7) : 'unknown';
+      const buildDate = new Date().toISOString();
+      
+      return {
+        branch: branchName,
+        commit: commitHash,
+        date: buildDate,
+        environment: 'VERCEL'
+      };
+    }
+    
+    // Fall back naar git commands voor andere omgevingen
     const branchName = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
     const commitHash = execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
     const buildDate = new Date().toISOString();
-    const buildEnv = process.env.VERCEL ? 'VERCEL' : process.env.GITHUB_ACTIONS ? 'GITHUB' : 'LOCAL';
+    const buildEnv = process.env.GITHUB_ACTIONS ? 'GITHUB' : 'LOCAL';
     
     return {
       branch: branchName,
