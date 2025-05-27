@@ -1,0 +1,110 @@
+# Exclude configuratie voor development builds
+# Deze bestanden/directories worden uitgesloten van de build
+# Commentaar lijnen beginnen met #
+
+# Global exclude patterns (van toepassing op alle secties)
+global:
+  - "**/_drafts/**"
+  - "**/.meta/**"
+  - "**/PROMPT.md"
+  - "**/BASELINE-*.md"
+  - "**/.DS_Store"
+
+# Per-sectie excludes
+docs-public:
+  enabled: true
+  exclude:
+    # Voorlopig uitschakelen tot content klaar is
+    - "freelancecontrol/**"
+    - "kennismaking/technologieën/**"
+    - "branding/downloads/**"
+    - "werken-bij/carrière-paden/**"
+    - "werken-bij/sollicitatieproces/**"
+
+docs-internal:
+  enabled: true
+  exclude:
+    # Certificering directories die nog niet klaar zijn
+    - "ontwikkeling/certificeringen/automation/**"
+    - "ontwikkeling/certificeringen/cloud/**"
+    - "ontwikkeling/certificeringen/kubernetes/**"
+    - "ontwikkeling/certificeringen/linux/**"
+    # Tool directories zonder content
+    - "tools/clockify/best-practices/**"
+    - "tools/clockify/gebruik/**"
+    - "tools/clockify/setup/**"
+    - "tools/communicatie/element/**"
+    - "tools/communicatie/email/**"
+    - "tools/communicatie/meetings/**"
+    - "tools/engineer-hub/basis-gebruik/**"
+    - "tools/engineer-hub/budgets/**"
+    - "tools/engineer-hub/geavanceerd/**"
+    - "tools/engineer-hub/troubleshooting/**"
+    - "tools/hoorayhr/basis/**"
+    - "tools/hoorayhr/declaraties/**"
+    - "tools/hoorayhr/tijdregistratie/**"
+    - "tools/hoorayhr/verlof/**"
+    # Incomplete budget procedures
+    - "budgetten/engineer-budget/procedures/**"
+    - "budgetten/engineer-budget/voorbeelden/**"
+    - "budgetten/mobility-budget/auto-lease/**"
+    - "budgetten/mobility-budget/fiets-regeling/**"
+    - "budgetten/mobility-budget/ov-vergoeding/**"
+
+docs-operation:
+  enabled: true
+  exclude:
+    # Incomplete planning sections
+    - "planning/capacity-planning/**"
+    - "processen/compliance/**"
+    - "processen/facilities/**"
+    - "processen/inhuur/**"
+    - "processen/kwaliteit/**"
+    - "processen/performance/**"
+    - "processen/quality-assurance/**"
+    - "processen/talent-acquisition/**"
+    # Incomplete project management
+    - "projectmanagement/methoden/**"
+    - "projectmanagement/methodieken/**"
+    - "projectmanagement/procedures/**"
+    - "projectmanagement/templates/**"
+    # Strategy sections
+    - "strategie/concurrentie/**"
+    - "strategie/groei/**"
+    - "strategie/groeiplannen/**"
+    - "strategie/innovatie/**"
+    - "strategie/marktpositie/**"
+
+docs-finance:
+  enabled: true
+  exclude:
+    # Incomplete accounting sections
+    - "boekhouding/contacten/**"
+    - "boekhouding/jaarafsluiting/**"
+    - "boekhouding/maandafsluiting/**"
+    # Budget sections without content
+    - "budgetten/bedrijfsbudget/**"
+    - "budgetten/engineer-budgets/**"
+    - "budgetten/forecasting/**"
+    - "budgetten/mobility-budgets/**"
+    # Compliance sections
+    - "compliance/belastingen/**"
+    - "compliance/btw/**"
+    - "compliance/regelgeving/**"
+    - "compliance/regulatory/**"
+    - "compliance/sna-registratie/**"
+    # Invoice specific clients
+    - "facturatie/klant-specifiek/enterprise-clients/**"
+    - "facturatie/klant-specifiek/freelance-clients/**"
+    - "facturatie/klant-specifiek/kpn/**"
+    - "facturatie/klant-specifiek/magnit/**"
+    - "facturatie/klant-specifiek/midmarket/**"
+    - "facturatie/klant-specifiek/overige/**"
+    - "facturatie/rapportage/**"
+
+# Development settings
+development:
+  # Schakel dit in om lokaal alles te kunnen builden
+  ignore_excludes: false
+  # Extra verbose logging
+  verbose: true
