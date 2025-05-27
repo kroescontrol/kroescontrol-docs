@@ -1,0 +1,26 @@
+# Context Export Configuration
+# Voor gebruik met contextCollector.js
+
+export_targets:
+  - docs-internal/onboarding/
+  - docs-internal/budgetten/engineer-budget/
+  - docs-internal/budgetten/mobility-budget/
+  - docs-internal/tools/engineer-hub/
+  - docs-public/freelancecontrol/
+  - docs-public/branding/
+
+priority_documents:
+  high:
+    - onboarding/index.md
+    - budgetten/index.md
+    - tools/engineer-hub/handleiding.md
+  medium:
+    - freelancecontrol/index.md
+    - branding/index.md
+    
+migration_sources:
+  engineer_budget: old/werkafspraken2.0/62 Kroescontrol Engineerbudget reglement.md
+  mobility_budget: old/werkafspraken2.0/66 Kroescontrol Mobiliteitsbudget reglement.md
+  engineer_hub: old/werkafspraken2.0/45 Engineer Hub_ Uitleg Tabbladen & Formules.md
+  onboarding: old/HR en onboarding/
+  freelancecontrol: old/freelancecontrolsectie/

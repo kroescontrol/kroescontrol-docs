@@ -21,6 +21,8 @@ temp-deploy
 temp-public-deploy
 docusaurus.config.js.bak
 .tijdelijk/
+setup-*.js
+setup-*.md
 
 # Project-specific directories
 /old/

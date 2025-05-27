@@ -1,18 +1,18 @@
 ---
-title: Freelancecontrol Model
+title: Over Kroescontrol
 sidebar_position: 1
-description: Ons unieke freelance samenwerkingsmodel - transparant en eerlijk
-tags: [freelancecontrol, zelfstandig, model]
-keywords: [freelancecontrol, zelfstandig, model]
+description: Wie we zijn, wat we doen, en waarom we bestaan
+tags: [kroescontrol, bedrijfsinfo, about]
+keywords: [kroescontrol, bedrijfsinfo, about]
 last_update:
   date: 2025-05-25
   author: Kroescontrol Setup
 image: /img/KC-logo-gradientKLEUR.svg
 ---
 
-# Freelancecontrol Model
+# Over Kroescontrol
 
-> Ons unieke freelance samenwerkingsmodel - transparant en eerlijk
+> Wie we zijn, wat we doen, en waarom we bestaan
 
 🌍 **Publiek toegankelijk** - Deze informatie is openbaar beschikbaar voor iedereen.
 
@@ -20,7 +20,7 @@ image: /img/KC-logo-gradientKLEUR.svg
 
 ## 🎯 Overzicht
 
-Complete transparantie over ons freelance model als competitive advantage.
+Authentiek bedrijfsverhaal met focus op employer branding en transparantie.
 
 *Deze sectie wordt uitgewerkt tijdens de content migratie vanuit ./old/ directory volgens de strategic migration plan.*
 

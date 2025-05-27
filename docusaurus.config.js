@@ -1,6 +1,35 @@
 require('dotenv').config();
+const { execSync } = require('child_process');
 const { detectEncryptedDirectories, isEncrypted } = require('./src/utils/encryption-utils');
 const { getBuildConfig, shouldIncludeDirectory, generateExcludePatterns, debugBuildConfig } = require('./src/utils/build-exclusion-utils');
+
+// Build informatie voor footer
+function getBuildInfo() {
+  try {
+    const branchName = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+    const commitHash = execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
+    const buildDate = new Date().toISOString();
+    const buildEnv = process.env.VERCEL ? 'VERCEL' : process.env.GITHUB_ACTIONS ? 'GITHUB' : 'LOCAL';
+    
+    return {
+      branch: branchName,
+      commit: commitHash,
+      date: buildDate,
+      environment: buildEnv
+    };
+  } catch (error) {
+    console.warn('Could not get build info:', error.message);
+    return {
+      branch: 'unknown',
+      commit: 'unknown',
+      date: new Date().toISOString(),
+      environment: 'unknown'
+    };
+  }
+}
+
+const buildInfo = getBuildInfo();
+console.log(`🏗️  Build Info: ${buildInfo.branch}@${buildInfo.commit} (${buildInfo.environment}) - ${buildInfo.date}`);
 
 // Boolean flags voor features
 const ENABLE_CHAT_PAGE = process.env.ENABLE_CHAT_PAGE === 'true';
@@ -63,54 +92,6 @@ module.exports = {
   customFields: {
     enableExtraMetaTags: ENABLE_EXTRA_META_TAGS,
   },
-  // Plugins
-  plugins: [
-    // LinkedIn meta tags plugin
-    [
-      require.resolve('./src/plugins/docusaurus-linkedin-tags'),
-      {
-        defaultImage: '/img/logo.svg',
-      },
-    ],
-    // Chat page plugin
-    ...(ENABLE_CHAT_PAGE ? [
-      [
-        "docusaurus-plugin-chat-page",
-        {
-          path: "chat",
-          openai: {
-            apiKey: process.env.OPENAI_API_KEY,
-            model: "gpt-4-turbo",
-          },
-          pageTitle: "Kroescontrol Assistant",
-          pageName: "Vraag het de Kroescontrol Assistant",
-          description: "Stel een vraag over de werkafspraken bij Kroescontrol",
-          prompt: "Je bent een behulpzame assistent voor Kroescontrol documentatie. Gebruik de gegeven context om vragen over werkafspraken, budgetten en processen te beantwoorden. Onderscheid duidelijk tussen Kroescontrol en Freelancecontrol wanneer van toepassing. Als je het antwoord niet weet of het niet in de documentatie staat, geef dit eerlijk aan en suggereer waar de gebruiker mogelijk meer informatie kan vinden.",
-          embeddings: {
-            chunking: {
-              maxChunkLength: 1500,
-              chunkOverlap: 100,
-            },
-          },
-        },
-      ]
-    ] : []),
-    // Redirect plugin
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        // Since the root URL is already occupied, we'll set up other redirects if needed
-        redirects: [
-          // Example: redirect from old paths to new paths if needed in the future
-          // {
-          //   from: '/old-path',
-          //   to: '/new-path',
-          // },
-        ],
-      },
-    ],
-  ],
-  
   // Google Fonts toevoegen voor Poppins en Noto Sans
   stylesheets: [
     {
@@ -330,7 +311,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Kroescontrol. Alle rechten voorbehouden.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Kroescontrol. Alle rechten voorbehouden.<br/><small>Build: ${buildInfo.branch}@${buildInfo.commit} (${buildInfo.environment}) - ${new Date(buildInfo.date).toLocaleString('nl-NL')}</small>`,
       },
       prism: {
         theme: lightCodeTheme,
