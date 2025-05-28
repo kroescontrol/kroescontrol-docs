@@ -326,7 +326,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Kroescontrol. Alle rechten voorbehouden.<br/><small>Build: ${buildInfo.branch}@${buildInfo.commit} (${buildInfo.environment}) - ${new Date(buildInfo.date).toLocaleString('nl-NL')}</small>`,
+        copyright: `Copyright © ${new Date().getFullYear()} Kroescontrol. Alle rechten voorbehouden.<br/><small>Build: ${buildInfo.branch}@${buildInfo.commit} (${buildInfo.environment}) - ${new Date(buildInfo.date).toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam' })}</small>`,
       },
       prism: {
         theme: lightCodeTheme,
