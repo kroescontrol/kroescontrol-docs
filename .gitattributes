@@ -12,6 +12,9 @@
 /docs-internal/**/_category_.json filter=git-crypt diff=git-crypt
 /docs-internal/.meta/** filter=git-crypt diff=git-crypt
 
+# Specifieke debug rule voor problematisch bestand
+/docs-internal/tools/documentatie/howto/HOWTO-voorwerk-vercel.md filter=git-crypt diff=git-crypt text eol=lf
+
 # Versleutel eventuele gevoelige .env bestanden
 .env filter=git-crypt diff=git-crypt
 
