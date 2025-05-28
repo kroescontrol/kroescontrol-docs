@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const { isEncrypted } = require('./encryption-utils');
 
 /**
  * Build types en hun toegestane content directories
@@ -48,17 +49,48 @@ const BUILD_TYPES = {
 };
 
 /**
- * Krijg de huidige build type op basis van environment variabelen
+ * Detecteer automatisch het hoogste beschikbare build type op basis van toegankelijke directories
  */
-function getBuildType() {
-  const buildType = process.env.BUILD_TYPE || 'internal';
+function detectAvailableBuildType() {
+  const dirs = ['docs-finance', 'docs-operation', 'docs-internal', 'docs-public'];
+  const available = [];
   
-  if (!BUILD_TYPES[buildType]) {
-    console.warn(`Unknown BUILD_TYPE: ${buildType}, falling back to 'internal'`);
-    return 'internal';
+  for (const dir of dirs) {
+    const indexPath = path.join(dir, 'index.md');
+    if (fs.existsSync(indexPath) && !isEncrypted(indexPath)) {
+      available.push(dir);
+      console.log(`✅ Available: ${dir}`);
+    } else {
+      console.log(`🔒 Encrypted/Missing: ${dir}`);
+    }
   }
   
-  return buildType;
+  // Bepaal build type op basis van hoogste beschikbare level
+  if (available.includes('docs-finance')) return 'full';
+  if (available.includes('docs-operation')) return 'operational'; 
+  if (available.includes('docs-internal')) return 'internal';
+  return 'public';
+}
+
+/**
+ * Krijg de huidige build type op basis van environment variabelen of auto-detectie
+ */
+function getBuildType() {
+  // Expliciete BUILD_TYPE heeft voorrang (voor backwards compatibility)
+  if (process.env.BUILD_TYPE) {
+    const buildType = process.env.BUILD_TYPE;
+    if (!BUILD_TYPES[buildType]) {
+      console.warn(`Unknown BUILD_TYPE: ${buildType}, falling back to auto-detection`);
+      return detectAvailableBuildType();
+    }
+    console.log(`🎯 Using explicit BUILD_TYPE: ${buildType}`);
+    return buildType;
+  }
+  
+  // Auto-detectie
+  const detected = detectAvailableBuildType();
+  console.log(`🔍 Auto-detected BUILD_TYPE: ${detected}`);
+  return detected;
 }
 
 /**
@@ -199,6 +231,7 @@ module.exports = {
   BUILD_TYPES,
   getBuildType,
   getBuildConfig,
+  detectAvailableBuildType,
   shouldIncludeDirectory,
   isDraftDocument,
   shouldExcludeFile,
