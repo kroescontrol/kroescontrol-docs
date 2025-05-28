@@ -1,7 +1,7 @@
 ---
 title: "Kroescontrol Documentatie"
 docStatus: "live"
-sidebar_position: 1
+sidebar_position: 0
 description: "Welkom bij de centrale documentatie hub voor Kroescontrol."
 slug: /home
 tags: [documentatie,overzicht,kroescontrol]
