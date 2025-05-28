@@ -50,6 +50,23 @@ We moedigen bijdragen aan onze documentatie aan. Of je nu een spelfout ziet die 
 2. **Via GitHub**: Clone de repository en maak een pull request
 3. **Feedback geven**: Open een GitHub issue met suggesties of correcties
 
+## Uitgebreide documentatie voor teamleden
+
+Voor Kroescontrol medewerkers is er uitgebreide documentatie beschikbaar in de interne sectie:
+
+- **Gedetailleerde HOWTO-gidsen** voor specifieke taken en processen
+- **Workflow documentatie** voor complexe procedures
+- **Technische architectuur** en implementatiedetails
+- **Deployment en staging** processen
+
+:::info Voor Kroescontrol medewerkers
+Toegang tot de interne documentatie verkrijg je automatisch na het doorlopen van het onboarding proces. Deze bevat onder andere:
+- Gedetailleerde Claude Code documentatiestructuur
+- Deployment procedures en troubleshooting
+- Migratie en staging workflows
+- Team authorization en security setup
+:::
+
 ## Volgende stappen
 
 Bekijk de verschillende pagina's in deze sectie om meer te leren over onze documentatieprocessen. Als je vragen hebt over iets dat niet wordt behandeld, aarzel dan niet om contact op te nemen met het documentatieteam.
