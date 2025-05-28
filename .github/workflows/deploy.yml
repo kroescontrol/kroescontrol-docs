@@ -45,10 +45,20 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
           OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           npm i -g vercel
-          vercel --token $VERCEL_TOKEN --prod
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "🚀 Deploying main branch to docs.kroescontrol.nl"
+            export VERCEL_PROJECT_ID="${{ secrets.VERCEL_PROJECT_ID }}"
+            vercel --token $VERCEL_TOKEN --prod
+          elif [ "${{ github.ref }}" = "refs/heads/staging-serge" ]; then
+            echo "🧪 Deploying staging-serge branch to serge.docs.kroescontrol.nl"
+            export VERCEL_PROJECT_ID="${{ secrets.VERCEL_PROJECT_ID_STAGING }}"
+            vercel --token $VERCEL_TOKEN --prod
+          else
+            echo "❌ Unknown branch: ${{ github.ref }}"
+            exit 1
+          fi
