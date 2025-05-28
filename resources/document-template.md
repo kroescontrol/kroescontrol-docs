@@ -1,7 +1,13 @@
 ---
-id: [document-id]
 title: "[Document Titel]"
 sidebar_position: [positie]
+description: "[Korte beschrijving van het document]"
+tags: [tag1, tag2, tag3]
+keywords: [keyword1, keyword2, keyword3]
+last_update:
+  date: [YYYY-MM-DD]
+  author: Serge Kroes
+image: /img/logo.svg
 ---
 
 # [Document Titel]
