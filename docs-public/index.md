@@ -1,5 +1,6 @@
 ---
 title: "Kroescontrol Documentatie"
+docStatus: "live"
 sidebar_position: 1
 description: "Welkom bij de centrale documentatie hub voor Kroescontrol."
 slug: /home

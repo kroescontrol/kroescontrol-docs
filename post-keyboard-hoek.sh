@@ -109,19 +109,8 @@ fi
 
 # Sidebar generatie test
 
-# Test normale sidebar generatie
-if node generate-sidebar.js > /dev/null 2>&1; then
-    report_success "Normale sidebar generatie succesvol"
-else
-    report_error "Sidebar generatie - normale sidebar generatie gefaald"
-fi
-
-# Test public-only sidebar generatie  
-if PUBLIC_ONLY=true node generate-sidebar.js > /dev/null 2>&1; then
-    report_success "PUBLIC_ONLY sidebar generatie succesvol"
-else
-    report_error "Sidebar generatie - PUBLIC_ONLY sidebar generatie gefaald"
-fi
+# Sidebar generatie is nu automatisch via Docusaurus - geen handmatige tests nodig
+report_info "Sidebar generatie gebeurt automatisch via Docusaurus"
 
 # Build tests
 

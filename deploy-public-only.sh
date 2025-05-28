@@ -11,9 +11,8 @@ export PUBLIC_ONLY=true
 export USE_CUSTOM_DOMAIN=true
 export BASE_URL="/"
 
-# Genereer de public-only sidebar met de verbeterde structuur
-echo "📑 Genereren van verbeterde sidebar voor publieke site..."
-node generate-sidebar.js
+# Docusaurus genereert automatisch de sidebar - geen handmatige generatie nodig
+echo "📑 Docusaurus gebruikt automatische sidebar generatie..."
 
 # Maak backup van docusaurus.config.js en pas de URL aan voor de build
 cp docusaurus.config.js docusaurus.config.js.bak
