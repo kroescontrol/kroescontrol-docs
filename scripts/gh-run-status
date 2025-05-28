@@ -48,6 +48,7 @@ show_help() {
     echo "Usage:"
     echo "  $0                Toon recente runs"
     echo "  $0 --watch        Monitor actieve runs"
+    echo "  $0 <run-id>       Analyseer specifieke run (toont error logs bij failure)"
     echo "  $0 --help         Toon deze help"
     echo ""
     echo "Workflows:"
@@ -58,10 +59,12 @@ show_help() {
 
 # Parse argumenten
 WATCH_MODE=false
+SPECIFIC_RUN=""
 case "${1:-}" in
     --watch) WATCH_MODE=true ;;
     --help|-h) show_help ;;
     "") ;; # Default mode
+    [0-9]*) SPECIFIC_RUN="$1" ;; # Run ID opgegeven
     *) echo -e "${RED}❌ Onbekende optie: $1${NC}"; echo "Gebruik --help voor help"; exit 1 ;;
 esac
 
@@ -210,16 +213,59 @@ monitor_run() {
     echo ""
     echo -e "${BLUE}📋 Run details:${NC}"
     gh run view "$run_id" 2>/dev/null | head -20
+    
+    # Als de run gefaald is, toon error informatie
+    if [[ "$conclusion" == "failure" ]]; then
+        echo ""
+        echo -e "${RED}💥 Run gefaald! Handmatige analyse nodig:${NC}"
+        echo "======================================="
+        echo "   gh run view $run_id --log"
+        echo "   ./scripts/gh-run-status $run_id"
+    fi
 }
 
 # Main logic
 echo -e "${BLUE}🔄 GitHub Actions Monitor${NC}"
 if [[ "$WATCH_MODE" == "true" ]]; then
     echo -e "${PURPLE}👁️  Watch mode - druk Ctrl+C om te stoppen${NC}"
+elif [[ -n "$SPECIFIC_RUN" ]]; then
+    echo -e "${PURPLE}🔍 Analyseer run #${SPECIFIC_RUN}${NC}"
 fi
 echo "==============================="
 
-if [[ "$WATCH_MODE" == "true" ]]; then
+if [[ -n "$SPECIFIC_RUN" ]]; then
+    # Specifieke run analyse
+    echo -e "${BLUE}📊 Run #${SPECIFIC_RUN} details:${NC}"
+    gh run view "$SPECIFIC_RUN" 2>/dev/null || {
+        echo -e "${RED}❌ Kan run #${SPECIFIC_RUN} niet vinden${NC}"
+        exit 1
+    }
+    
+    # Check status
+    run_info=$(gh run view "$SPECIFIC_RUN" --json status,conclusion,workflowName 2>/dev/null)
+    status=$(echo "$run_info" | jq -r '.status')
+    conclusion=$(echo "$run_info" | jq -r '.conclusion // ""')
+    
+    # Toon logs als run gefaald is
+    if [[ "$conclusion" == "failure" ]]; then
+        echo ""
+        echo -e "${RED}💥 Error informatie:${NC}"
+        echo "======================================="
+        
+        # Probeer failed logs eerst
+        failed_logs=$(gh run view "$SPECIFIC_RUN" --log-failed 2>/dev/null)
+        if [[ -n "$failed_logs" ]]; then
+            echo "$failed_logs"
+        else
+            echo "⚠️  Geen gedetailleerde error logs beschikbaar"
+            echo ""
+            echo "💡 Handmatige troubleshooting:"
+            echo "   gh run view $SPECIFIC_RUN --log"
+            echo "   Bekijk de run op GitHub: https://github.com/kroescontrol/kroescontrol-docs/actions/runs/$SPECIFIC_RUN"
+        fi
+    fi
+    
+elif [[ "$WATCH_MODE" == "true" ]]; then
     # Watch mode
     while true; do
         echo -e "\n${BLUE}🔍 Checking for runs...${NC}"
