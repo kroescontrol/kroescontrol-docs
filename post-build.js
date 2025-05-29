@@ -6,22 +6,8 @@ const path = require('path');
 async function main() {
     console.log('🔧 Post-build: Generating status report and securing protected directories...');
 
-    // Generate status report first
-    console.log('📊 Generating documentation status report...');
-    try {
-        const StatusReporter = require('./scripts/statusReport.js');
-        const reporter = new StatusReporter();
-        
-        // Generate the report (this will create statusreport.md)
-        reporter.scanDocuments();
-        reporter.generateConsoleReport();
-        
-        // Save markdown report
-        await reporter.saveMarkdownReport();
-        console.log('✅ Status report generated successfully');
-    } catch (error) {
-        console.warn('⚠️  Could not generate status report:', error.message);
-    }
+    // Status report is now generated in pre-build step
+    console.log('📊 Status report was generated in pre-build step');
 
     // Debug environment variables
     console.log('🔍 Environment check:');
