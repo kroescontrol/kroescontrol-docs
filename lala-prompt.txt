@@ -1,0 +1,479 @@
+# GECOMBINEERDE PROMPT VOOR: docs-public/freelancecontrol
+# Gegenereerd op: do mei 29 17:02:49 CEST 2025
+# Door: buildPrompt.sh
+
+# ===========================================
+# CLAUDE Module: CLAUDE_basis.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_basis.md
+# ===========================================
+
+---
+title: Basis Richtlijnen
+sidebar_position: 1
+description: 'Fundamentele schrijfstijl, terminologie en author conventies voor Claude Code'
+tags:
+  - claude-code
+  - basis
+  - schrijfstijl
+  - author
+keywords:
+  - schrijfstijl
+  - terminologie
+  - author
+  - conventies
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Claude Code Basis Richtlijnen
+
+## Communicatie & Taal
+
+- **Communiceer in Nederlands** tenzij anders aangegeven
+- Gebruik professionele maar toegankelijke tone
+- Technische termen mogen in het Engels blijven waar gebruikelijk
+
+## Author Richtlijnen
+
+Bij het werken met git commits, documentatie en content creatie:
+
+### Author Conventies
+- **Gebruik altijd "Serge Kroes"** als author in frontmatter en metadata
+- **Vermeld nooit** "Claude", "Claude Code", of "AI-gegenereerd" in commit berichten
+- **Schrijf commit berichten** in eerste persoon alsof je de ontwikkelaar bent
+- **Schrijf documentatie** vanuit het perspectief van het team/organisatie, niet als AI assistent
+
+### Schrijfstijl
+- **Commit berichten zoals**: "Voeg nieuwe feature X toe" of "Los bug op in Y"
+- **NIET zoals**: "Claude voegt feature X toe" of "Gegenereerd door Claude"
+- **In documentatie gebruik**: "Dit document beschrijft..." of "We raden aan..."
+- **NIET**: "Claude heeft dit gegenereerd" of "AI-gecreëerde content"
+
+## Technische Focus
+
+Het project richt zich op:
+- **Kubernetes** en Cloud Native technologieën
+- **Observability** en monitoring
+- **SRE Engineering** practices
+- **Moderne development workflows**
+
+## Content Principes
+
+- **Praktisch**: Focus op uitvoerbare instructies
+- **Compleet**: Alle benodigde informatie aanwezig
+- **Consistent**: Volg gedefinieerde templates en structuren
+- **Actueel**: Houd informatie up-to-date en relevant
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_structuur.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_structuur.md
+# ===========================================
+
+---
+title: Repository Structuur
+sidebar_position: 2
+description: >-
+  Directory organisatie en bestandsconventies voor de kroescontrol-docs
+  repository
+tags:
+  - claude-code
+  - structuur
+  - repository
+  - directories
+keywords:
+  - repository
+  - structuur
+  - directories
+  - organisatie
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Repository Structuur
+
+## Hoofddirectories
+
+### `/docs-public/` - Openbare Informatie
+- **Algemeen**: Informatie over Kroescontrol
+- **Werken-bij**: Informatie voor potentiële werknemers
+- **Kennismaking**: Introductie tot Kroescontrol-functies
+- **Branding**: Logo's, kleuren en huisstijl informatie
+- **Tools**: Publieke documentatie over tools
+
+### `/docs-internal/` - Interne Documentatie (git-crypt)
+- **Budgetten**: Details over Engineer Budget, Mobility Budget, etc.
+- **Tools**: Documentatie voor interne tools en systemen
+- **Onboarding**: Proces voor nieuwe medewerkers
+- **FAQ**: Veelgestelde vragen
+- **Procedures**: Interne processen en beleid
+
+### `/docs-operation/` - Operationele Documentatie (git-crypt)
+- Planning en resource management
+- Klantcommunicatie en projectbeheer
+- Strategische planning
+
+### `/docs-finance/` - Financiële Documentatie (git-crypt)
+- Boekhouding en facturatie procedures
+- BTW en belasting zaken
+- Budget administratie
+
+## Ondersteunende Directories
+
+### `/src/` - Docusaurus Thema
+- **Components**: React componenten voor het thema
+- **Plugins**: Custom Docusaurus plugins
+- **Theme**: Aanpassingen aan het Docusaurus thema
+- **Utils**: Utility functies (build exclusions, encryption utils)
+
+### `/static/` - Statische Assets
+- **Branding**: Huisstijl materialen (logos, kleuren)
+- **Img**: Algemene afbeeldingen en iconen
+
+### `/old/` - Bronmateriaal (niet in git)
+- Legacy documentatie voor content generatie
+- Historische bestanden en templates
+
+## Bestandsconventies
+
+### Naamgeving
+- **Directories**: lowercase met hyphens (`engineer-hub`, `basis-gebruik`)
+- **Bestanden**: descriptieve namen met hyphens (`budget-reglement.md`)
+- **Prompts**: `PROMPT.md` in content directories
+
+### Speciale Bestanden
+- **`_category_.json`**: Docusaurus category configuratie
+- **`index.md`**: Hoofdpagina voor elke directory
+- **`PROMPT.md`**: AI content generation prompts
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_content.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_content.md
+# ===========================================
+
+---
+title: Content Conventies
+sidebar_position: 3
+description: 'Documentatie standaarden, frontmatter en content structuur richtlijnen'
+tags:
+  - claude-code
+  - content
+  - frontmatter
+  - structuur
+keywords:
+  - content
+  - documentatie
+  - frontmatter
+  - structuur
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Content Conventies
+
+## Documentstructuur
+
+Elk document gebruikt een consistente structuur:
+
+### Standaardsecties
+- **Introductieparagraaf**: Korte uitleg wat het document behandelt
+- **"Belangrijkste punten"**: Key takeaways in bullet vorm
+- **"Gedetailleerde informatie"**: Uitgebreide uitleg en procedures
+- **"Veelgestelde vragen"**: Optioneel, alleen toevoegen indien relevant
+
+## Frontmatter Template
+
+```yaml
+---
+title: Documenttitel                # Verplicht - titel van de pagina
+sidebar_position: 1                # Verplicht - positie in de zijbalk
+description: Korte beschrijving    # Verplicht - voor SEO en voorvertoningen
+tags: [tag1, tag2, tag3]          # Verplicht - voor categorisatie en filtering
+keywords: [keyword1, keyword2]     # Verplicht - extra trefwoorden voor SEO
+last_update:                       # Verplicht - datum van laatste update
+  date: 2025-05-28
+  author: Serge Kroes              # Altijd "Serge Kroes" gebruiken
+image: /img/logo.svg               # Verplicht - standaard logo
+slug: /custom-url                  # Optioneel - aangepaste URL
+---
+```
+
+## Content Richtlijnen
+
+### Toegangsniveaus
+- **Public**: Algemene bedrijfsinformatie, branding, werving
+- **Internal**: Medewerker procedures, tools, onboarding
+- **Operational**: Management processen, strategie
+- **Financial**: Boekhouding, facturatie, compliance
+
+### Schrijfstijl
+- **Helder en beknopt**: Vermijd onnodige complexiteit
+- **Praktisch**: Focus op uitvoerbare instructies
+- **Professioneel**: Zakelijke tone maar toegankelijk
+- **Consistent**: Gebruik dezelfde terminologie door heel de site
+
+### Markdown Best Practices
+- **Kopjes hiërarchie**: Logische H1 → H2 → H3 structuur
+- **Code blocks**: Gebruik syntax highlighting
+- **Links**: Interne links naar gerelateerde documentatie
+- **Afbeeldingen**: Met alt text en beschrijvende bestandsnamen
+
+## PROMPT.md Bestanden
+
+Voor AI content generatie in directories:
+
+### Template Structuur
+```markdown
+---
+title: "PROMPT [sectie naam]"
+sidebar_position: 99
+description: "Prompt bestand voor [sectie] documentatie"
+tags: [prompt]
+keywords: [prompt, template]
+last_update:
+  date: [YYYY-MM-DD]
+  author: Serge Kroes
+image: /img/logo.svg
+---
+
+# PROMPT: [sectie naam]
+
+Instructies voor content generatie...
+```
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_deployment.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_deployment.md
+# ===========================================
+
+---
+title: Deployment Richtlijnen
+sidebar_position: 4
+description: Build en deployment procedures voor verschillende omgevingen
+tags:
+  - claude-code
+  - deployment
+  - build
+  - vercel
+keywords:
+  - deployment
+  - build
+  - vercel
+  - github-pages
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Deployment Richtlijnen
+
+## Build Types
+
+Het project ondersteunt verschillende build types voor verschillende doelgroepen:
+
+### 1. Public Build (`BUILD_TYPE=public`)
+- **Includes**: docs-public alleen
+- **Use case**: Externe website voor publiek
+- **Command**: `npm run build:public`
+
+### 2. Internal Build (`BUILD_TYPE=internal`) - DEFAULT
+- **Includes**: docs-public + docs-internal
+- **Use case**: Medewerkers documentatie site
+- **Command**: `npm run build` of `npm run build:internal`
+
+### 3. Operational Build (`BUILD_TYPE=operational`)
+- **Includes**: docs-public + docs-internal + docs-operation
+- **Use case**: Management en operationeel team
+- **Command**: `npm run build:operational`
+
+### 4. Full Build (`BUILD_TYPE=full`)
+- **Includes**: Alle directories
+- **Use case**: Volledige toegang voor leidinggevenden
+- **Command**: `npm run build:full`
+
+### 5. Development Build (`BUILD_TYPE=dev`)
+- **Includes**: Alles + draft content
+- **Use case**: Development en content creation
+- **Command**: `npm run build:dev`
+
+## Deployment Omgevingen
+
+### Publieke Site Deploy
+Voor alleen publieke documentatie:
+```bash
+./deploy-public-only.sh
+```
+
+**Process:**
+1. Genereert sidebar in PUBLIC_ONLY modus
+2. Configureert juiste URL en instellingen
+3. Maakt tijdelijke .env zonder API keys
+4. Bouwt alleen publieke inhoud
+5. Deployt naar kroescontrol-public GitHub repository
+
+### Vercel Deployment
+- **Interne site**: docs.kroescontrol.nl via Vercel
+- **Environment variables**: Configureer BUILD_TYPE per environment
+- **Git-crypt**: Automatisch unlocking via GitHub Actions
+
+## Git-crypt Beveiliging
+
+- **Versleutelde directories**: `/docs-internal/`, `/docs-operation/`, `/docs-finance/`
+- **GPG keys**: Beheer via git-crypt add-gpg-user
+- **CI/CD**: Automatische unlock in GitHub Actions
+- **Nieuwe gebruikers**: GPG sleutel delen met repository beheerder
+
+## Belangrijke Scripts
+
+### Build Verificatie
+```bash
+npm run build:check    # Debug configuratie
+npm run test-routes    # Test alle routes
+npm run check-access   # Git-crypt access check
+```
+
+### Status Monitoring
+```bash
+npm run status:report  # Documentatie status
+node scripts/statusReport.js   # Detailed status report
+```
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_workflow.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_workflow.md
+# ===========================================
+
+---
+title: Workflow Commando's
+sidebar_position: 5
+description: Git workflow en npm scripts voor dagelijks gebruik
+tags:
+  - claude-code
+  - workflow
+  - git
+  - npm
+keywords:
+  - workflow
+  - git
+  - npm
+  - commands
+  - scripts
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Workflow Commando's
+
+## Veelgebruikte NPM Scripts
+
+### Development
+```bash
+npm install              # Installeer dependencies
+npm start               # Start development server (internal build)
+npm run start:dev       # Start met draft content
+npm run start:public    # Start public-only build
+npm run clear           # Wis Docusaurus cache
+```
+
+### Building
+```bash
+npm run build           # Production build (internal)
+npm run build:public    # Build alleen publieke content
+npm run build:full      # Build alle directories
+npm run deploy          # Build en deploy
+```
+
+### Maintenance
+```bash
+npm run status:report   # Documentatie status check
+npm run build:check     # Debug build configuratie
+npm run test-routes     # Test alle routes
+```
+
+## Git Workflow
+
+### Basis Commands
+```bash
+git status              # Check repository status
+git add .              # Stage alle wijzigingen
+git commit -m "message" # Commit met bericht
+git push               # Push naar remote
+```
+
+### Git-crypt Operations
+```bash
+git-crypt status       # Check encryption status
+git-crypt unlock       # Unlock encrypted files
+git-crypt lock         # Lock encrypted files (voor testen)
+```
+
+### Branch Management
+```bash
+git checkout main      # Switch naar main branch
+git checkout -b feature/name  # Nieuwe feature branch
+git push -u origin branch-name  # Push nieuwe branch
+```
+
+## Deployment Workflows
+
+### GitHub Actions Monitoring
+```bash
+# Custom script voor monitoring
+./.tijdelijk/gh-run-status     # Monitor GitHub Actions runs
+```
+
+### Vercel Operations
+```bash
+vercel --prod          # Deploy naar productie
+vercel inspect --logs  # Bekijk deployment logs
+vercel logs [deployment-id]  # Specifieke deployment logs
+```
+
+## Content Creation Workflow
+
+### Nieuwe Pagina Toevoegen
+1. **Bepaal locatie**: Welke docs-* directory
+2. **Maak directory**: `docs-internal/[categorie]/[sectie]/`
+3. **Maak PROMPT.md**: Voor AI content generatie
+4. **Genereer content**: Gebruik Claude Code met prompt
+5. **Review en verfijn**: Check consistentie
+
+### Draft Content Workflow
+1. **Start met draft**: `status: draft` in frontmatter
+2. **Ontwikkel**: `npm run start:dev` (toont drafts)
+3. **Review**: `npm run start` (verbergt drafts)
+4. **Publiceer**: Verwijder draft status
+
+## Troubleshooting Commands
+
+### Git-crypt Issues
+```bash
+export GPG_TTY=$(tty)           # Fix GPG TTY issues
+gpg --list-secret-keys          # Check GPG keys
+gpgconf --kill gpg-agent        # Restart GPG agent
+```
+
+### Build Issues
+```bash
+npm run clear                   # Clear caches
+rm -rf node_modules && npm install  # Fresh install
+npm run build:check             # Debug build config
+```
+

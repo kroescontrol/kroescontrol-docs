@@ -21,9 +21,10 @@ Alle Claude Code prompts zijn verdeeld over modulaire bestanden voor betere onde
 
 Voor Claude Code sessies:
 
-1. **Lees altijd eerst**: `./docs-internal/tools/claudecode/prompt/CLAUDE_basis.md`
-2. **Check project context**: `./docs-internal/tools/claudecode/context/project-context.md`
-3. **Specifieke modules**: Raadpleeg relevante prompt modules voor gedetailleerde instructies
+1. **Lees altijd**: `./CLAUDE.local.md`
+2. **Lees altijd eerst**: `./docs-internal/tools/claudecode/prompt/CLAUDE_basis.md`
+3. **Check project context**: `./docs-internal/tools/claudecode/context/project-context.md`
+4. **Specifieke modules**: Raadpleeg relevante prompt modules voor gedetailleerde instructies
 
 ## 📖 Belangrijke Templates
 
