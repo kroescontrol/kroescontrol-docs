@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const { execSync } = require('child_process');
 const { detectEncryptedDirectories, isEncrypted } = require('./src/utils/encryption-utils');
 const { getBuildConfig, shouldIncludeDirectory, generateExcludePatterns, debugBuildConfig } = require('./src/utils/build-exclusion-utils');
@@ -117,6 +118,13 @@ module.exports = {
   
   // Plugins
   plugins: [
+    // Build info injection plugin
+    [
+      require.resolve('./src/plugins/inject-build-info'),
+      {
+        buildInfo: buildInfo,
+      },
+    ],
     // LinkedIn meta tags plugin
     [
       require.resolve('./src/plugins/docusaurus-linkedin-tags'),
@@ -124,6 +132,8 @@ module.exports = {
         defaultImage: '/img/logo.svg',
       },
     ],
+    // FrontMatter provider plugin (for development UX components)
+    require.resolve('./src/plugins/frontmatter-provider'),
     // Chat page plugin
     ...(ENABLE_CHAT_PAGE ? [
       [
@@ -210,6 +220,21 @@ module.exports = {
         editUrl: 'https://github.com/kroescontrol/kroescontrol-docs/edit/main/',
       },
     ]] : []),
+    // docStatus filter plugin
+    [
+      path.resolve(__dirname, 'src/plugins/filter-docs-by-status'),
+      {
+        excludeStatuses: process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [],
+        enableVisualIndicators: process.env.NODE_ENV === 'development',
+        statusLabels: {
+          templated: 'Template',
+          generated: 'Gegenereerd',
+          completed: 'Voltooid',
+          live: 'Live',
+          locked: 'Vergrendeld',
+        },
+      },
+    ],
     // TEST AUTH plugin
     [
       '@docusaurus/plugin-content-docs',

@@ -1,14 +1,24 @@
 ---
-title: "Tools & Processen"
+title: Tools & Processen
 sidebar_position: 1
-description: "Overzicht van tools en processen die worden gebruikt binnen Kroescontrol."
+description: Overzicht van tools en processen die worden gebruikt binnen Kroescontrol.
 slug: /public/tools
-tags: [tools,processen,documentatie,workflow]
-keywords: [handleidingen,software,systemen,documentatie,werkmethode]
+tags:
+  - tools
+  - processen
+  - documentatie
+  - workflow
+keywords:
+  - handleidingen
+  - software
+  - systemen
+  - documentatie
+  - werkmethode
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Tools & Processen

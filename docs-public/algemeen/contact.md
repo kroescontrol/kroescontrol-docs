@@ -20,12 +20,12 @@ Hier vind je informatie over hoe je contact kunt opnemen met Kroescontrol.
 
 ### Vestigingen
 
-**Klarenbeek**  
-Oudhuizerstraat 31  
+**Klarenbeek**
+Oudhuizerstraat 31
 7382 BS Klarenbeek
 
-**Amsterdam**  
-Stationsplein 9  
+**Amsterdam**
+Stationsplein 9
 1012 AB Amsterdam
 
 ### E-mail
@@ -43,5 +43,5 @@ Voor algemene vragen:
 
 ## Interesse in samenwerking?
 
-Heb je interesse om met Kroescontrol samen te werken of wil je meer weten over onze diensten? 
+Heb je interesse om met Kroescontrol samen te werken of wil je meer weten over onze diensten?
 Neem vrijblijvend contact op via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).

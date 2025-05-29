@@ -1,14 +1,29 @@
 ---
-title: "Repository en Toegang"
+title: Repository en Toegang
 sidebar_position: 2
-description: "Uitleg over de documentatie repository en toegangsbeheer voor verschillende informatieniveaus."
+description: >-
+  Uitleg over de documentatie repository en toegangsbeheer voor verschillende
+  informatieniveaus.
 slug: /public/tools/documentatie/repository-toegang
-tags: [documentatie,repository,github,toegangsbeheer,beveiliging]
-keywords: [git-crypt,versleuteling,inloggen,autorisatie,structuur,publiek,intern]
+tags:
+  - documentatie
+  - repository
+  - github
+  - toegangsbeheer
+  - beveiliging
+keywords:
+  - git-crypt
+  - versleuteling
+  - inloggen
+  - autorisatie
+  - structuur
+  - publiek
+  - intern
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Repository en Toegang
@@ -73,7 +88,7 @@ Voor dagelijks gebruik door alle medewerkers:
 - **Publieke content**: Voor iedereen toegankelijk zonder login
 - **Beveiligde content**: Na inloggen met GitHub worden je teamlidmaatschappen gecontroleerd
   - `kroescontrol-engineers`: Toegang tot interne documentatie
-  - `kroescontrol-operation`: Toegang tot operationele documentatie  
+  - `kroescontrol-operation`: Toegang tot operationele documentatie
   - `kroescontrol-finance`: Toegang tot financiële documentatie
 
 ### Beveiligingsmechanisme

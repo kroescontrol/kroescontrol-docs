@@ -1,14 +1,27 @@
 ---
-title: "Downloads"
+title: Downloads
 sidebar_position: 5
-description: "Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en documentatie."
+description: >-
+  Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en
+  documentatie.
 slug: /public/branding/downloads
-tags: [kroescontrol,branding,downloads,logo,beeldmerk]
-keywords: [downloads,assets,branding materialen,media kit,huisstijl]
+tags:
+  - kroescontrol
+  - branding
+  - downloads
+  - logo
+  - beeldmerk
+keywords:
+  - downloads
+  - assets
+  - branding materialen
+  - media kit
+  - huisstijl
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Branding Downloads

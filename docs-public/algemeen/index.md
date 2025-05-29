@@ -1,13 +1,20 @@
 ---
 title: Over Kroescontrol
 sidebar_position: 1
-description: Wie we zijn, wat we doen, en waarom we bestaan
-tags: [kroescontrol, bedrijfsinfo, about]
-keywords: [kroescontrol, bedrijfsinfo, about]
+description: 'Wie we zijn, wat we doen, en waarom we bestaan'
+tags:
+  - kroescontrol
+  - bedrijfsinfo
+  - about
+keywords:
+  - kroescontrol
+  - bedrijfsinfo
+  - about
 last_update:
-  date: 2025-05-25
+  date: 2025-05-25T00:00:00.000Z
   author: Kroescontrol Setup
 image: /img/KC-logo-gradientKLEUR.svg
+docStatus: live
 ---
 
 # Over Kroescontrol
@@ -18,7 +25,7 @@ image: /img/KC-logo-gradientKLEUR.svg
 
 ---
 
-## 🎯 Overzicht
+## [TARGET] Overzicht
 
 Authentiek bedrijfsverhaal met focus op employer branding en transparantie.
 
@@ -27,7 +34,7 @@ Authentiek bedrijfsverhaal met focus op employer branding en transparantie.
 ## 📋 Belangrijkste Punten
 
 - **Punt 1:** Belangrijke informatie die gebruikers moeten weten
-- **Punt 2:** Key takeaway voor dagelijks gebruik  
+- **Punt 2:** Key takeaway voor dagelijks gebruik
 - **Punt 3:** Kritieke procedure of richtlijn
 - **Punt 4:** Contact informatie voor vragen
 

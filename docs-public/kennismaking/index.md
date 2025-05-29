@@ -1,14 +1,26 @@
 ---
-title: "Kennismaking Kroescontrol"
+title: Kennismaking Kroescontrol
 sidebar_position: 1
-description: "Gedetailleerde informatie voor engineers in de oriëntatiefase."
+description: Gedetailleerde informatie voor engineers in de oriëntatiefase.
 slug: /public/kennismaking
-tags: [kroescontrol,werkwijze,budgetstructuur,arbeidsvoorwaarden,oriëntatie]
-keywords: [engineer-hub,detachering,technische-focus,vacatures,autonomie,projecten]
+tags:
+  - kroescontrol
+  - werkwijze
+  - budgetstructuur
+  - arbeidsvoorwaarden
+  - oriëntatie
+keywords:
+  - engineer-hub
+  - detachering
+  - technische-focus
+  - vacatures
+  - autonomie
+  - projecten
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Kennismaking Kroescontrol
@@ -30,7 +42,7 @@ Bij Kroescontrol geloven we dat IT-professionals het beste functioneren in een o
 Onze werkwijze is gebaseerd op enkele kernprincipes:
 
 - **Transparantie**: Volledige openheid over tarieven, marges en bedrijfsvoering
-- **Vertrouwen**: Vrijheid en verantwoordelijkheid in balans 
+- **Vertrouwen**: Vrijheid en verantwoordelijkheid in balans
 - **Vakmanschap**: Focus op technische excellentie en continue ontwikkeling
 - **Persoonlijke groei**: Ruimte om je expertise te verdiepen en verbreden
 
@@ -56,17 +68,17 @@ In deze sectie vind je gedetailleerde informatie over:
 
 ## Veelgestelde vragen
 
-**Is Kroescontrol een detacheringsbureau?**  
+**Is Kroescontrol een detacheringsbureau?**
 Ja, Kroescontrol is een IT-consultancy en detacheringsbedrijf, maar wel met een unieke aanpak. Wij combineren de zekerheid van een vast dienstverband met de persoonlijke vrijheid om zelf richting te geven aan je carrière.
 
-**Waarin onderscheidt Kroescontrol zich van andere IT-detacheerders?**  
+**Waarin onderscheidt Kroescontrol zich van andere IT-detacheerders?**
 Wij onderscheiden ons door transparantie, persoonlijke budgetten, vaste contracten en een informele, professionele cultuur. We bieden geen standaardpakket, maar een op maat gemaakte werkervaring met ruimte voor eigen inbreng en ontwikkeling.
 
-**Wat zijn de persoonlijke budgetten precies?**  
+**Wat zijn de persoonlijke budgetten precies?**
 Bij Kroescontrol krijg je toegang tot een Engineer Budget voor professionele ontwikkeling en hardware, en een Mobiliteitsbudget voor reiskosten. Deze budgetten worden transparant beheerd in je persoonlijke Engineer Hub.
 
-**Moet ik veel reizen als engineer bij Kroescontrol?**  
+**Moet ik veel reizen als engineer bij Kroescontrol?**
 De reisfrequentie is afhankelijk van de opdracht en jouw wensen. We zoeken altijd naar een optimale match tussen jouw voorkeuren en de beschikbare opdrachten. Het Mobiliteitsbudget biedt daarbij flexibiliteit in hoe je je reis invult.
 
-**Hoe verloopt het kennismakingsproces?**  
+**Hoe verloopt het kennismakingsproces?**
 Na een eerste gesprek kijken we samen naar de mogelijkheden die passen bij jouw ervaring en ambities. We geloven in een wederzijdse klik, dus je krijgt alle ruimte om vragen te stellen en een gevoel te krijgen bij onze werkwijze voordat we verdere stappen zetten.

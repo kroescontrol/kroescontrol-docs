@@ -1,14 +1,28 @@
 ---
-title: "Voordelen"
+title: Voordelen
 sidebar_position: 3
-description: "Een compleet overzicht van de voordelen en secundaire arbeidsvoorwaarden bij Kroescontrol."
+description: >-
+  Een compleet overzicht van de voordelen en secundaire arbeidsvoorwaarden bij
+  Kroescontrol.
 slug: /public/werken-bij/voordelen
-tags: [kroescontrol,voordelen,arbeidsvoorwaarden,budgetten,ontwikkeling]
-keywords: [engineer budget,mobiliteitsbudget,vakantiedagen,salaris,bonus,werkomgeving]
+tags:
+  - kroescontrol
+  - voordelen
+  - arbeidsvoorwaarden
+  - budgetten
+  - ontwikkeling
+keywords:
+  - engineer budget
+  - mobiliteitsbudget
+  - vakantiedagen
+  - salaris
+  - bonus
+  - werkomgeving
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Voordelen
@@ -105,17 +119,17 @@ Deze persoonlijke benadering zorgt ervoor dat je je niet alleen professioneel, m
 
 ## Veelgestelde vragen
 
-**Hoe flexibel is het Engineer Budget precies?**  
+**Hoe flexibel is het Engineer Budget precies?**
 Het Engineer Budget biedt veel flexibiliteit. Je kunt zelf beslissen waar je in investeert, zolang het bijdraagt aan je professionele werkzaamheden. Of je nu een krachtige laptop, een ergonomische werkplek of een specifieke opleiding nodig hebt - jij bepaalt wat het beste bij jouw behoeften past.
 
-**Kan ik kiezen voor meer salaris in plaats van een van de budgetten?**  
+**Kan ik kiezen voor meer salaris in plaats van een van de budgetten?**
 Nee, onze budgetstructuur is een essentieel onderdeel van ons bedrijfsmodel. We geloven dat deze structuur bijdraagt aan zowel jouw professionele ontwikkeling als aan de kwaliteit van ons werk voor klanten.
 
-**Zijn de 30 vakantiedagen echt vrij op te nemen?**  
+**Zijn de 30 vakantiedagen echt vrij op te nemen?**
 In principe wel, al stemmen we dit natuurlijk af met de projectplanning en klantverwachtingen. We moedigen je aan om je vakantiedagen daadwerkelijk op te nemen voor een goede werk-privé balans.
 
-**Wat gebeurt er met mijn budgetten als ik parttime werk?**  
-De budgetten worden naar rato aangepast op basis van je contracturen. 
+**Wat gebeurt er met mijn budgetten als ik parttime werk?**
+De budgetten worden naar rato aangepast op basis van je contracturen.
 
-**Kan ik het Mobiliteitsbudget gebruiken voor een elektrische auto?**  
+**Kan ik het Mobiliteitsbudget gebruiken voor een elektrische auto?**
 Absoluut, het Mobiliteitsbudget kan worden ingezet voor diverse vervoersopties, waaronder een elektrische (lease)auto. We bespreken graag de specifieke mogelijkheden die passen bij jouw situatie.

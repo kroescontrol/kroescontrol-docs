@@ -1,14 +1,27 @@
 ---
-title: "Onze Cultuur & Waarden"
+title: Onze Cultuur & Waarden
 sidebar_position: 2
-description: "Informatie over de cultuur en waarden van Kroescontrol."
+description: Informatie over de cultuur en waarden van Kroescontrol.
 slug: /public/werken-bij/cultuur
-tags: [kroescontrol,cultuur,waarden,teamwork,innovatie,community]
-keywords: [kennisdeling,samenwerking,community-days,informeel,ambassadeur,werksfeer]
+tags:
+  - kroescontrol
+  - cultuur
+  - waarden
+  - teamwork
+  - innovatie
+  - community
+keywords:
+  - kennisdeling
+  - samenwerking
+  - community-days
+  - informeel
+  - ambassadeur
+  - werksfeer
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Onze Cultuur & Waarden
@@ -71,7 +84,7 @@ Onze Community Days vormen het hart van onze kennisdelingscultuur. Regelmatig ko
 - Hebben we de ruimte om te experimenteren met nieuwe tools en methodologieën
 - Vieren we successen en leren we van uitdagingen in een ondersteunende sfeer
 
-De Community Days zijn een perfect moment om de echte Kroescontrol-cultuur te ervaren, zowel voor huidige teamleden als voor potentiële nieuwe collega's. Ze combineren professionele ontwikkeling met de informele, open sfeer die kenmerkend is voor ons team. 
+De Community Days zijn een perfect moment om de echte Kroescontrol-cultuur te ervaren, zowel voor huidige teamleden als voor potentiële nieuwe collega's. Ze combineren professionele ontwikkeling met de informele, open sfeer die kenmerkend is voor ons team.
 
 Deze dagen zijn niet verplicht, maar worden door het hele team gewaardeerd als essentiële momenten van verbinding en professionele uitwisseling. Ze weerspiegelen onze overtuiging dat de beste innovaties ontstaan wanneer gepassioneerde professionals in een ontspannen setting samenwerken.
 
@@ -110,17 +123,17 @@ We zoeken bewust de beste engineers om de technische lat hoog te houden, maar te
 
 ## Veelgestelde vragen
 
-**Hoe informeel is de werksfeer echt?**  
+**Hoe informeel is de werksfeer echt?**
 Onze cultuur is oprecht informeel en laagdrempelig, maar tegelijk zeer professioneel. We spreken elkaar aan met je/jij, delen zowel successen als uitdagingen openlijk, en houden van een goed gesprek - of dat nu over technologie gaat of over andere interesses.
 
-**Is er een dresscode bij Kroescontrol?**  
+**Is er een dresscode bij Kroescontrol?**
 Nee, we hebben geen formele dresscode. Draag waar jij je comfortabel in voelt, passend bij de context van je werk. Bij klantbezoeken kan gepaste zakelijke kleding gewenst zijn, maar op kantoor of tijdens thuiswerken waarderen we authenticiteit.
 
-**Hoe belangrijk zijn Community Days en samenwerkdagen?**  
+**Hoe belangrijk zijn Community Days en samenwerkdagen?**
 Deze dagen zijn belangrijk voor kennisdeling en teambuilding, maar niet verplicht. We begrijpen dat iedereen zijn eigen balans zoekt tussen gezamenlijke activiteiten en focus op individueel werk of persoonlijke tijd.
 
-**Hoe gaan jullie om met fouten en mislukkingen?**  
+**Hoe gaan jullie om met fouten en mislukkingen?**
 We zien fouten en mislukkingen als leermomenten. In onze cultuur is het veilig om risico's te nemen, nieuwe dingen te proberen en eerlijk te zijn wanneer iets niet werkt. We leren samen van uitdagingen en gebruiken deze inzichten om te groeien.
 
-**Wat als ik niet de 'ambassadeurs'-persoonlijkheid heb?**  
+**Wat als ik niet de 'ambassadeurs'-persoonlijkheid heb?**
 We waarderen verschillende persoonlijkheidstypes en erkennen dat niet iedereen extrovert of een natuurlijke netwerker is. Wat we zoeken zijn professionals die hun kennis willen delen en openstaan voor samenwerking, elk op hun eigen manier en in hun eigen tempo.

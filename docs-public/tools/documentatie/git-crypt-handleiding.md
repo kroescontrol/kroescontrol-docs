@@ -1,14 +1,27 @@
 ---
-title: "Git-Crypt Handleiding"
+title: Git-Crypt Handleiding
 sidebar_position: 3
-description: "Stap-voor-stap handleiding voor het gebruik van git-crypt met onze documentatie repository."
+description: >-
+  Stap-voor-stap handleiding voor het gebruik van git-crypt met onze
+  documentatie repository.
 slug: /public/tools/documentatie/git-crypt-handleiding
-tags: [git-crypt,handleiding,gpg,encryptie,documentatie]
-keywords: [beveiliging,repository,versleuteling,troubleshooting,gpg-sleutels]
+tags:
+  - git-crypt
+  - handleiding
+  - gpg
+  - encryptie
+  - documentatie
+keywords:
+  - beveiliging
+  - repository
+  - versleuteling
+  - troubleshooting
+  - gpg-sleutels
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Git-Crypt Handleiding
@@ -78,7 +91,7 @@ Je moet je publieke GPG sleutel delen met een repository beheerder om toegang te
 # Lijst je sleutels om je sleutel-ID te vinden
 gpg --list-keys
 
-# Je ziet iets als: 
+# Je ziet iets als:
 # pub   rsa4096 2023-05-21 [SC]
 #       AB123CD456EF789GH012345678IJKLMNOPQRST901
 # uid           [ultimate] Jouw Naam <jouw.email@kroescontrol.nl>
@@ -170,7 +183,7 @@ Als je bestanden er nog steeds versleuteld uitzien (binaire rommel in plaats van
    ```bash
    git-crypt status -e
    ```
-   
+
 3. **Pull de laatste wijzigingen**:
    ```bash
    git pull
@@ -249,7 +262,7 @@ git push
 # Voor operationele documenten
 git-crypt add-gpg-user -k operation manager.email@kroescontrol.nl
 
-# Voor financiële documenten  
+# Voor financiële documenten
 git-crypt add-gpg-user -k finance finance.manager@kroescontrol.nl
 
 # Commit de wijzigingen voor de specifieke key

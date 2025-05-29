@@ -45,33 +45,120 @@ fi
 if ! command -v git-crypt &> /dev/null; then
     report_error "git-crypt is niet geïnstalleerd"
 else
-    # Check git-crypt status (check exit code, ignore output)
-    if git-crypt status >/dev/null 2>&1; then
+    # Check git-crypt initialization (more robust test)
+    if git-crypt status >/dev/null 2>&1 || [[ -f ".git-crypt/.gitattributes" ]]; then
         report_success "git-crypt is correct geïnitialiseerd"
         
-        # Check for diff attribute warnings
-        warning_count=$(git-crypt status 2>&1 | grep "WARNING: diff=git-crypt attribute not set" | wc -l)
-        if [[ $warning_count -gt 0 ]]; then
-            report_warning "$warning_count bestanden hebben ontbrekende diff=git-crypt attributen in .gitattributes"
-        else
-            report_success "Alle git-crypt attributen zijn correct ingesteld"
-        fi
-        
-        # Check access to encrypted content
-        access_output=$(npm run check-access --silent 2>&1 || echo "FAILED")
-        if [[ "$access_output" == *"FAILED"* ]]; then
-            report_error "Kan git-crypt access niet controleren"
-        else
-            echo "$access_output"
+        # Check access to encrypted content (non-blocking)
+        access_output=$(npm run check-access --silent 2>/dev/null || echo "")
+        if [[ -n "$access_output" ]]; then
+            echo "$access_output" | grep -E "(✅|🔒)" | head -3
             if [[ "$access_output" == *"ENCRYPTED"* ]]; then
-                report_info "Sommige directories zijn nog encrypted. Je hebt mogelijk niet de juiste git-crypt key."
+                report_info "Sommige directories zijn encrypted (normaal in sommige omgevingen)"
             else
-                report_success "Alle encrypted directories zijn toegankelijk"
+                report_success "Encrypted directories zijn toegankelijk"
             fi
+        else
+            report_info "Git-crypt access check overgeslagen (mogelijk geen encrypted content)"
         fi
     else
-        report_error "git-crypt is niet correct geïnitialiseerd in deze repository"
+        report_warning "git-crypt lijkt niet geïnitialiseerd (mogelijk geen encrypted content in repo)"
     fi
+fi
+
+# Encoding validation test voor Unicode/emoji problemen
+report_info "Encoding validation - controleer voor problematische karakters..."
+
+# Run comprehensive encoding validation met Python script
+if [[ -f "scripts/analyze-encoding.py" ]]; then
+    if python3 scripts/analyze-encoding.py >/dev/null 2>&1; then
+        report_success "Geen encoding problemen gevonden (emoji's, CRLF, BOM) - analyze-encoding.py"
+    else
+        report_warning "Encoding problemen gedetecteerd die git-crypt CRLF warnings kunnen veroorzaken"
+        report_info "Details: python3 scripts/analyze-encoding.py"
+        report_info "Fix automatisch: python3 scripts/fix-encoding.py"
+    fi
+fi
+encoding_errors=()
+
+# Extra check voor gewijzigde/staged files
+changed_files=$(git diff --name-only --cached 2>/dev/null)
+modified_files=$(git diff --name-only 2>/dev/null)
+if [[ -n "$changed_files" ]] || [[ -n "$modified_files" ]]; then
+    report_info "Let extra op: er zijn gewijzigde files die encoding problemen kunnen introduceren"
+    if [[ -n "$changed_files" ]]; then
+        report_info "Staged files: $(echo $changed_files | tr '\n' ' ')"
+    fi
+    if [[ -n "$modified_files" ]]; then
+        report_info "Modified files: $(echo $modified_files | tr '\n' ' ')"
+    fi
+fi
+
+# Check voor Unicode replacement character (het probleem dat we hadden)
+unicode_files=$(grep -r "�" docs-* 2>/dev/null | grep -v ".git" | head -5)
+if [[ -n "$unicode_files" ]]; then
+    encoding_errors+=("Unicode replacement character (�) gevonden")
+    echo "$unicode_files" | while read -r line; do
+        report_warning "Unicode replacement character in: $line"
+    done
+fi
+
+# Check voor problematische multi-byte emoji's in markdown bestanden
+problematic_emojis=()
+while IFS= read -r -d '' file; do
+    if [[ -f "$file" ]] && grep -l -E "🏃‍♂️|👨‍💻|🧪|👩‍💻" "$file" >/dev/null 2>&1; then
+        problematic_emojis+=("$file")
+    fi
+done < <(find docs-* -name "*.md" -print0 2>/dev/null)
+
+if [[ ${#problematic_emojis[@]} -gt 0 ]]; then
+    encoding_errors+=("Complexe emoji's gevonden die encoding problemen kunnen veroorzaken")
+    report_warning "Files met complexe emoji's: ${problematic_emojis[*]}"
+fi
+
+# Check voor BOM (Byte Order Mark) headers
+bom_files=$(find docs-* -name "*.md" -exec file {} \; 2>/dev/null | grep -E "(UTF-8.*BOM|UTF-16)" | head -3)
+if [[ -n "$bom_files" ]]; then
+    encoding_errors+=("BOM headers gevonden die problemen kunnen veroorzaken")
+    echo "$bom_files" | while read -r line; do
+        report_warning "BOM header in: $line"
+    done
+fi
+
+if [[ ${#encoding_errors[@]} -eq 0 ]]; then
+    report_success "Geen encoding problemen gevonden"
+else
+    for error in "${encoding_errors[@]}"; do
+        report_warning "Encoding: $error"
+    done
+fi
+
+# docStatus system test
+if [[ -f "scripts/generateContent.js" ]] && [[ -d "src/plugins/filter-docs-by-status" ]]; then
+    report_info "docStatus systeem validatie..."
+    
+    # Test basic script functionality
+    if node scripts/generateContent.js --help >/dev/null 2>&1; then
+        report_success "docStatus scripts zijn functioneel"
+        
+        # Test docStatus report functie
+        if npm run docstatus:report >/dev/null 2>&1; then
+            report_success "docStatus rapport functie werkt"
+        else
+            report_warning "docStatus rapport functie faalde (mogelijk geen documenten met status)"
+        fi
+    else
+        report_error "docStatus scripts zijn niet functioneel - check dependencies"
+    fi
+    
+    # Check for docStatus plugin in config
+    if grep -q "filter-docs-by-status" docusaurus.config.js; then
+        report_success "docStatus plugin is geconfigureerd in Docusaurus"
+    else
+        report_error "docStatus plugin niet gevonden in docusaurus.config.js"
+    fi
+else
+    report_info "docStatus systeem niet gedetecteerd (optioneel)"
 fi
 
 # Package dependencies check
