@@ -10,6 +10,7 @@ class DocumentationStatusReporter {
         this.documents = [];
         this.stats = {
             byStatus: {},
+            byDocStatus: {},
             byCategory: {},
             byDirectory: {},
             total: 0
@@ -84,6 +85,7 @@ class DocumentationStatusReporter {
             
             // Bepaal de status van het document
             let status = this.determineDocumentStatus(frontmatter);
+            let docStatus = this.determineDocStatus(frontmatter);
             
             // Bepaal category
             let documentCategory = category || 'root';
@@ -99,6 +101,7 @@ class DocumentationStatusReporter {
                 category: documentCategory,
                 title: frontmatter.title || path.basename(filePath, '.md'),
                 status: status,
+                docStatus: docStatus,
                 description: frontmatter.description || '',
                 lastUpdate: frontmatter.last_update?.date || 'Unknown',
                 author: frontmatter.last_update?.author || 'Unknown',
@@ -142,6 +145,19 @@ class DocumentationStatusReporter {
     }
 
     /**
+     * Bepaal de docStatus van een document op basis van frontmatter
+     */
+    determineDocStatus(frontmatter) {
+        // Check voor docStatus veld
+        if (frontmatter.docStatus) {
+            return frontmatter.docStatus.toLowerCase();
+        }
+        
+        // Default naar geen docStatus
+        return null;
+    }
+
+    /**
      * Tel woorden in content (simpele implementatie)
      */
     countWords(content) {
@@ -154,12 +170,20 @@ class DocumentationStatusReporter {
     generateStatistics() {
         // Reset statistieken
         this.stats.byStatus = {};
+        this.stats.byDocStatus = {};
         this.stats.byCategory = {};
         this.stats.byDirectory = {};
 
         for (const doc of this.documents) {
             // Status statistieken
             this.stats.byStatus[doc.status] = (this.stats.byStatus[doc.status] || 0) + 1;
+            
+            // DocStatus statistieken
+            if (doc.docStatus) {
+                this.stats.byDocStatus[doc.docStatus] = (this.stats.byDocStatus[doc.docStatus] || 0) + 1;
+            } else {
+                this.stats.byDocStatus['no-docstatus'] = (this.stats.byDocStatus['no-docstatus'] || 0) + 1;
+            }
             
             // Category statistieken
             this.stats.byCategory[doc.category] = (this.stats.byCategory[doc.category] || 0) + 1;
@@ -189,6 +213,17 @@ class DocumentationStatusReporter {
                 const percentage = ((count / this.stats.total) * 100).toFixed(1);
                 const statusIcon = this.getStatusIcon(status);
                 console.log(`${statusIcon} ${status.toUpperCase().padEnd(10)} ${count.toString().padStart(3)} (${percentage}%)`);
+            });
+
+        // DocStatus overview
+        console.log('\n🏷️  DOCSTATUS OVERVIEW:');
+        console.log('-'.repeat(30));
+        Object.entries(this.stats.byDocStatus)
+            .sort(([,a], [,b]) => b - a)
+            .forEach(([docStatus, count]) => {
+                const percentage = ((count / this.stats.total) * 100).toFixed(1);
+                const docStatusIcon = this.getDocStatusIcon(docStatus);
+                console.log(`${docStatusIcon} ${docStatus.toUpperCase().padEnd(12)} ${count.toString().padStart(3)} (${percentage}%)`);
             });
 
         // Directory overview
@@ -257,6 +292,21 @@ class DocumentationStatusReporter {
     }
 
     /**
+     * Geef icoon voor docStatus
+     */
+    getDocStatusIcon(docStatus) {
+        const icons = {
+            'templated': '📋',
+            'generated': '🤖',
+            'completed': '✅',
+            'live': '🟢',
+            'locked': '🔒',
+            'no-docstatus': '❓'
+        };
+        return icons[docStatus] || '📄';
+    }
+
+    /**
      * Genereer markdown rapport bestand
      */
     async generateMarkdownReport() {
@@ -269,6 +319,8 @@ class DocumentationStatusReporter {
         markdown += '---\n';
         markdown += 'title: Documentation Status Report\n';
         markdown += 'sidebar_position: 999\n';
+        markdown += 'sidebar_class_name: hidden\n';
+        markdown += 'displayed_sidebar: null\n';
         markdown += `description: Automatisch gegenereerd statusrapport van alle documentatie op ${date}\n`;
         markdown += 'tags: [status, rapport, documentatie, overzicht]\n';
         markdown += 'keywords: [status, report, documentation, statistics]\n';
@@ -293,6 +345,19 @@ class DocumentationStatusReporter {
                 const percentage = ((count / this.stats.total) * 100).toFixed(1);
                 const statusIcon = this.getStatusIcon(status);
                 markdown += `| ${statusIcon} ${status.charAt(0).toUpperCase() + status.slice(1)} | ${count} | ${percentage}% |\n`;
+            });
+
+        // DocStatus overzicht
+        markdown += '\n## 🏷️ DocStatus Overzicht\n\n';
+        markdown += '| DocStatus | Aantal | Percentage |\n';
+        markdown += '|-----------|--------|------------|\n';
+        Object.entries(this.stats.byDocStatus)
+            .sort(([,a], [,b]) => b - a)
+            .forEach(([docStatus, count]) => {
+                const percentage = ((count / this.stats.total) * 100).toFixed(1);
+                const docStatusIcon = this.getDocStatusIcon(docStatus);
+                const displayName = docStatus === 'no-docstatus' ? 'Geen docStatus' : docStatus.charAt(0).toUpperCase() + docStatus.slice(1);
+                markdown += `| ${docStatusIcon} ${displayName} | ${count} | ${percentage}% |\n`;
             });
 
         // Directory overzicht
@@ -342,14 +407,16 @@ class DocumentationStatusReporter {
         markdown += '\n## 📚 Alle Documenten\n\n';
         markdown += '<details>\n';
         markdown += '<summary>Klik om volledige lijst te tonen</summary>\n\n';
-        markdown += '| Bestand | Titel | Status | Categorie | Woorden | Laatste Update |\n';
-        markdown += '|---------|-------|--------|-----------|---------|----------------|\n';
+        markdown += '| Bestand | Titel | Status | DocStatus | Categorie | Woorden | Laatste Update |\n';
+        markdown += '|---------|-------|--------|-----------|-----------|---------|----------------|\n';
         
         this.documents
             .sort((a, b) => a.path.localeCompare(b.path))
             .forEach(doc => {
                 const statusIcon = this.getStatusIcon(doc.status);
-                markdown += `| [${doc.relativePath}](/${doc.path}) | ${doc.title} | ${statusIcon} ${doc.status} | ${doc.category} | ${doc.wordCount} | ${doc.lastUpdate} |\n`;
+                const docStatusIcon = doc.docStatus ? this.getDocStatusIcon(doc.docStatus) : '❓';
+                const docStatusDisplay = doc.docStatus ? `${docStatusIcon} ${doc.docStatus}` : '❓ geen';
+                markdown += `| [${doc.relativePath}](/${doc.path}) | ${doc.title} | ${statusIcon} ${doc.status} | ${docStatusDisplay} | ${doc.category} | ${doc.wordCount} | ${doc.lastUpdate} |\n`;
             });
         
         markdown += '\n</details>\n\n';
@@ -367,7 +434,7 @@ class DocumentationStatusReporter {
      */
     async saveMarkdownReport() {
         const markdown = await this.generateMarkdownReport();
-        const outputPath = path.join(this.rootDir, 'docs-internal', 'statusreport.md');
+        const outputPath = path.join(this.rootDir, 'docs-internal', '_statusreport.md');
         
         // Zorg ervoor dat de directory bestaat
         const outputDir = path.dirname(outputPath);
