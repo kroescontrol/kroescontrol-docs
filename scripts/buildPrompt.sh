@@ -55,6 +55,7 @@ Opties:
   --stdout    Output naar stdout (auto-quiet mode)
   --quiet     Onderdruk debug berichten (alleen errors)
   --verbose   Toon debug berichten ook met --stdout
+  --no-prompt Excludeer target PROMPT.md (alleen CLAUDE modules)
   -h, --help  Toon deze help
 
 Veiligheidscontroles:
@@ -66,6 +67,8 @@ Voorbeelden:
   $0 docs-internal/voorbeeld1                      # → prompt-combined.txt
   $0 --stdout docs-public/branding | claude       # Clean stdout naar Claude
   $0 --stdout --verbose docs-internal/voorbeeld1   # Stdout met debug info
+  $0 --stdout --no-prompt docs-internal/beveiliging/toegangsbeheer  # Alleen CLAUDE modules
+  $0 --stdout --no-prompt default                 # Alleen basis CLAUDE modules (geen target dir)
 
 EOF
 }
@@ -73,6 +76,7 @@ EOF
 # Parse command line arguments
 STDOUT_MODE=false
 QUIET_MODE=false
+NO_PROMPT_MODE=false
 TARGET_DIR=""
 
 while [[ $# -gt 0 ]]; do
@@ -88,6 +92,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --verbose)
             QUIET_MODE=false  # Override auto-quiet from --stdout
+            shift
+            ;;
+        --no-prompt)
+            NO_PROMPT_MODE=true
             shift
             ;;
         -h|--help)
@@ -112,13 +120,20 @@ if [ -z "$TARGET_DIR" ]; then
     exit 0
 fi
 
-# Validatie: target directory moet bestaan
-if [ ! -d "$TARGET_DIR" ]; then
-    error "Target directory '$TARGET_DIR' bestaat niet"
-    exit 1
+# Handle special 'default' keyword
+if [ "$TARGET_DIR" = "default" ]; then
+    debug "Default mode: alleen CLAUDE modules, geen target directory"
+    NO_PROMPT_MODE=true
+    # Skip directory validation for default mode
+else
+    debug "Target directory: $TARGET_DIR"
+    
+    # Validatie: target directory moet bestaan
+    if [ ! -d "$TARGET_DIR" ]; then
+        error "Target directory '$TARGET_DIR' bestaat niet"
+        exit 1
+    fi
 fi
-
-debug "Target directory: $TARGET_DIR"
 
 # Repository root directory (waar script vandaan wordt aangeroepen)
 REPO_ROOT="$(pwd)"
@@ -142,6 +157,12 @@ debug "Target PROMPT.md: $TARGET_PROMPT"
 
 # Functie: Check voor live bestanden in target directory
 check_live_files() {
+    # Skip live file check voor default mode
+    if [ "$TARGET_DIR" = "default" ]; then
+        debug "Default mode: skip live bestanden check"
+        return 0
+    fi
+    
     debug "Controleren op live bestanden in $TARGET_DIR..."
     
     # Gebruik node script om docStatus te checken
@@ -263,8 +284,12 @@ main() {
         append_file "$module_path" "CLAUDE Module: $module" "$output_file"
     done
     
-    # Target PROMPT.md als laatste
-    append_file "$TARGET_PROMPT" "Target Directory PROMPT.md" "$output_file"
+    # Target PROMPT.md als laatste (tenzij --no-prompt is gebruikt)
+    if [ "$NO_PROMPT_MODE" = false ]; then
+        append_file "$TARGET_PROMPT" "Target Directory PROMPT.md" "$output_file"
+    else
+        debug "PROMPT.md overgeslagen vanwege --no-prompt flag"
+    fi
     
     # 4. Resultaat rapporteren
     debug "=== RESULTAAT ==="
