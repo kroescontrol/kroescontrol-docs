@@ -1,14 +1,26 @@
 ---
-title: "Projectvoorbeelden"
+title: Projectvoorbeelden
 sidebar_position: 5
-description: "Voorbeelden van projecten bij Kroescontrol."
+description: Voorbeelden van projecten bij Kroescontrol.
 slug: /public/kennismaking/projecten
-tags: [kroescontrol,projecten,klanten,expertise,cases]
-keywords: [ebay,asml,nedap,cloud-native,automatisering,kubernetes]
+tags:
+  - kroescontrol
+  - projecten
+  - klanten
+  - expertise
+  - cases
+keywords:
+  - ebay
+  - asml
+  - nedap
+  - cloud-native
+  - automatisering
+  - kubernetes
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Projectvoorbeelden
@@ -31,7 +43,7 @@ Hieronder vind je concrete voorbeelden van projecten waar onze engineers aan heb
 
 **De uitdaging**: Het productieomgevingsbeheer verliep traag en foutgevoelig door te veel handmatige processen.
 
-**Onze aanpak**: 
+**Onze aanpak**:
 - Implementatie van vergaande automatisering in de productieomgeving
 - Invoering van Git-versiebeheer en code-reviewtooling om het proces te verbeteren
 - Preventief oplossen van probleemsituaties door betere automatisering
@@ -119,17 +131,17 @@ Deze diversiteit biedt je de kans om ervaring op te doen in verschillende omgevi
 
 ## Veelgestelde vragen
 
-**Krijg ik inspraak in de projecten waaraan ik werk?**  
+**Krijg ik inspraak in de projecten waaraan ik werk?**
 Absoluut. We vinden het essentieel dat er een goede match is tussen jouw ambities, expertise en de opdracht. We betrekken je actief bij het selectieproces van projecten die bij je passen.
 
-**Hoe lang duurt een gemiddeld project?**  
+**Hoe lang duurt een gemiddeld project?**
 De projectduur varieert, maar gemiddeld werken onze engineers 1 tot 2 jaar bij dezelfde klant. We streven naar duurzame samenwerkingen waarbij je echt impact kunt maken en diepgaande kennis kunt opbouwen.
 
-**Werk ik alleen of in een team?**  
+**Werk ik alleen of in een team?**
 Dit is projectafhankelijk. In sommige gevallen ben je de enige Kroescontrol engineer bij een klant, werkend in hun team. In andere situaties werken meerdere Kroescontrol engineers samen bij dezelfde klant. We zorgen altijd voor ondersteuning via interne kennisdeling.
 
-**Zijn de projecten altijd technisch uitdagend?**  
+**Zijn de projecten altijd technisch uitdagend?**
 We streven ernaar om projecten te selecteren die technisch uitdagend zijn en aansluiten bij onze expertise in Cloud Native en infrastructuur-automatisering. Daarbinnen is er ruimte voor verschillende moeilijkheidsgraden, afhankelijk van jouw ervaring en ontwikkelwensen.
 
-**Kan ik tussen projecten door ook interne projecten doen?**  
+**Kan ik tussen projecten door ook interne projecten doen?**
 Jazeker, we moedigen het aan om tussen opdrachten door deel te nemen aan interne projecten of initiatieven. Dit biedt je de kans om te experimenteren met nieuwe technologieën en bij te dragen aan de ontwikkeling van Kroescontrol.

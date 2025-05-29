@@ -1,0 +1,132 @@
+.devStatusBadge {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  background: white;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  max-width: 300px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.devStatusBadge:hover {
+  opacity: 1;
+}
+
+.statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.headerLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.statusBadge {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.devLabel {
+  background: #333;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.dataSourceLabel {
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.realData {
+  background: #27ae60;
+  color: white;
+}
+
+.fallbackData {
+  background: #f39c12;
+  color: white;
+}
+
+.statusDetails {
+  border-top: 1px solid #e1e8ed;
+  padding-top: 8px;
+}
+
+.statusRow {
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.statusRow strong {
+  color: #333;
+  margin-right: 4px;
+}
+
+.editLink {
+  color: #1976d2;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.editLink:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .devStatusBadge {
+  background: #1c1e21;
+  border-color: #444950;
+  color: #e3e3e3;
+}
+
+[data-theme='dark'] .statusRow strong {
+  color: #e3e3e3;
+}
+
+[data-theme='dark'] .statusDetails {
+  border-top-color: #444950;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .devStatusBadge {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 10px 0;
+    max-width: 100%;
+  }
+}
+
+/* Print styles - hide in print */
+@media print {
+  .devStatusBadge {
+    display: none !important;
+  }
+}

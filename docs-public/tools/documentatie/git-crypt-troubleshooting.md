@@ -1,14 +1,25 @@
 ---
-title: "Git-Crypt Problemen Oplossen"
+title: Git-Crypt Problemen Oplossen
 sidebar_position: 5
-description: "Praktische oplossingen voor veelvoorkomende git-crypt problemen en foutmeldingen."
+description: >-
+  Praktische oplossingen voor veelvoorkomende git-crypt problemen en
+  foutmeldingen.
 slug: /public/tools/documentatie/git-crypt-troubleshooting
-tags: [git-crypt,troubleshooting,problemen,oplossingen]
-keywords: [foutmeldingen,gpg-problemen,unlock-issues,encryptie-problemen]
+tags:
+  - git-crypt
+  - troubleshooting
+  - problemen
+  - oplossingen
+keywords:
+  - foutmeldingen
+  - gpg-problemen
+  - unlock-issues
+  - encryptie-problemen
 image: /img/logo.svg
 last_update:
-  date: 2025-05-23
-  author: Kroescontrol Team
+  date: 2025-05-29T00:00:00.000Z
+  author: Serge Kroes
+docStatus: live
 ---
 
 # Git-Crypt Problemen Oplossen
@@ -89,7 +100,7 @@ git-crypt status -k operation
 
 **Wat je ziet:**
 ```bash
-Warning: one or more files has a git-crypt filter attribute but not a 
+Warning: one or more files has a git-crypt filter attribute but not a
 corresponding git-crypt diff attribute.
 ```
 
@@ -162,6 +173,66 @@ git-crypt status
 - Controleer of je GPG sleutel is geïmporteerd
 - Vraag een beheerder of je toegang hebt tot de repository
 - Test je GPG setup
+
+### 7. CRLF Warning bij Git-Crypt Bestanden
+
+**Wat je ziet:**
+```bash
+warning: in the working copy of 'docs-internal/file.md', CRLF will be replaced by LF the next time Git touches it
+```
+
+**Waarom dit gebeurt:**
+Dit probleem treedt op wanneer encoding fix scripts (of andere tools) proberen git-crypt versleutelde bestanden te wijzigen. Git-crypt gebruikt binaire encryptie, en wanneer een script dit interpreteert als tekst en "verbetert", ontstaan er line ending conflicten.
+
+**Technische achtergrond:**
+- Git-crypt bestanden zijn binair versleuteld
+- Encoding scripts zien encrypted content als "tekst met problemen"
+- Scripts proberen emoji's, line endings, of encoding te "fixen"
+- Dit corrumpeert de encryptie en veroorzaakt CRLF warnings
+- In het ergste geval kan dit de git-crypt integriteit beschadigen
+
+**Herkenning:**
+```bash
+# Check welke bestanden encrypted zijn
+git-crypt status | grep "encrypted:"
+
+# Als deze bestanden CRLF warnings geven, dan is dit het probleem
+git add .
+# Waarschuwingen voor encrypted bestanden = encoding script probleem
+```
+
+**Directe oplossing:**
+```bash
+# Reset wijzigingen aan encrypted bestanden
+git checkout -- docs-internal/problematisch-bestand.md
+
+# Of reset alle wijzigingen
+git checkout -- .
+```
+
+**Preventie:**
+Zorg dat encoding fix scripts git-crypt encrypted bestanden detecteren en overslaan:
+
+```python
+# Voorbeeld check in Python script
+import subprocess
+
+def is_git_crypt_encrypted(file_path):
+    """Check of bestand git-crypt encrypted is"""
+    result = subprocess.run(['git-crypt', 'status', file_path],
+                          capture_output=True, text=True, check=False)
+    if result.returncode == 0:
+        return 'encrypted:' in result.stdout
+    return False
+
+# Skip encrypted bestanden
+if is_git_crypt_encrypted(file_path):
+    print(f"SKIP: {file_path} is encrypted")
+    return
+```
+
+**Waarschuwing:**
+Wijzig NOOIT handmatig git-crypt encrypted bestanden met text editors of encoding tools. Dit kan de encryptie permanent beschadigen.
 
 ## Diagnostische Commando's
 

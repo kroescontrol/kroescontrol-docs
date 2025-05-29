@@ -1,14 +1,25 @@
 ---
-title: "Arbeidsvoorwaarden"
+title: Arbeidsvoorwaarden
 sidebar_position: 4
-description: "Complete informatie over de arbeidsvoorwaarden bij Kroescontrol."
+description: Complete informatie over de arbeidsvoorwaarden bij Kroescontrol.
 slug: /public/kennismaking/voorwaarden
-tags: [kroescontrol,arbeidsvoorwaarden,contract,vakantiedagen,pensioen]
-keywords: [salaris,dienstverband,secundaire arbeidsvoorwaarden,werktijden,thuiswerken]
+tags:
+  - kroescontrol
+  - arbeidsvoorwaarden
+  - contract
+  - vakantiedagen
+  - pensioen
+keywords:
+  - salaris
+  - dienstverband
+  - secundaire arbeidsvoorwaarden
+  - werktijden
+  - thuiswerken
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Arbeidsvoorwaarden
@@ -104,17 +115,17 @@ Bij Kroescontrol werken we in een informele maar professionele sfeer, waar kenni
 
 ## Veelgestelde vragen
 
-**Is er een verschil tussen de Kroescontrol en Freelancecontrol arbeidsvoorwaarden?**  
+**Is er een verschil tussen de Kroescontrol en Freelancecontrol arbeidsvoorwaarden?**
 Ja, bij Kroescontrol heb je vaste voorwaarden en budgetten, terwijl Freelancecontrol gericht is op de freelance-georiënteerde professional met een vergoeding die gedeeltelijk gekoppeld is aan omzetprestatie. Je kunt in overleg wisselen tussen beide structuren.
 
-**Zijn er doorgroeimogelijkheden binnen Kroescontrol?**  
+**Zijn er doorgroeimogelijkheden binnen Kroescontrol?**
 Zeker, we stimuleren persoonlijke en professionele groei. Dit kan zowel technisch inhoudelijk zijn door het verdiepen van je expertise, als in je rol en verantwoordelijkheden.
 
-**Hoe zit het met thuiswerken?**  
+**Hoe zit het met thuiswerken?**
 De mogelijkheid om thuis te werken hangt af van de opdracht en de wensen van de klant. We zoeken altijd naar een optimale balans tussen de wensen van de klant, jouw voorkeuren en effectief samenwerken.
 
-**Zijn er mogelijkheden voor parttime werken?**  
+**Zijn er mogelijkheden voor parttime werken?**
 Ja, we bieden flexibiliteit in contracturen. De specifieke mogelijkheden bespreken we graag tijdens het sollicitatieproces, afhankelijk van de beschikbare opdrachten.
 
-**Is er een reisafstandsbeperking voor opdrachten?**  
+**Is er een reisafstandsbeperking voor opdrachten?**
 We houden zoveel mogelijk rekening met je woonplaats en reisvoorkeuren bij het matchen van opdrachten. Met het Mobiliteitsbudget krijg je flexibiliteit in hoe je je reizen organiseert.

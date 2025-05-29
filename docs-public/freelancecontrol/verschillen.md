@@ -1,12 +1,17 @@
 ---
-title: "Verschillen met Kroescontrol"
+title: Verschillen met Kroescontrol
 sidebar_position: 3
-description: "De belangrijkste verschillen tussen Freelancecontrol en Kroescontrol."
+description: De belangrijkste verschillen tussen Freelancecontrol en Kroescontrol.
 slug: /public/freelancecontrol/verschillen
-tags: [freelancecontrol,vergelijking,budgetstructuur,zelfstandigheid]
+tags:
+  - freelancecontrol
+  - vergelijking
+  - budgetstructuur
+  - zelfstandigheid
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Verschillen met Kroescontrol
@@ -76,7 +81,7 @@ Een belangrijk verschil zit in de verplichtingen en bedingen die bij de contract
 | **Relatiebeding** | Ja | Beperkt** |
 | **Klantbeperking** | Ja | Nee |
 
-\* Voor je eigen contacten en relaties geldt geen beding  
+\* Voor je eigen contacten en relaties geldt geen beding
 \** Alleen voor bestaande relaties van Kroescontrol is een relatiebeding van toepassing
 
 ### Inspraak en zeggenschap

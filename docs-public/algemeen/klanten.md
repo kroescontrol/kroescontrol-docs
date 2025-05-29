@@ -1,14 +1,28 @@
 ---
-title: "Klantenportfolio"
+title: Klantenportfolio
 sidebar_position: 3
-description: "Onze klanten en projectvoorbeelden: voor wie werken we en wat hebben we gerealiseerd."
+description: >-
+  Onze klanten en projectvoorbeelden: voor wie werken we en wat hebben we
+  gerealiseerd.
 slug: /public/algemeen/klanten
-tags: [algemeen,klanten,projecten,cases,portfolio]
-keywords: [referenties,enterprise,mkb,automatisering,cloud,infrastructuur]
+tags:
+  - algemeen
+  - klanten
+  - projecten
+  - cases
+  - portfolio
+keywords:
+  - referenties
+  - enterprise
+  - mkb
+  - automatisering
+  - cloud
+  - infrastructuur
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Klantenportfolio

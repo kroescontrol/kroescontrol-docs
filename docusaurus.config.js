@@ -118,6 +118,13 @@ module.exports = {
   
   // Plugins
   plugins: [
+    // Build info injection plugin
+    [
+      require.resolve('./src/plugins/inject-build-info'),
+      {
+        buildInfo: buildInfo,
+      },
+    ],
     // LinkedIn meta tags plugin
     [
       require.resolve('./src/plugins/docusaurus-linkedin-tags'),
@@ -125,6 +132,8 @@ module.exports = {
         defaultImage: '/img/logo.svg',
       },
     ],
+    // FrontMatter provider plugin (for development UX components)
+    require.resolve('./src/plugins/frontmatter-provider'),
     // Chat page plugin
     ...(ENABLE_CHAT_PAGE ? [
       [

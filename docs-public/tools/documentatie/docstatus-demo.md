@@ -1,19 +1,19 @@
 ---
-title: "🧪 docStatus Demo Document"
+title: "[TEST] docStatus Demo Document"
 sidebar_position: 998
 docStatus: live
 ---
 
-# 🧪 docStatus Demo Document
+# [TEST] docStatus Demo Document
 
 Dit document demonstreert het **docStatus systeem** dat zojuist is geïmplementeerd.
 
 ## Huidige Status: `live`
 
 Dit document heeft `docStatus: live` in zijn frontmatter, wat betekent dat het:
-- ✅ Zichtbaar is in **alle builds** (development én production)
-- ✅ Wordt beschouwd als **productie-klaar**
-- ✅ Geschikt is voor **live gebruik**
+- [OK] Zichtbaar is in **alle builds** (development én production)
+- [OK] Wordt beschouwd als **productie-klaar**
+- [OK] Geschikt is voor **live gebruik**
 
 ## Complete Zichtbaarheidsmatrix
 
@@ -23,25 +23,25 @@ Deze tabel toont hoe **beide** systemen (Docusaurus `draft` + ons `docStatus`) s
 
 | docStatus | Beschrijving | Local | Staging | Production |
 |-----------|-------------|-------|---------|------------|
-| `templated` | Template fase | ✅ | ✅ | ❌ |
-| `generated` | Auto-gegenereerd | ✅ | ✅ | ❌ |
-| `completed` | Afgerond | ✅ | ✅ | ✅ |
-| `live` | Actief | ✅ | ✅ | ✅ |
-| `locked` | Vergrendeld | ✅ | ✅ | ✅ |
+| `templated` | Template fase | [OK] | [OK] | ❌ |
+| `generated` | Auto-gegenereerd | [OK] | [OK] | ❌ |
+| `completed` | Afgerond | [OK] | [OK] | [OK] |
+| `live` | Actief | [OK] | [OK] | [OK] |
+| `locked` | Vergrendeld | [OK] | [OK] | [OK] |
 
 ### Met draft: true (ongeacht docStatus)
 
 | draft + docStatus | Beschrijving | Local | Staging | Production |
 |-------------------|-------------|-------|---------|------------|
-| `draft: true` + `templated` | Draft template | ✅ | ❌ | ❌ |
-| `draft: true` + `generated` | Draft gegenereerd | ✅ | ❌ | ❌ |
-| `draft: true` + `completed` | Draft compleet | ✅ | ❌ | ❌ |
-| `draft: true` + `live` | Draft live | ✅ | ❌ | ❌ |
-| `draft: true` + `locked` | Draft vergrendeld | ✅ | ❌ | ❌ |
+| `draft: true` + `templated` | Draft template | [OK] | ❌ | ❌ |
+| `draft: true` + `generated` | Draft gegenereerd | [OK] | ❌ | ❌ |
+| `draft: true` + `completed` | Draft compleet | [OK] | ❌ | ❌ |
+| `draft: true` + `live` | Draft live | [OK] | ❌ | ❌ |
+| `draft: true` + `locked` | Draft vergrendeld | [OK] | ❌ | ❌ |
 
 ### Samengevat: Wanneer is content zichtbaar?
 
-**✅ Zichtbaar wanneer:**
+**[OK] Zichtbaar wanneer:**
 - Local: Altijd (behalve bij onze docStatus filtering)
 - Staging: `draft: false` EN (`docStatus: completed|live|locked` OF geen docStatus filtering)
 - Production: `draft: false` EN `docStatus: completed|live|locked`
@@ -72,10 +72,10 @@ node scripts/generateContent.js process-status docs-public templated
 
 Het systeem is succesvol geïmplementeerd en getest:
 
-- ✅ **Plugin werkt** - Docusaurus plugin correct geïnstalleerd
-- ✅ **Filtering actief** - Statussen worden correct gefilterd per build type
-- ✅ **Scripts functioneel** - Alle management scripts werken
-- ✅ **Build pipeline** - Geïntegreerd in bestaand build proces
+- [OK] **Plugin werkt** - Docusaurus plugin correct geïnstalleerd
+- [OK] **Filtering actief** - Statussen worden correct gefilterd per build type
+- [OK] **Scripts functioneel** - Alle management scripts werken
+- [OK] **Build pipeline** - Geïntegreerd in bestaand build proces
 
 ## Implementatie Details
 

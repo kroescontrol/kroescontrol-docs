@@ -68,6 +68,17 @@ fi
 
 # Encoding validation test voor Unicode/emoji problemen
 report_info "Encoding validation - controleer voor problematische karakters..."
+
+# Run comprehensive encoding validation met Python script
+if [[ -f "scripts/analyze-encoding.py" ]]; then
+    if python3 scripts/analyze-encoding.py >/dev/null 2>&1; then
+        report_success "Geen encoding problemen gevonden (emoji's, CRLF, BOM) - analyze-encoding.py"
+    else
+        report_warning "Encoding problemen gedetecteerd die git-crypt CRLF warnings kunnen veroorzaken"
+        report_info "Details: python3 scripts/analyze-encoding.py"
+        report_info "Fix automatisch: python3 scripts/fix-encoding.py"
+    fi
+fi
 encoding_errors=()
 
 # Extra check voor gewijzigde/staged files

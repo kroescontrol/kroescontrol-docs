@@ -1,14 +1,27 @@
 ---
-title: "Logo"
+title: Logo
 sidebar_position: 3
-description: "Het Kroescontrol logo in verschillende varianten en formaten, met richtlijnen voor gebruik."
+description: >-
+  Het Kroescontrol logo in verschillende varianten en formaten, met richtlijnen
+  voor gebruik.
 slug: /public/branding/logo
-tags: [kroescontrol,branding,huisstijl,logo]
-keywords: [logo,huisstijl,gradient,kleur,zwart-wit,varianten]
+tags:
+  - kroescontrol
+  - branding
+  - huisstijl
+  - logo
+keywords:
+  - logo
+  - huisstijl
+  - gradient
+  - kleur
+  - zwart-wit
+  - varianten
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Kroescontrol Logo
@@ -37,7 +50,7 @@ Het Kroescontrol logo is de primaire visuele vertegenwoordiging van ons merk. De
       <img src="/branding/Logo/PNG/KC-logo-gradientKLEUR.png" alt="Kroescontrol Logo - Gradient Kleur" style={{maxWidth: '280px', width: '100%'}} />
     </div>
   </div>
-  
+
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '250px'}}>
     <h3>Gradient Zwart-Wit</h3>
     <p>De zwart-wit gradient versie is ideaal voor donkere achtergronden waar geen kleur nodig is maar wel een onderscheidend element gewenst is.</p>
@@ -57,14 +70,14 @@ Het Kroescontrol logo is de primaire visuele vertegenwoordiging van ons merk. De
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0'}}>Gradient Kleur</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-gradientBW.png" alt="Gradient BW op wit" style={{maxWidth: '140px', width: '100%'}} />
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0'}}>Gradient Z/W</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-zwart.png" alt="Zwart op wit" style={{maxWidth: '140px', width: '100%'}} />
@@ -81,14 +94,14 @@ Het Kroescontrol logo is de primaire visuele vertegenwoordiging van ons merk. De
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Kleur</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-gradientBW.png" alt="Gradient BW op zwart" style={{maxWidth: '140px', width: '100%'}} />
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-wit.png" alt="Wit op zwart" style={{maxWidth: '140px', width: '100%'}} />
@@ -105,21 +118,21 @@ Het Kroescontrol logo is de primaire visuele vertegenwoordiging van ons merk. De
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Kleur</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-gradientBW.png" alt="Gradient BW op blauw" style={{maxWidth: '140px', width: '100%'}} />
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-wit.png" alt="Wit op blauw" style={{maxWidth: '140px', width: '100%'}} />
     </div>
     <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Wit</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(25% - 12px)', minWidth: '160px', maxWidth: '200px'}}>
     <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/branding/Logo/PNG/KC-logo-zwart.png" alt="Zwart op blauw" style={{maxWidth: '140px', width: '100%'}} />
@@ -160,7 +173,7 @@ Het logo is gebaseerd op nauwkeurige verhoudingen:
       <img src="/branding/Logo/PNG/KC-logo-gradientKLEUR.png" alt="Logo met vrije ruimte" style={{maxWidth: '280px', width: '100%', border: '2px dashed #ccc', padding: '30px'}} />
     </div>
   </div>
-  
+
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px', display: 'flex', flexDirection: 'column'}}>
     <div style={{minHeight: '50px', display: 'flex', alignItems: 'center'}}>
       <p style={{margin: 0}}>Op donkere achtergronden geldt dezelfde regel voor minimale vrije ruimte rondom het logo.</p>
@@ -179,7 +192,7 @@ Het logo is gebaseerd op nauwkeurige verhoudingen:
       <li>Voor digitale weergave: Minimaal 100 pixels breed</li>
     </ul>
   </div>
-  
+
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
     <h3>Niet doen</h3>
     <ul>
@@ -200,12 +213,12 @@ Het logo is gebaseerd op nauwkeurige verhoudingen:
     <h3 style={{color: '#333'}}>SVG</h3>
     <p style={{color: '#333'}}>Voor gebruik op websites en digitale toepassingen. Schaalbaar naar elke grootte zonder kwaliteitsverlies.</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '200px', padding: '15px', backgroundColor: '#f5f5f5', borderRadius: '5px'}}>
     <h3 style={{color: '#333'}}>PNG</h3>
     <p style={{color: '#333'}}>Voor gebruik in documenten en presentaties, met transparante achtergrond. Geschikt voor digitaal gebruik.</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '200px', padding: '15px', backgroundColor: '#f5f5f5', borderRadius: '5px'}}>
     <h3 style={{color: '#333'}}>EPS</h3>
     <p style={{color: '#333'}}>Voor professioneel drukwerk en vectortoepassingen. Ideaal voor externe partners en printbureaus.</p>

@@ -1,14 +1,26 @@
 ---
-title: "Engineer Hub"
+title: Engineer Hub
 sidebar_position: 2
-description: "Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem."
+description: 'Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem.'
 slug: /public/kennismaking/engineer-hub
-tags: [kroescontrol,engineer-hub,budgetbeheer,transparantie,dashboard]
-keywords: [spreadsheet,wallet,metrics,boekhouding,real-time,inzicht]
+tags:
+  - kroescontrol
+  - engineer-hub
+  - budgetbeheer
+  - transparantie
+  - dashboard
+keywords:
+  - spreadsheet
+  - wallet
+  - metrics
+  - boekhouding
+  - real-time
+  - inzicht
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Engineer Hub
@@ -68,17 +80,17 @@ De Engineer Hub stimuleert kostenbewust werken. Door volledige inzichtelijkheid 
 
 ## Veelgestelde vragen
 
-**Kan ik zelf aanpassingen maken in de Engineer Hub?**  
+**Kan ik zelf aanpassingen maken in de Engineer Hub?**
 De Engineer Hub is primair een dashboard voor inzicht. Bepaalde velden zijn beschermd tegen wijzigingen om de integriteit van de gegevens te waarborgen. Voor declaraties en uitgaven gebruik je HoorayHR, waarna deze automatisch in de Engineer Hub worden verwerkt.
 
-**Hoe actueel zijn de gegevens in de Engineer Hub?**  
+**Hoe actueel zijn de gegevens in de Engineer Hub?**
 De meeste processen verlopen automatisch, waardoor de Engineer Hub vrijwel altijd actueel is. Declaraties worden direct zichtbaar gemaakt nadat ze zijn verwerkt in HoorayHR.
 
-**Wat gebeurt er als ik vragen heb over de gegevens in mijn Engineer Hub?**  
+**Wat gebeurt er als ik vragen heb over de gegevens in mijn Engineer Hub?**
 Bij vragen of onduidelijkheden kun je altijd terecht bij Serge of Patriek. Zij helpen je graag verder en kunnen waar nodig aanpassingen doorvoeren.
 
-**Is mijn data veilig in de Engineer Hub?**  
+**Is mijn data veilig in de Engineer Hub?**
 Ja, de Engineer Hub is een persoonlijke Google Drive-spreadsheet met beperkte toegang. Er worden regelmatig back-ups gemaakt en de gegevens worden periodiek gecontroleerd door de boekhouding.
 
-**Kan ik de Engineer Hub inzien voordat ik bij Kroescontrol start?**  
+**Kan ik de Engineer Hub inzien voordat ik bij Kroescontrol start?**
 Tijdens het sollicitatieproces krijg je een demonstratie van de Engineer Hub om je een goed beeld te geven van hoe het werkt. De persoonlijke hub wordt aangemaakt zodra je bij Kroescontrol start.

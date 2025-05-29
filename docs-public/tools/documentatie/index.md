@@ -1,14 +1,24 @@
 ---
-title: "Documentatie bij Kroescontrol"
+title: Documentatie bij Kroescontrol
 sidebar_position: 1
-description: "Informatie over onze documentatieprocessen, structuur en toegang."
+description: 'Informatie over onze documentatieprocessen, structuur en toegang.'
 slug: /public/tools/documentatie
-tags: [documentatie,processen,git,repository]
-keywords: [git-crypt,workflows,kennisdeling,handleiding,bijdragen]
+tags:
+  - documentatie
+  - processen
+  - git
+  - repository
+keywords:
+  - git-crypt
+  - workflows
+  - kennisdeling
+  - handleiding
+  - bijdragen
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Documentatie bij Kroescontrol

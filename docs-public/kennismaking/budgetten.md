@@ -1,14 +1,26 @@
 ---
-title: "Budgetstructuren"
+title: Budgetstructuren
 sidebar_position: 3
-description: "Uitleg over de verschillende budgetstructuren bij Kroescontrol."
+description: Uitleg over de verschillende budgetstructuren bij Kroescontrol.
 slug: /public/kennismaking/budgetten
-tags: [kroescontrol,budgetten,engineer-budget,mobiliteitsbudget,financien]
-keywords: [wallet,afschrijving,leaseauto,hardware,declaraties,transparantie]
+tags:
+  - kroescontrol
+  - budgetten
+  - engineer-budget
+  - mobiliteitsbudget
+  - financien
+keywords:
+  - wallet
+  - afschrijving
+  - leaseauto
+  - hardware
+  - declaraties
+  - transparantie
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Budgetstructuren
@@ -84,17 +96,17 @@ Bij Kroescontrol stimuleren we een kostenbewuste aanpak. Dit betekent niet dat j
 
 ## Veelgestelde vragen
 
-**Wat gebeurt er als ik mijn budgetten niet volledig opmaak?**  
+**Wat gebeurt er als ik mijn budgetten niet volledig opmaak?**
 Niet-gebruikte Engineer Budget-middelen blijven beschikbaar voor toekomstige uitgaven. Voor het Mobiliteitsbudget geldt dat een deel van het overschot (maximaal 20% van het maandelijkse budget) kan worden overgeheveld naar je Engineer Budget.
 
-**Kan ik zelf bepalen waar ik mijn Engineer Budget aan besteed?**  
+**Kan ik zelf bepalen waar ik mijn Engineer Budget aan besteed?**
 Ja, binnen de gestelde kaders heb je volledige vrijheid om te beslissen waar je in investeert. Of dat nu een krachtige laptop, een extra monitor of een specifieke training is - je maakt zelf de keuzes die het beste aansluiten bij jouw professionele behoeften.
 
-**Wat gebeurt er met hardware als ik uit dienst ga?**  
+**Wat gebeurt er met hardware als ik uit dienst ga?**
 Hardware aangeschaft via het Engineer Budget blijft eigendom van Kroescontrol. Bij uitdiensttreding heb je de mogelijkheid om hardware over te nemen tegen de dan geldende restwaarde, zoals geregistreerd in de Engineer Hub.
 
-**Kan ik mijn Mobiliteitsbudget gebruiken voor privéreizen?**  
+**Kan ik mijn Mobiliteitsbudget gebruiken voor privéreizen?**
 Het Mobiliteitsbudget is primair bedoeld voor woon-werkverkeer en zakelijke reizen. Bij een leaseauto zijn de afspraken over privégebruik onderdeel van de leaseconstructie en worden vooraf besproken.
 
-**Welke declaraties kan ik indienen via HoorayHR?**  
+**Welke declaraties kan ik indienen via HoorayHR?**
 Via HoorayHR kun je zakelijke uitgaven declareren die binnen je Engineer Budget of Mobiliteitsbudget vallen. Na goedkeuring worden deze automatisch verwerkt in je Engineer Hub.
