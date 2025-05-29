@@ -4,7 +4,7 @@ description: Overzicht van de status van alle public documentatiepagina's.
 sidebar_position: 999
 sidebar_class_name: hidden
 displayed_sidebar: null
-slug: /public/status
+slug: ../status
 docStatus: live
 ---
 
