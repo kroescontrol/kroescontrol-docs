@@ -2,12 +2,19 @@
 title: Freelancecontrol Model
 sidebar_position: 1
 description: Ons unieke freelance samenwerkingsmodel - transparant en eerlijk
-tags: [freelancecontrol, zelfstandig, model]
-keywords: [freelancecontrol, zelfstandig, model]
+tags:
+  - freelancecontrol
+  - zelfstandig
+  - model
+keywords:
+  - freelancecontrol
+  - zelfstandig
+  - model
 last_update:
-  date: 2025-05-25
+  date: 2025-05-25T00:00:00.000Z
   author: Kroescontrol Setup
 image: /img/KC-logo-gradientKLEUR.svg
+docStatus: live
 ---
 
 # Freelancecontrol Model
@@ -18,7 +25,7 @@ image: /img/KC-logo-gradientKLEUR.svg
 
 ---
 
-## 🎯 Overzicht
+## [TARGET] Overzicht
 
 Complete transparantie over ons freelance model als competitive advantage.
 
@@ -27,7 +34,7 @@ Complete transparantie over ons freelance model als competitive advantage.
 ## 📋 Belangrijkste Punten
 
 - **Punt 1:** Belangrijke informatie die gebruikers moeten weten
-- **Punt 2:** Key takeaway voor dagelijks gebruik  
+- **Punt 2:** Key takeaway voor dagelijks gebruik
 - **Punt 3:** Kritieke procedure of richtlijn
 - **Punt 4:** Contact informatie voor vragen
 

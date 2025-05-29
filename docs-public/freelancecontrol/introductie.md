@@ -1,12 +1,17 @@
 ---
-title: "Wat is Freelancecontrol"
+title: Wat is Freelancecontrol
 sidebar_position: 2
-description: "Introductie tot het Freelancecontrol model."
+description: Introductie tot het Freelancecontrol model.
 slug: /public/freelancecontrol/introductie
-tags: [freelancecontrol,werkmodel,samenwerkingsvorm,contract]
+tags:
+  - freelancecontrol
+  - werkmodel
+  - samenwerkingsvorm
+  - contract
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Wat is Freelancecontrol
@@ -33,22 +38,22 @@ Bij Kroescontrol werk je **met** ons (Patriek en Serge), niet **voor** ons. Dit 
 
 Freelancecontrol is opgebouwd rond zes kernprincipes die de basis vormen van onze samenwerking:
 
-1. **Ondernemersvrijheid zonder belemmeringen**  
+1. **Ondernemersvrijheid zonder belemmeringen**
    Geen concurrentiebeding of klantenbeperkingen voor jouw eigen relaties
 
-2. **Contract voor onbepaalde tijd**  
+2. **Contract voor onbepaalde tijd**
    Zekerheid en continuïteit in een flexibele structuur
 
-3. **Omzet-gedreven budgetten**  
+3. **Omzet-gedreven budgetten**
    Je budgetten groeien direct mee met je omzet
 
-4. **Flexibele besteding**  
+4. **Flexibele besteding**
    Jij bepaalt waar je investeert en hoe je je budgetten inzet
 
-5. **Transparante afspraken**  
+5. **Transparante afspraken**
    Real-time inzicht in omzet, kosten en verdiencapaciteit
 
-6. **Fiscaal geoptimaliseerd**  
+6. **Fiscaal geoptimaliseerd**
    Profiteer van fiscale voordelen binnen de kaders van loondienst
 
 ### Hoe werkt Freelancecontrol in de praktijk?

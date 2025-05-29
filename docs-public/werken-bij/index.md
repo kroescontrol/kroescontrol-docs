@@ -1,14 +1,25 @@
 ---
-title: "Werken bij Kroescontrol"
+title: Werken bij Kroescontrol
 sidebar_position: 1
-description: "Informatie over werken bij Kroescontrol."
+description: Informatie over werken bij Kroescontrol.
 slug: /public/werken-bij
-tags: [werken-bij,carriere,arbeidsvoorwaarden,team]
-keywords: [werken,solliciteren,baan,it,cloud,kubernetes]
+tags:
+  - werken-bij
+  - carriere
+  - arbeidsvoorwaarden
+  - team
+keywords:
+  - werken
+  - solliciteren
+  - baan
+  - it
+  - cloud
+  - kubernetes
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Werken bij Kroescontrol
@@ -79,7 +90,7 @@ Het gaat niet om verschillende werkmodellen, maar om één team Kroescontrol, wa
 We zoeken voornamelijk IT-professionals met ervaring in infrastructure engineering, cloud platforms (Azure, AWS, GCP), containerization/Kubernetes, of DevOps. Een achtergrond in software development met interesse in infrastructuur is ook waardevol.
 
 ### Hoe verloopt het sollicitatieproces?
-Ons sollicitatieproces bestaat voornamelijk uit gesprekken op gelijkwaardig niveau tussen professionals. We geloven niet in strakke, identieke procedures voor iedereen. We gaan in gesprek om elkaar te leren kennen - natuurlijk komen elementen als cultuurfit, technische expertise en arbeidsvoorwaarden aan bod, maar dit gebeurt in een open dialoog. 
+Ons sollicitatieproces bestaat voornamelijk uit gesprekken op gelijkwaardig niveau tussen professionals. We geloven niet in strakke, identieke procedures voor iedereen. We gaan in gesprek om elkaar te leren kennen - natuurlijk komen elementen als cultuurfit, technische expertise en arbeidsvoorwaarden aan bod, maar dit gebeurt in een open dialoog.
 
 Voor iedere professional is het proces anders, afgestemd op jouw achtergrond en ervaring. Een ervaren specialist die bij andere partijen na een kort gesprek al een aanbod zou krijgen, doorloopt bij ons alsnog meerdere gesprekken - niet omdat we jouw expertise in twijfel trekken, maar omdat we willen dat beide partijen een weloverwogen keuze maken.
 

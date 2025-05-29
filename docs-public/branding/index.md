@@ -1,14 +1,26 @@
 ---
-title: "Huisstijl & Branding"
+title: Huisstijl & Branding
 sidebar_position: 1
-description: "Informatie over de huisstijl en branding van Kroescontrol."
+description: Informatie over de huisstijl en branding van Kroescontrol.
 slug: /public/branding
-tags: [kroescontrol,branding,huisstijl,logo,beeldmerk]
-keywords: [logo,kleuren,identiteit,merk,download,stijlgids]
+tags:
+  - kroescontrol
+  - branding
+  - huisstijl
+  - logo
+  - beeldmerk
+keywords:
+  - logo
+  - kleuren
+  - identiteit
+  - merk
+  - download
+  - stijlgids
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Huisstijl & Branding
@@ -44,7 +56,7 @@ Onze typografie is een belangrijk onderdeel van onze visuele identiteit. We gebr
   <p style={{fontFamily: 'Poppins, sans-serif', fontWeight: 'bold'}}>Poppins Bold - Voor belangrijke koppen</p>
   <p style={{fontFamily: 'Poppins, sans-serif', fontWeight: '600'}}>Poppins SemiBold - Voor subkoppen</p>
   <p style={{fontFamily: 'Poppins, sans-serif', fontWeight: 'normal'}}>Poppins Regular - Voor kleinere koppen</p>
-  
+
   <p style={{fontFamily: 'Poppins, sans-serif'}}>
     A B C D E F G H I J K L M<br/>
     N O P Q R S T U V W X Y Z<br/>
@@ -62,7 +74,7 @@ Onze typografie is een belangrijk onderdeel van onze visuele identiteit. We gebr
   <p style={{fontFamily: 'Noto Sans, sans-serif', fontWeight: 'bold'}}>Noto Sans Bold - Voor nadruk in tekst</p>
   <p style={{fontFamily: 'Noto Sans, sans-serif', fontStyle: 'italic'}}>Noto Sans Italic - Voor subtiele accenten</p>
   <p style={{fontFamily: 'Noto Sans, sans-serif', fontWeight: 'normal'}}>Noto Sans Regular - Voor standaard bodytekst</p>
-  
+
   <p style={{fontFamily: 'Noto Sans, sans-serif'}}>
     A B C D E F G H I J K L M<br/>
     N O P Q R S T U V W X Y Z<br/>

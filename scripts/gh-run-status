@@ -214,13 +214,18 @@ monitor_run() {
     echo -e "${BLUE}📋 Run details:${NC}"
     gh run view "$run_id" 2>/dev/null | head -20
     
-    # Als de run gefaald is, toon error informatie
+    # Als de run gefaald is, automatisch gedetailleerde analyse uitvoeren
     if [[ "$conclusion" == "failure" ]]; then
         echo ""
-        echo -e "${RED}💥 Run gefaald! Handmatige analyse nodig:${NC}"
+        echo -e "${RED}💥 Run gefaald! Automatische analyse...${NC}"
         echo "======================================="
-        echo "   gh run view $run_id --log"
-        echo "   ./scripts/gh-run-status $run_id"
+        
+        # Voer automatisch gedetailleerde analyse uit
+        echo -e "${BLUE}🔍 Uitvoeren gedetailleerde analyse voor run #${run_id}...${NC}"
+        echo ""
+        
+        # Call zichzelf recursief voor gedetailleerde analyse
+        exec "$0" "$run_id"
     fi
 }
 

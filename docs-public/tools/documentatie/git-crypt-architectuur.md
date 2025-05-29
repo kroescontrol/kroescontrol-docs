@@ -1,14 +1,25 @@
 ---
-title: "Hoe Git-Crypt Werkt"
+title: Hoe Git-Crypt Werkt
 sidebar_position: 4
-description: "Uitleg van hoe git-crypt werkt in onze documentatie repository - transparante bestandsversleuteling voor veilige samenwerking."
+description: >-
+  Uitleg van hoe git-crypt werkt in onze documentatie repository - transparante
+  bestandsversleuteling voor veilige samenwerking.
 slug: /public/tools/documentatie/hoe-git-crypt-werkt
-tags: [git-crypt,uitleg,beveiliging,samenwerking]
-keywords: [transparante-encryptie,repository-beveiliging,automatische-versleuteling,teamwork]
+tags:
+  - git-crypt
+  - uitleg
+  - beveiliging
+  - samenwerking
+keywords:
+  - transparante-encryptie
+  - repository-beveiliging
+  - automatische-versleuteling
+  - teamwork
 image: /img/logo.svg
 last_update:
-  date: 2025-05-23
+  date: 2025-05-23T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Hoe Git-Crypt Werkt
@@ -33,7 +44,7 @@ Onze documentatie repository is zo ingericht:
 docs/
 ├── public/          ← Iedereen kan dit lezen
 ├── internal/        ← Alleen medewerkers (versleuteld)
-├── operation/       ← Alleen management (versleuteld)  
+├── operation/       ← Alleen management (versleuteld)
 └── finance/         ← Alleen finance team (versleuteld)
 ```
 
@@ -63,7 +74,7 @@ Je bewerkt een bestand → Git slaat het versleuteld op → Anderen kunnen het o
 - Kan direct meewerken aan algemene documentatie
 - Ziet geen financiële of operationele details
 
-**Scenario 2: Manager**  
+**Scenario 2: Manager**
 - Krijgt toegang tot alle documenten
 - Kan operationele procedures bijwerken
 - Heeft volledig overzicht van processen
@@ -79,7 +90,7 @@ Elke persoon heeft een "digitale sleutel" (GPG sleutel):
 - **Publieke sleutel**: Kan gedeeld worden, wordt gebruikt om dingen voor jou te versleutelen
 - **Privé sleutel**: Alleen jij hebt deze, wordt gebruikt om dingen te ontsleutelen
 
-### Repository Master Sleutel  
+### Repository Master Sleutel
 - De repository heeft één "hoofdsleutel" die daadwerkelijk bestanden versleutelt
 - Deze hoofdsleutel is zelf versleuteld met ieders publieke GPG sleutel
 - Alleen mensen met de juiste privé sleutel kunnen de hoofdsleutel gebruiken
@@ -117,7 +128,7 @@ Elke persoon heeft een "digitale sleutel" (GPG sleutel):
 - Alleen mensen met de juiste sleutel kunnen ze lezen
 - Zelfs als iemand de hele repository steelt, kunnen ze geen gevoelige info lezen
 
-### Wat is Niet Beschermd  
+### Wat is Niet Beschermd
 - Bestandsnamen zijn zichtbaar (maar niet de inhoud)
 - Het feit dat er bestanden zijn is zichtbaar
 - Publieke documenten blijven voor iedereen leesbaar
@@ -131,7 +142,7 @@ Elke persoon heeft een "digitale sleutel" (GPG sleutel):
 
 Git-crypt zorgt ervoor dat we:
 1. **Veilig** gevoelige informatie kunnen delen binnen het team
-2. **Eenvoudig** kunnen samenwerken aan documentatie  
+2. **Eenvoudig** kunnen samenwerken aan documentatie
 3. **Flexibel** verschillende toegangsniveaus kunnen geven
 4. **Transparant** kunnen werken zonder complexe procedures
 

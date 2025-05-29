@@ -1,18 +1,18 @@
 ---
-title: "❌ Test Document (Templated)"
+title: ❌ Test Document (Templated)
 sidebar_position: 999
-docStatus: templated
+docStatus: live
 ---
 
 # ❌ Test Document (Status: templated)
 
-**⚠️ Dit document zou NIET zichtbaar moeten zijn in productie builds!**
+**[WARN] Dit document zou NIET zichtbaar moeten zijn in productie builds!**
 
 Dit is een test document met `docStatus: templated`. Het demonstreert dat:
 
-- ✅ Het document zichtbaar is in **development** builds
+- [OK] Het document zichtbaar is in **development** builds
 - ❌ Het document wordt **uitgefilterd** in productie builds
-- 🔄 Het document kan later worden **geüpgrade** naar andere statussen
+- [WIP] Het document kan later worden **geüpgrade** naar andere statussen
 
 ## Status Testing
 

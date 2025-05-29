@@ -1,14 +1,25 @@
 ---
-title: "Kleurenpalet"
+title: Kleurenpalet
 sidebar_position: 2
-description: "Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden."
+description: Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden.
 slug: /public/branding/kleuren
-tags: [kroescontrol,branding,huisstijl,kleuren]
-keywords: [kleurenpalet,huisstijl,primaire kleuren,secundaire kleuren,hex-code,cmyk]
+tags:
+  - kroescontrol
+  - branding
+  - huisstijl
+  - kleuren
+keywords:
+  - kleurenpalet
+  - huisstijl
+  - primaire kleuren
+  - secundaire kleuren
+  - hex-code
+  - cmyk
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Kleurenpalet Kroescontrol
@@ -40,7 +51,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </div>
     <p>Deze kleur straalt betrouwbaarheid, professionaliteit en stabiliteit uit. Het is een van de kernkleuren van onze merkidentiteit.</p>
   </div>
-  
+
   <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
     <h3>Crimson Magenta (Karmozijn Magenta)</h3>
     <div style={{backgroundColor: '#c22757', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -62,7 +73,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
 
 <div style={{marginBottom: '30px'}}>
   <p>De Kroescontrol gradient is een karakteristiek element in onze visuele identiteit en wordt gebruikt in ons logo en beeldmerk. Het symboliseert de verbindende rol die Kroescontrol speelt als derde partij.</p>
-  
+
   <div style={{background: 'linear-gradient(90deg, #222b5b 0%, #c22757 100%)', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
     <div style={{display: 'flex', alignItems: 'center'}}>
       <div style={{width: '80px', height: '40px', background: 'linear-gradient(90deg, #222b5b 0%, #c22757 100%)', border: '1px solid white', marginRight: '15px', borderRadius: '3px', flexShrink: 0}}></div>
@@ -72,7 +83,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       </div>
     </div>
   </div>
-  
+
   <div style={{display: 'flex', flexWrap: 'wrap', gap: '15px'}}>
     <div style={{flex: '1 1 300px', background: 'linear-gradient(90deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px'}}></div>
     <div style={{flex: '1 1 300px', background: 'linear-gradient(180deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px'}}></div>
@@ -99,7 +110,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </div>
     <p>Straalt warmte, enthousiasme en creativiteit uit. Deze kleur wordt gebruikt voor accenten en het benadrukken van belangrijke elementen.</p>
   </div>
-  
+
   <div>
     <h3>Teal (Zeegroen)</h3>
     <div style={{backgroundColor: '#1c9c8e', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -115,7 +126,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </div>
     <p>Symboliseert vertrouwen, betrouwbaarheid en groei. Wordt gebruikt voor secundaire elementen en accenten.</p>
   </div>
-  
+
   <div>
     <h3>Royal Blue (Koningsblauw)</h3>
     <div style={{backgroundColor: '#2050a3', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -131,7 +142,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </div>
     <p>Staat voor loyaliteit, vertrouwen en wijsheid. Wordt gebruikt als aanvulling op de primaire blauwtint.</p>
   </div>
-  
+
   <div>
     <h3>Steel Blue (Staalblauw)</h3>
     <div style={{backgroundColor: '#8393a7', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -166,7 +177,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       </div>
     </div>
   </div>
-  
+
   <div>
     <h3>Donkergrijs</h3>
     <div style={{backgroundColor: '#333333', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -181,7 +192,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       </div>
     </div>
   </div>
-  
+
   <div>
     <h3>Lichtgrijs</h3>
     <div style={{backgroundColor: '#F2F2F2', color: '#333', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
@@ -196,7 +207,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       </div>
     </div>
   </div>
-  
+
   <div>
     <h3>Wit</h3>
     <div style={{backgroundColor: '#FFFFFF', color: '#333', padding: '20px', border: '1px solid #ddd', borderRadius: '5px', marginBottom: '10px'}}>
@@ -226,7 +237,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       <li>Social media en online marketing</li>
     </ul>
   </div>
-  
+
   <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '280px'}}>
     <h3>Toegankelijkheid</h3>
     <ul>
@@ -236,7 +247,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
       <li>Voor betere toegankelijkheid, vermijd tekst direct op de gradiënt</li>
     </ul>
   </div>
-  
+
   <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '280px'}}>
     <h3>Technische opmerkingen</h3>
     <ul>

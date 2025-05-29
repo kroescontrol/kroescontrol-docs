@@ -1,14 +1,25 @@
 ---
-title: "Introductie Kroescontrol"
+title: Introductie Kroescontrol
 sidebar_position: 1
-description: "Algemene informatie over Kroescontrol: wie we zijn, wat we doen en hoe we werken."
-tags: [kroescontrol,bedrijfsinformatie,diensten,contactgegevens]
-keywords: [it-detachering, platform engineering, kubernetes, cloud native]
+description: >-
+  Algemene informatie over Kroescontrol: wie we zijn, wat we doen en hoe we
+  werken.
+tags:
+  - kroescontrol
+  - bedrijfsinformatie
+  - diensten
+  - contactgegevens
+keywords:
+  - it-detachering
+  - platform engineering
+  - kubernetes
+  - cloud native
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
 image: /img/logo.svg
 slug: /public/algemeen/introductie
+docStatus: live
 ---
 
 # Introductie Kroescontrol
@@ -80,15 +91,15 @@ Strategisch advies en begeleiding bij het implementeren van DevOps-cultuur en -p
 
 Wil je meer weten over Kroescontrol of ben je geïnteresseerd in samenwerking? Neem dan contact met ons op:
 
-**Kroescontrol B.V.**  
-**Bezoekadres Klarenbeek**: Oudhuizerstraat 31, 7382 BS Klarenbeek  
+**Kroescontrol B.V.**
+**Bezoekadres Klarenbeek**: Oudhuizerstraat 31, 7382 BS Klarenbeek
 **Bezoekadres Amsterdam**: Stationsplein 9, 1012 AB Amsterdam
 
-**E-mail**: info@kroescontrol.nl  
+**E-mail**: info@kroescontrol.nl
 **Telefoon**: 06-34116494 (Serge Kroes)
 
-**Directie**:  
-Serge Kroes - s.kroes@kroescontrol.nl  
+**Directie**:
+Serge Kroes - s.kroes@kroescontrol.nl
 Patriek Radewalt - patriek@kroescontrol.nl
 
 ## Meer informatie
