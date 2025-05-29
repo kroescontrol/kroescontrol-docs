@@ -9,7 +9,7 @@
 .cache-loader
 
 # Generated reports (created during build)
-docs-internal/statusreport.md
+docs-internal/_statusreport.md
 docs-internal/statusreport.json
 
 # Environment variables
