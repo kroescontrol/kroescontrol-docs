@@ -2,7 +2,7 @@
 title: Werken bij Kroescontrol
 sidebar_position: 1
 description: Informatie over werken bij Kroescontrol.
-slug: /public/werken-bij
+slug: /werken-bij
 tags:
   - werken-bij
   - carriere

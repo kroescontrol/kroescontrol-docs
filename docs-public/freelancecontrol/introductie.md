@@ -2,7 +2,7 @@
 title: Wat is Freelancecontrol
 sidebar_position: 2
 description: Introductie tot het Freelancecontrol model.
-slug: /public/freelancecontrol/introductie
+slug: /freelancecontrol/introductie
 tags:
   - freelancecontrol
   - werkmodel

@@ -1,11 +1,10 @@
 {
-  "label": "Kennismaking Kroescontrol",
-  "position": 3,
+  "label": "Kroescontrol Engineer",
+  "position": 20,
   "collapsed": true,
   "link": {
-    "type": "generated-index",
-    "title": "Kennismaking Kroescontrol",
-    "description": "Meer gedetailleerde informatie voor engineers in de oriëntatiefase"
+    "type": "doc",
+    "id": "kennismaking/index"
   },
   "customProps": {
     "description": "Meer gedetailleerde informatie voor engineers in de oriëntatiefase",

@@ -2,7 +2,7 @@
 title: Budgetstructuren
 sidebar_position: 3
 description: Uitleg over de verschillende budgetstructuren bij Kroescontrol.
-slug: /public/kennismaking/budgetten
+slug: /kennismaking/budgetten
 tags:
   - kroescontrol
   - budgetten

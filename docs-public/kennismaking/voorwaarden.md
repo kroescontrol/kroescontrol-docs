@@ -2,7 +2,7 @@
 title: Arbeidsvoorwaarden
 sidebar_position: 4
 description: Complete informatie over de arbeidsvoorwaarden bij Kroescontrol.
-slug: /public/kennismaking/voorwaarden
+slug: /kennismaking/voorwaarden
 tags:
   - kroescontrol
   - arbeidsvoorwaarden

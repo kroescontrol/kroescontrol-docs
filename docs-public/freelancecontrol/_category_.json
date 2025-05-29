@@ -1,11 +1,10 @@
 {
   "label": "Freelancecontrol Model",
-  "position": 4,
+  "position": 30,
   "collapsed": true,
   "link": {
-    "type": "generated-index",
-    "title": "Freelancecontrol Model",
-    "description": "Informatie over het alternatieve model voor zelfstandige professionals"
+    "type": "doc",
+    "id": "freelancecontrol/index"
   },
   "customProps": {
     "description": "Informatie over het alternatieve model voor zelfstandige professionals",

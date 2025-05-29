@@ -4,7 +4,7 @@ sidebar_position: 4
 description: >-
   Het Kroescontrol beeldmerk in verschillende varianten en formaten, met
   richtlijnen voor gebruik.
-slug: /public/branding/beeldmerk
+slug: /branding/beeldmerk
 tags:
   - kroescontrol
   - branding

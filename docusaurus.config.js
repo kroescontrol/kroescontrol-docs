@@ -290,7 +290,7 @@ module.exports = {
         },
         items: [
           {
-            to: '/home',
+            to: '/welkom',
             position: 'left',
             label: PUBLIC_ONLY ? 'Welkom' : 'Public',
           },
@@ -337,7 +337,7 @@ module.exports = {
             items: [
               {
                 label: 'Werkafspraken',
-                to: '/home',
+                to: '/welkom',
               },
             ],
           },

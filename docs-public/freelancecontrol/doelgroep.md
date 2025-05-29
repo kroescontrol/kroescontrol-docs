@@ -2,7 +2,7 @@
 title: Voor wie is Freelancecontrol
 sidebar_position: 4
 description: Uitleg over de doelgroep van Freelancecontrol.
-slug: /public/freelancecontrol/doelgroep
+slug: /freelancecontrol/doelgroep
 tags:
   - freelancecontrol
   - doelgroep

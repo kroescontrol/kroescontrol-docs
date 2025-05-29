@@ -1,9 +1,9 @@
 ---
-title: "Kroescontrol Documentatie"
+title: "Welkom bij Kroescontrol"
 docStatus: "live"
 sidebar_position: 0
 description: "Welkom bij de centrale documentatie hub voor Kroescontrol."
-slug: /home
+slug: /welkom
 tags: [documentatie,overzicht,kroescontrol]
 last_update:
   date: 2025-05-21
@@ -12,34 +12,25 @@ last_update:
 
 # Welkom bij Kroescontrol
 
-Welkom bij de centrale documentatie hub voor Kroescontrol. Hier vind je alle informatie die je nodig hebt over ons team, onze diensten en werkwijze.
+Welkom bij de documentatie van Kroescontrol. Navigeer naar de gewenste sectie:
 
-## Over Deze Documentatie
+## 🏢 Over Kroescontrol
 
-Deze documentatie is bedoeld voor:
+- [Maak Kennis Met Kroescontrol](/over-kroescontrol) - Ons verhaal, visie en werkwijze
+- [Klantenportfolio](/klanten) - Voor wie we werken en wat we doen
+- [Informatieorganisatie](/informatieorganisatie) - Hoe we informatie organiseren
+- [Contact](/contact) - Bereikbaarheid en vestigingen
 
-- **Huidige medewerkers**: Alle informatie over budgetten, procedures en voorwaarden
-- **Potentiële medewerkers**: Inzicht in wat Kroescontrol te bieden heeft
-- **Klanten en partners**: Informatie over onze werkwijze en dienstverlening
+## 💼 Voor Professionals
 
-## Belangrijkste secties
+- [Werken bij Kroescontrol](/werken-bij) - Carrièremogelijkheden en cultuur
+- [Kroescontrol Engineer](/kroescontrol-engineer) - Allesomvattende IT-professionals
+- [Freelancecontrol Model](/freelancecontrol) - Alternatief model voor zelfstandigen
 
-Onze documentatie omvat:
+## 🛠️ Tools & Branding
 
-- **Algemene informatie**: Over ons team en onze werkwijze
-- **Werken bij Kroescontrol**: Carrièremogelijkheden en werksfeer
-- **Kennismaking**: Een introductie tot onze belangrijkste features
-- **Freelancecontrol Model**: Onze innovatieve aanpak voor freelancers
-- **Tools & Processen**: Documentatie en procesrichtlijnen
-- **Huisstijl & Branding**: Richtlijnen voor onze visuele identiteit
-
-## Aan de slag
-
-Begin met het verkennen van de documentatie door een van de onderstaande secties te kiezen:
-
-- [Maak Kennis Met Kroescontrol](/public/algemeen/over-kroescontrol)
-- [Werken bij Kroescontrol](/public/werken-bij)
-- [Kennismaking](/public/kennismaking)
+- [Tools & Processen](/public/tools) - Documentatie en werkprocessen
+- [Huisstijl & Branding](/branding) - Logo's, kleuren en downloads
 
 ## Hulp nodig?
 

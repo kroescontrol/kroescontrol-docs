@@ -2,7 +2,7 @@
 title: Vacatures
 sidebar_position: 4
 description: Actuele vacatures bij Kroescontrol.
-slug: /public/werken-bij/vacatures
+slug: /werken-bij/vacatures
 tags:
   - kroescontrol
   - vacatures

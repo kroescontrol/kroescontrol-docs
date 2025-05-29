@@ -3,8 +3,8 @@ title: "Contact"
 docStatus: "live"
 sidebar_position: 4
 description: "Contactinformatie van Kroescontrol."
-slug: /public/algemeen/contact
-tags: [algemeen,contact,bereikbaarheid,vestigingen]
+slug: /contact
+tags: [kroescontrol,contact,bereikbaarheid,vestigingen]
 keywords: [email,adres,telefoon,sociale media,locatie,klarenbeek,amsterdam]
 image: /img/logo.svg
 last_update:
