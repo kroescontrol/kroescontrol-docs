@@ -1,0 +1,97 @@
+# Kroescontrol Documentation Categories
+# Statische lijst voor geautomatiseerde category generatie
+# Format: hoofdcategorie/subcategorie/subsectie
+# Gebruik: ./scripts/generate-categories.sh < categories.txt
+
+# ==============================================
+# DOCS-INTERNAL (HR, processen, tools, security)
+# ==============================================
+
+docs-internal/personeel/registratie
+docs-internal/personeel/arbeidsovereenkomsten
+docs-internal/personeel/handboek
+docs-internal/personeel/pensioen
+docs-internal/personeel/cao
+
+docs-internal/beveiliging/toegangsbeheer
+docs-internal/beveiliging/compliance
+docs-internal/beveiliging/procedures
+docs-internal/beveiliging/tools
+docs-internal/beveiliging/training
+docs-internal/beveiliging/incident-response
+
+docs-internal/werkafspraken/introductie
+docs-internal/werkafspraken/budget-structuren
+docs-internal/werkafspraken/reglementen
+docs-internal/werkafspraken/persoonlijke-voorstellen
+
+docs-internal/ontwikkeling/self-directed-learning
+docs-internal/ontwikkeling/training-programmas
+docs-internal/ontwikkeling/certificeringen
+
+docs-internal/kantoor/amsterdam
+docs-internal/kantoor/faciliteiten
+docs-internal/kantoor/mr-green
+
+# ==============================================
+# DOCS-OPERATIONS (Operationele procedures, klanten)
+# ==============================================
+
+docs-operations/klanten/opdracht-portals
+docs-operations/klanten/markt-positie
+docs-operations/klanten/inhuur-procedures
+docs-operations/klanten/gegevens-aanlevering
+
+docs-operations/uren/registratie
+docs-operations/uren/maandrapportage
+docs-operations/uren/factuur-koppeling
+
+docs-operations/fleet/auto/athlon-flex
+docs-operations/fleet/auto/procedures
+docs-operations/fleet/auto/aanvragen
+docs-operations/fleet/mobiliteit
+
+docs-operations/operations/procedures
+docs-operations/operations/werkprocessen
+docs-operations/operations/kwaliteit
+
+docs-operations/sna/registratie
+docs-operations/sna/verklaringen
+docs-operations/sna/procedures
+
+docs-operations/management/serge-patriek
+docs-operations/management/besluiten
+docs-operations/management/strategie
+
+# ==============================================
+# DOCS-FINANCE (Financiële processen, budgetten)
+# ==============================================
+
+docs-finance/facturatie/nummering
+docs-finance/facturatie/magnit-reverse-billing
+docs-finance/facturatie/kpn-yem
+docs-finance/facturatie/procedures
+
+docs-finance/administratie/winst-in-balans
+docs-finance/administratie/bedrijfsgegevens
+docs-finance/administratie/procedures
+docs-finance/administratie/boekhouding
+
+docs-finance/loon/cao-toepassing
+docs-finance/loon/procedures
+docs-finance/loon/verwerking
+
+docs-finance/freelancecontrol/basis-financieel
+docs-finance/freelancecontrol/werking-financieel
+docs-finance/freelancecontrol/todo-financieel
+
+docs-finance/projecten/migratie-documentatie
+docs-finance/projecten/documentatiestructuur
+docs-finance/projecten/prompts
+
+# ==============================================
+# TOTAAL: 45 categorieën
+# docs-internal: 21 categorieën
+# docs-operations: 12 categorieën  
+# docs-finance: 12 categorieën
+# ==============================================
