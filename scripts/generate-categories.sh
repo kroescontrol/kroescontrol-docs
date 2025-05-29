@@ -56,6 +56,7 @@ Modi:
   full          - Volledige pipeline: create + prompt
   status        - Check docStatus van alle categorieën
   clean         - Verwijder lege directories (VOORZICHTIG!)
+  remove        - Verwijder volledige categorieën met inhoud (beschermt live content)
   stdin         - Lees categorieën van stdin
 
 Filters:
@@ -70,6 +71,7 @@ Voorbeelden:
   $0 prompt security                # Genereer prompts voor security
   $0 full docs-finance              # Volledige pipeline voor finance
   $0 status                         # Check docStatus van alles
+  $0 remove security                # Verwijder alle security categorieën
   
   # Via stdin:
   echo "docs-internal/beveiliging/compliance" | $0 stdin create
@@ -80,6 +82,7 @@ Veiligheid:
   - Maakt alleen directories aan die nog niet bestaan
   - Overschrijft geen bestaande PROMPT.md bestanden
   - Gebruikt buildPrompt.sh voor veiligheidscontroles
+  - Remove mode controleert docStatus en beschermt live content automatisch
 
 EOF
 }
@@ -180,13 +183,31 @@ check_docstatus() {
     local full_path="$REPO_ROOT/$category"
     
     if [ ! -d "$full_path" ]; then
-        echo "📁 NO_DIR"
+        echo "NO_DIR"
         return
     fi
     
-    # Gebruik analyzeDocStatus.js
-    local status_output=$(node "$REPO_ROOT/scripts/analyzeDocStatus.js" report "$category" 2>/dev/null | grep -E "(live|templated|generated|completed)" | head -1 || echo "❓ UNKNOWN")
-    echo "$status_output"
+    # Check alle .md bestanden in de directory voor docStatus
+    local has_live=false
+    local has_any_files=false
+    
+    # Zoek alle .md bestanden in de directory
+    find "$full_path" -name "*.md" -type f | while read -r md_file; do
+        has_any_files=true
+        # Extract docStatus uit frontmatter
+        local doc_status=$(grep "^docStatus:" "$md_file" 2>/dev/null | head -1 | sed 's/docStatus: *//' | tr -d ' \r\n')
+        if [ "$doc_status" = "live" ]; then
+            echo "LIVE_FOUND"
+            exit 1
+        fi
+    done
+    
+    # Check result van subshell
+    if [ $? -eq 1 ]; then
+        echo "live"
+    else
+        echo "safe"
+    fi
 }
 
 # Functie: Maak directory structuur
@@ -257,9 +278,20 @@ generate_prompt() {
     
     # Safety check - gebruik buildPrompt.sh om live files te detecteren
     info "Safety check voor $category..."
-    if ! "$REPO_ROOT/scripts/buildPrompt.sh" --stdout --quiet "$category" >/dev/null 2>&1; then
-        error "Safety check gefaald voor $category - mogelijk live content"
-        return 1
+    
+    # Probeer buildPrompt.sh - capture exit code
+    if "$REPO_ROOT/scripts/buildPrompt.sh" --stdout --quiet "$category" >/dev/null 2>&1; then
+        debug "Safety check OK voor $category"
+    else
+        local exit_code=$?
+        # Exit code 1 kan betekenen: live files (error) of missing PROMPT.md (warning)
+        # Probeer specifieke live file check
+        if "$REPO_ROOT/scripts/buildPrompt.sh" --stdout --quiet "$category" 2>&1 | grep -q "Live bestanden"; then
+            error "Safety check gefaald voor $category - bevat live content!"
+            return 1
+        else
+            debug "Safety check warning voor $category - PROMPT.md ontbreekt (normaal voor nieuwe directories)"
+        fi
     fi
     
     # Genereer PROMPT.md met meta-prompt
@@ -270,14 +302,115 @@ generate_prompt() {
     local sub_category=$(echo "$category" | cut -d'/' -f2)
     local subsection=$(echo "$category" | cut -d'/' -f3)
     
-    # Maak basis PROMPT.md template
+    # Bepaal category-specific context
+    local specific_focus=""
+    local old_files=""
+    local current_tools=""
+    local responsible_roles=""
+    local compliance_requirements=""
+    local category_friendly_name=""
+    local specific_keywords=""
+    
+    # Category-specific configuratie
+    case "$sub_category" in
+        "facturatie")
+            specific_focus="Factuurnummer systemen, billing procedures, client-specific workflows"
+            old_files="Procesbeschrijving Factuurnummering bij Kroescontrol.md, Procesbeschrijving Magnit reverse billing.md, Procesbeschrijving facturatie KPN_YEM.md"
+            current_tools="Billing Hub, Administratiekantoor Winst in Balans, Client portals"
+	    responsible_roles="Bruno (administratie), Patriek(goedkeuring), Serge (goedkeuring), Engineers (tijdregistratie)"
+            compliance_requirements="BTW procedures, Client requirements"
+            specific_keywords="facturatie, billing, reverse-billing, factuurnummering"
+            ;;
+        "compliance")
+            specific_focus="SNA procedures, CAO naleving, audit preparatie, certificering"
+            old_files="SNA/Kroescontrol procedure Loonadministatie en Cao-Toepassing.md, SNA/directe link naar register en verklaring.md"
+            current_tools="SNA register systeem, CAO database, HoorayHR compliance module"
+            responsible_roles="Bruno (payroll), Serge (compliance officer), HR (CAO naleving)"
+            compliance_requirements="SNA certificering onderhoud, CAO periodic compliance, Audit trail maintenance"
+            specific_keywords="SNA, CAO, compliance, audit, certificering, loonadministratie"
+            ;;
+        "beveiliging")
+            specific_focus="Security procedures, toegangsbeheer, incident response"
+            old_files="INDOCU onboarding spullen.md, Procesbeschrijving Personeelsregistratie.md"
+            current_tools="1Password, Google Workspace Admin, HoorayHR access management"
+            responsible_roles="Serge (security officer), IT Admin (access provisioning)"
+            compliance_requirements="GDPR compliance, Security incident reporting, Access audit trails"
+            specific_keywords="security, toegang, 1password, incidents, privacy"
+            ;;
+        "personeel")
+            specific_focus="HR procedures, HoorayHR, arbeidsovereenkomsten, personeelsadministratie"
+            old_files="Arbeidsovereenkomst Kroescontrol Engineer (template).md, Personeelshandboek van Kroescontrol.md"
+            current_tools="HoorayHR, Google Workspace, Pensioen administratie"
+            responsible_roles="HR (contracts), Bruno (payroll), Serge (approval)"
+            compliance_requirements="CAO compliance, Contract law, GDPR for employee data"
+            specific_keywords="personeel, contracts, arbeidsovereenkomst, HR, personeelshandboek"
+            ;;
+        "werkafspraken")
+            specific_focus="Budget structuren, reglementen, engineer agreements"
+            old_files="62 Kroescontrol Engineerbudget reglement.md, 03 Kroescontrol Introductie.md, 24 Welkom bij Kroescontrol.md"
+            current_tools="Engineer Hub, Budget tracking sheets, HoorayHR declarations"
+            responsible_roles="Engineers (budget gebruik), Management (approval), Finance (tracking)"
+            compliance_requirements="Budget compliance, Tax implications, Engineer agreement adherence"
+            specific_keywords="budget, engineer-budget, reglement, werkafspraken, mobility"
+            ;;
+        "ontwikkeling")
+            specific_focus="Carrièreontwikkeling, training, certificeringen"
+            old_files="Kroescontrol Self-Directed Learning.md, 45 Engineer Hub_ Uitleg Tabbladen & Formules.md"
+            current_tools="Engineer Hub training module, Certification platforms, Learning budget tracking"
+            responsible_roles="Engineers (development), Management (approval), HR (tracking)"
+            compliance_requirements="Training budget compliance, Certification maintenance"
+            specific_keywords="training, certificering, carrière, ontwikkeling, self-directed-learning"
+            ;;
+        "operations")
+            specific_focus="Operationele procedures, werkprocessen, kwaliteit"
+            old_files=""
+            current_tools="Project management tools, Quality assurance systems"
+            responsible_roles="Operations team, Quality manager, Project leads"
+            compliance_requirements="ISO procedures, Quality standards, Process documentation"
+            specific_keywords="operations, procedures, kwaliteit, werkprocessen"
+            ;;
+        "klanten")
+            specific_focus="Client procedures, inhuur workflows, markt positie"
+            old_files="Opdrachten portals toelichting.md, Toelichting - de markt - onze positite.md"
+            current_tools="Client portals, CRM systems, Contract management"
+            responsible_roles="Account managers, Engineers (client delivery), Management (contracts)"
+            compliance_requirements="Client contractual obligations, SLA compliance"
+            specific_keywords="klanten, inhuur, opdrachten, markt, client-portals"
+            ;;
+        *)
+            # Default voor onbekende categorieën
+            specific_focus="$subsection procedures en workflows binnen $sub_category"
+            old_files="Legacy documentation gerelateerd aan $subsection"
+            current_tools="Relevante Kroescontrol tools en systemen"
+            responsible_roles="Team leden werkend met $subsection"
+            compliance_requirements="Standaard Kroescontrol compliance vereisten"
+            specific_keywords="$sub_category, $subsection, procedures"
+            ;;
+    esac
+    
+    # Bepaal friendly name
+    case "$subsection" in
+        "toegangsbeheer") category_friendly_name="Toegangsbeheer en Account Provisioning" ;;
+        "nummering") category_friendly_name="Factuurnummering Procedures" ;;
+        "cao-toepassing") category_friendly_name="CAO Toepassing en Naleving" ;;
+        "winst-in-balans") category_friendly_name="Administratiekantoor Procedures" ;;
+        *) category_friendly_name="$(echo $subsection | sed 's/-/ /g' | sed 's/\b\w/\U&/g')" ;;
+    esac
+    
+    # Zoek echte /old referenties
+    local found_old_files=""
+    if [ -d "$REPO_ROOT/old" ]; then
+        found_old_files=$(find "$REPO_ROOT/old" -name "*.md" -type f | xargs grep -l "$subsection\|$(echo $subsection | tr '-' ' ')" 2>/dev/null | head -3 | sed "s|$REPO_ROOT/old/|- |" | tr '\n' ' ' || echo "- Geen directe bronnen gevonden")
+    fi
+    
+    # Maak category-aware PROMPT.md template
     cat > "$prompt_file" << EOF
 ---
-title: "PROMPT $sub_category $subsection"
+title: "PROMPT $category_friendly_name"
 sidebar_position: 99
-description: "Prompt bestand voor $category documentatie"
-tags: [prompt, claude-code, $sub_category]
-keywords: [prompt, template, content-generatie, $subsection]
+description: "Context-aware prompt voor $category_friendly_name documentatie"
+tags: [prompt, claude-code, $sub_category, $subsection]
+keywords: [$specific_keywords]
 last_update:
   date: $(date +%Y-%m-%d)
   author: Serge Kroes
@@ -285,49 +418,63 @@ image: /img/logo.svg
 docStatus: templated
 ---
 
-# PROMPT: $sub_category - $subsection
+# PROMPT: $category_friendly_name
 
-## Context voor Content Generatie
+## 🎯 SPECIFIEKE CONTEXT DEFINITIE
 
-Deze directory bevat documentatie over $subsection binnen $sub_category.
+### Wat deze categorie doet:
+**$subsection** binnen **$sub_category** behandelt: $specific_focus
 
-Referentie bronnen uit ./old/:
-$(grep -l "$subsection\|$(echo $subsection | tr '-' ' ')" "$REPO_ROOT/old"/**/*.md 2>/dev/null | head -3 | sed 's|.*/old/|- |' || echo "- Geen directe bronnen gevonden")
+### Directe Bronnen uit ./old/:
+$old_files
 
-## Specifieke Instructies
+### Gevonden legacy referenties:
+$found_old_files
 
-### Doelgroep
-Kroescontrol team leden die werken met $subsection procedures.
+### Kroescontrol Context:
+- **Huidige tools**: $current_tools
+- **Verantwoordelijke rollen**: $responsible_roles  
+- **Compliance vereisten**: $compliance_requirements
 
-### Tone & Stijl
-- Professioneel maar toegankelijk
-- Stap-voor-stap instructies waar mogelijk
-- Concrete voorbeelden en templates
-- Referenties naar bestaande tools (HoorayHR, Engineer Hub, etc.)
+## 📋 CONCRETE CONTENT INSTRUCTIES
 
-### Vereiste Secties
-1. **Overzicht** - Wat is $subsection en waarom belangrijk
-2. **Procedures** - Concrete stappen en workflows  
-3. **Tools & Resources** - Benodigde tools en toegang
-4. **Veelgestelde Vragen** - Common issues en oplossingen
-5. **Contacten** - Wie te benaderen voor hulp
+### Verplichte Documentatie Onderdelen:
 
-### Content Richtlijnen
-- Gebruik concrete Kroescontrol voorbeelden
-- Verwijs naar bestaande documentatie waar relevant
-- Voeg checklists toe waar mogelijk
-- Houd rekening met verschillende gebruikersrollen (engineer, admin, HR)
+#### 1. **Overzicht & Doel** (Altijd eerste sectie)
+- Waarom bestaat deze procedure binnen Kroescontrol?
+- Welke business need lost het op?
+- Wie gebruikt het dagelijks?
+- Referentie naar legacy documentatie uit ./old/
 
-## Templates
+#### 2. **Concrete Procedures** (Hoofdcontent)
+Gebaseerd op ./old/ referenties:
+- **Stap-voor-stap workflows** met Kroescontrol specifieke details
+- **Voorbeelden met echte data** (geanonimiseerd)  
+- **Tools en systemen** die gebruikt worden ($current_tools)
+- **Escalatiepunten** bij problemen
 
-### Frontmatter Template
+#### 3. **Praktische Resources** (Actionable)
+- **Checklist templates** voor dagelijks gebruik
+- **Contactgegevens** voor ondersteuning ($responsible_roles)
+- **Link naar tools** en toegangsprocedures
+- **Troubleshooting guide** voor veelvoorkomende issues
+
+#### 4. **Compliance & Governance** (Kroescontrol specifiek)
+Focus op: $compliance_requirements
+- **SNA/CAO vereisten** (indien van toepassing)
+- **Privacy/Security** overwegingen
+- **Audit trails** en documentatie vereisten
+
+## 🎨 OUTPUT SPECIFICATIES
+
+### Frontmatter Requirements:
 \`\`\`yaml
 ---
-title: $subsection [Specifieke Titel]
-sidebar_position: [nummer]
-description: [Korte beschrijving]
-tags: [$sub_category, $subsection, procedures]
-keywords: [relevante, zoektermen]
+title: "$category_friendly_name"
+sidebar_position: 1
+description: "Kroescontrol $category_friendly_name procedures en workflows"
+tags: [$sub_category, $subsection, procedures, kroescontrol]
+keywords: [$specific_keywords]
 last_update:
   date: $(date +%Y-%m-%d)
   author: System
@@ -336,20 +483,61 @@ docStatus: generated
 ---
 \`\`\`
 
-### Content Structuur
-1. **Hoofdtitel** met korte introductie
-2. **Overzicht sectie** met key points
-3. **Gedetailleerde procedures** met substappen
-4. **Tools en toegang** informatie
-5. **FAQ sectie** met veel voorkomende vragen
-6. **Contactinformatie** en escalatiepunten
+### Content Structuur:
+\`\`\`markdown
+# $category_friendly_name
 
-## Belangrijke Aandachtspunten
+## Overzicht
+[Waarom belangrijk voor Kroescontrol + referentie naar ./old/ legacy files]
 
-- **Privacy**: Geen echte persoonlijke gegevens in voorbeelden
-- **Security**: Volg Kroescontrol security richtlijnen
-- **Compliance**: Houd rekening met SNA/CAO vereisten waar relevant
-- **Updates**: Link naar source systemen voor actuele informatie
+## Procedures  
+[Concrete stappen uit legacy documentatie, gemoderniseerd voor huidige tools]
+
+## Tools & Toegang
+[$current_tools - welke systemen + hoe toegang krijgen]
+
+## Veelgestelde Vragen
+[Uit legacy docs + nieuwe vragen gebaseerd op huidige workflows]
+
+## Contacten & Escalatie
+[$responsible_roles - wie benaderen + wanneer]
+
+## Gerelateerde Documentatie  
+[Links naar andere relevante procedures binnen $main_category]
+\`\`\`
+
+## 🔍 KWALITEITSEISEN
+
+### Must-Have Elementen:
+- [✓] **Concrete acties** - elke sectie moet actionable zijn
+- [✓] **Kroescontrol specifiek** - geen generieke templates  
+- [✓] **Legacy gebaseerd** - minimaal 70% uit ./old/ content
+- [✓] **Tool integratie** - verwijzingen naar $current_tools
+- [✓] **Role-based** - duidelijk wie wat doet ($responsible_roles)
+
+### Verboden:
+- [✗] **Vage instructies** ("neem contact op" zonder specifieke persoon)
+- [✗] **Generic templates** zonder Kroescontrol context
+- [✗] **Ontbrekende ./old/ referenties** 
+- [✗] **Tool namen** zonder uitleg hoe toegang te krijgen
+
+## 🎯 VERIFICATIE CHECKLIST
+
+Voor deze specifieke documentatie:
+- [ ] Verwijst naar specifieke ./old/ files: $old_files
+- [ ] Bevat concrete Kroescontrol voorbeelden uit legacy docs
+- [ ] Noemt tools en toegangsprocedures: $current_tools
+- [ ] Heeft duidelijke escalatiepunten: $responsible_roles
+- [ ] Volgt compliance vereisten: $compliance_requirements
+- [ ] Is actionable voor dagelijks gebruik
+- [ ] Integreert met bestaande $main_category workflows
+
+## 🚨 CATEGORY-SPECIFIC FOCUS
+
+Voor $sub_category/$subsection specifiek:
+$specific_focus
+
+**Let op**: Deze documentatie moet praktisch bruikbaar zijn voor Kroescontrol team leden en gebaseerd zijn op bewezen procedures uit de legacy documentatie.
 EOF
 
     success "PROMPT.md gegenereerd: $category"
@@ -416,6 +604,26 @@ case "$MODE" in
         else
             info "Clean geannuleerd"
         fi
+        ;;
+        
+    "remove")
+        info "=== REMOVE CATEGORIEËN ==="
+        read_categories | filter_categories "$FILTER" | while IFS= read -r category; do
+            [[ -z "$category" ]] && continue
+            full_path="$REPO_ROOT/$category"
+            if [ -d "$full_path" ]; then
+                # Check docStatus voor safety
+                status_check=$(check_docstatus "$category")
+                if [[ "$status_check" =~ "live" ]]; then
+                    warn "OVERGESLAGEN (live content): $category"
+                else
+                    rm -rf "$full_path"
+                    success "VERWIJDERD: $category"
+                fi
+            else
+                debug "Bestaat niet: $category"
+            fi
+        done
         ;;
         
     *)
