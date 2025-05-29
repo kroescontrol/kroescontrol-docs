@@ -2,7 +2,7 @@
 title: Verschillen met Kroescontrol
 sidebar_position: 3
 description: De belangrijkste verschillen tussen Freelancecontrol en Kroescontrol.
-slug: /public/freelancecontrol/verschillen
+slug: /freelancecontrol/verschillen
 tags:
   - freelancecontrol
   - vergelijking

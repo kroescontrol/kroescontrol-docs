@@ -2,7 +2,7 @@
 title: Engineer Hub
 sidebar_position: 2
 description: 'Introductie tot de Engineer Hub, ons transparante budgetbeheersysteem.'
-slug: /public/kennismaking/engineer-hub
+slug: /kennismaking/engineer-hub
 tags:
   - kroescontrol
   - engineer-hub

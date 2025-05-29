@@ -1,10 +1,10 @@
 ---
 title: Maak Kennis Met Kroescontrol
-sidebar_position: 2
+sidebar_position: 1
 description: 'Ontdek meer over het Kroescontrol team, onze geschiedenis en visie.'
-slug: /public/algemeen/over-kroescontrol
+slug: /over-kroescontrol
 tags:
-  - algemeen
+  - kroescontrol
   - bedrijf
   - geschiedenis
   - visie

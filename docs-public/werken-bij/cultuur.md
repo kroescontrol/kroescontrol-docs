@@ -2,7 +2,7 @@
 title: Onze Cultuur & Waarden
 sidebar_position: 2
 description: Informatie over de cultuur en waarden van Kroescontrol.
-slug: /public/werken-bij/cultuur
+slug: /werken-bij/cultuur
 tags:
   - kroescontrol
   - cultuur

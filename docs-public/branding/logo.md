@@ -4,7 +4,7 @@ sidebar_position: 3
 description: >-
   Het Kroescontrol logo in verschillende varianten en formaten, met richtlijnen
   voor gebruik.
-slug: /public/branding/logo
+slug: /branding/logo
 tags:
   - kroescontrol
   - branding

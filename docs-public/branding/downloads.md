@@ -4,7 +4,7 @@ sidebar_position: 5
 description: >-
   Download alle Kroescontrol branding materialen, zoals logo's, beeldmerken en
   documentatie.
-slug: /public/branding/downloads
+slug: /branding/downloads
 tags:
   - kroescontrol
   - branding
