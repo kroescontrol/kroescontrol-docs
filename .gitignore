@@ -42,3 +42,4 @@ build-normal.log*
 build-public.log*
 .vercel
 build.backup
+docstatus-report.csv
