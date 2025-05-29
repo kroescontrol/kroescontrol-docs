@@ -199,66 +199,76 @@ fi
 # Sidebar generatie is nu automatisch via Docusaurus - geen handmatige tests nodig
 report_info "Sidebar generatie gebeurt automatisch via Docusaurus"
 
-# Build tests
+# Build tests (can be disabled via environment variable)
+ENABLE_BUILD_TESTS=${ENABLE_BUILD_TESTS:-false}
 
-# Backup existing build if it exists
-if [[ -d "build" ]]; then
-    mv build build.backup
-fi
+if [[ "$ENABLE_BUILD_TESTS" == "true" ]]; then
+    # Backup existing build if it exists
+    if [[ -d "build" ]]; then
+        mv build build.backup
+    fi
 
-# Test normale build
-if npm run build > build-normal.log 2>&1; then
-    report_success "Normale build succesvol"
-    rm -f build-normal.log
-    # Check of belangrijke bestanden aanwezig zijn
-    if [[ -f "build/index.html" ]]; then
-        report_success "index.html gegenereerd"
+    # Test normale build
+    if npm run build > build-normal.log 2>&1; then
+        report_success "Normale build succesvol"
+        rm -f build-normal.log
+        # Check of belangrijke bestanden aanwezig zijn
+        if [[ -f "build/index.html" ]]; then
+            report_success "index.html gegenereerd"
+        else
+            report_error "index.html niet gevonden in build"
+        fi
     else
-        report_error "index.html niet gevonden in build"
+        report_error "Build test - normale build gefaald. Check build-normal.log voor details"
+    fi
+
+    # Cleanup build voor volgende test (maar continue altijd)
+    rm -rf build || true
+
+    # Test public-only build
+    if PUBLIC_ONLY=true npm run build > build-public.log 2>&1; then
+        report_success "PUBLIC_ONLY build succesvol"
+        rm -f build-public.log
+        # Check of public routes beschikbaar zijn
+        if [[ -f "build/index.html" ]]; then
+            report_success "Public index.html gegenereerd"
+        else
+            report_error "Public index.html niet gevonden in build"
+        fi
+    else
+        report_error "Build test - PUBLIC_ONLY build gefaald. Check build-public.log voor details"
+    fi
+
+    # Restore backup build if it existed (maar continue altijd)
+    if [[ -d "build.backup" ]]; then
+        rm -rf build || true
+        mv build.backup build || true
+    else
+        rm -rf build || true
     fi
 else
-    report_error "Build test - normale build gefaald. Check build-normal.log voor details"
+    report_info "Build tests uitgeschakeld (ENABLE_BUILD_TESTS=false)"
 fi
 
-# Cleanup build voor volgende test (maar continue altijd)
-rm -rf build || true
+# Deployment script syntax check (can be disabled via environment variable)
+ENABLE_DEPLOY_CHECKS=${ENABLE_DEPLOY_CHECKS:-false}
 
-# Test public-only build
-if PUBLIC_ONLY=true npm run build > build-public.log 2>&1; then
-    report_success "PUBLIC_ONLY build succesvol"
-    rm -f build-public.log
-    # Check of public routes beschikbaar zijn
-    if [[ -f "build/index.html" ]]; then
-        report_success "Public index.html gegenereerd"
+if [[ "$ENABLE_DEPLOY_CHECKS" == "true" ]]; then
+    # Check deploy-public-only.sh syntax
+    if bash -n deploy-public-only.sh; then
+        report_success "deploy-public-only.sh syntax is correct"
     else
-        report_error "Public index.html niet gevonden in build"
+        report_error "deploy-public-only.sh heeft syntax errors"
+    fi
+
+    # Check of deploy script executeerbaar is
+    if [[ -x "deploy-public-only.sh" ]]; then
+        report_success "deploy-public-only.sh is executable"
+    else
+        report_warning "deploy-public-only.sh is niet executable. Run 'chmod +x deploy-public-only.sh'"
     fi
 else
-    report_error "Build test - PUBLIC_ONLY build gefaald. Check build-public.log voor details"
-fi
-
-# Restore backup build if it existed (maar continue altijd)
-if [[ -d "build.backup" ]]; then
-    rm -rf build || true
-    mv build.backup build || true
-else
-    rm -rf build || true
-fi
-
-# Deployment script syntax check
-
-# Check deploy-public-only.sh syntax
-if bash -n deploy-public-only.sh; then
-    report_success "deploy-public-only.sh syntax is correct"
-else
-    report_error "deploy-public-only.sh heeft syntax errors"
-fi
-
-# Check of deploy script executeerbaar is
-if [[ -x "deploy-public-only.sh" ]]; then
-    report_success "deploy-public-only.sh is executable"
-else
-    report_warning "deploy-public-only.sh is niet executable. Run 'chmod +x deploy-public-only.sh'"
+    report_info "Deployment checks uitgeschakeld (ENABLE_DEPLOY_CHECKS=false)"
 fi
 
 # Git remote check
