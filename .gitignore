@@ -8,6 +8,10 @@
 .docusaurus
 .cache-loader
 
+# Generated reports (created during build)
+docs-internal/statusreport.md
+docs-internal/statusreport.json
+
 # Environment variables
 .env
 .env.local
