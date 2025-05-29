@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:public": "PUBLIC_ONLY=true docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && npm run post-build",
     "build:public": "PUBLIC_ONLY=true docusaurus build --config docusaurus.config.js",
     "debug": "npm run build && npm run test-routes",
     "debug:public": "PUBLIC_ONLY=true npm run build && npm run test-routes:public",
