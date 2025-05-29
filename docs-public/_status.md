@@ -31,7 +31,7 @@ import BuildStatus from '@site/src/components/BuildStatus';
 
 Voor **gedetailleerde status per document**, inclusief docStatus tracking en volledige statistieken:
 
-➡️ **[Bekijk volledige status rapportage](../internal/_statusreport)**
+➡️ **[Bekijk volledige status rapportage](/internal/_statusreport)**
 
 ---
 
