@@ -2,12 +2,20 @@
 title: Test Authenticatie
 sidebar_position: 1
 description: Test pagina voor OAuth authenticatie flow
-tags: [test, oauth, authenticatie]
-keywords: [test, oauth, github, authenticatie]
+tags:
+  - test
+  - oauth
+  - authenticatie
+keywords:
+  - test
+  - oauth
+  - github
+  - authenticatie
 last_update:
-  date: 2025-05-24
+  date: 2025-05-24T00:00:00.000Z
   author: Test
 image: /img/logo.svg
+docStatus: templated
 ---
 
 # Test Authenticatie
@@ -17,7 +25,7 @@ Deze pagina is een test voor de OAuth authenticatie implementatie.
 ## Status
 
 Als je deze pagina kunt zien, dan is de authenticatie:
-- ✅ **Succesvol** - je bent ingelogd via GitHub OAuth
+- [OK] **Succesvol** - je bent ingelogd via GitHub OAuth
 - ❌ **Mislukt** - je hebt deze pagina zonder authenticatie bereikt
 
 ## Test Informatie

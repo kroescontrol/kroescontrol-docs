@@ -1,12 +1,17 @@
 ---
-title: "Voor wie is Freelancecontrol"
+title: Voor wie is Freelancecontrol
 sidebar_position: 4
-description: "Uitleg over de doelgroep van Freelancecontrol."
+description: Uitleg over de doelgroep van Freelancecontrol.
 slug: /public/freelancecontrol/doelgroep
-tags: [freelancecontrol,doelgroep,zzp,ervaren-professionals]
+tags:
+  - freelancecontrol
+  - doelgroep
+  - zzp
+  - ervaren-professionals
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Voor wie is Freelancecontrol
@@ -26,19 +31,19 @@ Freelancecontrol is ontworpen voor een specifiek type IT professional: de zelfst
 
 Het Freelancecontrol model is specifiek ontwikkeld voor IT professionals die:
 
-1. **Zelfstandig willen opereren**  
+1. **Zelfstandig willen opereren**
    Je wilt je eigen projecten kiezen, je eigen werkwijze bepalen en zelf beslissen over je tijdsindeling.
 
-2. **Ondernemend zijn ingesteld**  
+2. **Ondernemend zijn ingesteld**
    Je hebt een proactieve houding, neemt initiatief in het vinden en behouden van klanten, en bent bereid risico's te nemen voor potentieel hogere verdiensten.
 
-3. **Vakspecialist zijn**  
+3. **Vakspecialist zijn**
    Je beschikt over specialistische kennis en ervaring in je vakgebied (Kubernetes, Cloud Native, Observability, SRE Engineering of aanverwante technologieën).
 
-4. **Administratieve lasten willen minimaliseren**  
+4. **Administratieve lasten willen minimaliseren**
    Je wilt je focussen op je vak en niet op boekhouding, facturatie, juridische zaken en administratie.
 
-5. **Juridische risico's willen beperken**  
+5. **Juridische risico's willen beperken**
    Je zoekt een constructie die voldoet aan de wet DBA en andere wetgeving, zonder zelf alle juridische complexiteit te hoeven doorgronden.
 
 ### Specifieke doelgroepen

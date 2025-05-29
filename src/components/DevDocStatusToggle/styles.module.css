@@ -1,0 +1,56 @@
+.toggleButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9998;
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toggleButton:hover {
+  background: #1565c0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toggleButton:active {
+  transform: translateY(0);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .toggleButton {
+  background: #f39c12;
+  color: #1c1e21;
+}
+
+[data-theme='dark'] .toggleButton:hover {
+  background: #e67e22;
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  .toggleButton {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Print styles - hide in print */
+@media print {
+  .toggleButton {
+    display: none !important;
+  }
+}

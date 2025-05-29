@@ -1,14 +1,27 @@
 ---
-title: "Maak Kennis Met Kroescontrol"
+title: Maak Kennis Met Kroescontrol
 sidebar_position: 2
-description: "Ontdek meer over het Kroescontrol team, onze geschiedenis en visie."
+description: 'Ontdek meer over het Kroescontrol team, onze geschiedenis en visie.'
 slug: /public/algemeen/over-kroescontrol
-tags: [algemeen,bedrijf,geschiedenis,visie,team]
-keywords: [ontstaan,specialisatie,toekomst,achtergrond,werksfeer,team,mensen]
+tags:
+  - algemeen
+  - bedrijf
+  - geschiedenis
+  - visie
+  - team
+keywords:
+  - ontstaan
+  - specialisatie
+  - toekomst
+  - achtergrond
+  - werksfeer
+  - team
+  - mensen
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Maak Kennis Met Kroescontrol
@@ -34,7 +47,7 @@ Door de jaren heen ontdekte Serge de waarde van kennisdeling en het stimuleren v
 Bij Kroescontrol specialiseren we ons in infrastructuur-automatisering, met Cloud Native engineering als kern. Ons team bestaat uit experts op het gebied van:
 
 - Platform Engineering
-- Cloud Native Transformatie 
+- Cloud Native Transformatie
 - Observability & Monitoring
 - SRE Engineering
 - DevOps Consultancy

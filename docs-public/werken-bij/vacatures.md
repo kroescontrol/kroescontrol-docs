@@ -1,14 +1,27 @@
 ---
-title: "Vacatures"
+title: Vacatures
 sidebar_position: 4
-description: "Actuele vacatures bij Kroescontrol."
+description: Actuele vacatures bij Kroescontrol.
 slug: /public/werken-bij/vacatures
-tags: [kroescontrol,vacatures,carriere,solliciteren,functies]
-keywords: [cloud-native,devops,sre,baan,sollicitatie,engineer,platform]
+tags:
+  - kroescontrol
+  - vacatures
+  - carriere
+  - solliciteren
+  - functies
+keywords:
+  - cloud-native
+  - devops
+  - sre
+  - baan
+  - sollicitatie
+  - engineer
+  - platform
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Vacatures
@@ -26,7 +39,7 @@ Bij Kroescontrol zijn we altijd op zoek naar getalenteerde professionals die ons
 
 ### Cloud Native Platform Engineer
 
-**Locatie:** Nederland (mix van thuiswerken en klantlocaties)  
+**Locatie:** Nederland (mix van thuiswerken en klantlocaties)
 **Type:** Fulltime
 
 #### Functieomschrijving
@@ -52,7 +65,7 @@ Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontro
 
 ### DevOps Engineer / Site Reliability Engineer
 
-**Locatie:** Nederland (mix van thuiswerken en klantlocaties)  
+**Locatie:** Nederland (mix van thuiswerken en klantlocaties)
 **Type:** Fulltime
 
 #### Functieomschrijving
@@ -98,17 +111,17 @@ Als er een wederzijdse klik is, doen we je een aanbod met daarin alle details ov
 
 ## Veelgestelde vragen
 
-**Moet ik al ervaring hebben met alle technologieën die jullie gebruiken?**  
+**Moet ik al ervaring hebben met alle technologieën die jullie gebruiken?**
 Nee, we verwachten niet dat je al expert bent in alle technologieën. Wat we belangrijker vinden is je leervermogen, je enthousiasme om nieuwe dingen te leren en je basiskennis van infrastructuur en Cloud Native principes.
 
-**Hoe lang duurt het sollicitatieproces gemiddeld?**  
+**Hoe lang duurt het sollicitatieproces gemiddeld?**
 We proberen het proces zo efficiënt mogelijk te houden. Doorgaans duurt het 2-3 weken van eerste gesprek tot aanbod, afhankelijk van de beschikbaarheid van beide partijen.
 
-**Kan ik ook parttime werken bij Kroescontrol?**  
+**Kan ik ook parttime werken bij Kroescontrol?**
 Ja, we staan open voor parttime dienstverbanden. De specifieke mogelijkheden bespreken we graag tijdens het sollicitatieproces.
 
-**Hoe gaan jullie om met remote werken?**  
+**Hoe gaan jullie om met remote werken?**
 We bieden een flexibele werkomgeving waarin een mix van thuiswerken, werken op kantoor en werken bij de klant mogelijk is. De exacte verdeling hangt af van het project, de klant en je persoonlijke voorkeuren.
 
-**Is Kroescontrol internationaal actief?**  
+**Is Kroescontrol internationaal actief?**
 Op dit moment zijn we primair actief in Nederland, maar we sluiten internationale projecten in de toekomst niet uit. Onze voertaal is Nederlands, maar Engels is ook gangbaar binnen onze organisatie.

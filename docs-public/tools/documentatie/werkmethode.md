@@ -1,14 +1,25 @@
 ---
-title: "Werkmethode Kroescontrol"
+title: Werkmethode Kroescontrol
 sidebar_position: 1
-description: "Overzicht van onze open en transparante werkmethode en filosofie."
+description: Overzicht van onze open en transparante werkmethode en filosofie.
 slug: /public/tools/documentatie/werkmethode
-tags: [werkmethode,filosofie,open-source,documentatie,samenwerking]
-keywords: [werkwijze,processen,transparantie,toegankelijkheid,versiebeheer]
+tags:
+  - werkmethode
+  - filosofie
+  - open-source
+  - documentatie
+  - samenwerking
+keywords:
+  - werkwijze
+  - processen
+  - transparantie
+  - toegankelijkheid
+  - versiebeheer
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+docStatus: live
 ---
 
 # Werkmethode Kroescontrol
