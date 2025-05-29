@@ -321,7 +321,7 @@ class DocumentationStatusReporter {
         markdown += 'sidebar_position: 999\n';
         markdown += 'sidebar_class_name: hidden\n';
         markdown += 'displayed_sidebar: null\n';
-        markdown += 'slug: /internal/statusreport\n';
+        markdown += 'slug: /statusreport\n';
         markdown += `description: Automatisch gegenereerd statusrapport van alle documentatie op ${date}\n`;
         markdown += 'tags: [status, rapport, documentatie, overzicht]\n';
         markdown += 'keywords: [status, report, documentation, statistics]\n';
