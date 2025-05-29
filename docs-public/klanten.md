@@ -1,12 +1,12 @@
 ---
 title: Klantenportfolio
-sidebar_position: 3
+sidebar_position: 2
 description: >-
   Onze klanten en projectvoorbeelden: voor wie werken we en wat hebben we
   gerealiseerd.
-slug: /public/algemeen/klanten
+slug: /klanten
 tags:
-  - algemeen
+  - kroescontrol
   - klanten
   - projecten
   - cases

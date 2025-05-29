@@ -8,27 +8,27 @@ const categories = [
   {
     title: 'Welkom bij Kroescontrol',
     description: 'Leer meer over onze werkprocessen, onboarding en bedrijfscultuur.',
-    link: '/home'
+    link: '/welkom'
   },
   {
     title: 'Werken bij Kroescontrol',
     description: 'Ontdek alles over de Kroescontrol werkwijze, bedrijfscultuur en voordelen.',
-    link: '/public/werken-bij'
+    link: '/werken-bij'
   },
   {
-    title: 'Kennismaking',
-    description: 'Informatie over onze budgetten, Engineer Hub en projecten.',
-    link: '/public/kennismaking'
+    title: 'Kroescontrol Engineer',
+    description: 'Ontdek wat het betekent om als engineer bij Kroescontrol te werken.',
+    link: '/kroescontrol-engineer'
   },
   {
     title: 'Freelancecontrol Model',
     description: 'Informatie over Freelancecontrol, wallet structuur en doelgroep.',
-    link: '/public/freelancecontrol'
+    link: '/freelancecontrol'
   },
   {
     title: 'Arbeidsvoorwaarden',
     description: 'Informatie over onze primaire arbeidsvoorwaarden, contracten en vergoedingen.',
-    link: '/public/werken-bij/voordelen'
+    link: '/werken-bij/voordelen'
   }
 ];
 

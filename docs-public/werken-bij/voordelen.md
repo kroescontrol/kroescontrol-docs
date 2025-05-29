@@ -4,7 +4,7 @@ sidebar_position: 3
 description: >-
   Een compleet overzicht van de voordelen en secundaire arbeidsvoorwaarden bij
   Kroescontrol.
-slug: /public/werken-bij/voordelen
+slug: /werken-bij/voordelen
 tags:
   - kroescontrol
   - voordelen

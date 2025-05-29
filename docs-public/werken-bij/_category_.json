@@ -1,11 +1,10 @@
 {
   "label": "Werken bij Kroescontrol",
-  "position": 2,
+  "position": 10,
   "collapsed": true,
   "link": {
-    "type": "generated-index",
-    "title": "Werken bij Kroescontrol",
-    "description": "Informatie voor potentiële medewerkers"
+    "type": "doc",
+    "id": "werken-bij/index"
   },
   "customProps": {
     "description": "Informatie voor potentiële medewerkers",

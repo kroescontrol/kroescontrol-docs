@@ -2,7 +2,7 @@
 title: Kleurenpalet
 sidebar_position: 2
 description: Het officiële kleurenpalet van Kroescontrol met hex-codes en CMYK-waarden.
-slug: /public/branding/kleuren
+slug: /branding/kleuren
 tags:
   - kroescontrol
   - branding

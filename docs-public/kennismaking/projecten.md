@@ -2,7 +2,7 @@
 title: Projectvoorbeelden
 sidebar_position: 5
 description: Voorbeelden van projecten bij Kroescontrol.
-slug: /public/kennismaking/projecten
+slug: /kennismaking/projecten
 tags:
   - kroescontrol
   - projecten

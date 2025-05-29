@@ -2,7 +2,7 @@
 title: Huisstijl & Branding
 sidebar_position: 1
 description: Informatie over de huisstijl en branding van Kroescontrol.
-slug: /public/branding
+slug: /branding
 tags:
   - kroescontrol
   - branding

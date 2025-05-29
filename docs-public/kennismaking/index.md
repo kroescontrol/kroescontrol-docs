@@ -1,84 +1,91 @@
 ---
-title: Kennismaking Kroescontrol
+title: Kroescontrol Engineer
 sidebar_position: 1
-description: Gedetailleerde informatie voor engineers in de oriëntatiefase.
-slug: /public/kennismaking
+description: Allesomvattende IT-professionals die kwaliteit en professionele resultaten behalen bij complexe enterprise projecten.
+slug: /kroescontrol-engineer
 tags:
   - kroescontrol
-  - werkwijze
-  - budgetstructuur
-  - arbeidsvoorwaarden
-  - oriëntatie
+  - engineer
+  - professionals
+  - kwaliteit
+  - enterprise
 keywords:
-  - engineer-hub
-  - detachering
-  - technische-focus
-  - vacatures
-  - autonomie
-  - projecten
+  - platform-engineering
+  - cloud-native
+  - professionals
+  - kwaliteit
+  - enterprise-projecten
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21T00:00:00.000Z
+  date: 2025-05-29T00:00:00.000Z
   author: Kroescontrol Team
 docStatus: live
 ---
 
-# Kennismaking Kroescontrol
+# Kroescontrol Engineer
 
-Welkom bij de kennismakingssectie van Kroescontrol. Deze sectie is speciaal samengesteld voor engineers die zich oriënteren op een toekomstige samenwerking met ons team. Hier vind je diepgaande informatie over onze werkwijze, budgetstructuren en arbeidsvoorwaarden.
+Kroescontrol Engineers zijn allesomvattende IT-professionals die op het hoogste niveau opereren. Wij leveren kwaliteit en professionele resultaten bij de meest complexe enterprise projecten.
 
-## Belangrijkste punten
+## Wat kenmerkt een Kroescontrol Engineer?
 
-- Kroescontrol biedt een unieke combinatie van professionele zekerheid en persoonlijke ontwikkeling met transparante budgetstructuren
-- Je krijgt toegang tot een persoonlijk Engineer Budget voor hardware en professionele ontwikkeling en een Mobiliteitsbudget voor reiskosten
-- Wij onderscheiden ons door een cultuur van vertrouwen, openheid en ruimte voor groei, met een focus op Kubernetes, Cloud Native technologieën en infrastructuur-automatisering
+### 🚀 **Technische Excellentie**
+Onze engineers beheersen cutting-edge technologieën: Cloud Native architecturen, Kubernetes, Platform Engineering, Observability en Site Reliability Engineering. Zij opereren daar waar technische diepgang en business impact samenkomen.
 
-## De Kroescontrol aanpak
+### 🎯 **Allesomvattende Professionals**
+Een Kroescontrol Engineer combineert technische expertise met zakelijk inzicht. Zij begrijpen niet alleen hoe technologie werkt, maar ook waarom bepaalde keuzes worden gemaakt en wat de impact is op organisaties.
 
-Bij Kroescontrol geloven we dat IT-professionals het beste functioneren in een omgeving waarin ze financiële zekerheid, professionele autonomie en controle over hun eigen ontwikkeling ervaren. Onze aanpak combineert de stabiliteit van een vast dienstverband met de flexibiliteit en vrijheid die engineers waarderen.
+### 🏢 **Enterprise Impact**
+Onze professionals werken voor toonaangevende organisaties en leveren meetbare resultaten:
+- **ASML** - Infrastructuur-automatisering die VM provisioning van dagen naar minuten bracht
+- **eBay** - Productie-update optimalisatie met verhoogde betrouwbaarheid
+- **Nedap** - Immutable Infrastructure implementatie voor maximale security
+- **Enterprise klanten** - Platform engineering en cloud transformaties
 
-### Onze filosofie
+## Professionele Ontwikkeling
 
-Onze werkwijze is gebaseerd op enkele kernprincipes:
+### **Autonomie & Verantwoordelijkheid**
+Kroescontrol Engineers hebben volledige autonomie in hun werkwijze. Zij kiezen projecten die passen bij hun expertise en ambities, werken waar en wanneer het optimaal is, en nemen eigenaarschap over resultaten.
 
-- **Transparantie**: Volledige openheid over tarieven, marges en bedrijfsvoering
-- **Vertrouwen**: Vrijheid en verantwoordelijkheid in balans
-- **Vakmanschap**: Focus op technische excellentie en continue ontwikkeling
-- **Persoonlijke groei**: Ruimte om je expertise te verdiepen en verbreden
+### **Continue Groei**
+- Persoonlijke budgetten voor technische ontwikkeling en certificering
+- Toegang tot premium learning platforms en conferenties
+- Experimenteerruimte voor nieuwe technologieën
+- Mentorship en knowledge sharing binnen het team
 
-### Technische focus
+### **Transparante Samenwerking**
+Via de Engineer Hub hebben professionals real-time inzicht in hun projecten, budgetten en ontwikkeling. Transparantie en vertrouwen staan centraal in onze werkrelaties.
 
-Als engineer bij Kroescontrol werk je met cutting-edge technologieën in het Cloud Native landschap:
+## Technische Specialisaties
 
-- DevOps en Platform Engineering
-- Kubernetes en containerisatie
-- Cloud infrastructuur (AWS, Azure, GCP)
-- Observability en monitoring
-- Continuous Integration/Continuous Deployment (CI/CD)
-- Infrastructure as Code (IaC)
+Kroescontrol Engineers opereren in high-impact domeinen:
 
-## Wat je kunt verwachten
+- **Platform Engineering** - Kubernetes ecosystemen, Service Mesh, API Management
+- **Cloud Native Development** - Microservices, Containerization, Serverless architecturen  
+- **Observability & Monitoring** - Complete zichtbaarheid in complexe systemen
+- **Infrastructure as Code** - Terraform, Pulumi, GitOps workflows
+- **Site Reliability Engineering** - SLI/SLO management, Incident Response
+- **Security Engineering** - Zero-trust implementaties, Compliance automation
 
-In deze sectie vind je gedetailleerde informatie over:
+## Kwaliteitsstandaard
 
-- [**Engineer Hub**](/public/kennismaking/engineer-hub) - Ons transparante systeem voor budgetbeheer
-- [**Budgetstructuren**](/public/kennismaking/budgetten) - Uitleg over Engineer Budget en Mobiliteitsbudget
-- [**Arbeidsvoorwaarden**](/public/kennismaking/voorwaarden) - Onze secundaire arbeidsvoorwaarden
-- [**Projectvoorbeelden**](/public/kennismaking/projecten) - Voorbeelden van opdrachten bij onze klanten
+### **Voor Klanten**
+Kroescontrol Engineers leveren voorspelbare, hoogwaardige resultaten. Klanten kunnen rekenen op professionals die complexe uitdagingen oplossen en meetbare business waarde creëren.
 
-## Veelgestelde vragen
+### **Voor Engineers**
+Werken als Kroescontrol Engineer betekent opereren op jouw hoogste niveau, met de tools en ondersteuning die je nodig hebt voor professionele groei en persoonlijke ontwikkeling.
 
-**Is Kroescontrol een detacheringsbureau?**
-Ja, Kroescontrol is een IT-consultancy en detacheringsbedrijf, maar wel met een unieke aanpak. Wij combineren de zekerheid van een vast dienstverband met de persoonlijke vrijheid om zelf richting te geven aan je carrière.
+## Volgende Stappen
 
-**Waarin onderscheidt Kroescontrol zich van andere IT-detacheerders?**
-Wij onderscheiden ons door transparantie, persoonlijke budgetten, vaste contracten en een informele, professionele cultuur. We bieden geen standaardpakket, maar een op maat gemaakte werkervaring met ruimte voor eigen inbreng en ontwikkeling.
+**Voor Engineers:**
+- [Budgetstructuren](/kennismaking/budgetten) - Investeer in jouw ontwikkeling
+- [Engineer Hub](/kennismaking/engineer-hub) - Transparant budgetbeheer
+- [Arbeidsvoorwaarden](/kennismaking/voorwaarden) - Complete arbeidsvoorwaarden
 
-**Wat zijn de persoonlijke budgetten precies?**
-Bij Kroescontrol krijg je toegang tot een Engineer Budget voor professionele ontwikkeling en hardware, en een Mobiliteitsbudget voor reiskosten. Deze budgetten worden transparant beheerd in je persoonlijke Engineer Hub.
+**Voor Klanten:**
+- [Projectvoorbeelden](/kennismaking/projecten) - Resultaten in de praktijk
+- [Klantenportfolio](/klanten) - Wie we bedienen
+- [Contact](/contact) - Start het gesprek
 
-**Moet ik veel reizen als engineer bij Kroescontrol?**
-De reisfrequentie is afhankelijk van de opdracht en jouw wensen. We zoeken altijd naar een optimale match tussen jouw voorkeuren en de beschikbare opdrachten. Het Mobiliteitsbudget biedt daarbij flexibiliteit in hoe je je reis invult.
+---
 
-**Hoe verloopt het kennismakingsproces?**
-Na een eerste gesprek kijken we samen naar de mogelijkheden die passen bij jouw ervaring en ambities. We geloven in een wederzijdse klik, dus je krijgt alle ruimte om vragen te stellen en een gevoel te krijgen bij onze werkwijze voordat we verdere stappen zetten.
+Ready om te ontdekken wat Kroescontrol Engineers uniek maakt? Neem contact op met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
