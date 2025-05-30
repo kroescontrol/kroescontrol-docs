@@ -104,6 +104,7 @@ console.log(`Base URL: ${BASE_URL}`);
 const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
+const redirects = require('./config/redirects');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -148,6 +149,8 @@ module.exports = {
   
   // Plugins
   plugins: [
+    // Development redirects plugin
+    require.resolve('./src/plugins/dev-redirects'),
     // Build info injection plugin
     [
       require.resolve('./src/plugins/inject-build-info'),
@@ -192,13 +195,7 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         // Since the root URL is already occupied, we'll set up other redirects if needed
-        redirects: [
-          // Example: redirect from old paths to new paths if needed in the future
-          // {
-          //   from: '/old-path',
-          //   to: '/new-path',
-          // },
-        ],
+        redirects: redirects,
       },
     ],
     // Public docs plugin - route depends on mode
@@ -321,7 +318,9 @@ module.exports = {
         },
         items: [
           {
-            to: '/welkom',
+            type: 'doc',
+            docId: 'index',
+            docsPluginId: 'public',
             position: 'left',
             label: PUBLIC_ONLY ? 'Welkom' : 'Public',
           },
