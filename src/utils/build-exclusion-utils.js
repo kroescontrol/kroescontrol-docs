@@ -264,9 +264,10 @@ function generateExcludePatterns() {
           const { data } = matter(content);
           
           if (data.docStatus && excludeStatuses.includes(data.docStatus)) {
-            // Maak relatief pad voor exclude pattern
+            // Maak volledig relatief pad voor exclude pattern (niet alleen bestandsnaam)
             const relativePath = path.relative(docsDir, file);
-            patterns.push(relativePath);
+            // Voeg het directory prefix toe om conflicten te voorkomen
+            patterns.push(`${path.basename(docsDir)}/${relativePath}`);
           }
         } catch (error) {
           // Skip bestanden die niet gelezen kunnen worden
