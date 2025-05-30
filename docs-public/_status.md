@@ -5,7 +5,7 @@ sidebar_position: 999
 sidebar_class_name: hidden
 displayed_sidebar: null
 slug: ../status
-docStatus: live
+docStatus: locked
 ---
 
 import styles from './status.module.css';

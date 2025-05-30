@@ -1,7 +1,9 @@
 ---
 title: Kroescontrol Engineer
 sidebar_position: 1
-description: Allesomvattende IT-professionals die kwaliteit en professionele resultaten behalen bij complexe enterprise projecten.
+description: >-
+  Allesomvattende IT-professionals die kwaliteit en professionele resultaten
+  behalen bij complexe enterprise projecten.
 slug: /kroescontrol-engineer
 tags:
   - kroescontrol

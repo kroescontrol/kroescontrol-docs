@@ -59,6 +59,12 @@ debugBuildConfig();
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
 
+// i18n configuration - DISABLED temporarily
+const locales = ['nl']; // Only Dutch for now
+
+console.log(`i18n configuration - DISABLED`);
+console.log(`Available locales: ${locales.join(', ')}`);
+
 // Environment-specific routing
 console.log(`KROESCONTROL_LOCAL_DEV: ${process.env.KROESCONTROL_LOCAL_DEV || 'undefined'}`);
 console.log(`Build environment: ${process.env.VERCEL ? 'VERCEL' : 'LOCAL'}`);
@@ -93,6 +99,7 @@ console.log(`Base URL: ${BASE_URL}`);
 const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
+const redirects = require('./config/redirects');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -108,6 +115,19 @@ module.exports = {
   customFields: {
     enableExtraMetaTags: ENABLE_EXTRA_META_TAGS,
   },
+  // i18n configuratie - DISABLED temporarily
+  i18n: {
+    defaultLocale: 'nl',
+    locales: ['nl'],
+    localeConfigs: {
+      nl: {
+        label: 'Nederlands',
+        direction: 'ltr',
+        htmlLang: 'nl-NL',
+        calendar: 'gregory',
+      }
+    }
+  },
   // Google Fonts toevoegen voor Poppins en Noto Sans
   stylesheets: [
     {
@@ -118,6 +138,8 @@ module.exports = {
   
   // Plugins
   plugins: [
+    // Development redirects plugin
+    require.resolve('./src/plugins/dev-redirects'),
     // Build info injection plugin
     [
       require.resolve('./src/plugins/inject-build-info'),
@@ -162,13 +184,7 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         // Since the root URL is already occupied, we'll set up other redirects if needed
-        redirects: [
-          // Example: redirect from old paths to new paths if needed in the future
-          // {
-          //   from: '/old-path',
-          //   to: '/new-path',
-          // },
-        ],
+        redirects: redirects,
       },
     ],
     // Public docs plugin - route depends on mode
@@ -225,6 +241,7 @@ module.exports = {
       path.resolve(__dirname, 'src/plugins/filter-docs-by-status'),
       {
         excludeStatuses: process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [],
+        hideFromSidebar: process.env.NODE_ENV === 'production' ? ['completed'] : [],
         enableVisualIndicators: process.env.NODE_ENV === 'development',
         statusLabels: {
           templated: 'Template',
@@ -290,7 +307,9 @@ module.exports = {
         },
         items: [
           {
-            to: '/welkom',
+            type: 'doc',
+            docId: 'index',
+            docsPluginId: 'public',
             position: 'left',
             label: PUBLIC_ONLY ? 'Welkom' : 'Public',
           },
@@ -327,6 +346,11 @@ module.exports = {
             label: 'GitHub',
             position: 'right',
           },
+          // Language switcher - DISABLED
+          // ...(showEnglish ? [{
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // }] : []),
         ],
       },
       footer: {

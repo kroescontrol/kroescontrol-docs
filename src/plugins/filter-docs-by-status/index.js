@@ -7,6 +7,9 @@
 
 // src/plugins/filter-docs-by-status/index.js
 const path = require('path');
+const fs = require('fs');
+const matter = require('gray-matter');
+const glob = require('glob');
 
 module.exports = function(context, options) {
   const {
@@ -19,17 +22,69 @@ module.exports = function(context, options) {
   // Default opties
   const defaultOptions = {
     excludeStatuses: ['templated', 'generated'],
+    hideFromSidebar: ['completed'], // Nieuwe optie: verberg uit sidebar maar genereer wel pagina
     enableVisualIndicators: false,
     customStatusBehaviors: {},
   };
   
   // Combineer default opties met gebruiker-gedefinieerde opties
   const pluginOptions = {...defaultOptions, ...options};
-  
+
+  /**
+   * Genereert exclude patterns voor docs plugin configuratie
+   */
+  function generateExcludePatterns() {
+    const patterns = [];
+    const docsDirectories = [
+      path.join(siteDir, 'docs-public'),
+      path.join(siteDir, 'docs-internal'),
+      path.join(siteDir, 'docs-finance'),
+      path.join(siteDir, 'docs-operation'),
+      path.join(siteDir, 'docs-test-auth'),
+    ];
+
+    for (const docsDir of docsDirectories) {
+      if (!fs.existsSync(docsDir)) continue;
+      
+      const files = glob.sync(`${docsDir}/**/*.{md,mdx}`);
+      
+      for (const file of files) {
+        try {
+          const content = fs.readFileSync(file, 'utf8');
+          const { data } = matter(content);
+          
+          if (data.docStatus && pluginOptions.excludeStatuses.includes(data.docStatus)) {
+            // Maak relatief pad voor exclude pattern
+            const relativePath = path.relative(docsDir, file);
+            patterns.push(relativePath);
+          }
+        } catch (error) {
+          // Skip bestanden die niet gelezen kunnen worden
+        }
+      }
+    }
+    
+    return patterns;
+  }
+
   return {
     name: 'filter-docs-by-status',
     
-    // Configureer webpack om de statusFilterLoader toe te voegen
+    // Hook om andere plugins te configureren voordat ze worden geladen
+    configurePostCss(postcssOptions) {
+      return postcssOptions;
+    },
+
+    // Hook om exclude patterns toe te voegen aan docs plugins
+    async loadContent() {
+      // Deze functie wordt geroepen voordat content wordt geladen
+      // We gebruiken dit om exclude patterns te genereren
+      return {
+        excludePatterns: generateExcludePatterns(),
+      };
+    },
+
+    // Configureer webpack voor sidebar filtering (alleen voor 'completed' status)
     configureWebpack(config, isServer, utils) {
       return {
         module: {

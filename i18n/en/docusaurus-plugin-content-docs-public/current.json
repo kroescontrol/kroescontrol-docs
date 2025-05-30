@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Werken bij Kroescontrol": {
+    "message": "Werken bij Kroescontrol",
+    "description": "The label for category Werken bij Kroescontrol in sidebar docs"
+  },
+  "sidebar.docs.category.Kroescontrol Engineer": {
+    "message": "Kroescontrol Engineer",
+    "description": "The label for category Kroescontrol Engineer in sidebar docs"
+  },
+  "sidebar.docs.category.Freelancecontrol Model": {
+    "message": "Freelancecontrol Model",
+    "description": "The label for category Freelancecontrol Model in sidebar docs"
+  },
+  "sidebar.docs.category.Tools & Processen": {
+    "message": "Tools & Processen",
+    "description": "The label for category Tools & Processen in sidebar docs"
+  },
+  "sidebar.docs.category.Documentatie": {
+    "message": "Documentatie",
+    "description": "The label for category Documentatie in sidebar docs"
+  },
+  "sidebar.docs.category.Documentatie.link.generated-index.title": {
+    "message": "Documentatie bij Kroescontrol",
+    "description": "The generated-index page title for category Documentatie in sidebar docs"
+  },
+  "sidebar.docs.category.Documentatie.link.generated-index.description": {
+    "message": "Informatie over onze documentatieprocessen en toegang",
+    "description": "The generated-index page description for category Documentatie in sidebar docs"
+  },
+  "sidebar.docs.category.Huisstijl & Branding": {
+    "message": "Huisstijl & Branding",
+    "description": "The label for category Huisstijl & Branding in sidebar docs"
+  }
+}
