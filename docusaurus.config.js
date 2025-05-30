@@ -59,15 +59,10 @@ debugBuildConfig();
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
 
-// i18n configuration - development-only English support
-const isDevelopment = process.env.NODE_ENV === 'development';
-const isVercelPreview = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'staging';
-const isStagingBranch = buildInfo.branch && buildInfo.branch.toLowerCase().includes('staging');
-const isStaging = isVercelPreview || isStagingBranch || process.env.IS_STAGING === 'true';
-const showEnglish = isDevelopment || isStaging;
-const locales = showEnglish ? ['nl', 'en'] : ['nl'];
+// i18n configuration - DISABLED temporarily
+const locales = ['nl']; // Only Dutch for now
 
-console.log(`i18n configuration - Development: ${isDevelopment}, Staging: ${isStaging}, Show English: ${showEnglish}`);
+console.log(`i18n configuration - DISABLED`);
 console.log(`Available locales: ${locales.join(', ')}`);
 
 // Environment-specific routing
@@ -120,21 +115,15 @@ module.exports = {
   customFields: {
     enableExtraMetaTags: ENABLE_EXTRA_META_TAGS,
   },
-  // i18n configuratie
+  // i18n configuratie - DISABLED temporarily
   i18n: {
     defaultLocale: 'nl',
-    locales: locales,
+    locales: ['nl'],
     localeConfigs: {
       nl: {
         label: 'Nederlands',
         direction: 'ltr',
         htmlLang: 'nl-NL',
-        calendar: 'gregory',
-      },
-      en: {
-        label: 'English', 
-        direction: 'ltr',
-        htmlLang: 'en-US',
         calendar: 'gregory',
       }
     }
@@ -357,11 +346,11 @@ module.exports = {
             label: 'GitHub',
             position: 'right',
           },
-          // Language switcher (alleen in development/staging)
-          ...(showEnglish ? [{
-            type: 'localeDropdown',
-            position: 'right',
-          }] : []),
+          // Language switcher - DISABLED
+          // ...(showEnglish ? [{
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // }] : []),
         ],
       },
       footer: {
