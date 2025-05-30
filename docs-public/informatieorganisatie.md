@@ -1,7 +1,7 @@
 ---
 title: Informatieorganisatie
 sidebar_position: 3
-description: 'Hoe Kroescontrol informatie organiseert en documenteert'
+description: Hoe Kroescontrol informatie organiseert en documenteert
 slug: /informatieorganisatie
 tags:
   - kroescontrol
@@ -18,7 +18,7 @@ image: /img/logo.svg
 last_update:
   date: 2025-05-29T00:00:00.000Z
   author: Kroescontrol Team
-docStatus: live
+docStatus: templated
 ---
 
 # Informatieorganisatie

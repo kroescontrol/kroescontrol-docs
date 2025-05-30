@@ -1,5 +1,5 @@
 ---
-title: "[TEST] docStatus Demo Document"
+title: '[TEST] docStatus Demo Document'
 sidebar_position: 998
 docStatus: live
 ---
