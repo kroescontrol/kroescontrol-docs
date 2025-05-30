@@ -255,6 +255,7 @@ module.exports = {
       path.resolve(__dirname, 'src/plugins/filter-docs-by-status'),
       {
         excludeStatuses: process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [],
+        hideFromSidebar: process.env.NODE_ENV === 'production' ? ['completed'] : [],
         enableVisualIndicators: process.env.NODE_ENV === 'development',
         statusLabels: {
           templated: 'Template',

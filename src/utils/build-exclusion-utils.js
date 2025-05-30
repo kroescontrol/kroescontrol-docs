@@ -152,6 +152,60 @@ function isDraftDocument(filePath) {
 }
 
 /**
+ * Check of een bestand moet worden uitgesloten op basis van docStatus
+ */
+function shouldExcludeByDocStatus(filePath) {
+  try {
+    if (!fs.existsSync(filePath) || !filePath.endsWith('.md')) {
+      return false;
+    }
+    
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data: frontmatter } = matter(fileContent);
+    
+    if (!frontmatter.docStatus) {
+      return false;
+    }
+    
+    // In productie builds: exclude templated en generated volledig
+    const excludeStatuses = process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [];
+    
+    return excludeStatuses.includes(frontmatter.docStatus);
+           
+  } catch (error) {
+    console.warn(`Could not parse docStatus for ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+/**
+ * Check of een bestand verborgen moet worden uit sidebar (maar wel pagina genereren)
+ */
+function shouldHideFromSidebar(filePath) {
+  try {
+    if (!fs.existsSync(filePath) || !filePath.endsWith('.md')) {
+      return false;
+    }
+    
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data: frontmatter } = matter(fileContent);
+    
+    if (!frontmatter.docStatus) {
+      return false;
+    }
+    
+    // In productie builds: verberg 'completed' uit sidebar
+    const hideFromSidebarStatuses = process.env.NODE_ENV === 'production' ? ['completed'] : [];
+    
+    return hideFromSidebarStatuses.includes(frontmatter.docStatus);
+           
+  } catch (error) {
+    console.warn(`Could not parse docStatus for sidebar hiding ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+/**
  * Check of een bestand moet worden uitgesloten
  */
 function shouldExcludeFile(filePath) {
@@ -159,6 +213,11 @@ function shouldExcludeFile(filePath) {
   
   // Check draft status
   if (!config.allowDrafts && isDraftDocument(filePath)) {
+    return true;
+  }
+  
+  // Check docStatus exclusion (volledig uitsluiten)
+  if (shouldExcludeByDocStatus(filePath)) {
     return true;
   }
   
@@ -177,6 +236,7 @@ function shouldExcludeFile(filePath) {
 function generateExcludePatterns() {
   const config = getBuildConfig();
   const patterns = [];
+  const glob = require('glob');
   
   // Exclude directories
   for (const excludeDir of config.excludeDirs) {
@@ -185,9 +245,34 @@ function generateExcludePatterns() {
   
   // Exclude drafts (alleen als drafts niet toegestaan zijn)
   if (!config.allowDrafts) {
-    // We kunnen niet direct op frontmatter filteren in Docusaurus exclude patterns
-    // Dit wordt afgehandeld door een custom plugin/preprocessor
     patterns.push('**/_drafts/**'); // Conventionele draft directory
+  }
+  
+  // Exclude documenten met specific docStatus (alleen in productie)
+  if (process.env.NODE_ENV === 'production') {
+    const excludeStatuses = ['templated', 'generated'];
+    const docsDirectories = ['docs-public', 'docs-internal', 'docs-finance', 'docs-operation', 'docs-test-auth'];
+    
+    for (const docsDir of docsDirectories) {
+      if (!fs.existsSync(docsDir)) continue;
+      
+      const files = glob.sync(`${docsDir}/**/*.{md,mdx}`);
+      
+      for (const file of files) {
+        try {
+          const content = fs.readFileSync(file, 'utf8');
+          const { data } = matter(content);
+          
+          if (data.docStatus && excludeStatuses.includes(data.docStatus)) {
+            // Maak relatief pad voor exclude pattern
+            const relativePath = path.relative(docsDir, file);
+            patterns.push(relativePath);
+          }
+        } catch (error) {
+          // Skip bestanden die niet gelezen kunnen worden
+        }
+      }
+    }
   }
   
   return patterns;
@@ -235,6 +320,8 @@ module.exports = {
   shouldIncludeDirectory,
   isDraftDocument,
   shouldExcludeFile,
+  shouldExcludeByDocStatus,
+  shouldHideFromSidebar,
   generateExcludePatterns,
   createDocumentFilter,
   debugBuildConfig
