@@ -1,6 +1,6 @@
 ---
 title: Contact
-docStatus: templated
+docStatus: live
 sidebar_position: 4
 description: Contactinformatie van Kroescontrol.
 slug: /contact

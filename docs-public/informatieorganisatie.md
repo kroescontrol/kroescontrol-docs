@@ -18,7 +18,7 @@ image: /img/logo.svg
 last_update:
   date: 2025-05-29T00:00:00.000Z
   author: Kroescontrol Team
-docStatus: templated
+docStatus: live
 ---
 
 # Informatieorganisatie

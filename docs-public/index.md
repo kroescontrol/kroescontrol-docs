@@ -1,6 +1,6 @@
 ---
 title: Welkom bij Kroescontrol
-docStatus: templated
+docStatus: live
 sidebar_position: 0
 description: Welkom bij de centrale documentatie hub voor Kroescontrol.
 slug: /welkom

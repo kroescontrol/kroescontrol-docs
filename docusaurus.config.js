@@ -61,7 +61,9 @@ const BASE_URL = process.env.BASE_URL || '/';
 
 // i18n configuration - development-only English support
 const isDevelopment = process.env.NODE_ENV === 'development';
-const isStaging = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'staging';
+const isVercelPreview = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'staging';
+const isStagingBranch = buildInfo.branch && buildInfo.branch.toLowerCase().includes('staging');
+const isStaging = isVercelPreview || isStagingBranch || process.env.IS_STAGING === 'true';
 const showEnglish = isDevelopment || isStaging;
 const locales = showEnglish ? ['nl', 'en'] : ['nl'];
 
