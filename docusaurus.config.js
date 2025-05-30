@@ -59,6 +59,15 @@ debugBuildConfig();
 // Base URL voor GitHub Pages vs. normale omgeving
 const BASE_URL = process.env.BASE_URL || '/';
 
+// i18n configuration - development-only English support
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isStaging = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'staging';
+const showEnglish = isDevelopment || isStaging;
+const locales = showEnglish ? ['nl', 'en'] : ['nl'];
+
+console.log(`i18n configuration - Development: ${isDevelopment}, Staging: ${isStaging}, Show English: ${showEnglish}`);
+console.log(`Available locales: ${locales.join(', ')}`);
+
 // Environment-specific routing
 console.log(`KROESCONTROL_LOCAL_DEV: ${process.env.KROESCONTROL_LOCAL_DEV || 'undefined'}`);
 console.log(`Build environment: ${process.env.VERCEL ? 'VERCEL' : 'LOCAL'}`);
@@ -107,6 +116,25 @@ module.exports = {
   projectName: 'werkafspraken',
   customFields: {
     enableExtraMetaTags: ENABLE_EXTRA_META_TAGS,
+  },
+  // i18n configuratie
+  i18n: {
+    defaultLocale: 'nl',
+    locales: locales,
+    localeConfigs: {
+      nl: {
+        label: 'Nederlands',
+        direction: 'ltr',
+        htmlLang: 'nl-NL',
+        calendar: 'gregory',
+      },
+      en: {
+        label: 'English', 
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+      }
+    }
   },
   // Google Fonts toevoegen voor Poppins en Noto Sans
   stylesheets: [
@@ -327,6 +355,11 @@ module.exports = {
             label: 'GitHub',
             position: 'right',
           },
+          // Language switcher (alleen in development/staging)
+          ...(showEnglish ? [{
+            type: 'localeDropdown',
+            position: 'right',
+          }] : []),
         ],
       },
       footer: {
