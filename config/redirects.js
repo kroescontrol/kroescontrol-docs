@@ -4,10 +4,11 @@
  */
 
 const redirects = [
-  {
-    from: '/en/welkom',
-    to: '/en/welcome',
-  },
+  // English redirects commented out after disabling i18n
+  // {
+  //   from: '/en/welkom',
+  //   to: '/en/welcome',
+  // },
   // Add more redirects here as needed
   // {
   //   from: '/en/over-kroescontrol',
