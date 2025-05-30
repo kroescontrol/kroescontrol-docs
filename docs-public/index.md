@@ -1,12 +1,15 @@
 ---
-title: "Welkom bij Kroescontrol"
-docStatus: "live"
+title: Welkom bij Kroescontrol
+docStatus: live
 sidebar_position: 0
-description: "Welkom bij de centrale documentatie hub voor Kroescontrol."
+description: Welkom bij de centrale documentatie hub voor Kroescontrol.
 slug: /welkom
-tags: [documentatie,overzicht,kroescontrol]
+tags:
+  - documentatie
+  - overzicht
+  - kroescontrol
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
 ---
 

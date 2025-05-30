@@ -1,0 +1,42 @@
+{
+  "title": {
+    "message": "Kroescontrol Docs",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Kroescontrol Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Public": {
+    "message": "Public",
+    "description": "Navbar item with label Public"
+  },
+  "item.label.Welkom": {
+    "message": "Welcome",
+    "description": "Navbar item with label Welkom"
+  },
+  "item.label.Internal": {
+    "message": "Internal",
+    "description": "Navbar item with label Internal"
+  },
+  "item.label.Operations": {
+    "message": "Operations",
+    "description": "Navbar item with label Operations"
+  },
+  "item.label.Finance": {
+    "message": "Finance",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Test Auth": {
+    "message": "Test Auth",
+    "description": "Navbar item with label Test Auth"
+  },
+  "item.label.AI Assistant": {
+    "message": "AI Assistant",
+    "description": "Navbar item with label AI Assistant"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

@@ -1,14 +1,25 @@
 ---
-title: "Contact"
-docStatus: "live"
+title: Contact
+docStatus: live
 sidebar_position: 4
-description: "Contactinformatie van Kroescontrol."
+description: Contactinformatie van Kroescontrol.
 slug: /contact
-tags: [kroescontrol,contact,bereikbaarheid,vestigingen]
-keywords: [email,adres,telefoon,sociale media,locatie,klarenbeek,amsterdam]
+tags:
+  - kroescontrol
+  - contact
+  - bereikbaarheid
+  - vestigingen
+keywords:
+  - email
+  - adres
+  - telefoon
+  - sociale media
+  - locatie
+  - klarenbeek
+  - amsterdam
 image: /img/logo.svg
 last_update:
-  date: 2025-05-21
+  date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
 ---
 

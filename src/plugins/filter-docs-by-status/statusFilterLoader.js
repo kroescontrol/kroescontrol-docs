@@ -2,7 +2,8 @@
  * Status Filter Loader
  * 
  * Deze webpack loader filtert markdown documenten op basis van hun docStatus.
- * Documenten met uitgesloten statussen worden vervangen door lege content.
+ * - Documenten met uitgesloten statussen worden volledig uitgesloten (via build-exclusion-utils)
+ * - Documenten met 'completed' status worden uit sidebar verborgen maar wel als pagina gegenereerd
  */
 
 const matter = require('gray-matter');
@@ -21,7 +22,31 @@ module.exports = function(source) {
       return callback(null, source);
     }
     
-    // Controleer of de status moet worden uitgesloten
+    // Controleer of dit document uit sidebar verborgen moet worden (maar wel pagina genereren)
+    if (options.hideFromSidebar && options.hideFromSidebar.includes(docStatus)) {
+      // In productie: verberg uit sidebar door sidebar_position op null te zetten
+      if (process.env.NODE_ENV === 'production') {
+        const hiddenFromSidebarData = {
+          ...data,
+          sidebar_position: null, // Verberg uit sidebar
+          sidebar_class_name: 'hidden-from-sidebar', // CSS class voor styling
+        };
+        
+        const newContent = matter.stringify(content, hiddenFromSidebarData);
+        return callback(null, newContent);
+      }
+      
+      // In development: toon normaal met indicator
+      const devData = {
+        ...data,
+        sidebar_class_name: 'dev-hidden-in-production', // CSS class voor development indicator
+      };
+      
+      const devContent = matter.stringify(content, devData);
+      return callback(null, devContent);
+    }
+    
+    // Controleer of de status moet worden uitgesloten (deze check is nu redundant omdat build-exclusion-utils dit al doet)
     if (options.excludeStatuses && options.excludeStatuses.includes(docStatus)) {
       // Voor development builds, toon een placeholder bericht
       if (process.env.NODE_ENV === 'development') {

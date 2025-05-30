@@ -1,0 +1,58 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.Voorbeeld 1": {
+    "message": "Voorbeeld 1",
+    "description": "The label for category Voorbeeld 1 in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.beveiliging": {
+    "message": "beveiliging",
+    "description": "The label for category beveiliging in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.tools": {
+    "message": "tools",
+    "description": "The label for category tools in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Claude Code Prompts": {
+    "message": "Claude Code Prompts",
+    "description": "The label for category Claude Code Prompts in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Prompt Modules": {
+    "message": "Prompt Modules",
+    "description": "The label for category Prompt Modules in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Project Context": {
+    "message": "Project Context",
+    "description": "The label for category Project Context in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Prompt-to-Prompt": {
+    "message": "Prompt-to-Prompt",
+    "description": "The label for category Prompt-to-Prompt in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Documentatie Tools": {
+    "message": "Documentatie Tools",
+    "description": "The label for category Documentatie Tools in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.HOWTO Gidsen": {
+    "message": "HOWTO Gidsen",
+    "description": "The label for category HOWTO Gidsen in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.Rapportages": {
+    "message": "Rapportages",
+    "description": "The label for category Rapportages in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.engineer-hub": {
+    "message": "engineer-hub",
+    "description": "The label for category engineer-hub in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.basis-gebruik": {
+    "message": "basis-gebruik",
+    "description": "The label for category basis-gebruik in sidebar defaultSidebar"
+  },
+  "sidebar.defaultSidebar.category.budgets": {
+    "message": "budgets",
+    "description": "The label for category budgets in sidebar defaultSidebar"
+  }
+}

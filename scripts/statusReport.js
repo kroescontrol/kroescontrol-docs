@@ -15,6 +15,9 @@ class DocumentationStatusReporter {
             byDirectory: {},
             total: 0
         };
+        // Detecteer build environment
+        this.isLocalDev = process.env.NODE_ENV !== 'production' && !process.env.VERCEL && !process.env.CI;
+        this.isVercelOrCI = process.env.VERCEL || process.env.CI || process.env.NODE_ENV === 'production';
     }
 
     /**
@@ -307,6 +310,43 @@ class DocumentationStatusReporter {
     }
 
     /**
+     * Bepaal of een link gemaakt moet worden voor een document
+     */
+    shouldCreateLink(doc) {
+        // Voor lokale development: altijd links maken
+        if (this.isLocalDev) {
+            return true;
+        }
+        
+        // Voor Vercel/CI: geen links voor draft, templated, of generated bestanden
+        if (this.isVercelOrCI) {
+            const excludedStatuses = ['draft'];
+            const excludedDocStatuses = ['templated', 'generated'];
+            
+            if (excludedStatuses.includes(doc.status)) {
+                return false;
+            }
+            
+            if (doc.docStatus && excludedDocStatuses.includes(doc.docStatus)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    /**
+     * Maak een link of plain text voor een document
+     */
+    formatDocumentReference(doc) {
+        if (this.shouldCreateLink(doc)) {
+            return `[${doc.relativePath}](/${doc.directory}/${doc.relativePath})`;
+        } else {
+            return doc.relativePath;
+        }
+    }
+
+    /**
      * Genereer markdown rapport bestand
      */
     async generateMarkdownReport() {
@@ -389,7 +429,8 @@ class DocumentationStatusReporter {
             markdown += '| Bestand | Titel | Categorie | Laatste Update |\n';
             markdown += '|---------|-------|-----------|----------------|\n';
             draftDocs.forEach(doc => {
-                markdown += `| [${doc.relativePath}](/${doc.path}) | ${doc.title} | ${doc.category} | ${doc.lastUpdate} |\n`;
+                const docReference = this.formatDocumentReference(doc);
+                markdown += `| ${docReference} | ${doc.title} | ${doc.category} | ${doc.lastUpdate} |\n`;
             });
         }
 
@@ -400,7 +441,8 @@ class DocumentationStatusReporter {
             markdown += '| Bestand | Titel | Categorie | Laatste Update |\n';
             markdown += '|---------|-------|-----------|----------------|\n';
             reviewDocs.forEach(doc => {
-                markdown += `| [${doc.relativePath}](/${doc.path}) | ${doc.title} | ${doc.category} | ${doc.lastUpdate} |\n`;
+                const docReference = this.formatDocumentReference(doc);
+                markdown += `| ${docReference} | ${doc.title} | ${doc.category} | ${doc.lastUpdate} |\n`;
             });
         }
 
@@ -417,7 +459,8 @@ class DocumentationStatusReporter {
                 const statusIcon = this.getStatusIcon(doc.status);
                 const docStatusIcon = doc.docStatus ? this.getDocStatusIcon(doc.docStatus) : '❓';
                 const docStatusDisplay = doc.docStatus ? `${docStatusIcon} ${doc.docStatus}` : '❓ geen';
-                markdown += `| [${doc.relativePath}](/${doc.path}) | ${doc.title} | ${statusIcon} ${doc.status} | ${docStatusDisplay} | ${doc.category} | ${doc.wordCount} | ${doc.lastUpdate} |\n`;
+                const docReference = this.formatDocumentReference(doc);
+                markdown += `| ${docReference} | ${doc.title} | ${statusIcon} ${doc.status} | ${docStatusDisplay} | ${doc.category} | ${doc.wordCount} | ${doc.lastUpdate} |\n`;
             });
         
         markdown += '\n</details>\n\n';
