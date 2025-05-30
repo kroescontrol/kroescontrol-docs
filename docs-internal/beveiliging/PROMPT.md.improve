@@ -1,0 +1,818 @@
+# TAAK: VERBETER PROMPT.MD KWALITEIT VOOR CATEGORIE
+
+## CONTEXT BASIS
+# GECOMBINEERDE PROMPT VOOR: default
+# Gegenereerd op: do mei 29 23:19:26 CEST 2025
+# Door: buildPrompt.sh
+
+# ===========================================
+# CLAUDE Module: CLAUDE_basis.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_basis.md
+# ===========================================
+
+---
+title: Basis Richtlijnen
+sidebar_position: 1
+description: 'Fundamentele schrijfstijl, terminologie en author conventies voor Claude Code'
+tags:
+  - claude-code
+  - basis
+  - schrijfstijl
+  - author
+keywords:
+  - schrijfstijl
+  - terminologie
+  - author
+  - conventies
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Claude Code Basis Richtlijnen
+
+## Communicatie & Taal
+
+- **Communiceer in Nederlands** tenzij anders aangegeven
+- Gebruik professionele maar toegankelijke tone
+- Technische termen mogen in het Engels blijven waar gebruikelijk
+
+## Author Richtlijnen
+
+Bij het werken met git commits, documentatie en content creatie:
+
+### Author Conventies
+- **Gebruik altijd "Serge Kroes"** als author in frontmatter en metadata
+- **Vermeld nooit** "Claude", "Claude Code", of "AI-gegenereerd" in commit berichten
+- **Schrijf commit berichten** in eerste persoon alsof je de ontwikkelaar bent
+- **Schrijf documentatie** vanuit het perspectief van het team/organisatie, niet als AI assistent
+
+### Schrijfstijl
+- **Commit berichten zoals**: "Voeg nieuwe feature X toe" of "Los bug op in Y"
+- **NIET zoals**: "Claude voegt feature X toe" of "Gegenereerd door Claude"
+- **In documentatie gebruik**: "Dit document beschrijft..." of "We raden aan..."
+- **NIET**: "Claude heeft dit gegenereerd" of "AI-gecreëerde content"
+
+## Technische Focus
+
+Het project richt zich op:
+- **Kubernetes** en Cloud Native technologieën
+- **Observability** en monitoring
+- **SRE Engineering** practices
+- **Moderne development workflows**
+
+## Content Principes
+
+- **Praktisch**: Focus op uitvoerbare instructies
+- **Compleet**: Alle benodigde informatie aanwezig
+- **Consistent**: Volg gedefinieerde templates en structuren
+- **Actueel**: Houd informatie up-to-date en relevant
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_structuur.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_structuur.md
+# ===========================================
+
+---
+title: Repository Structuur
+sidebar_position: 2
+description: >-
+  Directory organisatie en bestandsconventies voor de kroescontrol-docs
+  repository
+tags:
+  - claude-code
+  - structuur
+  - repository
+  - directories
+keywords:
+  - repository
+  - structuur
+  - directories
+  - organisatie
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Repository Structuur
+
+## Hoofddirectories
+
+**Repository Context**: 
+- macOS: `/Users/serkroes/Workspace/kroescontrol-docs/`
+- Linux build: `/tmp/build/kroescontrol-docs/`
+- Git repo: `kroescontrol-docs`
+
+### `/docs-public/` - Openbare Informatie
+**Pad**: `./docs-public/` (root level)  
+**Toegang**: Openbaar via public site  
+**Content**: 33 bestanden, 98.8% published status
+
+**Subcategorieën**:
+- **Algemeen**: `./docs-public/algemeen/` - Kroescontrol introductie
+- **Werken-bij**: `./docs-public/werken-bij/` - Recruitment informatie  
+- **Kennismaking**: `./docs-public/kennismaking/` - Product introductie
+- **Branding**: `./docs-public/branding/` - Huisstijl en visuele identiteit
+- **Tools**: `./docs-public/tools/` - Publieke tool documentatie
+
+### `/docs-internal/` - Interne Documentatie (git-crypt)
+**Pad**: `./docs-internal/` (encrypted)  
+**Toegang**: Team only via git-crypt  
+**Content**: 45 bestanden, mixed docStatus
+
+**Subcategorieën**:
+- **Budgetten**: `./docs-internal/budgetten/` - Engineer/Mobility budget details
+- **Tools**: `./docs-internal/tools/` - Interne tools (claudecode, documentatie, engineer-hub, hoorayhr)
+- **Onboarding**: `./docs-internal/onboarding/` - 5-fase nieuwe medewerker proces
+- **FAQ**: `./docs-internal/faq/` - Interne veelgestelde vragen
+- **Beveiliging**: `./docs-internal/beveiliging/` - Security procedures (45 planned categories)
+
+### `/docs-operation/` - Operationele Documentatie (git-crypt)
+**Pad**: `./docs-operations/` (encrypted)  
+**Toegang**: Operations team via git-crypt  
+**Content**: 2 bestanden, planning voor 12 categorieën
+
+**Geplande subcategorieën**:
+- **Klanten**: Client procedures en inhuur workflows  
+- **SNA**: Registratie en compliance procedures
+- **Management**: Strategische planning en besluitvorming
+
+### `/docs-finance/` - Financiële Documentatie (git-crypt)
+**Pad**: `./docs-finance/` (encrypted)  
+**Toegang**: Finance team via git-crypt  
+**Content**: 2 bestanden, planning voor 12 categorieën
+
+**Geplande subcategorieën**:
+- **Facturatie**: `./docs-finance/facturatie/` - Billing en nummering procedures
+- **Administratie**: `./docs-finance/administratie/` - Boekhouding en BTW
+- **Loon**: `./docs-finance/loon/` - Payroll en CAO procedures
+
+## Ondersteunende Directories
+
+### `/src/` - Docusaurus Thema
+- **Components**: React componenten voor het thema
+- **Plugins**: Custom Docusaurus plugins
+- **Theme**: Aanpassingen aan het Docusaurus thema
+- **Utils**: Utility functies (build exclusions, encryption utils)
+
+### `/static/` - Statische Assets
+- **Branding**: Huisstijl materialen (logos, kleuren)
+- **Img**: Algemene afbeeldingen en iconen
+
+### `/old/` - Legacy Bronmateriaal en Context
+**Locatie**: `./old/` (repository root level)  
+**Doel**: Historische documentatie als bron voor content generatie  
+**Index**: Zie `./old/index.md` voor complete overzicht van 47+ legacy bestanden
+
+**Inhoud structuur**:
+- **HR en Onboarding** (7 bestanden) - Volledige onboarding workflows
+- **SNA Certificering** (5 bestanden) - Payroll en compliance procedures  
+- **Strategische Documenten** (5 bestanden) - Project plannen en migratie
+- **Branding & Visuele Identiteit** (2 bestanden) - Merkrichtlijnen
+- **Werkafspraken 2.0** (8 bestanden) - Budget reglementen en procedures
+- **12 andere categorieën** - Facturatie, administratie, kantoor, etc.
+
+**Gebruik voor prompts**:
+- **Context bron** voor nieuwe documentatie generatie
+- **Template referenties** voor bestaande Kroescontrol procedures  
+- **Historical patterns** voor consistente documentatie stijl
+- **Process documentation** voor business requirements
+
+**Toegang**: 
+- Repository root: `/Users/serkroes/Workspace/kroescontrol-docs/old/` (macOS)
+- Build environment: `/tmp/build/kroescontrol-docs/old/` (Linux)
+- Git: Niet gecommit (local only)
+
+## Scripts en Automatisering
+
+### Documentatie Management Scripts
+**Locatie**: `./scripts/` (repository root)
+
+**Core Scripts**:
+- **`buildPrompt.sh`** - Modulaire prompt assembly voor Claude Code
+  - Combineert CLAUDE_*.md modules + target PROMPT.md  
+  - Safety checks voor live content protection
+  - Stdout output voor pipeline gebruik
+- **`analyzeDocStatus.js`** - DocStatus analyse en filtering  
+  - Identificeert Laag 2 content (regenereerbaar)
+  - Live content protection via status checks
+  - Bulk status reporting
+- **`generate-categories.sh`** - Geautomatiseerde category management
+  - Creates directories met `categories.txt` planning
+  - Genereert context-aware PROMPT.md bestanden
+  - Bulk operations met safety checks
+
+**Category Planning**:
+- **`categories.txt`** - Statische lijst van 45 categorieën voor bulk operaties
+- **Template system** - Context-aware PROMPT.md generatie per business domain
+
+### Modulaire Prompt Architectuur
+**Deze prompt modules** (`./docs-internal/tools/claudecode/prompt/CLAUDE_*.md`) vormen de basis van het content generatie systeem:
+
+**Module Stack**:
+1. **CLAUDE_basis.md** - Fundamentele richtlijnen en conventies
+2. **CLAUDE_structuur.md** - Deze file - repository organisatie 
+3. **CLAUDE_content.md** - Documentatie standaarden en templates
+4. **CLAUDE_deployment.md** - Build en deployment procedures  
+5. **CLAUDE_workflow.md** - Git workflows en automation
+
+**Assembly Workflow**:
+```bash
+# Modulaire prompt building
+./scripts/buildPrompt.sh --stdout docs-internal/beveiliging/toegangsbeheer | claude
+
+# Combines: CLAUDE modules + target PROMPT.md → Claude Code context
+```
+
+## Bestandsconventies
+
+### Naamgeving
+- **Directories**: lowercase met hyphens (`engineer-hub`, `basis-gebruik`)
+- **Bestanden**: descriptieve namen met hyphens (`budget-reglement.md`)
+- **Prompts**: `PROMPT.md` in content directories
+- **Categories**: Gedefinieerd in `categories.txt` voor geautomatiseerde generatie
+
+### Speciale Bestanden
+- **`_category_.json`**: Docusaurus category configuratie (auto-generated)
+- **`index.md`**: Hoofdpagina voor elke directory
+- **`PROMPT.md`**: AI content generation prompts (context-aware per domain)
+- **`categories.txt`**: Master lijst voor directory planning en bulk operations
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_content.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_content.md
+# ===========================================
+
+---
+title: Content Conventies
+sidebar_position: 3
+description: 'Documentatie standaarden, frontmatter en content structuur richtlijnen'
+tags:
+  - claude-code
+  - content
+  - frontmatter
+  - structuur
+keywords:
+  - content
+  - documentatie
+  - frontmatter
+  - structuur
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Content Conventies
+
+## Documentstructuur
+
+Elk document gebruikt een consistente structuur:
+
+### Standaardsecties
+- **Introductieparagraaf**: Korte uitleg wat het document behandelt
+- **"Belangrijkste punten"**: Key takeaways in bullet vorm
+- **"Gedetailleerde informatie"**: Uitgebreide uitleg en procedures
+- **"Veelgestelde vragen"**: Optioneel, alleen toevoegen indien relevant
+
+## Frontmatter Template
+
+```yaml
+---
+title: Documenttitel                # Verplicht - titel van de pagina
+sidebar_position: 1                # Verplicht - positie in de zijbalk
+description: Korte beschrijving    # Verplicht - voor SEO en voorvertoningen
+tags: [tag1, tag2, tag3]          # Verplicht - voor categorisatie en filtering
+keywords: [keyword1, keyword2]     # Verplicht - extra trefwoorden voor SEO
+last_update:                       # Verplicht - datum van laatste update
+  date: 2025-05-28
+  author: Serge Kroes              # Altijd "Serge Kroes" gebruiken
+image: /img/logo.svg               # Verplicht - standaard logo
+slug: /custom-url                  # Optioneel - aangepaste URL
+---
+```
+
+## Content Richtlijnen
+
+### Toegangsniveaus
+- **Public**: Algemene bedrijfsinformatie, branding, werving
+- **Internal**: Medewerker procedures, tools, onboarding
+- **Operational**: Management processen, strategie
+- **Financial**: Boekhouding, facturatie, compliance
+
+### Schrijfstijl
+- **Helder en beknopt**: Vermijd onnodige complexiteit
+- **Praktisch**: Focus op uitvoerbare instructies
+- **Professioneel**: Zakelijke tone maar toegankelijk
+- **Consistent**: Gebruik dezelfde terminologie door heel de site
+
+### Markdown Best Practices
+- **Kopjes hiërarchie**: Logische H1 → H2 → H3 structuur
+- **Code blocks**: Gebruik syntax highlighting
+- **Links**: Interne links naar gerelateerde documentatie
+- **Afbeeldingen**: Met alt text en beschrijvende bestandsnamen
+
+## PROMPT.md Bestanden
+
+Voor AI content generatie in directories:
+
+### Template Structuur
+```markdown
+---
+title: "PROMPT [sectie naam]"
+sidebar_position: 99
+description: "Prompt bestand voor [sectie] documentatie"
+tags: [prompt]
+keywords: [prompt, template]
+last_update:
+  date: [YYYY-MM-DD]
+  author: Serge Kroes
+image: /img/logo.svg
+---
+
+# PROMPT: [sectie naam]
+
+Instructies voor content generatie...
+```
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_deployment.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_deployment.md
+# ===========================================
+
+---
+title: Deployment Richtlijnen
+sidebar_position: 4
+description: Build en deployment procedures voor verschillende omgevingen
+tags:
+  - claude-code
+  - deployment
+  - build
+  - vercel
+keywords:
+  - deployment
+  - build
+  - vercel
+  - github-pages
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Deployment Richtlijnen
+
+## Build Types
+
+Het project ondersteunt verschillende build types voor verschillende doelgroepen:
+
+### 1. Public Build (`BUILD_TYPE=public`)
+- **Includes**: docs-public alleen
+- **Use case**: Externe website voor publiek
+- **Command**: `npm run build:public`
+
+### 2. Internal Build (`BUILD_TYPE=internal`) - DEFAULT
+- **Includes**: docs-public + docs-internal
+- **Use case**: Medewerkers documentatie site
+- **Command**: `npm run build` of `npm run build:internal`
+
+### 3. Operational Build (`BUILD_TYPE=operational`)
+- **Includes**: docs-public + docs-internal + docs-operation
+- **Use case**: Management en operationeel team
+- **Command**: `npm run build:operational`
+
+### 4. Full Build (`BUILD_TYPE=full`)
+- **Includes**: Alle directories
+- **Use case**: Volledige toegang voor leidinggevenden
+- **Command**: `npm run build:full`
+
+### 5. Development Build (`BUILD_TYPE=dev`)
+- **Includes**: Alles + draft content
+- **Use case**: Development en content creation
+- **Command**: `npm run build:dev`
+
+## Deployment Omgevingen
+
+### Publieke Site Deploy
+Voor alleen publieke documentatie:
+```bash
+./deploy-public-only.sh
+```
+
+**Process:**
+1. Genereert sidebar in PUBLIC_ONLY modus
+2. Configureert juiste URL en instellingen
+3. Maakt tijdelijke .env zonder API keys
+4. Bouwt alleen publieke inhoud
+5. Deployt naar kroescontrol-public GitHub repository
+
+### Vercel Deployment
+- **Interne site**: docs.kroescontrol.nl via Vercel
+- **Environment variables**: Configureer BUILD_TYPE per environment
+- **Git-crypt**: Automatisch unlocking via GitHub Actions
+
+## Git-crypt Beveiliging
+
+- **Versleutelde directories**: `/docs-internal/`, `/docs-operation/`, `/docs-finance/`
+- **GPG keys**: Beheer via git-crypt add-gpg-user
+- **CI/CD**: Automatische unlock in GitHub Actions
+- **Nieuwe gebruikers**: GPG sleutel delen met repository beheerder
+
+## Belangrijke Scripts
+
+### Build Verificatie
+```bash
+npm run build:check    # Debug configuratie
+npm run test-routes    # Test alle routes
+npm run check-access   # Git-crypt access check
+```
+
+### Status Monitoring
+```bash
+npm run status:report  # Documentatie status
+node scripts/statusReport.js   # Detailed status report
+```
+
+
+# ===========================================
+# CLAUDE Module: CLAUDE_workflow.md
+# Bron: /Users/serkroes/Workspace/kroescontrol-docs/docs-internal/tools/claudecode/prompt/CLAUDE_workflow.md
+# ===========================================
+
+---
+title: Workflow Commando's
+sidebar_position: 5
+description: Git workflow en npm scripts voor dagelijks gebruik
+tags:
+  - claude-code
+  - workflow
+  - git
+  - npm
+keywords:
+  - workflow
+  - git
+  - npm
+  - commands
+  - scripts
+last_update:
+  date: 2025-05-28T00:00:00.000Z
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: locked
+---
+
+# Workflow Commando's
+
+## Veelgebruikte NPM Scripts
+
+### Development
+```bash
+npm install              # Installeer dependencies
+npm start               # Start development server (internal build)
+npm run start:dev       # Start met draft content
+npm run start:public    # Start public-only build
+npm run clear           # Wis Docusaurus cache
+```
+
+### Building
+```bash
+npm run build           # Production build (internal)
+npm run build:public    # Build alleen publieke content
+npm run build:full      # Build alle directories
+npm run deploy          # Build en deploy
+```
+
+### Maintenance
+```bash
+npm run status:report   # Documentatie status check
+npm run build:check     # Debug build configuratie
+npm run test-routes     # Test alle routes
+```
+
+## Git Workflow
+
+### Basis Commands
+```bash
+git status              # Check repository status
+git add .              # Stage alle wijzigingen
+git commit -m "message" # Commit met bericht
+git push               # Push naar remote
+```
+
+### Git-crypt Operations
+```bash
+git-crypt status       # Check encryption status
+git-crypt unlock       # Unlock encrypted files
+git-crypt lock         # Lock encrypted files (voor testen)
+```
+
+### Branch Management
+```bash
+git checkout main      # Switch naar main branch
+git checkout -b feature/name  # Nieuwe feature branch
+git push -u origin branch-name  # Push nieuwe branch
+```
+
+## Deployment Workflows
+
+### GitHub Actions Monitoring
+```bash
+# Custom script voor monitoring
+./.tijdelijk/gh-run-status     # Monitor GitHub Actions runs
+```
+
+### Vercel Operations
+```bash
+vercel --prod          # Deploy naar productie
+vercel inspect --logs  # Bekijk deployment logs
+vercel logs [deployment-id]  # Specifieke deployment logs
+```
+
+## Content Creation Workflow
+
+### Nieuwe Pagina Toevoegen
+1. **Bepaal locatie**: Welke docs-* directory
+2. **Maak directory**: `docs-internal/[categorie]/[sectie]/`
+3. **Maak PROMPT.md**: Voor AI content generatie
+4. **Genereer content**: Gebruik Claude Code met prompt
+5. **Review en verfijn**: Check consistentie
+
+### Draft Content Workflow
+1. **Start met draft**: `status: draft` in frontmatter
+2. **Ontwikkel**: `npm run start:dev` (toont drafts)
+3. **Review**: `npm run start` (verbergt drafts)
+4. **Publiceer**: Verwijder draft status
+
+## Troubleshooting Commands
+
+### Git-crypt Issues
+```bash
+export GPG_TTY=$(tty)           # Fix GPG TTY issues
+gpg --list-secret-keys          # Check GPG keys
+gpgconf --kill gpg-agent        # Restart GPG agent
+```
+
+### Build Issues
+```bash
+npm run clear                   # Clear caches
+rm -rf node_modules && npm install  # Fresh install
+npm run build:check             # Debug build config
+```
+
+## SPECIFIEKE CATEGORIE VERBETERING
+**Target**: docs-internal/beveiliging  
+**Categorie**: beveiliging binnen docs-internal  
+**Bestaande PROMPT.md**: ---
+title: "PROMPT Beveiliging"
+sidebar_position: 99
+description: "Prompt bestand voor beveiliging sectie documentatie"
+tags:
+  - prompt
+  - beveiliging
+  - security
+keywords:
+  - prompt
+  - template
+  - beveiliging
+  - security
+  - toegangsbeheer
+last_update:
+  date: 2025-05-29
+  author: Serge Kroes
+image: /img/logo.svg
+docStatus: live
+---
+
+# PROMPT: Beveiliging Sectie
+
+## CONTEXT & SCOPE
+
+**Target Directory**: `docs-internal/beveiliging/`  
+**Bestaande Subcategorieën**: 
+- `compliance/` - Compliance procedures en naleving
+- `incident-response/` - Incident respons procedures
+- `procedures/` - Algemene beveiliging procedures
+- `toegangsbeheer/` - Access management en authenticatie
+- `tools/` - Security tools en configuratie
+- `training/` - Security awareness en training
+
+## LEGACY CONTENT RESEARCH
+
+### Primaire Legacy Bronnen
+**Gebaseerd op analyse van `/old/` directory voor beveiliging-gerelateerde content:**
+
+#### 1. Toegangsbeheer & Onboarding (Hoge prioriteit)
+- **`./old/HR en onboarding/INDOCU onboarding spullen.md`**
+  - 1Password onboarding procedures (invite flow, vault toegang)
+  - Google Workspace account setup (admin.google.com procedures)
+  - Clockify toegang configuratie
+  - Admin procedures voor account beheer
+
+#### 2. HoorayHR Access Management
+- **`./old/HR en onboarding/Procesbeschrijving Personeelsregistratie.md`**
+  - Beheerder toegang definitie (S. Kroes, P. Radewalt, boekhouder)
+  - Workflow toegang en rol-gebaseerde permissies
+  - HoorayHR onboarding workflow security
+
+#### 3. Fysieke Toegang & Kantoor Security
+- **`./old/kantoorzaken/INDOCU mr.green.md`**
+  - SaltoApp digitale sleutel systeem
+  - WiFi toegang (Mr.Green Members netwerk)
+  - Corporate grade netwerkbeveiliging per bedrijf
+  - PEAP authenticatie configuratie
+  - PIN-gebaseerde toegangscontrole
+
+#### 4. Overige Security-gerelateerde Legacy
+- Diverse `./old/` bestanden bevatten authentication/authorization referenties
+- Compliance aspecten in SNA documentatie
+- Tool-specifieke security configuraties
+
+## CONTENT GENERATIE INSTRUCTIES
+
+### Prioriteit 1: Core Security Procedures
+**Ontwikkel uitgebreide documentatie voor:**
+
+1. **Toegangsbeheer (`toegangsbeheer/`)**
+   - **1Password Enterprise Setup**
+     - Legacy referentie: `./old/HR en onboarding/INDOCU onboarding spullen.md`
+     - Admin procedures (my.1password.eu/signin configuratie)
+     - Vault structuur en permissies
+     - Invite flow en team member onboarding
+     - 2FA verificatie procedures
+   
+   - **Google Workspace Security**
+     - Admin console toegang (admin.google.com)
+     - Organizational unit configuratie
+     - Recovery informatie management
+     - Account lifecycle procedures
+
+   - **HoorayHR Access Management**
+     - Legacy referentie: `./old/HR en onboarding/Procesbeschrijving Personeelsregistratie.md`
+     - Beheerder rollen (Kroes, Radewalt, boekhouder)
+     - Workflow permissies en rol toewijzing
+     - Partner toegang configuratie
+
+2. **Tools Security (`tools/`)**
+   - **Clockify Security Setup**
+     - Teams configuratie en groep toewijzing
+     - Engineer groep toegang procedures
+     - Admin panel security (clockify.me/teams)
+   
+   - **Mr.Green Office Security**
+     - Legacy referentie: `./old/kantoorzaken/INDOCU mr.green.md`
+     - SaltoApp digitale sleutel management
+     - WiFi enterprise security (PEAP/MSSCHAPv2)
+     - Network segmentatie en corporate grade beveiliging
+     - PIN-gebaseerde toegangscontrole
+
+3. **Procedures (`procedures/`)**
+   - **Account Lifecycle Management**
+     - Onboarding security checklist
+     - Offboarding procedures en toegang intrekking
+     - Periodieke access reviews
+   
+   - **Tool Integration Security**
+     - Cross-platform authentication flows
+     - SSO configuratie waar mogelijk
+     - API key management
+
+### Prioriteit 2: Governance & Compliance
+**Ontwikkel documentatie voor:**
+
+4. **Compliance (`compliance/`)**
+   - **Data Protection & Privacy**
+     - GDPR compliance procedures
+     - Data retention policies
+     - Personal data handling in HR tools
+   
+   - **SNA Compliance Security**
+     - Reference naar SNA documentatie in `./old/SNA/`
+     - Payroll security procedures
+     - Compliance reporting requirements
+
+5. **Training (`training/`)**
+   - **Security Awareness Program**
+     - 1Password best practices
+     - Phishing awareness
+     - Physical security procedures (Mr.Green offices)
+   
+   - **Tool-specific Security Training**
+     - HoorayHR security features
+     - Google Workspace security settings
+     - Mobile device security (SaltoApp)
+
+6. **Incident Response (`incident-response/`)**
+   - **Security Incident Procedures**
+     - Contact escalation (Kroes, Radewalt)
+     - Tool-specific incident response
+     - Access revocation procedures
+   
+   - **Business Continuity**
+     - Backup access procedures
+     - Emergency tool access
+     - Alternative authentication methods
+
+## IMPLEMENTATIE RICHTLIJNEN
+
+### Content Structuur
+- **Index pagina**: `index.md` - Overzicht security framework
+- **Per subcategorie**: Specifieke PROMPT.md + gegenereerde content
+- **Cross-referenties**: Links tussen gerelateerde security procedures
+
+### Tool-specific Details
+**Integreer concrete configuratie uit legacy:**
+- 1Password invite URLs en admin procedures
+- Google Workspace organizational unit configuratie
+- HoorayHR workflow template namen
+- Mr.Green app integration procedures
+- SaltoApp koppeling workflows
+
+### Security-first Approach
+- **Principle of Least Privilege**: Minimale toegang per rol
+- **Defense in Depth**: Meerdere security lagen
+- **Regular Reviews**: Periodieke toegangsvalidatie
+- **Incident Preparedness**: Duidelijke escalatiepaden
+
+### Kroescontrol Context
+**Specifieke organisatie elementen:**
+- **Beheerder rollen**: Serge Kroes, Patriek Radewalt
+- **Tools stack**: 1Password, Google Workspace, HoorayHR, Clockify, Mr.Green
+- **Company structure**: Engineers, management, finance (external bookkeeper)
+- **Locaties**: Mr.Green offices (Klarenbeek, Amsterdam)
+
+## KWALITEITSCRITERIA
+
+### Legacy Integration
+- [ ] Verwijst naar specifieke legacy procedures uit `./old/`
+- [ ] Behoudt concrete tool configuraties en URLs
+- [ ] Integreert bestaande rol definities en permissies
+
+### Praktische Bruikbaarheid
+- [ ] Stap-voor-stap procedures voor elke tool
+- [ ] Duidelijke escalatiepaden en contactpersonen
+- [ ] Troubleshooting sectie per security procedure
+
+### Compliance & Governance
+- [ ] GDPR-conforme procedures
+- [ ] SNA compliance integration
+- [ ] Audit trail en logging procedures
+
+### Organisatie-specific
+- [ ] Kroescontrol-specifieke tool configuraties
+- [ ] Concrete rol toewijzingen (Kroes, Radewalt, etc.)
+- [ ] Mr.Green office-specifieke security procedures
+
+**SCOPE**: Uitgebreide beveiliging documentatie gebaseerd op concrete legacy procedures en tool-specifieke configuraties uit de Kroescontrol organisatie.
+
+## RESEARCH OPDRACHT
+Analyseer de ./old directory voor relevante content voor deze categorie:
+
+### Legacy Content Research
+1. **Zoek in ./old/index.md** naar referenties gerelateerd aan "beveiliging" of "docs-internal"
+2. **Scan ./old/ bestanden** voor content matching deze categorie keywords
+3. **Identificeer concrete procedures** uit legacy docs die relevant zijn
+4. **Vind tool referenties** en Kroescontrol-specifieke workflows
+
+### Kwaliteitsverbetering Opdracht
+**VERBETER de bestaande PROMPT.md** door:
+
+#### Als WEINIG legacy content gevonden:
+- **Beknopte index aanpak** - focus op kern functionaliteit
+- **Template-driven** - gebruik basis structuren
+- **Minimal viable** - belangrijkste procedures only
+- **Verwijs naar gerelateerde categorieën** voor meer context
+
+#### Als VEEL legacy content gevonden:
+- **Uitgebreide documentatie structuur** - meerdere documenten plan
+- **Cross-referenties tussen documenten** binnen categorie
+- **Concrete legacy procedures** integreren en moderniseren  
+- **Index als navigation hub** naar sub-documenten
+- **Tool-specific workflows** uit legacy docs
+
+### OUTPUT SPECIFICATIES
+Genereer een **VERBETERDE PROMPT.md** die:
+
+1. **Legacy-driven content instructies** - concrete referenties naar ./old bestanden
+2. **Category-specific focus** - diepgaand op beveiliging procedures  
+3. **Kroescontrol context** - echte tools, rollen, compliance vereisten
+4. **Actionable procedures** - geen generieke templates
+5. **Scale-appropriate** - beknopt bij weinig info, uitgebreid bij veel content
+
+### KWALITEITSCHECKLIST
+- [ ] Verwijst naar specifieke ./old/ bestanden gevonden tijdens research
+- [ ] Bevat concrete Kroescontrol voorbeelden uit legacy
+- [ ] Definieert realistic scope (beknopt vs uitgebreid) 
+- [ ] Includes actual tool names en access procedures
+- [ ] Specifies escalation contacts en procedures
+- [ ] Legacy procedures zijn gemoderniseerd voor huidige workflow
+
+**MAAK NU EEN VERBETERDE PROMPT.MD** voor categorie: docs-internal/beveiliging
