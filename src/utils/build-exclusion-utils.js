@@ -248,6 +248,10 @@ function generateExcludePatterns() {
     patterns.push('**/_drafts/**'); // Conventionele draft directory
   }
   
+  // NIET exclude PROMPT.md files - we willen ze wel kunnen bekijken
+  // patterns.push('**/PROMPT.md');
+  // patterns.push('**/PROMPT.md.improve');
+  
   // Exclude documenten met specific docStatus (alleen in productie)
   if (process.env.NODE_ENV === 'production') {
     const excludeStatuses = ['templated', 'generated'];

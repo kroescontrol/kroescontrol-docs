@@ -10,7 +10,7 @@ tags:
   - transparantie
   - dashboard
 keywords:
-  - spreadsheet
+  - dashboard
   - wallet
   - metrics
   - boekhouding
@@ -29,13 +29,13 @@ De Engineer Hub vormt het hart van onze transparante werkwijze bij Kroescontrol.
 
 ## Belangrijkste punten
 
-- De Engineer Hub is een persoonlijk Google Spreadsheet dashboard dat volledig inzicht geeft in je Engineer Budget en Mobiliteitsbudget
+- De Engineer Hub is een persoonlijk dashboard dat volledig inzicht geeft in je Engineer Budget en Mobiliteitsbudget
 - Het systeem wordt automatisch bijgewerkt en geeft je real-time toegang tot je financiële overzichten
 - De Engineer Hub stimuleert kostenbewust werken door volledige transparantie te bieden over uitgaven en beschikbare middelen
 
 ## Wat is de Engineer Hub?
 
-De Engineer Hub is een persoonlijke Google Drive-spreadsheet die speciaal voor jou wordt aangemaakt wanneer je bij Kroescontrol start. Deze spreadsheet vormt een compleet dashboard waarin al je budgetten, uitgaven en declaraties overzichtelijk worden bijgehouden. Het is ontworpen om maximale transparantie te bieden en je in staat te stellen je eigen budgetten effectief te beheren.
+De Engineer Hub is een persoonlijk dashboard dat speciaal voor jou wordt aangemaakt wanneer je bij Kroescontrol start. Dit dashboard vormt een compleet overzicht waarin al je budgetten, uitgaven en declaraties overzichtelijk worden bijgehouden. Het is ontworpen om maximale transparantie te bieden en je in staat te stellen je eigen budgetten effectief te beheren.
 
 ### Voordelen van de Engineer Hub
 
@@ -90,7 +90,7 @@ De meeste processen verlopen automatisch, waardoor de Engineer Hub vrijwel altij
 Bij vragen of onduidelijkheden kun je altijd terecht bij Serge of Patriek. Zij helpen je graag verder en kunnen waar nodig aanpassingen doorvoeren.
 
 **Is mijn data veilig in de Engineer Hub?**
-Ja, de Engineer Hub is een persoonlijke Google Drive-spreadsheet met beperkte toegang. Er worden regelmatig back-ups gemaakt en de gegevens worden periodiek gecontroleerd door de boekhouding.
+Ja, de Engineer Hub is een persoonlijk dashboard met beperkte toegang. Er worden regelmatig back-ups gemaakt en de gegevens worden periodiek gecontroleerd door de boekhouding.
 
 **Kan ik de Engineer Hub inzien voordat ik bij Kroescontrol start?**
 Tijdens het sollicitatieproces krijg je een demonstratie van de Engineer Hub om je een goed beeld te geven van hoe het werkt. De persoonlijke hub wordt aangemaakt zodra je bij Kroescontrol start.

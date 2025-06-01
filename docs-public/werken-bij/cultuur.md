@@ -74,7 +74,7 @@ Deze cultuur van openheid geeft ruimte voor het experimenteren en vernieuwen dat
 
 ### Community Days
 
-Onze Community Days vormen het hart van onze kennisdelingscultuur. Regelmatig komen we samen op ons kantoor voor deze waardevolle bijeenkomsten die veel meer zijn dan gewone werksessies. Hier:
+Onze [Community Days](/cultuur/community-days) vormen het hart van onze kennisdelingscultuur. Regelmatig komen we samen op ons kantoor voor deze waardevolle bijeenkomsten die veel meer zijn dan gewone werksessies. Hier:
 
 - Delen we diepgaande kennis, praktische tips en tricks uit onze dagelijkse praktijk
 - Geven collega's inspirerende demo's van lopende projecten en nieuwe technologieën
@@ -130,7 +130,7 @@ Onze cultuur is oprecht informeel en laagdrempelig, maar tegelijk zeer professio
 Nee, we hebben geen formele dresscode. Draag waar jij je comfortabel in voelt, passend bij de context van je werk. Bij klantbezoeken kan gepaste zakelijke kleding gewenst zijn, maar op kantoor of tijdens thuiswerken waarderen we authenticiteit.
 
 **Hoe belangrijk zijn Community Days en samenwerkdagen?**
-Deze dagen zijn belangrijk voor kennisdeling en teambuilding, maar niet verplicht. We begrijpen dat iedereen zijn eigen balans zoekt tussen gezamenlijke activiteiten en focus op individueel werk of persoonlijke tijd.
+Deze [Community Days](/cultuur/community-days) zijn belangrijk voor kennisdeling en teambuilding, maar niet verplicht. We begrijpen dat iedereen zijn eigen balans zoekt tussen gezamenlijke activiteiten en focus op individueel werk of persoonlijke tijd.
 
 **Hoe gaan jullie om met fouten en mislukkingen?**
 We zien fouten en mislukkingen als leermomenten. In onze cultuur is het veilig om risico's te nemen, nieuwe dingen te proberen en eerlijk te zijn wanneer iets niet werkt. We leren samen van uitdagingen en gebruiken deze inzichten om te groeien.

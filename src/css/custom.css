@@ -52,6 +52,16 @@
   --ifm-navbar-padding-horizontal: 1.5rem;
 }
 
+/* Hide PROMPT.md files from sidebar navigation */
+.theme-doc-sidebar-item-link[href*="PROMPT"] {
+  display: none !important;
+}
+
+/* Alternative approach using class name */
+.excluded-from-sidebar {
+  display: none !important;
+}
+
 /* Dark mode overrides */
 [data-theme='dark'] {
   /* Primaire kleur in dark mode: kc-pink voor betere leesbaarheid */
@@ -741,4 +751,9 @@ th {
     border-left-width: 2px;
     margin-left: 0.75rem;
   }
+}
+
+/* Hide PROMPT.md files from sidebar while keeping them accessible via URL */
+.hidden {
+  display: none !important;
 }

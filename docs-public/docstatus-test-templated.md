@@ -1,14 +1,14 @@
 ---
 title: ❌ Test Document (Templated)
 sidebar_position: 999
-docStatus: templated
+docStatus: completed
 ---
 
 # ❌ Test Document (Status: templated)
 
 **[WARN] Dit document zou NIET zichtbaar moeten zijn in productie builds!**
 
-Dit is een test document met `docStatus: templated`. Het demonstreert dat:
+Dit is een test document met `docStatus: completed`. Het demonstreert dat:
 
 - [OK] Het document zichtbaar is in **development** builds
 - ❌ Het document wordt **uitgefilterd** in productie builds

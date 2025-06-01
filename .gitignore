@@ -29,6 +29,7 @@ setup-*.md
 
 # Project-specific directories
 /old/
+/input/
 
 # Editor & system files
 .DS_Store

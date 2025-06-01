@@ -406,16 +406,12 @@ generate_prompt() {
     # Maak category-aware PROMPT.md template
     cat > "$prompt_file" << EOF
 ---
-title: "PROMPT $category_friendly_name"
-sidebar_position: 99
 description: "Context-aware prompt voor $category_friendly_name documentatie"
 tags: [prompt, claude-code, $sub_category, $subsection]
 keywords: [$specific_keywords]
 last_update:
   date: $(date +%Y-%m-%d)
   author: Serge Kroes
-image: /img/logo.svg
-docStatus: templated
 ---
 
 # PROMPT: $category_friendly_name

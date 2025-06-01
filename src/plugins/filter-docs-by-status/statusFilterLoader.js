@@ -13,6 +13,22 @@ module.exports = function(source) {
   const options = this.getOptions();
   
   try {
+    // Check if this is a PROMPT.md file that should be excluded from sidebar
+    const filePath = this.resourcePath;
+    const fileName = require('path').basename(filePath);
+    
+    if (options.excludeFromSidebar && options.excludeFromSidebar.includes(fileName)) {
+      const { data, content } = matter(source);
+      const hiddenData = {
+        ...data,
+        sidebar_position: null, // Remove from sidebar completely
+        sidebar_class_name: 'excluded-from-sidebar',
+      };
+      
+      const newContent = matter.stringify(content, hiddenData);
+      return callback(null, newContent);
+    }
+    
     // Parse frontmatter
     const { data, content } = matter(source);
     const { docStatus } = data;

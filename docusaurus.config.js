@@ -242,6 +242,7 @@ module.exports = {
       {
         excludeStatuses: process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [],
         hideFromSidebar: process.env.NODE_ENV === 'production' ? ['completed'] : [],
+        excludeFromSidebar: ['PROMPT.md'], // Exclude PROMPT.md files from sidebar entirely
         enableVisualIndicators: process.env.NODE_ENV === 'development',
         statusLabels: {
           templated: 'Template',
