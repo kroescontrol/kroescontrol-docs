@@ -190,6 +190,22 @@ p {
   text-decoration: none;
 }
 
+/* Section-specific hover states */
+.navbar__link[href*="/internal"]:hover {
+  color: var(--kc-teal);
+  background-color: rgba(28, 156, 143, 0.05);
+}
+
+.navbar__link[href*="/operation"]:hover {
+  color: var(--kc-blue);
+  background-color: rgba(32, 80, 163, 0.05);
+}
+
+.navbar__link[href*="/finance"]:hover {
+  color: var(--kc-coral);
+  background-color: rgba(230, 87, 96, 0.05);
+}
+
 .navbar__link--active {
   font-weight: 600;
   color: var(--kc-pink);
@@ -197,6 +213,31 @@ p {
   border: 2px solid var(--kc-pink);
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(194, 39, 87, 0.2);
+}
+
+/* Section-specific navbar active states */
+/* Internal section - Teal accent */
+.navbar__link[href*="/internal"].navbar__link--active {
+  color: var(--kc-teal);
+  background-color: rgba(28, 156, 143, 0.1);
+  border-color: var(--kc-teal);
+  box-shadow: 0 2px 8px rgba(28, 156, 143, 0.2);
+}
+
+/* Operation section - Royal Blue accent */
+.navbar__link[href*="/operation"].navbar__link--active {
+  color: var(--kc-blue);
+  background-color: rgba(32, 80, 163, 0.1);
+  border-color: var(--kc-blue);
+  box-shadow: 0 2px 8px rgba(32, 80, 163, 0.2);
+}
+
+/* Finance section - Coral accent */
+.navbar__link[href*="/finance"].navbar__link--active {
+  color: var(--kc-coral);
+  background-color: rgba(230, 87, 96, 0.1);
+  border-color: var(--kc-coral);
+  box-shadow: 0 2px 8px rgba(230, 87, 96, 0.2);
 }
 
 /* Dark mode styling */
@@ -264,12 +305,50 @@ p {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Dark mode section-specific hover states */
+[data-theme='dark'] .navbar__link[href*="/internal"]:hover {
+  color: var(--kc-teal);
+  background-color: rgba(28, 156, 143, 0.08);
+}
+
+[data-theme='dark'] .navbar__link[href*="/operation"]:hover {
+  color: #5B8DE8;
+  background-color: rgba(91, 141, 232, 0.08);
+}
+
+[data-theme='dark'] .navbar__link[href*="/finance"]:hover {
+  color: var(--kc-coral);
+  background-color: rgba(230, 87, 96, 0.08);
+}
+
 [data-theme='dark'] .navbar__link--active {
   color: var(--kc-pink);
   background-color: rgba(194, 39, 87, 0.15);
   border: 2px solid var(--kc-pink);
   border-radius: 6px;
   box-shadow: 0 2px 12px rgba(194, 39, 87, 0.3);
+}
+
+/* Dark mode section-specific navbar active states */
+[data-theme='dark'] .navbar__link[href*="/internal"].navbar__link--active {
+  color: var(--kc-teal);
+  background-color: rgba(28, 156, 143, 0.15);
+  border-color: var(--kc-teal);
+  box-shadow: 0 2px 12px rgba(28, 156, 143, 0.3);
+}
+
+[data-theme='dark'] .navbar__link[href*="/operation"].navbar__link--active {
+  color: #5B8DE8; /* Lighter blue for better contrast in dark mode */
+  background-color: rgba(91, 141, 232, 0.15);
+  border-color: #5B8DE8;
+  box-shadow: 0 2px 12px rgba(91, 141, 232, 0.3);
+}
+
+[data-theme='dark'] .navbar__link[href*="/finance"].navbar__link--active {
+  color: var(--kc-coral);
+  background-color: rgba(230, 87, 96, 0.15);
+  border-color: var(--kc-coral);
+  box-shadow: 0 2px 12px rgba(230, 87, 96, 0.3);
 }
 
 /* Footer styling */
@@ -336,6 +415,58 @@ p {
   border-radius: 4px;
 }
 
+/* Section-specific sidebar colors */
+/* Internal section */
+[data-doc-plugin-id="internal"] .menu__link--active,
+.menu__link--active[href*="/internal"] {
+  color: var(--kc-teal) !important;
+  background-color: rgba(28, 156, 143, 0.08) !important;
+}
+
+[data-doc-plugin-id="internal"] .menu__list-item-collapsible--active {
+  color: var(--kc-teal) !important;
+  background-color: rgba(28, 156, 143, 0.05) !important;
+}
+
+[data-doc-plugin-id="internal"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(28, 156, 143, 0.3) !important;
+  background-color: rgba(28, 156, 143, 0.02) !important;
+}
+
+/* Operation section */
+[data-doc-plugin-id="operation"] .menu__link--active,
+.menu__link--active[href*="/operation"] {
+  color: var(--kc-blue) !important;
+  background-color: rgba(32, 80, 163, 0.08) !important;
+}
+
+[data-doc-plugin-id="operation"] .menu__list-item-collapsible--active {
+  color: var(--kc-blue) !important;
+  background-color: rgba(32, 80, 163, 0.05) !important;
+}
+
+[data-doc-plugin-id="operation"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(32, 80, 163, 0.3) !important;
+  background-color: rgba(32, 80, 163, 0.02) !important;
+}
+
+/* Finance section */
+[data-doc-plugin-id="finance"] .menu__link--active,
+.menu__link--active[href*="/finance"] {
+  color: var(--kc-coral) !important;
+  background-color: rgba(230, 87, 96, 0.08) !important;
+}
+
+[data-doc-plugin-id="finance"] .menu__list-item-collapsible--active {
+  color: var(--kc-coral) !important;
+  background-color: rgba(230, 87, 96, 0.05) !important;
+}
+
+[data-doc-plugin-id="finance"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(230, 87, 96, 0.3) !important;
+  background-color: rgba(230, 87, 96, 0.02) !important;
+}
+
 /* Add a subtle left border for active section and a light background */
 .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
   border-left: 1px solid rgba(194, 39, 87, 0.2);
@@ -353,6 +484,25 @@ p {
 
 .menu__list-item-collapsible:hover {
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Section-specific hover states */
+[data-doc-plugin-id="internal"] .menu__link:hover,
+.menu__link[href*="/internal"]:hover {
+  color: var(--kc-teal);
+  background-color: rgba(28, 156, 143, 0.03);
+}
+
+[data-doc-plugin-id="operation"] .menu__link:hover,
+.menu__link[href*="/operation"]:hover {
+  color: var(--kc-blue);
+  background-color: rgba(32, 80, 163, 0.03);
+}
+
+[data-doc-plugin-id="finance"] .menu__link:hover,
+.menu__link[href*="/finance"]:hover {
+  color: var(--kc-coral);
+  background-color: rgba(230, 87, 96, 0.03);
 }
 
 /* Subtle indicators for expand/collapse caret */
@@ -394,6 +544,76 @@ p {
   border-radius: 0 0 4px 4px;
   margin-top: -2px;
   padding-top: 4px;
+}
+
+/* Dark mode section-specific sidebar colors */
+/* Internal section */
+[data-theme='dark'] [data-doc-plugin-id="internal"] .menu__link--active,
+[data-theme='dark'] .menu__link--active[href*="/internal"] {
+  color: var(--kc-teal) !important;
+  background-color: rgba(28, 156, 143, 0.15) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="internal"] .menu__list-item-collapsible--active {
+  color: var(--kc-teal) !important;
+  background-color: rgba(28, 156, 143, 0.1) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="internal"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(28, 156, 143, 0.4) !important;
+  background-color: rgba(28, 156, 143, 0.03) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="internal"] .menu__link:hover,
+[data-theme='dark'] .menu__link[href*="/internal"]:hover {
+  color: var(--kc-teal) !important;
+  background-color: rgba(28, 156, 143, 0.08) !important;
+}
+
+/* Operation section */
+[data-theme='dark'] [data-doc-plugin-id="operation"] .menu__link--active,
+[data-theme='dark'] .menu__link--active[href*="/operation"] {
+  color: #5B8DE8 !important;
+  background-color: rgba(91, 141, 232, 0.15) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="operation"] .menu__list-item-collapsible--active {
+  color: #5B8DE8 !important;
+  background-color: rgba(91, 141, 232, 0.1) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="operation"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(91, 141, 232, 0.4) !important;
+  background-color: rgba(91, 141, 232, 0.03) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="operation"] .menu__link:hover,
+[data-theme='dark'] .menu__link[href*="/operation"]:hover {
+  color: #5B8DE8 !important;
+  background-color: rgba(91, 141, 232, 0.08) !important;
+}
+
+/* Finance section */
+[data-theme='dark'] [data-doc-plugin-id="finance"] .menu__link--active,
+[data-theme='dark'] .menu__link--active[href*="/finance"] {
+  color: var(--kc-coral) !important;
+  background-color: rgba(230, 87, 96, 0.15) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="finance"] .menu__list-item-collapsible--active {
+  color: var(--kc-coral) !important;
+  background-color: rgba(230, 87, 96, 0.1) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="finance"] .menu__list-item:not(.menu__list-item--collapsed) > .menu__list {
+  border-left-color: rgba(230, 87, 96, 0.4) !important;
+  background-color: rgba(230, 87, 96, 0.03) !important;
+}
+
+[data-theme='dark'] [data-doc-plugin-id="finance"] .menu__link:hover,
+[data-theme='dark'] .menu__link[href*="/finance"]:hover {
+  color: var(--kc-coral) !important;
+  background-color: rgba(230, 87, 96, 0.08) !important;
 }
 
 /* Link styling */
