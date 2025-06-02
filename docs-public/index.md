@@ -28,16 +28,16 @@ Welkom bij de documentatie van Kroescontrol. Navigeer naar de gewenste sectie:
 ## :rocket: Voor Professionals
 
 - [Werken bij Kroescontrol](/werken-bij) - Carrièremogelijkheden en cultuur
-- [Kennismaking](/kennismaking) - Onboarding en eerste stappen
+- [Kennismaking](/kroescontrol-engineer) - Onboarding en eerste stappen
 - [Freelancecontrol Model](/freelancecontrol) - Alternatief model voor zelfstandigen
 
 ## :house: Voorzieningen
 
-- [Kantoorvoorzieningen](/kantoorvoorzieningen) - Moderne kantoorlocaties en faciliteiten
+- [Kantoor](/kantoor) - Moderne kantoorlocaties en faciliteiten
 
 ## :wrench: Tools & Branding
 
-- [Tools & Documentatie](/tools) - Documentatie en werkprocessen
+- [Tools & Documentatie](/public/tools) - Documentatie en werkprocessen
 - [Huisstijl & Branding](/branding) - Logo's, kleuren en downloads
 
 ## Hulp nodig?
