@@ -1,0 +1,97 @@
+# Productie exclusions voor sensitive content scan
+# Deze directories en bestanden worden overgeslagen tijdens de scan
+# BELANGRIJK: Dit bestand is versleuteld met operations key
+
+# ============================================================================
+# GIT EN VERSIE CONTROLE
+# ============================================================================
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# ============================================================================
+# NODE.JS EN BUILD ARTIFACTS
+# ============================================================================
+node_modules/
+build/
+dist/
+.next/
+.cache/
+.temp/
+.tmp/
+
+# ============================================================================
+# REEDS BESCHERMDE DIRECTORIES (git-crypt)
+# ============================================================================
+docs-finance/
+docs-operation/
+docs-internal/
+sensitive/
+.git-crypt/
+
+# ============================================================================
+# VERCEL EN DEPLOYMENT
+# ============================================================================
+.vercel/
+vercel.json
+
+# ============================================================================
+# ONTWIKKEL TOOLS EN CONFIGURATIE
+# ============================================================================
+.vscode/
+.idea/
+*.log
+.env*
+babel.config.js
+docusaurus.config.js
+package-lock.json
+package.json
+
+# ============================================================================
+# STATIC ASSETS EN BRANDING (publiek materiaal)
+# ============================================================================
+static/branding/
+static/img/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.pdf
+
+# ============================================================================
+# DOCUMENTATIE ASSETS
+# ============================================================================
+**/assets/screenshots/
+**/assets/images/
+README.md
+
+# ============================================================================
+# ENCRYPTED FILES (reeds beschermd)
+# ============================================================================
+*.gpg
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+
+# ============================================================================
+# SPECIFIEKE BESTANDEN DIE OVERGESLAGEN KUNNEN WORDEN
+# ============================================================================
+i18n/
+sidebars.js
+post-build.js
+
+# ============================================================================
+# TIJDELIJKE EN BACKUP BESTANDEN
+# ============================================================================
+*.bak
+*.backup
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
