@@ -1,7 +1,7 @@
 ---
-title: "🧪 Test Document (Completed Status)"
+title: 🧪 Test Document (Completed Status)
 sidebar_position: 998
-docStatus: completed
+docStatus: live
 ---
 
 # 🧪 Test Document (Status: completed)
