@@ -1,12 +1,12 @@
 ---
-id: kantoorvoorzieningen-overzicht
-title: Kantoorvoorzieningen
+id: kantoor-overzicht
+title: Kantoor
 sidebar_label: Overzicht
 sidebar_position: 1
 description: Kroescontrol werkt met moderne kantoorlocaties met luxe faciliteiten
 ---
 
-# Kantoorvoorzieningen
+# Kantoor
 
 ## Onze filosofie
 
@@ -36,18 +36,23 @@ Bij Kroescontrol gebruiken we kantoor zoals het hoort - fantastische mooie locat
 
 ## Onze kantoorlocaties
 
-We werken vanuit moderne kantoorlocaties verspreid door Nederland:
-- **Amsterdam** - Centraal gelegen met excellente OV-verbindingen
-- **Klarenbeek** - Natuurrijke omgeving, ideaal voor geconcentreerd werken
+Onze hoofdlocaties met volledige faciliteiten:
+- **[Amsterdam](/kantoor/locaties/amsterdam)** - Centraal gelegen met excellente OV-verbindingen
+- **[Klarenbeek](/kantoor/locaties/klarenbeek)** - Natuurrijke omgeving, ideaal voor geconcentreerd werken
+
+Daarnaast hebben we flexwerkplekken in:
 - **Apeldoorn** - Flexibele werkplekken in de Veluwe regio
 - **Rotterdam** - Dynamische zakelijke omgeving
-- **Ede** - Moderne faciliteiten in het hart van Nederland
-- **Zwolle** - Goed bereikbare locatie in Overijssel
+- **Utrecht** - Centrale ligging in Nederland
+- **Eindhoven** - Tech en innovatie hub
+
+[Bekijk alle locaties →](/kantoor/locaties/)
 
 ## Voor wie?
 
 Onze kantoren zijn toegankelijk voor:
 - Alle Kroescontrol medewerkers
+- Kroescontrol engineers met kantoor membership (afhankelijk van individuele afspraken)
 - Freelancecontrol professionals die daar zelf voor kiezen en gebruik van willen maken
 - Bezoekers op afspraak
 - Klanten voor meetings en presentaties
@@ -56,9 +61,11 @@ Onze kantoren zijn toegankelijk voor:
 
 Voor vragen over kantoorvoorzieningen:
 - Neem contact op met je Kroescontrol contactpersoon
-- Bekijk onze [contact & support](/kantoorvoorzieningen/contact-support) pagina
-- Raadpleeg de lokale informatie op de betreffende locatie
+- Raadpleeg de [specifieke locatie pagina's](/kantoor/locaties/) voor gedetailleerde informatie
+- **Mr. Green Support:** 055-301 1082 of info@mrgreenoffices.nl
 
 ## Meer informatie
 
-Meer informatie over specifieke onderwerpen vind je in de andere pagina's van deze sectie. Uitgebreide documentatie is beschikbaar in onze interne sectie voor medewerkers.
+Meer informatie over specifieke onderwerpen vind je in de andere pagina's van deze sectie.
+
+**Voor Kroescontrol medewerkers**: Interne procedures voor WiFi toegang, Salto sleutelsysteem, print faciliteiten en andere gevoelige informatie vind je in de [Mr. Green interne procedures](/internal/mrgreen/).
