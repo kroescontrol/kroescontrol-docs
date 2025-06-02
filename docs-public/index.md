@@ -1,9 +1,9 @@
 ---
-title: Welkom bij Kroescontrol
+title: Welkom
 docStatus: live
 sidebar_position: 0
 description: Welkom bij de centrale documentatie hub voor Kroescontrol.
-slug: /welkom
+slug: /
 tags:
   - documentatie
   - overzicht
@@ -17,22 +17,27 @@ last_update:
 
 Welkom bij de documentatie van Kroescontrol. Navigeer naar de gewenste sectie:
 
-## 🏢 Over Kroescontrol
+## :office: Over Kroescontrol
 
 - [Maak Kennis Met Kroescontrol](/over-kroescontrol) - Ons verhaal, visie en werkwijze
-- [Klantenportfolio](/klanten) - Voor wie we werken en wat we doen
+- [Klanten](/klanten) - Voor wie we werken en wat we doen
 - [Informatieorganisatie](/informatieorganisatie) - Hoe we informatie organiseren
 - [Contact](/contact) - Bereikbaarheid en vestigingen
+- [SNA Keurmerk](/sna-keurmerk) - Onze certificering
 
-## 💼 Voor Professionals
+## :rocket: Voor Professionals
 
 - [Werken bij Kroescontrol](/werken-bij) - Carrièremogelijkheden en cultuur
-- [Kroescontrol Engineer](/kroescontrol-engineer) - Allesomvattende IT-professionals
+- [Kennismaking](/kennismaking) - Onboarding en eerste stappen
 - [Freelancecontrol Model](/freelancecontrol) - Alternatief model voor zelfstandigen
 
-## 🛠️ Tools & Branding
+## :house: Voorzieningen
 
-- [Tools & Processen](/public/tools) - Documentatie en werkprocessen
+- [Kantoorvoorzieningen](/kantoorvoorzieningen) - Moderne kantoorlocaties en faciliteiten
+
+## :wrench: Tools & Branding
+
+- [Tools & Documentatie](/tools) - Documentatie en werkprocessen
 - [Huisstijl & Branding](/branding) - Logo's, kleuren en downloads
 
 ## Hulp nodig?

@@ -4,6 +4,11 @@
  */
 
 const redirects = [
+  // Redirect old /welkom URL to new homepage
+  {
+    from: '/welkom',
+    to: '/',
+  },
   // English redirects commented out after disabling i18n
   // {
   //   from: '/en/welkom',
