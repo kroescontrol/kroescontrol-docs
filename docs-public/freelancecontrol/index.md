@@ -1,5 +1,5 @@
 ---
-title: Freelancecontrol Model
+title: Freelancecontrol Engineer
 sidebar_position: 1
 description: Ons unieke freelance samenwerkingsmodel - transparant en eerlijk
 slug: /freelancecontrol
@@ -12,15 +12,15 @@ keywords:
   - zelfstandig
   - model
 last_update:
-  date: 2025-05-29T00:00:00.000Z
-  author: Kroescontrol Team
+  date: 2025-01-25T00:00:00.000Z
+  author: Serge Kroes
 image: /img/KC-logo-gradientKLEUR.svg
-docStatus: live
+docStatus: generated
 ---
 
-# Freelancecontrol Model
+# Freelancecontrol Engineer
 
-Freelancecontrol is de innovatieve overeenkomst van Kroescontrol voor IT professionals die de vrijheid van zelfstandig ondernemerschap willen combineren met de voordelen en zekerheid van een professionele organisatie.
+Freelancecontrol Engineer is onze naam voor een freelancer die een arbeidsovereenkomst nodig heeft voor het uitvoeren van zijn werk. Het combineert de vrijheid van zelfstandig ondernemerschap met de voordelen en zekerheid van een professionele organisatie.
 
 ## Belangrijkste punten
 
@@ -31,14 +31,14 @@ Freelancecontrol is de innovatieve overeenkomst van Kroescontrol voor IT profess
 
 ## De essentie van Freelancecontrol
 
-Bij Kroescontrol werk je **met** ons (Patriek en Serge), niet **voor** ons. Dit principe wordt bij Freelancecontrol tot het hoogste niveau doorgevoerd. Waar veel freelancers worstelen met administratieve lasten, onzekere inkomsten en juridische complexiteit, biedt Freelancecontrol een oplossing die het beste van twee werelden combineert:
+Bij Kroescontrol werk je **met** ons (Patriek en Serge), niet **voor** ons. Dit principe wordt bij Freelancecontrol Engineer tot het hoogste niveau doorgevoerd. Voor freelancers die administratieve ondersteuning zoeken en juridische zekerheid willen, biedt Freelancecontrol Engineer een oplossing die het beste van twee werelden combineert:
 
 1. **De vrijheid van een zelfstandige**: Jij kiest je projecten, klanten en werkwijze
 2. **De rugdekking van een organisatie**: Wij zorgen voor administratie, facturatie en juridische zekerheid
 
 ## Kernprincipes
 
-Freelancecontrol is opgebouwd rond kernprincipes die de basis vormen van onze samenwerking:
+Freelancecontrol Engineer is opgebouwd rond kernprincipes die de basis vormen van onze samenwerking:
 
 1. **Ondernemersvrijheid zonder belemmeringen** - Geen concurrentiebeding of klantenbeperkingen voor jouw eigen relaties
 2. **Contract voor onbepaalde tijd** - Zekerheid en continuïteit in een flexibele structuur
@@ -49,12 +49,12 @@ Freelancecontrol is opgebouwd rond kernprincipes die de basis vormen van onze sa
 
 ## Meer informatie
 
-Voor specifieke informatie over het Freelancecontrol model:
+Voor specifieke informatie over het Freelancecontrol Engineer model:
 
 - [Wat is Freelancecontrol](/freelancecontrol/introductie) - Uitgebreide introductie
 - [Voor wie is Freelancecontrol](/freelancecontrol/doelgroep) - Doelgroep en geschiktheid
-- [Verschillen met Kroescontrol](/freelancecontrol/verschillen) - Vergelijking met ons standaard model
+- [Verschillen met Kroescontrol](/freelancecontrol/verschillen) - Vergelijking met de standaard arbeidsovereenkomst
 
 ## Contact
 
-Voor vragen over Freelancecontrol kun je direct contact opnemen met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
+Voor vragen over Freelancecontrol Engineer kun je direct contact opnemen met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).

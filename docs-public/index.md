@@ -29,7 +29,7 @@ Welkom bij de documentatie van Kroescontrol. Navigeer naar de gewenste sectie:
 
 - [Werken bij Kroescontrol](/werken-bij) - Carrièremogelijkheden en cultuur
 - [Kennismaking](/kroescontrol-engineer) - Onboarding en eerste stappen
-- [Freelancecontrol Model](/freelancecontrol) - Alternatief model voor zelfstandigen
+- [Freelancecontrol Engineer](/freelancecontrol) - Freelance arbeidsovereenkomst
 
 ## :house: Voorzieningen
 
