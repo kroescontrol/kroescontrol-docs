@@ -15,7 +15,7 @@ last_update:
   date: 2025-05-24T00:00:00.000Z
   author: Test
 image: /img/logo.svg
-docStatus: completed
+docStatus: live
 ---
 
 # Test Authenticatie
