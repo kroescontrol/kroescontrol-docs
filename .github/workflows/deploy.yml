@@ -10,28 +10,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      # Git-crypt tijdelijk uitgeschakeld - geen versleutelde content aanwezig
-      # - name: Install git-crypt
-      #   run: |
-      #     sudo apt-get update && sudo apt-get install -y git-crypt
-      # 
-      # - name: Unlock git-crypt (default key)
-      #   run: |
-      #     echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d > /tmp/git-crypt-key
-      #     git-crypt unlock /tmp/git-crypt-key
-      #     rm /tmp/git-crypt-key
-      # 
-      # - name: Unlock git-crypt (operation key)
-      #   run: |
-      #     echo "${{ secrets.GIT_CRYPT_OPERATION_KEY }}" | base64 -d > /tmp/git-crypt-key
-      #     git-crypt unlock /tmp/git-crypt-key
-      #     rm /tmp/git-crypt-key
-      # 
-      # - name: Unlock git-crypt (finance key)
-      #   run: |
-      #     echo "${{ secrets.GIT_CRYPT_FINANCE_KEY }}" | base64 -d > /tmp/git-crypt-key
-      #     git-crypt unlock /tmp/git-crypt-key
-      #     rm /tmp/git-crypt-key
+      - name: Install git-crypt
+        run: |
+          sudo apt-get update && sudo apt-get install -y git-crypt
+      
+      - name: Unlock git-crypt (default key voor internal)
+        run: |
+          echo "${{ secrets.GIT_CRYPT_KEY_DEFAULT }}" | base64 -d > /tmp/git-crypt-key
+          git-crypt unlock /tmp/git-crypt-key
+          rm /tmp/git-crypt-key
+      
+      - name: Unlock git-crypt (operation key)
+        run: |
+          echo "${{ secrets.GIT_CRYPT_KEY_OPERATION }}" | base64 -d > /tmp/git-crypt-key-operation
+          git-crypt unlock /tmp/git-crypt-key-operation
+          rm /tmp/git-crypt-key-operation
+      
+      - name: Unlock git-crypt (finance key)
+        run: |
+          echo "${{ secrets.GIT_CRYPT_KEY_FINANCE }}" | base64 -d > /tmp/git-crypt-key-finance
+          git-crypt unlock /tmp/git-crypt-key-finance
+          rm /tmp/git-crypt-key-finance
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
