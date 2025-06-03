@@ -1,0 +1,136 @@
+name: Deploy Cloudflare Workers
+
+on:
+  push:
+    branches: [main, staging-*]
+    paths:
+      # Trigger bij wijzigingen in:
+      - 'sensitive/access-control*.yml'        # ACL wijzigingen
+      - 'cloudflare/auth-worker-template.js'  # Worker code wijzigingen
+      - 'scripts/deploy-cloudflare-worker.js' # Deploy script wijzigingen
+      - '.github/workflows/deploy-cloudflare-workers.yml' # Deze workflow
+  workflow_dispatch: # Manueel kunnen triggeren
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - both
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    if: |
+      github.ref == 'refs/heads/main' && 
+      (github.event_name == 'push' || 
+       github.event.inputs.environment == 'production' || 
+       github.event.inputs.environment == 'both')
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install git-crypt
+      run: |
+        sudo apt-get update && sudo apt-get install -y git-crypt
+        
+    - name: Unlock git-crypt (default key - heeft toegang tot sensitive/)
+      run: |
+        echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d > /tmp/git-crypt-key
+        git-crypt unlock /tmp/git-crypt-key
+        rm /tmp/git-crypt-key
+        
+    - name: Verify ACL is decrypted
+      run: |
+        if grep -q "GITCRYPT" sensitive/access-control.yml; then
+          echo "❌ Error: ACL file is still encrypted!"
+          exit 1
+        fi
+        echo "✅ ACL file is decrypted"
+        
+    - name: Deploy Production Worker to Cloudflare
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      run: |
+        # Make script executable
+        chmod +x scripts/deploy-cloudflare-worker.js
+        
+        # Deploy production worker
+        node scripts/deploy-cloudflare-worker.js production
+        
+    - name: Notify deployment
+      if: success()
+      run: |
+        echo "✅ Production Cloudflare Worker deployed successfully!"
+        echo "📋 Triggered by: ${{ github.event_name }}"
+        echo "📝 Commit: ${{ github.sha }}"
+
+  deploy-staging:
+    runs-on: ubuntu-latest
+    if: |
+      (startsWith(github.ref, 'refs/heads/staging-') && github.event_name == 'push') || 
+      github.event.inputs.environment == 'staging' || 
+      github.event.inputs.environment == 'both'
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install git-crypt
+      run: |
+        sudo apt-get update && sudo apt-get install -y git-crypt
+        
+    - name: Unlock git-crypt (operation key - heeft toegang tot sensitive/)
+      run: |
+        echo "${{ secrets.GIT_CRYPT_KEY_OPERATION }}" | base64 -d > /tmp/git-crypt-key
+        git-crypt unlock /tmp/git-crypt-key
+        rm /tmp/git-crypt-key
+        
+    - name: Verify Staging ACL is decrypted
+      run: |
+        if grep -q "GITCRYPT" sensitive/access-control-staging.yml; then
+          echo "❌ Error: Staging ACL file is still encrypted!"
+          exit 1
+        fi
+        echo "✅ Staging ACL file is decrypted"
+        
+    - name: Deploy Staging Worker to Cloudflare
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      run: |
+        # Make script executable
+        chmod +x scripts/deploy-cloudflare-worker.js
+        
+        # Deploy staging worker
+        node scripts/deploy-cloudflare-worker.js staging
+        
+    - name: Notify deployment
+      if: success()
+      run: |
+        echo "✅ Staging Cloudflare Worker deployed successfully!"
+        echo "📋 Triggered by: ${{ github.event_name }}"
+        echo "📝 Commit: ${{ github.sha }}"
