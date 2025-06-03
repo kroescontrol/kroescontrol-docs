@@ -18,14 +18,21 @@
 // JWT_SECRET = <random-string-genereer-met-openssl>
 // BACKEND_URL = https://kroescontrol-docs.vercel.app
 
-// Environment variables from Cloudflare Dashboard
-const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, JWT_SECRET, BACKEND_URL } = globalThis;
+export default {
+  async fetch(request, env, ctx) {
+    return handleRequest(request, env);
+  }
+};
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});
-
-async function handleRequest(request) {
+async function handleRequest(request, env = {}) {
+  // Environment variables from Cloudflare Dashboard
+  const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, JWT_SECRET, BACKEND_URL } = env;
+  
+  // Make environment variables globally available
+  globalThis.GITHUB_CLIENT_ID = GITHUB_CLIENT_ID;
+  globalThis.GITHUB_CLIENT_SECRET = GITHUB_CLIENT_SECRET;
+  globalThis.JWT_SECRET = JWT_SECRET;
+  globalThis.BACKEND_URL = BACKEND_URL;
   const url = new URL(request.url);
   const path = url.pathname;
   
@@ -181,7 +188,7 @@ async function checkAuth(request) {
   }
   
   try {
-    const payload = await verifyJWT(token, JWT_SECRET);
+    const payload = await verifyJWT(token, globalThis.JWT_SECRET);
     
     // Check of token niet verlopen is
     if (payload.exp < Date.now() / 1000) {
@@ -215,7 +222,7 @@ async function handleLogin(request) {
     : `https://${url.hostname}`; // Custom domain roept Worker aan
   const redirectUri = `${workerHost}/api/auth/callback`;
   const githubAuthUrl = `https://github.com/login/oauth/authorize?` +
-    `client_id=${GITHUB_CLIENT_ID}&` +
+    `client_id=${globalThis.GITHUB_CLIENT_ID}&` +
     `redirect_uri=${encodeURIComponent(redirectUri)}&` +
     `scope=read:user&` +
     `state=${state}`;
@@ -244,8 +251,8 @@ async function handleCallback(request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        client_id: GITHUB_CLIENT_ID,
-        client_secret: GITHUB_CLIENT_SECRET,
+        client_id: globalThis.GITHUB_CLIENT_ID,
+        client_secret: globalThis.GITHUB_CLIENT_SECRET,
         code: code,
       }),
     });
@@ -373,7 +380,7 @@ async function handleStatus(request) {
 
 async function proxyToVercel(request) {
   const url = new URL(request.url);
-  const backendUrl = `${BACKEND_URL}${url.pathname}${url.search}`;
+  const backendUrl = `${globalThis.BACKEND_URL}${url.pathname}${url.search}`;
   
   // Clone headers maar verwijder CF-specifieke headers
   const headers = new Headers(request.headers);
