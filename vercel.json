@@ -5,6 +5,9 @@
   "framework": null,
   "routes": [
     { "src": "/api/debug", "dest": "/api/debug" },
+    { "src": "/internal/(.*)", "dest": "/api/internal?path=$1" },
+    { "src": "/finance/(.*)", "dest": "/api/finance?path=$1" },
+    { "src": "/operation/(.*)", "dest": "/api/operation?path=$1" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "/api/?path=$1" }
   ],
@@ -13,8 +16,17 @@
       "runtime": "@vercel/node@3.2.21",
       "includeFiles": "build/**"
     },
-    "middleware.js": {
-      "runtime": "edge"
+    "api/internal.js": {
+      "runtime": "@vercel/node@3.2.21",
+      "includeFiles": "build/internal/**"
+    },
+    "api/finance.js": {
+      "runtime": "@vercel/node@3.2.21",
+      "includeFiles": "build/finance/**"
+    },
+    "api/operation.js": {
+      "runtime": "@vercel/node@3.2.21",
+      "includeFiles": "build/operation/**"
     }
   }
 }
