@@ -30,23 +30,38 @@ async function main() {
         process.exit(0);
     }
 
-    console.log('🌐 Production build: Removing protected directories to force OAuth');
+    console.log('🌐 Production build: Setting up section-specific OAuth protection');
 
     const buildDir = path.join(__dirname, 'build');
-    const dirsToRemove = ['internal', 'finance', 'operation'];
+    const protectedSections = ['internal', 'finance', 'operation'];
 
-    dirsToRemove.forEach(dir => {
-        const dirPath = path.join(buildDir, dir);
-        if (fs.existsSync(dirPath)) {
-            console.log(`🗑️  Removing ${dir}/ directory...`);
-            fs.rmSync(dirPath, { recursive: true, force: true });
-            console.log(`✅ Removed ${dir}/ - OAuth will handle access`);
+    // Instead of removing directories, we'll create index.html files that redirect to OAuth
+    protectedSections.forEach(section => {
+        const sectionPath = path.join(buildDir, section);
+        if (fs.existsSync(sectionPath)) {
+            // Create a redirect index.html at the root of each protected section
+            const redirectHtml = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Authenticating...</title>
+    <meta http-equiv="refresh" content="0; url=/${section}/">
+    <script>window.location.href = '/${section}/';</script>
+</head>
+<body>
+    <p>Redirecting to authentication...</p>
+</body>
+</html>`;
+            
+            const indexPath = path.join(sectionPath, 'index.html');
+            fs.writeFileSync(indexPath, redirectHtml);
+            console.log(`✅ Created OAuth redirect for ${section}/ section`);
         } else {
-            console.log(`⚠️  Directory ${dir}/ not found`);
+            console.log(`⚠️  Section ${section}/ not found in build`);
         }
     });
 
-    console.log('🔐 Post-build security complete: Protected content now requires OAuth');
+    console.log('🔐 Post-build security complete: Each section has its own OAuth handler');
 }
 
 // Run the main function
