@@ -54,9 +54,11 @@
     "file-loader": "^6.2.0",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "prism-react-renderer": "^2.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "simple-oauth2": "^5.1.0",
     "url-loader": "^4.1.1",
     "vercel-github-oauth-proxy": "^1.2.6"
   },

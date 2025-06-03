@@ -40,6 +40,13 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
+        
+      - name: Build ACL environment variables
+        run: |
+          node scripts/build-acl-env.js --vercel
+          if [ -f .env.acl ]; then
+            cat .env.acl >> $GITHUB_ENV
+          fi
       
       - name: Deploy to Vercel
         env:
