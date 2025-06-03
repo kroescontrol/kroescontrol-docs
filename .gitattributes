@@ -27,9 +27,9 @@
 /docs-operation/.meta/** filter=git-crypt-operation diff=git-crypt-operation
 
 # ============================================================================
-# SENSITIVE (root/sensitive) - Operations team - Gevoelige tooling en data
+# SENSITIVE (root/sensitive) - Alle medewerkers - ACL en configuratie
 # ============================================================================
-/sensitive/** filter=git-crypt-operation diff=git-crypt-operation
+/sensitive/** filter=git-crypt diff=git-crypt
 
 # ============================================================================
 # FINANCE KEY (docs-finance) - Finance team
