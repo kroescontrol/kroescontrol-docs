@@ -18,6 +18,9 @@
 // JWT_SECRET = <random-string-genereer-met-openssl>
 // BACKEND_URL = https://kroescontrol-docs.vercel.app
 
+// Environment variables from Cloudflare Dashboard
+const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, JWT_SECRET, BACKEND_URL } = globalThis;
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request));
 });
@@ -206,7 +209,11 @@ async function handleLogin(request) {
     nonce: crypto.randomUUID()
   }));
   
-  const redirectUri = `${url.origin}/api/auth/callback`;
+  // Force callback to Worker URL (not BACKEND_URL)
+  const workerHost = url.hostname.includes('workers.dev') 
+    ? url.origin 
+    : `https://${url.hostname}`; // Custom domain roept Worker aan
+  const redirectUri = `${workerHost}/api/auth/callback`;
   const githubAuthUrl = `https://github.com/login/oauth/authorize?` +
     `client_id=${GITHUB_CLIENT_ID}&` +
     `redirect_uri=${encodeURIComponent(redirectUri)}&` +
