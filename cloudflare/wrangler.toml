@@ -1,0 +1,13 @@
+# Cloudflare Workers configuratie
+name = "kroescontrol-docs-auth"
+main = ".tmp-worker-deploy.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables worden via Dashboard gezet voor security
+# GITHUB_CLIENT_ID
+# GITHUB_CLIENT_SECRET  
+# JWT_SECRET
+# BACKEND_URL
+
+# Custom domains worden via Dashboard geconfigureerd
+# docs.kroescontrol.nl

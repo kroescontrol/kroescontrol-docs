@@ -48,3 +48,4 @@ docstatus-report.csv
 # Security - NOOIT committen
 add-github-secrets.sh
 .env.acl
+.tmp-worker-deploy.js
