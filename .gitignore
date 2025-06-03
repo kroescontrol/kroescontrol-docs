@@ -44,3 +44,6 @@ build-public.log*
 .vercel
 build.backup
 docstatus-report.csv
+
+# Security - NOOIT committen
+add-github-secrets.sh
