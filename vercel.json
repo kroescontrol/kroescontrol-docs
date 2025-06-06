@@ -9,9 +9,13 @@
     { "src": "/finance/(.*)", "dest": "/api/finance?path=$1" },
     { "src": "/operation/(.*)", "dest": "/api/operation?path=$1" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/api/?path=$1" }
+    { "src": "/(.*)", "dest": "/api/public?path=$1" }
   ],
   "functions": {
+    "api/public.js": {
+      "runtime": "@vercel/node@3.2.21",
+      "includeFiles": "build/**"
+    },
     "api/index.js": {
       "runtime": "@vercel/node@3.2.21",
       "includeFiles": "build/**"
