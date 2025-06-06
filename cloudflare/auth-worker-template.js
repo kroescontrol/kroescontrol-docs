@@ -28,6 +28,11 @@ async function handleRequest(request, env = {}) {
   // Environment variables from Cloudflare Dashboard
   const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, JWT_SECRET, BACKEND_URL } = env;
   
+  // Validate required environment variables
+  if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET || !JWT_SECRET || !BACKEND_URL) {
+    return new Response('Missing required environment variables', { status: 500 });
+  }
+  
   // Make environment variables globally available
   globalThis.GITHUB_CLIENT_ID = GITHUB_CLIENT_ID;
   globalThis.GITHUB_CLIENT_SECRET = GITHUB_CLIENT_SECRET;
@@ -241,7 +246,12 @@ async function handleCallback(request) {
   
   try {
     // Parse state
-    const stateData = JSON.parse(atob(state));
+    let stateData;
+    try {
+      stateData = JSON.parse(atob(state));
+    } catch (e) {
+      return new Response('Invalid state parameter', { status: 400 });
+    }
     
     // Exchange code voor access token
     const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
@@ -437,7 +447,7 @@ async function generateJWT(payload) {
     'HMAC',
     await crypto.subtle.importKey(
       'raw',
-      new TextEncoder().encode(JWT_SECRET),
+      new TextEncoder().encode(globalThis.JWT_SECRET),
       { name: 'HMAC', hash: 'SHA-256' },
       false,
       ['sign']
@@ -451,12 +461,12 @@ async function generateJWT(payload) {
   return `${encodedHeader}.${encodedPayload}.${encodedSignature}`;
 }
 
-async function verifyJWT(token) {
+async function verifyJWT(token, secret) {
   const [header, payload, signature] = token.split('.');
   
   const key = await crypto.subtle.importKey(
     'raw',
-    new TextEncoder().encode(JWT_SECRET),
+    new TextEncoder().encode(secret),
     { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['verify']
@@ -477,5 +487,6 @@ async function verifyJWT(token) {
     throw new Error('Invalid signature');
   }
   
-  return JSON.parse(atob(payload + '=='));
+  const padded = payload + '='.repeat((4 - payload.length % 4) % 4);
+  return JSON.parse(atob(padded));
 }
