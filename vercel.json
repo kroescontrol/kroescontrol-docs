@@ -5,6 +5,8 @@
   "framework": null,
   "routes": [
     { "src": "/api/debug", "dest": "/api/debug" },
+    { "src": "/login/oauth/authorize", "dest": "/api/index" },
+    { "src": "/login/oauth/callback", "dest": "/api/index" },
     { "src": "/internal/(.*)", "dest": "/api/internal?path=$1" },
     { "src": "/finance/(.*)", "dest": "/api/finance?path=$1" },
     { "src": "/operation/(.*)", "dest": "/api/operation?path=$1" },
