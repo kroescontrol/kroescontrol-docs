@@ -1,6 +1,13 @@
 # CLAUDE.md
 
-Dit bestand biedt richtlijnen voor Claude Code (claude.ai/code) bij het werken met code in deze repository.
+This file provides guidelines for Claude Code (claude.ai/code) when working with code in this repository.
+
+## 📋 Git Conventies
+
+- Think in english, communicate in Dutch;
+- Communiceer in nederlands, verder mogen alle technische termin vooral juist weer in engels.
+- Schrijf git commit messages in het Nederlands
+- Schrijf git commit messages zonder verwijzing naar AI
 
 ## 🧩 Modulaire Prompt Structuur
 
@@ -39,7 +46,3 @@ Voor Claude Code sessies:
 **Verwijzingen**: Gebruik de normale Docusaurus markup voor verwijzingen maar In PROMPT.md en CLAUDE_ bestanden gebruik directory paths (dit zijn files onderdeel van een AI prompt)
 **Structuur**: Modulaire aanpak met specifieke prompt modules per onderwerp
 
-## 📋 Git Conventies
-
-- Schrijf git commit messages in het Nederlands
-- Schrijf git commit messages zonder verwijzing naar AI
