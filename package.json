@@ -34,7 +34,7 @@
     "deploy": "docusaurus deploy",
     "deploy:public": "./deploy-public.sh",
     "serve": "docusaurus serve",
-    "pre-build": "node scripts/statusReport.js && node scripts/pre-build-filter.js",
+    "pre-build": "node scripts/pre-build-filter.js",
     "post-build": "node scripts/post-build-restore.js && node post-build.js",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
