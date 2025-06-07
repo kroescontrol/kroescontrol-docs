@@ -1,6 +1,6 @@
 ---
 title: Cultuur
-sidebar_position: 1
+sidebar_position: 99
 description: Kroescontrol cultuur en community activiteiten
 tags:
   - cultuur
@@ -16,6 +16,7 @@ last_update:
   author: Serge Kroes
 image: /img/logo.svg
 docStatus: production
+slug: /cultuur
 ---
 
 # Cultuur

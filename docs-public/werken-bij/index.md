@@ -1,7 +1,7 @@
 ---
 title: Werken bij Kroescontrol
-sidebar_position: 1
-description: Informatie over werken bij Kroescontrol.
+sidebar_position: 10
+description: Informatie voor potentiële medewerkers
 slug: /werken-bij
 tags:
   - werken-bij
@@ -20,6 +20,7 @@ last_update:
   date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
 docStatus: production
+sidebar_class_name: category-collapsed
 ---
 
 # Werken bij Kroescontrol

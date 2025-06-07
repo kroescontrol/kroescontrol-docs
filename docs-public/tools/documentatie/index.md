@@ -1,6 +1,6 @@
 ---
 title: Documentatie bij Kroescontrol
-sidebar_position: 1
+sidebar_position: 4
 description: 'Informatie over onze documentatieprocessen, structuur en toegang.'
 slug: /public/tools/documentatie
 tags:
@@ -19,6 +19,7 @@ last_update:
   date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
 docStatus: production
+sidebar_class_name: category-collapsed
 ---
 
 # Documentatie bij Kroescontrol

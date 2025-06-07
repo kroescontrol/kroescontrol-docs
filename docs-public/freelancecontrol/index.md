@@ -1,7 +1,7 @@
 ---
 title: Freelancecontrol Engineer
-sidebar_position: 1
-description: Ons unieke freelance samenwerkingsmodel - transparant en eerlijk
+sidebar_position: 30
+description: Informatie over het alternatieve model voor zelfstandige professionals
 slug: /freelancecontrol
 tags:
   - freelancecontrol
@@ -16,6 +16,7 @@ last_update:
   author: Serge Kroes
 image: /img/KC-logo-gradientKLEUR.svg
 docStatus: dev
+sidebar_class_name: category-collapsed
 ---
 
 # Freelancecontrol Engineer

@@ -2,8 +2,10 @@
 id: kantoor-overzicht
 title: Kantoor
 sidebar_label: Overzicht
-sidebar_position: 1
+sidebar_position: 6
 description: Kroescontrol werkt met moderne kantoorlocaties met luxe faciliteiten
+docStatus: production
+slug: /kantoor
 ---
 
 # Kantoor

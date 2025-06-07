@@ -1,8 +1,8 @@
 ---
 title: Welkom
 docStatus: production
-sidebar_position: 0
-description: Welkom bij de centrale documentatie hub voor Kroescontrol.
+sidebar_position: 1
+description: Algemene informatie toegankelijk voor iedereen
 slug: /
 tags:
   - documentatie
@@ -11,6 +11,7 @@ tags:
 last_update:
   date: 2025-05-21T00:00:00.000Z
   author: Kroescontrol Team
+sidebar_class_name: category-collapsed
 ---
 
 # Welkom bij Kroescontrol

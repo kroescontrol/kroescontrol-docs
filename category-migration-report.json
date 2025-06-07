@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-06-07T08:05:59.477Z",
+  "migrations": [
+    {
+      "directory": "docs-internal/tools/claudecode/migratie",
+      "categoryLabel": "Legacy Migratie",
+      "position": 3,
+      "hasContent": true,
+      "newSlug": "/tools/claudecode/migratie"
+    },
+    {
+      "directory": "docs-internal/tools/claudecode/context",
+      "categoryLabel": "Project Context",
+      "position": 2,
+      "hasContent": false,
+      "newSlug": "/tools/claudecode/context"
+    },
+    {
+      "directory": "docs-internal/tools/claudecode",
+      "categoryLabel": "Claude Code Prompts",
+      "position": 2,
+      "hasContent": true,
+      "newSlug": "/tools/claudecode"
+    },
+    {
+      "directory": "docs-internal/tools/claudecode/prompt",
+      "categoryLabel": "Prompt Modules",
+      "position": 1,
+      "hasContent": false,
+      "newSlug": "/tools/claudecode/prompt"
+    },
+    {
+      "directory": "docs-internal/tools/claudecode/prompt2prompt",
+      "categoryLabel": "Prompt-to-Prompt",
+      "position": 3,
+      "hasContent": true,
+      "newSlug": "/tools/claudecode/prompt2prompt"
+    },
+    {
+      "directory": "docs-internal/tools/documentatie",
+      "categoryLabel": "Documentatie Tools",
+      "position": 3,
+      "hasContent": true,
+      "newSlug": "/tools/documentatie"
+    },
+    {
+      "directory": "docs-internal/tools/documentatie/rapportages",
+      "categoryLabel": "Rapportages",
+      "position": 3,
+      "hasContent": false,
+      "newSlug": "/tools/documentatie/rapportages"
+    },
+    {
+      "directory": "docs-internal/tools/documentatie/workflow",
+      "categoryLabel": "Workflow Documentatie",
+      "position": 2,
+      "hasContent": false,
+      "newSlug": "/tools/documentatie/workflow"
+    },
+    {
+      "directory": "docs-internal/tools/documentatie/howto",
+      "categoryLabel": "HOWTO Gidsen",
+      "position": 1,
+      "hasContent": false,
+      "newSlug": "/tools/documentatie/howto"
+    },
+    {
+      "directory": "docs-public/cultuur",
+      "categoryLabel": "Cultuur",
+      "position": 99,
+      "hasContent": true,
+      "newSlug": "/cultuur"
+    },
+    {
+      "directory": "docs-public/branding",
+      "categoryLabel": "Huisstijl & Branding",
+      "position": 100,
+      "hasContent": true,
+      "newSlug": "/branding"
+    },
+    {
+      "directory": "docs-public/tools",
+      "categoryLabel": "Tools & Processen",
+      "position": 40,
+      "hasContent": true,
+      "newSlug": "/public/tools"
+    },
+    {
+      "directory": "docs-public/tools/documentatie",
+      "categoryLabel": "Documentatie",
+      "position": 4,
+      "hasContent": true,
+      "newSlug": "/public/tools/documentatie"
+    },
+    {
+      "directory": "docs-public/freelancecontrol",
+      "categoryLabel": "Freelancecontrol Model",
+      "position": 30,
+      "hasContent": true,
+      "newSlug": "/freelancecontrol"
+    },
+    {
+      "directory": "docs-public/werken-bij",
+      "categoryLabel": "Werken bij Kroescontrol",
+      "position": 10,
+      "hasContent": true,
+      "newSlug": "/werken-bij"
+    },
+    {
+      "directory": "docs-public/kennismaking",
+      "categoryLabel": "Kroescontrol Engineer",
+      "position": 20,
+      "hasContent": true,
+      "newSlug": "/kroescontrol-engineer"
+    },
+    {
+      "directory": "docs-public",
+      "categoryLabel": "Publieke Documentatie",
+      "position": 1,
+      "hasContent": true,
+      "newSlug": "/"
+    },
+    {
+      "directory": "docs-public/kantoor",
+      "categoryLabel": "Kantoor",
+      "position": 6,
+      "hasContent": true,
+      "newSlug": "/kantoor"
+    }
+  ]
+}
