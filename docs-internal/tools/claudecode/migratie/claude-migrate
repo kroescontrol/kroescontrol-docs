@@ -1,0 +1,471 @@
+#!/bin/bash
+
+# Claude Migratie Helper Script
+# Gebruik: ./claude-migrate [actie] [bestand/directory]
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
+OLD_DIR="$PROJECT_ROOT/old"
+INPUT_DIR="$PROJECT_ROOT/input"
+
+# Kleuren voor output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+# Help functie
+show_help() {
+    echo -e "${BLUE}Claude Migratie Helper${NC}"
+    echo ""
+    echo "Gebruik:"
+    echo "  ./claude-migrate [actie] [bestand/directory] [opties]"
+    echo ""
+    echo "Acties:"
+    echo "  file       - Analyseer specifiek bestand"
+    echo "  dir        - Analyseer alle bestanden in directory"
+    echo "  preplan    - Maak pre-plan voor directory/alles"
+    echo "  orchestrate - Start orchestrator voor interactieve migratie"
+    echo ""
+    echo "Opties:"
+    echo "  --claude   - Start direct Claude Code sessie met gegenereerde prompt"
+    echo "  --auto     - Automatische uitvoering zonder bevestigingsvragen"
+    echo "  --commit   - Maak git commit met Nederlandse message na voltooiing (alleen met --auto)"
+    echo ""
+    echo "Voorbeelden:"
+    echo "  ./claude-migrate                                    # Toon dit help menu"
+    echo "  ./claude-migrate file \"HR/onboarding-proces.md\"    # Analyseer specifiek bestand"
+    echo "  ./claude-migrate file \"Magnit.md\" --claude         # Start direct Claude Code sessie"
+    echo "  ./claude-migrate file \"Magnit.md\" --claude --auto  # Auto-uitvoering zonder vragen"
+    echo "  ./claude-migrate file \"Magnit.md\" --claude --auto --commit  # Auto + commit"
+    echo "  ./claude-migrate dir \"HR\"                         # Analyseer alle bestanden in HR directory"
+    echo "  ./claude-migrate dir \"HR\" --claude --auto         # Auto-migratie hele HR directory"
+    echo "  ./claude-migrate dir \"HR\" --claude --auto --commit  # Auto-migratie + commit"
+    echo "  ./claude-migrate preplan                           # Pre-plan voor hele ./old/"
+    echo "  ./claude-migrate preplan \"HR en onboarding\"       # Pre-plan voor specifieke directory"
+    echo "  ./claude-migrate orchestrate                       # Start interactieve begeleiding"
+    echo ""
+}
+
+# Zoek file in ./old of ./input directories
+find_file() {
+    local filename="$1"
+    local found_path=""
+    local found_type=""
+    
+    # Zoek eerst in ./old/ (exacte pad)
+    if [[ -f "$OLD_DIR/$filename" ]]; then
+        found_path="$OLD_DIR/$filename"
+        found_type="legacy"
+    # Dan in ./input/ (exacte pad)
+    elif [[ -f "$INPUT_DIR/$filename" ]]; then
+        found_path="$INPUT_DIR/$filename"
+        found_type="input"
+    # Probeer relatief pad vanaf project root
+    elif [[ -f "$PROJECT_ROOT/$filename" ]]; then
+        found_path="$PROJECT_ROOT/$filename"
+        found_type="project"
+    # Probeer absolute pad
+    elif [[ -f "$filename" ]]; then
+        found_path="$filename"
+        found_type="absolute"
+    else
+        # Zoek recursief in ./old/ op bestandsnaam
+        local old_search=$(find "$OLD_DIR" -name "$filename" -type f 2>/dev/null | head -1)
+        if [[ -n "$old_search" ]]; then
+            found_path="$old_search"
+            found_type="legacy"
+        else
+            # Zoek recursief in ./input/ op bestandsnaam
+            local input_search=$(find "$INPUT_DIR" -name "$filename" -type f 2>/dev/null | head -1)
+            if [[ -n "$input_search" ]]; then
+                found_path="$input_search"
+                found_type="input"
+            fi
+        fi
+    fi
+    
+    if [[ -n "$found_path" ]]; then
+        echo -e "${GREEN}✓ Bestand gevonden in $found_type: $found_path${NC}" >&2
+        echo "$found_path|$found_type"
+        return 0
+    else
+        echo -e "${RED}✗ Bestand niet gevonden: $filename${NC}"
+        echo ""
+        echo "Gezocht in:"
+        echo "  ./old/$filename (exact pad)"
+        echo "  ./input/$filename (exact pad)"
+        echo "  ./$filename (relatief)"
+        echo "  ./old/**/$filename (recursief)"
+        echo "  ./input/**/$filename (recursief)"
+        echo ""
+        echo "Beschikbare bestanden in ./old/:"
+        find "$OLD_DIR" -name "*.md" -type f 2>/dev/null | head -10 | sed 's|.*/old/|  |' || echo "  (directory bestaat niet)"
+        echo ""
+        echo "Beschikbare bestanden in ./input/:"
+        find "$INPUT_DIR" -name "*.md" -type f 2>/dev/null | head -10 | sed 's|.*/input/|  |' || echo "  (directory bestaat niet)"
+        return 1
+    fi
+}
+
+# Check of directory bestaat (voor preplan)
+check_directory() {
+    local path="$1"
+    local full_path="$OLD_DIR/$path"
+    
+    if [[ ! -d "$full_path" ]]; then
+        echo -e "${RED}Error: Directory $full_path bestaat niet${NC}"
+        echo ""
+        echo "Beschikbare directories in ./old/:"
+        ls -la "$OLD_DIR" 2>/dev/null | grep ^d | awk '{print "  " $9}' | grep -v "^\.$\|^\.\.$" || echo "  (directory bestaat niet)"
+        exit 1
+    fi
+}
+
+# Genereer Claude prompt voor pre-plan
+generate_preplan_prompt() {
+    local target="${1:-hele ./old/ directory}"
+    
+    echo -e "${GREEN}📋 Genereer pre-plan prompt...${NC}"
+    echo ""
+    
+    cat << EOF
+Ik wil een pre-plan maken voor legacy documentatie migratie.
+
+**INSTRUCTIE**: Gebruik ./docs-internal/tools/claudecode/migratie/MIGRATIE-0-preplan.md als je guide.
+
+**TARGET**: $target
+
+**ACTIES**:
+1. Update eerst de index: python scripts/generateDocIndex.py
+2. Bepaal volgend Plan ID (check ./docs-internal/_migration-plans/)
+3. Scan de opgegeven directory/file
+4. Genereer aanpasbaar pre-plan met checkboxes
+5. Sla op in juiste Plan directory
+
+**START**: Begin met het bepalen van het volgende Plan ID en update de index.
+EOF
+}
+
+# Genereer Claude prompt voor directory analyse
+generate_dir_prompt() {
+    local dirname="$1"
+    local use_auto="$2"
+    local target_dir=""
+    
+    # Bepaal welke directory te gebruiken
+    if [[ -d "$OLD_DIR/$dirname" ]]; then
+        target_dir="$OLD_DIR/$dirname"
+        dir_type="legacy"
+    elif [[ -d "$INPUT_DIR/$dirname" ]]; then
+        target_dir="$INPUT_DIR/$dirname"
+        dir_type="input"
+    elif [[ -d "$PROJECT_ROOT/$dirname" ]]; then
+        target_dir="$PROJECT_ROOT/$dirname"
+        dir_type="project"
+    elif [[ -d "$dirname" ]]; then
+        target_dir="$dirname"
+        dir_type="absolute"
+    else
+        echo -e "${RED}✗ Directory niet gevonden: $dirname${NC}"
+        return 1
+    fi
+    
+    echo -e "${GREEN}📁 Genereer directory analyse prompt...${NC}"
+    echo ""
+    
+    echo "Ik wil een complete directory analyseren voor migratie."
+    echo ""
+    echo "**DIRECTORY**: $dirname"
+    echo "**LOCATIE**: $dir_type ($target_dir)"
+    echo ""
+    
+    # Lijst alle markdown bestanden in de directory (handle spaces in filenames)
+    local md_files=()
+    while IFS= read -r -d '' file; do
+        md_files+=("$file")
+    done < <(find "$target_dir" -name "*.md" -type f -print0 | sort -z)
+    
+    echo "**GEVONDEN BESTANDEN** (${#md_files[@]} markdown files):"
+    for file in "${md_files[@]}"; do
+        local relative_path=${file#$target_dir/}
+        echo "- $relative_path"
+    done
+    echo ""
+    
+    echo "**ALLE BESTANDEN INHOUD**:"
+    for file in "${md_files[@]}"; do
+        local relative_path=${file#$target_dir/}
+        echo ""
+        echo "### BESTAND: $relative_path"
+        echo '```markdown'
+        cat "$file"
+        echo '```'
+        echo ""
+    done
+    
+    if [[ "$dir_type" == "legacy" ]]; then
+        echo "**INSTRUCTIE**: Gebruik ./docs-internal/tools/claudecode/migratie/MIGRATIE-2-mapping.md voor mapping analyse van deze legacy directory."
+    elif [[ "$dir_type" == "input" ]]; then
+        echo "**INSTRUCTIE**: Deze directory staat in ./input/ - migreer alle bestanden naar de juiste doellocaties en VERWIJDER de originelen uit ./input/ na succesvolle migratie."
+    else
+        echo "**INSTRUCTIE**: Deze directory staat in $dir_type - analyseer voor mogelijke integratie in de documentatie structuur."
+    fi
+    
+    if [[ "$use_auto" == "true" ]]; then
+        echo ""
+        echo "**AUTO-EXECUTION MODE**: Voer het implementatieplan direct uit zonder bevestigingsvragen. Migreer alle bestanden systematisch. Maak alle benodigde directories, files en wijzigingen automatisch. Rapporteer alleen de voltooide acties."
+        echo ""
+        echo "**CLAUDE CODE ONE-SHOT**: Deze sessie wordt uitgevoerd met -p flag en eindigt automatisch na voltooiing. Gebruik GEEN /exit commando."
+        echo ""
+        echo "**GEEN INTERACTIE**: Stel geen vragen, vraag geen bevestiging, voer alle taken automatisch uit."
+    fi
+    
+    echo ""
+    echo "Geef me een complete analyse voor de hele directory:"
+    echo "1. Per bestand: content analyse (actueel/verouderd/waarde)"
+    echo "2. Per bestand: voorgestelde doellocatie in docs-* structuur"
+    echo "3. Directory structuur: hoe de bestanden samenhangen"
+    echo "4. Migratie strategie: volgorde en dependencies"
+    echo "5. Speciale aandachtspunten voor de hele directory"
+    echo "6. Implementatieplan: concrete stappen per bestand"
+}
+
+# Genereer Claude prompt voor file analyse
+generate_file_prompt() {
+    local filepath="$1"
+    local file_info="$2"
+    local use_auto="$3"
+    local file_path=$(echo "$file_info" | cut -d'|' -f1)
+    local file_type=$(echo "$file_info" | cut -d'|' -f2)
+    
+    echo -e "${GREEN}📄 Genereer file analyse prompt...${NC}"
+    echo ""
+    
+    echo "Ik wil een specifiek bestand analyseren voor migratie."
+    echo ""
+    echo "**BESTAND**: $filepath"
+    echo "**LOCATIE**: $file_type ($file_path)"
+    echo ""
+    echo "**INHOUD**:"
+    echo '```markdown'
+    cat "$file_path"
+    echo '```'
+    echo ""
+    
+    if [[ "$file_type" == "legacy" ]]; then
+        echo "**INSTRUCTIE**: Gebruik ./docs-internal/tools/claudecode/migratie/MIGRATIE-2-mapping.md voor mapping analyse van dit legacy bestand."
+    elif [[ "$file_type" == "input" ]]; then
+        echo "**INSTRUCTIE**: Dit bestand staat in ./input/ - migreer het naar de juiste doellocatie en VERWIJDER het origineel uit ./input/ na succesvolle migratie."
+    else
+        echo "**INSTRUCTIE**: Dit bestand staat in $file_type - analyseer voor mogelijke integratie in de documentatie structuur."
+    fi
+    
+    if [[ "$use_auto" == "true" ]]; then
+        echo ""
+        echo "**AUTO-EXECUTION MODE**: Voer het implementatieplan direct uit zonder bevestigingsvragen. Maak alle benodigde directories, files en wijzigingen automatisch. Rapporteer alleen de voltooide acties."
+        echo ""
+        echo "**CLAUDE CODE ONE-SHOT**: Deze sessie wordt uitgevoerd met -p flag en eindigt automatisch na voltooiing. Gebruik GEEN /exit commando."
+        echo ""
+        echo "**GEEN INTERACTIE**: Stel geen vragen, vraag geen bevestiging, voer alle taken automatisch uit."
+    fi
+    
+    echo ""
+    echo "Geef me:"
+    echo "1. Content analyse (actueel/verouderd/waarde)"
+    echo "2. Voorgestelde doellocatie in docs-* structuur"
+    echo "3. Migratie actie (migrate/restructure/consolidate/archive)"
+    echo "4. Speciale aandachtspunten"
+    echo "5. Dependencies met andere documenten"
+}
+
+# Genereer orchestrator prompt
+generate_orchestrator_prompt() {
+    echo -e "${GREEN}🎭 Start interactieve migratie begeleiding...${NC}"
+    echo ""
+    
+    cat << EOF
+Ik wil legacy documentatie migreren met interactieve begeleiding.
+
+**INSTRUCTIE**: Gebruik ./docs-internal/tools/claudecode/migratie/MIGRATIE-1-orchestratie.md als je guide en begeleid me stap-voor-stap door het complete migratieproces.
+
+Begin met me te vragen welke legacy documentatie ik wil migreren.
+EOF
+}
+
+# Maak git commit met Nederlandse message
+create_migration_commit() {
+    local action_type="$1"  # file/dir
+    local target_name="$2"  # naam van bestand/directory
+    
+    # Check of er wijzigingen zijn
+    if ! git diff --quiet || ! git diff --cached --quiet || [[ -n $(git status --porcelain) ]]; then
+        echo -e "${GREEN}📝 Maak git commit voor migratie wijzigingen...${NC}"
+        
+        # Bepaal commit message
+        local commit_msg=""
+        if [[ "$action_type" == "file" ]]; then
+            commit_msg="Migreer legacy bestand $target_name naar nieuwe documentatie structuur"
+        elif [[ "$action_type" == "dir" ]]; then
+            commit_msg="Migreer legacy directory $target_name naar nieuwe documentatie structuur"
+        else
+            commit_msg="Migreer legacy documentatie naar nieuwe structuur"
+        fi
+        
+        # Add alle wijzigingen en commit
+        git add -A
+        git commit -m "$commit_msg"
+        
+        echo -e "${GREEN}✅ Commit succesvol: $commit_msg${NC}"
+    else
+        echo -e "${YELLOW}ℹ️  Geen wijzigingen om te committen${NC}"
+    fi
+}
+
+# Start Claude Code met prompt
+start_claude_with_prompt() {
+    local prompt_text="$1"
+    local use_auto="$2"
+    local use_commit="$3"
+    local action_type="$4"
+    local target_name="$5"
+    
+    # Start Claude Code met de prompt
+    cd "$PROJECT_ROOT"
+    
+    if [[ "$use_auto" == "true" ]]; then
+        # One-shot modus met juiste Claude Code flags
+        echo -e "${YELLOW}⚡ AUTO MODE: One-shot uitvoering met -p flag${NC}" >&2
+        
+        # Gebruik pipe voor grote prompts en juiste flags
+        if echo "$prompt_text" | claude -p --dangerously-skip-permissions --max-turns 50 --output-format text --verbose; then
+            echo -e "${GREEN}✅ Migratie succesvol voltooid${NC}" >&2
+            
+            # Maak commit na voltooiing als --commit gebruikt wordt
+            if [[ "$use_commit" == "true" ]]; then
+                create_migration_commit "$action_type" "$target_name"
+            fi
+        else
+            local exit_code=$?
+            echo -e "${RED}❌ Migratie gefaald (exit code: $exit_code)${NC}" >&2
+            exit $exit_code
+        fi
+    else
+        # Normale interactieve modus
+        claude "$prompt_text"
+        
+        # In interactieve modus altijd vragen of er gecommit moet worden
+        if [[ "$use_commit" == "true" ]]; then
+            echo -e "${YELLOW}Wil je de wijzigingen committen? [y/N]${NC}"
+            read -r response
+            if [[ "$response" =~ ^[Yy]$ ]]; then
+                create_migration_commit "$action_type" "$target_name"
+            fi
+        fi
+    fi
+}
+
+# Main functie
+main() {
+    local action="$1"
+    local target="$2"
+    local use_claude=false
+    local use_auto=false
+    local use_commit=false
+    
+    # Check voor opties
+    for arg in "$@"; do
+        if [[ "$arg" == "--claude" ]]; then
+            use_claude=true
+        elif [[ "$arg" == "--auto" ]]; then
+            use_auto=true
+        elif [[ "$arg" == "--commit" ]]; then
+            use_commit=true
+        fi
+    done
+    
+    # Valideer dat --commit alleen met --auto gebruikt wordt
+    if [[ "$use_commit" == true && "$use_auto" == false ]]; then
+        echo -e "${RED}Error: --commit kan alleen gebruikt worden samen met --auto${NC}"
+        exit 1
+    fi
+    
+    # Geen argumenten = help
+    if [[ -z "$action" ]]; then
+        show_help
+        exit 0
+    fi
+    
+    # Acties uitvoeren
+    case "$action" in
+        "help"|"-h"|"--help")
+            show_help
+            exit 0
+            ;;
+        "orchestrate")
+            generate_orchestrator_prompt
+            exit 0
+            ;;
+        "preplan")
+            if [[ -z "$target" ]]; then
+                # Volledige ./old/ scan
+                generate_preplan_prompt "hele ./old/ directory"
+            else
+                check_directory "$target"
+                generate_preplan_prompt "./old/$target"
+            fi
+            ;;
+        "file")
+            if [[ -z "$target" ]]; then
+                echo -e "${RED}Error: file actie vereist een bestandsnaam${NC}"
+                echo "Gebruik: ./claude-migrate file \"bestandsnaam.md\""
+                exit 1
+            fi
+            
+            # Zoek file en rapporteer locatie
+            file_result=$(find_file "$target")
+            if [[ $? -eq 0 ]]; then
+                prompt_output=$(generate_file_prompt "$target" "$file_result" "$use_auto")
+                
+                if [[ "$use_claude" == true ]]; then
+                    start_claude_with_prompt "$prompt_output" "$use_auto" "$use_commit" "file" "$target"
+                else
+                    echo "$prompt_output"
+                fi
+            else
+                exit 1
+            fi
+            ;;
+        "dir")
+            if [[ -z "$target" ]]; then
+                echo -e "${RED}Error: dir actie vereist een directory naam${NC}"
+                echo "Gebruik: ./claude-migrate dir \"directory-naam\""
+                exit 1
+            fi
+            
+            # Genereer directory analyse prompt
+            prompt_output=$(generate_dir_prompt "$target" "$use_auto")
+            if [[ $? -eq 0 ]]; then
+                if [[ "$use_claude" == true ]]; then
+                    start_claude_with_prompt "$prompt_output" "$use_auto" "$use_commit" "dir" "$target"
+                else
+                    echo "$prompt_output"
+                fi
+            else
+                exit 1
+            fi
+            ;;
+        *)
+            echo -e "${RED}Onbekende actie: $action${NC}"
+            echo ""
+            show_help
+            exit 1
+            ;;
+    esac
+}
+
+# Voer script uit
+main "$@"
