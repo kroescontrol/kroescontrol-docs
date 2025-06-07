@@ -32,8 +32,6 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "deploy:public": "./deploy-public.sh",
-    "deploy:staging": "node scripts/deploy-cloudflare-worker.js staging",
-    "deploy:production": "node scripts/deploy-cloudflare-worker.js production",
     "serve": "docusaurus serve",
     "pre-build": "node scripts/statusReport.js",
     "post-build": "node post-build.js",

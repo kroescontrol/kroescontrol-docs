@@ -2,18 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build", 
   "installCommand": "npm ci",
-  "framework": null,
-  "routes": [
-    { "src": "/api/debug", "dest": "/api/debug" },
-    { "src": "/(.*)", "dest": "/api/public?path=$1" }
-  ],
-  "functions": {
-    "api/public.js": {
-      "runtime": "@vercel/node@3.2.21",
-      "includeFiles": "build/**"
-    },
-    "api/debug.js": {
-      "runtime": "@vercel/node@3.2.21"
-    }
-  }
+  "framework": null
 }
