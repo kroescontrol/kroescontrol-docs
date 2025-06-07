@@ -43,11 +43,13 @@ async function handleRequest(request, env = {}) {
   
   // ===== PUBLIEKE ROUTES - Direct doorsturen =====
   const publicPaths = [
-    '/',
     '/public',
     '/_next',
     '/img',
-    '/assets',
+    '/assets'
+  ];
+  
+  const publicExtensions = [
     '.css',
     '.js',
     '.png',
@@ -58,7 +60,19 @@ async function handleRequest(request, env = {}) {
     '.woff2'
   ];
   
-  if (publicPaths.some(p => path.includes(p))) {
+  // Check exact paths of extensions
+  if (path === '/' || 
+      publicPaths.some(p => path.startsWith(p)) ||
+      publicExtensions.some(ext => path.endsWith(ext))) {
+    return proxyToVercel(request);
+  }
+  
+  // Check if path doesn't start with protected sections
+  const protectedSections = ['internal', 'finance', 'operation'];
+  const section = path.split('/')[1];
+  
+  if (!protectedSections.includes(section) && !path.startsWith('/api/auth')) {
+    // Not a protected section, allow public access
     return proxyToVercel(request);
   }
   
@@ -80,9 +94,8 @@ async function handleRequest(request, env = {}) {
   }
   
   // ===== PROTECTED ROUTES - Auth check =====
-  const section = path.split('/')[1];
-  
-  if (['internal', 'finance', 'operation'].includes(section)) {
+  // We already checked section above, so if we're here, it's a protected route
+  if (protectedSections.includes(section)) {
     const auth = await checkAuth(request);
     
     if (!auth.authenticated) {
