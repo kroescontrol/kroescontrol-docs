@@ -19,7 +19,7 @@ last_update:
   date: 2025-05-28T00:00:00.000Z
   author: Serge Kroes
 image: /img/logo.svg
-docStatus: live
+docStatus: production
 ---
 
 # Git-Crypt Uitleg voor Kroescontrol Documentatie Repository

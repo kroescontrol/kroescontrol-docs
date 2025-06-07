@@ -3,7 +3,7 @@ id: community-days
 title: Community Days
 sidebar_label: Community Days
 sidebar_position: 2
-description: Kroescontrol Community Days - samen leren, netwerken en inspireren
+description: 'Kroescontrol Community Days - samen leren, netwerken en inspireren'
 tags:
   - community
   - events
@@ -20,7 +20,7 @@ last_update:
   date: 2025-01-06T00:00:00.000Z
   author: Serge Kroes
 image: /img/logo.svg
-docStatus: live
+docStatus: production
 ---
 
 # Community Days

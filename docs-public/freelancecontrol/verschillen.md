@@ -11,7 +11,7 @@ tags:
 last_update:
   date: 2025-01-25T00:00:00.000Z
   author: Serge Kroes
-docStatus: generated
+docStatus: dev
 ---
 
 # Verschillen met Kroescontrol

@@ -21,8 +21,8 @@ module.exports = function(context, options) {
   
   // Default opties
   const defaultOptions = {
-    excludeStatuses: ['templated', 'generated'],
-    hideFromSidebar: ['completed'], // Nieuwe optie: verberg uit sidebar maar genereer wel pagina
+    excludeStatuses: ['template', 'dev'],
+    hideFromSidebar: ['staging'], // Nieuwe optie: verberg uit sidebar maar genereer wel pagina
     enableVisualIndicators: false,
     customStatusBehaviors: {},
   };
@@ -53,7 +53,13 @@ module.exports = function(context, options) {
           const content = fs.readFileSync(file, 'utf8');
           const { data } = matter(content);
           
-          if (data.docStatus && pluginOptions.excludeStatuses.includes(data.docStatus)) {
+          // Behandel 'locked' als alias voor 'production'
+          let effectiveStatus = data.docStatus;
+          if (effectiveStatus === 'locked') {
+            effectiveStatus = 'production';
+          }
+          
+          if (effectiveStatus && pluginOptions.excludeStatuses.includes(effectiveStatus)) {
             // Maak relatief pad voor exclude pattern
             const relativePath = path.relative(docsDir, file);
             patterns.push(relativePath);
@@ -133,19 +139,19 @@ module.exports = function(context, options) {
                 font-weight: bold;
                 margin-left: 8px;
               }
-              .doc-status-templated {
+              .doc-status-template {
                 background-color: #f0f0f0;
                 color: #666;
               }
-              .doc-status-generated {
+              .doc-status-dev {
                 background-color: #e6f7ff;
                 color: #0088cc;
               }
-              .doc-status-completed {
+              .doc-status-staging {
                 background-color: #d9f7be;
                 color: #52c41a;
               }
-              .doc-status-live {
+              .doc-status-production {
                 background-color: #fff1b8;
                 color: #fa8c16;
               }

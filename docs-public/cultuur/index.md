@@ -15,7 +15,7 @@ last_update:
   date: 2025-01-06T00:00:00.000Z
   author: Serge Kroes
 image: /img/logo.svg
-docStatus: live
+docStatus: production
 ---
 
 # Cultuur

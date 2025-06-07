@@ -167,10 +167,16 @@ function shouldExcludeByDocStatus(filePath) {
       return false;
     }
     
-    // In productie builds: exclude templated en generated volledig
-    const excludeStatuses = process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [];
+    // Behandel 'locked' als 'production'
+    let effectiveStatus = frontmatter.docStatus;
+    if (effectiveStatus === 'locked') {
+      effectiveStatus = 'production';
+    }
     
-    return excludeStatuses.includes(frontmatter.docStatus);
+    // In productie builds: exclude template en dev volledig
+    const excludeStatuses = process.env.NODE_ENV === 'production' ? ['template', 'dev'] : [];
+    
+    return excludeStatuses.includes(effectiveStatus);
            
   } catch (error) {
     console.warn(`Could not parse docStatus for ${filePath}:`, error.message);
@@ -194,10 +200,16 @@ function shouldHideFromSidebar(filePath) {
       return false;
     }
     
-    // In productie builds: verberg 'completed' uit sidebar
-    const hideFromSidebarStatuses = process.env.NODE_ENV === 'production' ? ['completed'] : [];
+    // Behandel 'locked' als 'production'
+    let effectiveStatus = frontmatter.docStatus;
+    if (effectiveStatus === 'locked') {
+      effectiveStatus = 'production';
+    }
     
-    return hideFromSidebarStatuses.includes(frontmatter.docStatus);
+    // In productie builds: verberg 'staging' uit sidebar
+    const hideFromSidebarStatuses = process.env.NODE_ENV === 'production' ? ['staging'] : [];
+    
+    return hideFromSidebarStatuses.includes(effectiveStatus);
            
   } catch (error) {
     console.warn(`Could not parse docStatus for sidebar hiding ${filePath}:`, error.message);
@@ -254,7 +266,7 @@ function generateExcludePatterns() {
   
   // Exclude documenten met specific docStatus (alleen in productie)
   if (process.env.NODE_ENV === 'production') {
-    const excludeStatuses = ['templated', 'generated'];
+    const excludeStatuses = ['template', 'dev'];
     const docsDirectories = ['docs-public', 'docs-internal', 'docs-finance', 'docs-operation', 'docs-test-auth'];
     
     for (const docsDir of docsDirectories) {
@@ -267,11 +279,18 @@ function generateExcludePatterns() {
           const content = fs.readFileSync(file, 'utf8');
           const { data } = matter(content);
           
-          if (data.docStatus && excludeStatuses.includes(data.docStatus)) {
+          // Behandel 'locked' als 'production'
+          let effectiveStatus = data.docStatus;
+          if (effectiveStatus === 'locked') {
+            effectiveStatus = 'production';
+          }
+          
+          if (effectiveStatus && excludeStatuses.includes(effectiveStatus)) {
             // Maak volledig relatief pad voor exclude pattern (niet alleen bestandsnaam)
             const relativePath = path.relative(docsDir, file);
             // Voeg het directory prefix toe om conflicten te voorkomen
             patterns.push(`${path.basename(docsDir)}/${relativePath}`);
+            console.log(`🚫 Excluding: ${path.basename(docsDir)}/${relativePath} (status: ${data.docStatus})`);
           }
         } catch (error) {
           // Skip bestanden die niet gelezen kunnen worden

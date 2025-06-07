@@ -1,13 +1,24 @@
 ---
 title: Kantoorlocaties
 sidebar_position: 1
-description: Overzicht van alle Kroescontrol kantoorlocaties met uitgebreide informatie per vestiging
-tags: [kantoor, locaties, mr green]
-keywords: [kantoorlocaties, vestigingen, amsterdam, klarenbeek, parkeren, bereikbaarheid]
+description: >-
+  Overzicht van alle Kroescontrol kantoorlocaties met uitgebreide informatie per
+  vestiging
+tags:
+  - kantoor
+  - locaties
+  - mr green
+keywords:
+  - kantoorlocaties
+  - vestigingen
+  - amsterdam
+  - klarenbeek
+  - parkeren
+  - bereikbaarheid
 last_update:
-  date: 2025-01-06
+  date: 2025-01-06T00:00:00.000Z
   author: Serge Kroes
-docStatus: live
+docStatus: production
 ---
 
 # Kantoorlocaties

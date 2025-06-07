@@ -1,5 +1,5 @@
 ---
-docStatus: live
+docStatus: production
 ---
 # HOWTO: Git-Crypt Key Separatie voor Operation en Finance
 

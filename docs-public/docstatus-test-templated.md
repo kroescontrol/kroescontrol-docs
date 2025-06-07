@@ -1,7 +1,7 @@
 ---
 title: ❌ Test Document (Templated)
 sidebar_position: 999
-docStatus: templated
+docStatus: template
 ---
 
 # ❌ Test Document (Status: templated)

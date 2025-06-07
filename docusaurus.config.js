@@ -240,15 +240,15 @@ module.exports = {
     [
       path.resolve(__dirname, 'src/plugins/filter-docs-by-status'),
       {
-        excludeStatuses: process.env.NODE_ENV === 'production' ? ['templated', 'generated'] : [],
-        hideFromSidebar: process.env.NODE_ENV === 'production' ? ['completed'] : [],
+        excludeStatuses: process.env.NODE_ENV === 'production' ? ['template', 'dev'] : [],
+        hideFromSidebar: process.env.NODE_ENV === 'production' ? ['staging'] : [],
         excludeFromSidebar: ['PROMPT.md'], // Exclude PROMPT.md files from sidebar entirely
         enableVisualIndicators: process.env.NODE_ENV === 'development',
         statusLabels: {
-          templated: 'Template',
-          generated: 'Gegenereerd',
-          completed: 'Voltooid',
-          live: 'Live',
+          template: 'Template',
+          dev: 'Development',
+          staging: 'Staging',
+          production: 'Production',
           locked: 'Vergrendeld',
         },
       },

@@ -19,7 +19,7 @@ image: /img/logo.svg
 last_update:
   date: 2025-05-29T00:00:00.000Z
   author: Serge Kroes
-docStatus: live
+docStatus: production
 ---
 
 # Git-Crypt Problemen Oplossen

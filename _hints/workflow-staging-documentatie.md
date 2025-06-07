@@ -1,5 +1,5 @@
 ---
-docStatus: live
+docStatus: production
 ---
 # Workflow voor Staging en Documentatie
 

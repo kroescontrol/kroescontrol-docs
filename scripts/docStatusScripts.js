@@ -108,16 +108,16 @@ async function processDocsByStatus(docsDir, options = {}) {
   // Verzamel te verwerken documenten
   const docsToProcess = [];
   
-  // Verzamel templated documenten indien nodig
+  // Verzamel template documenten indien nodig
   if (processOptions.processTemplated) {
-    const templatedDocs = getDocumentsByStatus(docsDir, 'templated');
-    docsToProcess.push(...templatedDocs.map(doc => ({ ...doc, targetStatus: 'generated' })));
+    const templateDocs = getDocumentsByStatus(docsDir, 'template');
+    docsToProcess.push(...templateDocs.map(doc => ({ ...doc, targetStatus: 'dev' })));
   }
   
-  // Verzamel generated documenten indien nodig
+  // Verzamel dev documenten indien nodig
   if (processOptions.processGenerated) {
-    const generatedDocs = getDocumentsByStatus(docsDir, 'generated');
-    docsToProcess.push(...generatedDocs.map(doc => ({ ...doc, targetStatus: 'completed' })));
+    const devDocs = getDocumentsByStatus(docsDir, 'dev');
+    docsToProcess.push(...devDocs.map(doc => ({ ...doc, targetStatus: 'staging' })));
   }
   
   // Verwerk elk document
@@ -134,9 +134,9 @@ async function processDocsByStatus(docsDir, options = {}) {
       
       // Bepaal of de status moet worden bijgewerkt
       let shouldUpgrade = false;
-      if (doc.status === 'templated' && processOptions.upgradeTemplated) {
+      if (doc.status === 'template' && processOptions.upgradeTemplated) {
         shouldUpgrade = true;
-      } else if (doc.status === 'generated' && processOptions.upgradeGenerated) {
+      } else if (doc.status === 'dev' && processOptions.upgradeGenerated) {
         shouldUpgrade = true;
       }
       

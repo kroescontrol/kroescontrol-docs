@@ -1,6 +1,6 @@
 ---
 title: Welcome to Kroescontrol
-docStatus: live
+docStatus: production
 sidebar_position: 0
 description: Welcome to the central documentation hub for Kroescontrol.
 slug: /welcome
