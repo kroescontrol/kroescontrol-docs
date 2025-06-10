@@ -1,4 +1,6 @@
 {
-  "index": "Home",
-  "public": "Documentatie"
+  "index": "Home", 
+  "public": "Documentatie",
+  "internal": "Interne Docs",
+  "auth-test": "Auth Test"
 }
