@@ -46,3 +46,7 @@ Deze site wordt automatisch gedeployed naar Vercel bij elke push naar de main br
 ### License
 
 Copyright © 2025 Kroescontrol B.V. - Alle rechten voorbehouden
+
+---
+
+*Laatste update: 10 juni 2025 - Nextra migratie voltooid*
