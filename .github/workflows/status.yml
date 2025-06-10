@@ -1,0 +1,23 @@
+name: 🌐 Deploy to Vercel (Docs)
+
+on:
+  workflow_run:
+    workflows: ["Deploy to Vercel"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    name: Deployment Status
+    steps:
+      - name: Check deployment status
+        run: |
+          echo "🚀 Kroescontrol Docs - Deployment Status"
+          echo "========================================"
+          echo "Repository: kroescontrol-docs"
+          echo "Framework: Nextra (Next.js)"
+          echo "Deployment: Vercel"
+          echo "URL: https://docs.kroescontrol.nl"
+          echo "========================================"
