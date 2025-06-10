@@ -14,7 +14,6 @@ keywords:
   - model
 last_update:
   date: 2025-05-20T00:00:00.000Z
-  author: Kroescontrol Team
   author: Serge Kroes
 image: /img/KC-logo-gradientKLEUR.svg
 docStatus: generated

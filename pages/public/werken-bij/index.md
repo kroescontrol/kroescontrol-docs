@@ -3,9 +3,6 @@ title: Werken bij Kroescontrol
 sidebar_position: 10
 description: Informatie voor potentiële medewerkers
 collapsed: true
-last_update:
-  date: 2025-05-20T00:00:00.000Z
-  author: Kroescontrol Team
 slug: /werken-bij
 tags:
   - werken-bij

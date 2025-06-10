@@ -3,9 +3,6 @@ title: Kroescontrol Engineer
 sidebar_position: 20
 description: Meer gedetailleerde informatie voor engineers in de oriëntatiefase
 collapsed: true
-last_update:
-  date: 2025-05-20T00:00:00.000Z
-  author: Kroescontrol Team
 slug: /kroescontrol-engineer
 tags:
   - kroescontrol

@@ -60,3 +60,4 @@ docusaurus.config.js.bak
 *.sh
 contextCollector.js
 post-build.js
+_hints

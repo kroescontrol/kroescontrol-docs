@@ -3,9 +3,6 @@ title: Tools & Processen
 sidebar_position: 40
 description: Overzicht van tools en processen voor dagelijks gebruik
 collapsed: true
-last_update:
-  date: 2025-05-20T00:00:00.000Z
-  author: Kroescontrol Team
 slug: /tools
 tags:
   - tools
