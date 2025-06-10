@@ -32,7 +32,7 @@ tags: [kantoor, locatie, [locatienaam], mr green]
 keywords: [kantoor, [locatienaam], parkeren, bereikbaarheid, faciliteiten, mr green]
 last_update:
   date: [YYYY-MM-DD]
-  author: Serge Kroes
+  author: [Auteur Naam]
 ---
 
 # Kantoor [Locatienaam]
