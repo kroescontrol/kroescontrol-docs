@@ -1,0 +1,42 @@
+{
+  // Kroescontrol Docs - Minimale accent aanpassingen
+  "workbench.colorCustomizations": {
+    // Activity Bar - Teal accent voor documentatie
+    "activityBar.background": "#1c9c8e",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#b3e0da",
+    "activityBarBadge.background": "#2050a3",
+    "activityBarBadge.foreground": "#ffffff",
+    
+    // Explorer selectie - Royal Blue accent
+    "list.activeSelectionBackground": "#2050a3",
+    "list.activeSelectionForeground": "#ffffff",
+    "list.hoverBackground": "#2050a333",
+    "list.highlightForeground": "#1c9c8e"
+  },
+  
+  // Editor associations
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
+  
+  // Workspace specific settings
+  "window.title": "Kroescontrol Docs - ${activeEditorShort}",
+  
+  // Terminal settings
+  "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.fastScrollSensitivity": 5,
+  
+  // UI compactness settings
+  "workbench.tree.indent": 10,           // Nog kleinere indent voor meer ruimte
+  "workbench.tree.renderIndentGuides": "none",     // Geen indent guides
+  "window.density.editorTabHeight": "compact",     // Compactere tabs
+  "workbench.activityBar.iconClickBehavior": "toggle", // Sneller sidebar toggle
+  "workbench.sideBar.location": "left",
+  "window.zoomLevel": -0.25,
+  "accessibility.signals.terminalBell": {
+    "sound": "off"
+  },
+  "terminal.integrated.enableVisualBell": false // Verkleint hele UI een klein beetje
+}
