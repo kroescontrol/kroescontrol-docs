@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   
   // Check if we're in production and trying to access freelancecontrol
   if (
-    process.env.NODE_ENV === 'production' &&
+    (process.env.NODE_ENV === 'production' || process.env.HIDE_FREELANCECONTROL === 'true') &&
     pathname.startsWith('/public/freelancecontrol')
   ) {
     // Redirect to home or show 404

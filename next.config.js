@@ -1,12 +1,11 @@
 const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
+  themeConfig: './theme.config.jsx',
   defaultShowCopyCode: true,
   staticImage: true
 })
 
 module.exports = withNextra({
-  output: 'standalone',
   images: {
     unoptimized: true
   },

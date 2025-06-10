@@ -1,13 +1,6 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
-
-const config: DocsThemeConfig = {
-  logo: (
-    <>
-      <img src="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientkleur.svg" alt="Kroescontrol" style={{ height: 32 }} />
-      <span style={{ marginLeft: '.4em', fontWeight: 800 }}>kroescontrol docs</span>
-    </>
-  ),
+/** @type {import('nextra-theme-docs').DocsThemeConfig} */
+export default {
+  logo: 'kroescontrol docs',
   project: {
     link: 'https://github.com/kroescontrol',
   },
@@ -30,13 +23,12 @@ const config: DocsThemeConfig = {
     titleComponent: ({ title, type }) => {
       // Verberg FreelanceControl in productie
       if (
-        process.env.NODE_ENV === 'production' &&
-        process.env.VERCEL_ENV === 'production' &&
-        title === 'FreelanceControl'
+        (process.env.NODE_ENV === 'production' || process.env.HIDE_FREELANCECONTROL === 'true') &&
+        title === 'Freelancecontrol'
       ) {
         return null
       }
-      return <>{title}</>
+      return title
     }
   },
   toc: {
@@ -54,18 +46,9 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s – Kroescontrol Docs'
     }
   },
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Kroescontrol Documentatie" />
-      <meta property="og:description" content="Officiële documentatie van Kroescontrol" />
-      <link rel="icon" href="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientkleur.svg" />
-    </>
-  ),
   banner: {
     key: 'nextra-migration',
     text: '🚀 Welkom bij de nieuwe Kroescontrol documentatie!'
-  }
+  },
+  faviconGlyph: '🔧'
 }
-
-export default config
