@@ -44,12 +44,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Het primaire logo voor gebruik op lichte achtergronden en algemene toepassingen.</p>
     </div>
     <div style={{backgroundColor: 'white', padding: '20px', borderRadius: '5px', border: '1px solid #eee', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Logo/PNG/KC-logo-gradientKLEUR.png" alt="Kroescontrol Logo - Gradient Kleur" style={{maxWidth: '200px', width: '100%'}} />
+      <img src="/public/branding/logo/png/kc-logo-gradientkleur.png" alt="Kroescontrol Logo - Gradient Kleur" style={{maxWidth: '200px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Logo/SVG/KC-logo-gradientKLEUR.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Logo/PNG/KC-logo-gradientKLEUR.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Logo/EPS/KC-logo-gradientKLEUR.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/logo/svg/kc-logo-gradientkleur.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/logo/png/kc-logo-gradientkleur.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/logo/eps/kc-logo-gradientkleur.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 
@@ -59,12 +59,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.</p>
     </div>
     <div style={{backgroundColor: 'rgb(51, 51, 51)', padding: '20px', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Logo/PNG/KC-logo-gradientBW.png" alt="Kroescontrol Logo - Gradient Zwart-Wit" style={{maxWidth: '200px', width: '100%'}} />
+      <img src="/public/branding/logo/png/kc-logo-gradientbw.png" alt="Kroescontrol Logo - Gradient Zwart-Wit" style={{maxWidth: '200px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Logo/SVG/KC-logo-gradientBW.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Logo/PNG/KC-logo-gradientBW.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Logo/EPS/KC-logo-gradientBW.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/logo/svg/kc-logo-gradientbw.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/logo/png/kc-logo-gradientbw.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/logo/eps/kc-logo-gradientbw.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 
@@ -74,12 +74,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Te gebruiken op donkere of kleurrijke achtergronden waar maximum contrast vereist is.</p>
     </div>
     <div style={{backgroundColor: '#333', padding: '20px', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Logo/PNG/KC-logo-wit.png" alt="Kroescontrol Logo - Wit" style={{maxWidth: '200px', width: '100%'}} />
+      <img src="/public/branding/logo/png/kc-logo-wit.png" alt="Kroescontrol Logo - Wit" style={{maxWidth: '200px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Logo/SVG/KC-logo-wit.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Logo/PNG/KC-logo-wit.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Logo/EPS/KC-logo-wit.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/logo/svg/kc-logo-wit.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/logo/png/kc-logo-wit.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/logo/eps/kc-logo-wit.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 
@@ -89,12 +89,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Voornamelijk voor print toepassingen waar alleen zwart-wit beschikbaar is.</p>
     </div>
     <div style={{backgroundColor: 'white', padding: '20px', borderRadius: '5px', border: '1px solid #eee', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Logo/PNG/KC-logo-zwart.png" alt="Kroescontrol Logo - Zwart" style={{maxWidth: '200px', width: '100%'}} />
+      <img src="/public/branding/logo/png/kc-logo-zwart.png" alt="Kroescontrol Logo - Zwart" style={{maxWidth: '200px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Logo/SVG/KC-logo-zwart.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Logo/PNG/KC-logo-zwart.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Logo/EPS/KC-logo-zwart.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/logo/svg/kc-logo-zwart.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/logo/png/kc-logo-zwart.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/logo/eps/kc-logo-zwart.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 </div>
@@ -108,12 +108,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Het primaire beeldmerk voor gebruik op lichte achtergronden en algemene toepassingen.</p>
     </div>
     <div style={{backgroundColor: 'white', padding: '20px', borderRadius: '5px', border: '1px solid #eee', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" alt="Kroescontrol Beeldmerk - Gradient Kleur" style={{maxWidth: '80px', width: '100%'}} />
+      <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientkleur.png" alt="Kroescontrol Beeldmerk - Gradient Kleur" style={{maxWidth: '80px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Beeldmerk/SVG/KC-beeldmerk-gradientKLEUR.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientKLEUR.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Beeldmerk/EPS/KC-beeldmerk-gradientKLEUR.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientkleur.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/beeldmerk/png/kc-beeldmerk-gradientkleur.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/beeldmerk/eps/kc-beeldmerk-gradientkleur.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 
@@ -123,12 +123,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.</p>
     </div>
     <div style={{backgroundColor: 'rgb(51, 51, 51)', padding: '20px', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" alt="Kroescontrol Beeldmerk - Gradient Zwart-Wit" style={{maxWidth: '80px', width: '100%'}} />
+      <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" alt="Kroescontrol Beeldmerk - Gradient Zwart-Wit" style={{maxWidth: '80px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Beeldmerk/SVG/KC-beeldmerk-gradientBW.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Beeldmerk/PNG/KC-beeldmerk-gradientBW.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Beeldmerk/EPS/KC-beeldmerk-gradientBW.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientbw.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/beeldmerk/eps/kc-beeldmerk-gradientbw.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 
@@ -138,12 +138,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Te gebruiken op donkere of kleurrijke achtergronden waar maximum contrast vereist is.</p>
     </div>
     <div style={{backgroundColor: '#333', padding: '20px', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" alt="Kroescontrol Beeldmerk - Wit" style={{maxWidth: '80px', width: '100%'}} />
+      <img src="/public/branding/beeldmerk/png/kc-beeldmerk-wit.png" alt="Kroescontrol Beeldmerk - Wit" style={{maxWidth: '80px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Beeldmerk/SVG/KC-beeldmerk-wit.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>SVG</a>
-      <a href="/branding/Beeldmerk/PNG/KC-beeldmerk-wit.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>PNG</a>
-      <a href="/branding/Beeldmerk/EPS/KC-beeldmerk-wit.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>EPS</a>
+      <a href="/public/branding/beeldmerk/svg/kc-beeldmerk-wit.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>SVG</a>
+      <a href="/public/branding/beeldmerk/png/kc-beeldmerk-wit.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>PNG</a>
+      <a href="/public/branding/beeldmerk/eps/kc-beeldmerk-wit.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em', color: '#333'}}>EPS</a>
     </div>
   </div>
 
@@ -153,12 +153,12 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
       <p>Voornamelijk voor print toepassingen waar alleen zwart-wit beschikbaar is.</p>
     </div>
     <div style={{backgroundColor: 'white', padding: '20px', borderRadius: '5px', border: '1px solid #eee', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
-      <img src="/branding/Beeldmerk/PNG/KC-beeldmerk-zwart.png" alt="Kroescontrol Beeldmerk - Zwart" style={{maxWidth: '80px', width: '100%'}} />
+      <img src="/public/branding/beeldmerk/png/kc-beeldmerk-zwart.png" alt="Kroescontrol Beeldmerk - Zwart" style={{maxWidth: '80px', width: '100%'}} />
     </div>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-      <a href="/branding/Beeldmerk/SVG/KC-beeldmerk-zwart.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
-      <a href="/branding/Beeldmerk/PNG/KC-beeldmerk-zwart.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
-      <a href="/branding/Beeldmerk/EPS/KC-beeldmerk-zwart.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
+      <a href="/public/branding/beeldmerk/svg/kc-beeldmerk-zwart.svg" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>SVG</a>
+      <a href="/public/branding/beeldmerk/png/kc-beeldmerk-zwart.png" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>PNG</a>
+      <a href="/public/branding/beeldmerk/eps/kc-beeldmerk-zwart.eps" style={{flex: '1', textAlign: 'center', padding: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', textDecoration: 'none', fontSize: '0.9em'}}>EPS</a>
     </div>
   </div>
 </div>
@@ -167,8 +167,8 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
 
 ### Branding Handleidingen
 
-- [Branding-Kroescontrol.pdf](/branding/Branding-Kroescontrol.pdf) - Compleet overzicht van onze visuele identiteit
-- [Kleuren-Kroescontrol.pdf](/branding/Kleuren-Kroescontrol.pdf) - Gedetailleerde specificaties van ons kleurenpalet
+- [branding-kroescontrol.pdf](/public/branding/branding-kroescontrol.pdf) - Compleet overzicht van onze visuele identiteit
+- [kleuren-kroescontrol.pdf](/public/branding/kleuren-kroescontrol.pdf) - Gedetailleerde specificaties van ons kleurenpalet
 
 ## Gebruiksvoorwaarden
 

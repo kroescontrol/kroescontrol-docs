@@ -262,6 +262,6 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
 
 ## Meer informatie
 
-Voor gedetailleerde specificaties kun je het [Kleuren-Kroescontrol.pdf](/branding/Kleuren-Kroescontrol.pdf) document downloaden.
+Voor gedetailleerde specificaties kun je het [kleuren-kroescontrol.pdf](/public/branding/kleuren-kroescontrol.pdf) document downloaden.
 
 Heb je vragen over het gebruik van ons kleurenpalet? Neem dan contact op met [info@kroescontrol.nl](mailto:info@kroescontrol.nl).

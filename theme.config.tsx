@@ -4,8 +4,8 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: (
     <>
-      <img src="/public/branding/Logo/SVG/KC-logo-gradientKLEUR.svg" alt="Kroescontrol" style={{ height: 32 }} />
-      <span style={{ marginLeft: '.4em', fontWeight: 800 }}>Docs</span>
+      <img src="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientkleur.svg" alt="Kroescontrol" style={{ height: 32 }} />
+      <span style={{ marginLeft: '.4em', fontWeight: 800 }}>kroescontrol docs</span>
     </>
   ),
   project: {
@@ -26,7 +26,18 @@ const config: DocsThemeConfig = {
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
-    toggleButton: true
+    toggleButton: true,
+    titleComponent: ({ title, type }) => {
+      // Verberg FreelanceControl in productie
+      if (
+        process.env.NODE_ENV === 'production' &&
+        process.env.VERCEL_ENV === 'production' &&
+        title === 'FreelanceControl'
+      ) {
+        return null
+      }
+      return <>{title}</>
+    }
   },
   toc: {
     backToTop: true
@@ -48,7 +59,7 @@ const config: DocsThemeConfig = {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="Kroescontrol Documentatie" />
       <meta property="og:description" content="Officiële documentatie van Kroescontrol" />
-      <link rel="icon" href="/public/branding/Beeldmerk/SVG/KC-beeldmerk-gradientKLEUR.svg" />
+      <link rel="icon" href="/public/branding/beeldmerk/svg/kc-beeldmerk-gradientkleur.svg" />
     </>
   ),
   banner: {

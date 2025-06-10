@@ -26,8 +26,8 @@ Kroescontrol staat geregistreerd in het officiële SNA register van gecertificee
 
 U kunt onze officiële verklaringen van registratie downloaden:
 
-- [📄 Verklaring van Registratie (Nederlands)](/sna/SNA_VerklaringVanRegistratie_Kroescontrol_20250404.pdf)
-- [📄 Declaration of Registration (English)](/sna/SNA_DeclarationOfRegistration_Kroescontrol_20250404.pdf)
+- [📄 Verklaring van Registratie (Nederlands)](/public/sna/SNA_VerklaringVanRegistratie_Kroescontrol_20250404.pdf)
+- [📄 Declaration of Registration (English)](/public/sna/SNA_DeclarationOfRegistration_Kroescontrol_20250404.pdf)
 
 ## Wat betekent dit voor u?
 
