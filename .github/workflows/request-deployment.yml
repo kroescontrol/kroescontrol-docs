@@ -41,7 +41,7 @@ jobs:
             --method POST \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/kroescontrol/kroescontrol-vault/repository-dispatch \
+            /repos/kroescontrol/kroescontrol-vault/dispatches \
             -f event_type="deploy-docs-$DEPLOY_TYPE" \
             -f 'client_payload[requester]="'"$REQUESTER"'"' \
             -f 'client_payload[triggered_from]="docs-repository"' \
