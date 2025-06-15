@@ -1,41 +1,88 @@
-# Kroescontrol Documentatie
+---
+title: Kroescontrol Docs
+description: Centraal documentatieportaal voor Kroescontrol medewerkers en klanten
+---
 
-Welkom bij de officiële documentatie van Kroescontrol. Hier vind je alle informatie over onze producten, services en technische specificaties.
+# 📖 Kroescontrol Documentatieportaal
 
-## 🚀 Snel Starten
+Welkom bij het centrale documentatieportaal van Kroescontrol. Kies de juiste sectie voor de informatie die je zoekt.
 
-### [📖 Introductie](/public/welkom)
-Leer meer over Kroescontrol en onze missie
+## 📂 Documentatie Secties
 
-### [💼 Kennismaking](/public/kennismaking)
-Ontdek onze oplossingen voor werkgevers en werknemers
+### 🌐 [Publieke Documentatie](/public)
+**Toegankelijk voor iedereen**
+- Bedrijfsinformatie en dienstverlening
+- Kennismaking en onboarding
+- Branding en contactgegevens
 
-### [🎨 Branding](/public/branding)
-Download logo's en lees onze huisstijl richtlijnen
+### 🔒 [Interne Documentatie](/internal)
+**Alleen voor Kroescontrol medewerkers**
+- Development procedures en guidelines  
+- Interne processen en workflows
+- Technische specificaties
 
-## 📚 Documentatie Secties
+### 📊 [Operations](/operation) 
+**Voor Operations team**
+- Monitoring en metrics
+- Resource management
+- Infrastructure procedures
 
-### Voor Medewerkers
-- [Kennismaking](/public/kennismaking) - Alles over werken bij Kroescontrol
-- [Engineer Hub](/public/kennismaking/engineer-hub) - Technische resources
-- [Kantoor](/public/kantoor) - Locaties en faciliteiten
-
-### Voor Klanten  
-- [Over Kroescontrol](/public/over-kroescontrol) - Wie we zijn
-- [Klanten](/public/klanten) - Onze partners
-- [SNA Keurmerk](/public/sna-keurmerk) - Certificeringen
-
-### Algemene Informatie
-- [Cultuur](/public/cultuur) - Onze bedrijfscultuur
-- [Werken bij](/public/werken-bij) - Carrière mogelijkheden
-- [Contact](/public/contact) - Bereikbaarheid
-
-## 🔗 Hulp Nodig?
-
-- **Support**: [support@kroescontrol.nl](mailto:support@kroescontrol.nl)
-- **Algemeen**: [info@kroescontrol.nl](mailto:info@kroescontrol.nl)
-- **Website**: [kroescontrol.nl](https://kroescontrol.nl)
+### 💰 [Finance](/finance)
+**Voor Finance team**  
+- Financial procedures
+- Compliance workflows
+- Budgeting en reporting
 
 ---
 
-*Deze documentatie wordt continu bijgewerkt.*
+## 🔐 Toegang tot Beschermde Secties
+
+Voor toegang tot interne documentatie:
+
+import { useSession, signIn } from 'next-auth/react'
+
+export function LoginStatus() {
+  const { data: session, status } = useSession()
+  
+  if (status === 'loading') {
+    return <div style={{padding: '16px', background: '#f3f4f6', borderRadius: '8px', margin: '16px 0'}}>
+      <p>🔄 Sessie wordt geladen...</p>
+    </div>
+  }
+  
+  if (session) {
+    return <div style={{padding: '16px', background: '#dcfce7', borderRadius: '8px', margin: '16px 0'}}>
+      <p>✅ <strong>Ingelogd als:</strong> {session.user?.name || session.user?.email}</p>
+      <p>Je hebt toegang tot alle beschermde secties!</p>
+    </div>
+  }
+  
+  return <div style={{padding: '16px', background: '#fef3c7', borderRadius: '8px', margin: '16px 0'}}>
+    <p>🔑 <strong>Niet ingelogd</strong></p>
+    <p>Voor toegang tot interne documentatie:</p>
+    <button 
+      onClick={() => signIn()} 
+      style={{
+        padding: '8px 16px', 
+        background: '#1e40af', 
+        color: 'white', 
+        border: 'none', 
+        borderRadius: '6px', 
+        cursor: 'pointer',
+        marginTop: '8px'
+      }}
+    >
+      Inloggen met GitHub/Google
+    </button>
+  </div>
+}
+
+<LoginStatus />
+
+---
+
+## 🔗 Support
+
+- **Technische vragen**: [tech@kroescontrol.nl](mailto:tech@kroescontrol.nl)
+- **Algemene vragen**: [info@kroescontrol.nl](mailto:info@kroescontrol.nl)
+- **Website**: [kroescontrol.nl](https://kroescontrol.nl)

@@ -38,7 +38,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
 ## Logo Downloads
 
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '30px'}}>
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Gradient Kleur Logo</h3>
       <p>Het primaire logo voor gebruik op lichte achtergronden en algemene toepassingen.</p>
@@ -53,7 +53,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Gradient Zwart-Wit Logo</h3>
       <p>Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.</p>
@@ -68,7 +68,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Wit Logo</h3>
       <p>Te gebruiken op donkere of kleurrijke achtergronden waar maximum contrast vereist is.</p>
@@ -83,7 +83,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Zwart Logo</h3>
       <p>Voornamelijk voor print toepassingen waar alleen zwart-wit beschikbaar is.</p>
@@ -102,7 +102,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
 ## Beeldmerk Downloads
 
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '30px'}}>
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Gradient Kleur Beeldmerk</h3>
       <p>Het primaire beeldmerk voor gebruik op lichte achtergronden en algemene toepassingen.</p>
@@ -117,7 +117,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Gradient Zwart-Wit Beeldmerk</h3>
       <p>Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.</p>
@@ -132,7 +132,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Wit Beeldmerk</h3>
       <p>Te gebruiken op donkere of kleurrijke achtergronden waar maximum contrast vereist is.</p>
@@ -147,7 +147,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
     </div>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Zwart Beeldmerk</h3>
       <p>Voornamelijk voor print toepassingen waar alleen zwart-wit beschikbaar is.</p>

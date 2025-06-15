@@ -36,7 +36,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
 ## Primaire kleuren
 
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '30px'}}>
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <h3>Deep Navy Blue (Diep Marineblauw)</h3>
     <div style={{backgroundColor: '#222b5b', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
       <div style={{display: 'flex', alignItems: 'center'}}>
@@ -52,7 +52,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     <p>Deze kleur straalt betrouwbaarheid, professionaliteit en stabiliteit uit. Het is een van de kernkleuren van onze merkidentiteit.</p>
   </div>
 
-  <div style={{flex: '1 1 calc(50% - 10px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <h3>Crimson Magenta (Karmozijn Magenta)</h3>
     <div style={{backgroundColor: '#c22757', color: 'white', padding: '20px', borderRadius: '5px', marginBottom: '10px'}}>
       <div style={{display: 'flex', alignItems: 'center'}}>
@@ -85,8 +85,8 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
   </div>
 
   <div style={{display: 'flex', flexWrap: 'wrap', gap: '15px'}}>
-    <div style={{flex: '1 1 300px', background: 'linear-gradient(90deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px'}}></div>
-    <div style={{flex: '1 1 300px', background: 'linear-gradient(180deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px'}}></div>
+    <div style={{flex: '1', background: 'linear-gradient(90deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px', minWidth: '300px'}}></div>
+    <div style={{flex: '1', background: 'linear-gradient(180deg, #222b5b 0%, #c22757 100%)', height: '60px', borderRadius: '5px', minWidth: '300px'}}></div>
   </div>
 </div>
 
@@ -227,7 +227,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
 ## Richtlijnen voor gebruik
 
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '30px'}}>
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <h3>Toepassingen</h3>
     <p>Het kleurenpalet is zorgvuldig samengesteld voor optimaal gebruik in:</p>
     <ul>
@@ -238,7 +238,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </ul>
   </div>
 
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <h3>Toegankelijkheid</h3>
     <ul>
       <li>Het contrast tussen tekst en achtergrond moet voldoen aan WCAG 2.1 AA-standaard</li>
@@ -248,7 +248,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
     </ul>
   </div>
 
-  <div style={{flex: '1 1 calc(33% - 14px)', minWidth: '280px'}}>
+  <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <h3>Technische opmerkingen</h3>
     <ul>
       <li>Alle kleuren zijn gestandaardiseerd voor consistentie over verschillende media</li>

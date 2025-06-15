@@ -1,38 +1,37 @@
 ---
 title: Interne Documentatie
-description: Toegang tot interne Kroescontrol documentatie
+description: Development procedures, interne processen en technische specificaties  
+protected: true
+requiresAuth: true
 ---
 
-import { ProtectedContent } from '../../components/ProtectedContent'
+# 🔒 Interne Documentatie
 
-# Interne Documentatie
+Deze sectie bevat interne documentatie voor Kroescontrol ontwikkelaars en technisch personeel.
 
-Deze sectie bevat vertrouwelijke informatie voor Kroescontrol medewerkers.
+## 🔐 Toegang Vereist
 
-<ProtectedContent section="internal">
+Deze documentatie is alleen toegankelijk voor geautoriseerde Kroescontrol medewerkers.
 
-## Welkom bij de interne documentatie
+## 📋 Lokale Development
 
-Als je dit kunt lezen, ben je succesvol ingelogd via het Kroescontrol Hub authenticatie systeem.
+Voor lokale development met interne documentatie:
 
-### Beschikbare secties
+```bash
+# Vanuit docs directory:
+ln -s ../../apphub/docs-internal pages/internal
+npm run dev
+```
 
-Afhankelijk van je toegangsrechten heb je toegang tot:
+## 📋 Inhoud
 
-- **Engineering Documentatie** - Technische documentatie en architectuur
-- **Finance Documentatie** - Financiële processen en rapportages
-- **Operations Documentatie** - Operationele procedures en handleidingen
+Deze sectie bevat normaal gesproken:
 
-### Quick Links
+- **Development Procedures**: Coding standards en workflows
+- **Technical Guidelines**: Architecture en best practices  
+- **Internal Processes**: Team procedures en workflows
+- **API Documentation**: Interne API specificaties
 
-- [Engineering Guidelines](/internal/engineering)
-- [System Architecture](/internal/architecture)
-- [API Documentation](/internal/api)
+---
 
-### Support
-
-Voor vragen over toegang of documentatie, neem contact op met:
-- **Technisch**: serge@kroescontrol.nl
-- **Algemeen**: patriek@kroescontrol.nl
-
-</ProtectedContent>
+*📂 **Placeholder:** Deze content wordt geladen via symlink naar apphub/docs-internal in productie en lokale development.*
