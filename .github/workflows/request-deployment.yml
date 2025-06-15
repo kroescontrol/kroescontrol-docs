@@ -49,7 +49,7 @@ jobs:
             -f 'client_payload[commit_sha]="${{ github.sha }}"' \
             -f 'client_payload[commit_message]="${{ github.event.head_commit.message || 'Manual deployment' }}"'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
           
       - name: View deployment info
         run: |
