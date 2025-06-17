@@ -40,7 +40,7 @@ export default {
       
       return (
         <a 
-          href="/api/auth/signin" 
+          href="https://hub.kroescontrol.nl/login?redirect=https://docs.kroescontrol.nl" 
           style={{ 
             padding: '6px 12px', 
             background: '#1e40af', 
