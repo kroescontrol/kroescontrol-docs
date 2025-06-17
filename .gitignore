@@ -43,6 +43,10 @@ next-env.d.ts
 /docs-finance
 /docs-operation
 
+# Symlinks to protected content (vault only - MT access required)
+/pages/operation
+/pages/finance
+
 # Legacy Docusaurus
 .docusaurus
 .cache-loader
