@@ -64,6 +64,6 @@ Voor technische ondersteuning tijdens je meeting:
 
 ## Zie ook
 
-- [Kantoorlocaties](/kantoor/locaties) - Waar vind je onze vergaderruimtes
-- [Voor bezoekers](/kantoor/bezoekers) - Informatie voor meeting gasten
-- [Contact & Support](/kantoor/contact-support) - Hulp nodig?
+- [Kantoorlocaties](/public/kantoor/locaties) - Waar vind je onze vergaderruimtes
+- [Voor bezoekers](/public/kantoor/bezoekers) - Informatie voor meeting gasten
+- [Contact & Support](/public/kantoor/contact-support) - Hulp nodig?

@@ -1,7 +1,19 @@
 {
   "index": "🏠 Home",
-  "public": "🌐 Public",
-  "internal": "🔒 Internal", 
-  "operation": "📊 Operations",
-  "finance": "💰 Finance"
+  "public": {
+    "title": "🌐 Public",
+    "type": "page"
+  },
+  "internal": {
+    "title": "🔒 Intern", 
+    "type": "page"
+  },
+  "operation": {
+    "title": "📊 Ops",
+    "type": "page"
+  },
+  "finance": {
+    "title": "💰 Fin",
+    "type": "page"
+  }
 }

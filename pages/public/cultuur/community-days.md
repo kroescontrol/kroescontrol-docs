@@ -88,10 +88,10 @@ Wil je weten hoe het is om deel uit te maken van onze community? Kom langs bij e
 ## Blijf op de hoogte
 
 Volg ons voor aankondigingen van komende Community Days:
-- Check onze [werken bij](/werken-bij/) pagina voor updates
+- Check onze [werken bij](/public/werken-bij/) pagina voor updates
 - Neem contact op als je interesse hebt in deelname
 - Vraag je Kroescontrol contactpersoon naar komende events
 
 ## Vragen?
 
-Heb je vragen over Community Days of wil je meer weten over deelname? Neem contact op via onze [contact](/contact) pagina.
+Heb je vragen over Community Days of wil je meer weten over deelname? Neem contact op via onze [contact](/public/contact) pagina.

@@ -60,35 +60,6 @@ Het kantoor ligt in het centrum van Amsterdam, direct bij het Centraal Station. 
 - **Carpool mogelijkheden:** Via Kroescontrol carpool WhatsApp groep
 - **Deelauto's:** Greenwheels en ShareNow in directe omgeving
 
-## 🏢 Faciliteiten
-
-### Werkplekken
-- Ergonomische bureaus met sta-zit functie
-- 34" widescreen monitors met laptop docking
-- High-speed WiFi (enterprise grade)
-- Rustige werkzones en concentratieplekken
-- Flexplekken met uitzicht over het IJ
-
-### Vergaderfaciliteiten
-- 6 vergaderruimtes (2-12 personen)
-- Moderne AV-apparatuur en presentatieschermen
-- Videocall faciliteiten met hoogwaardige camera's
-- Whiteboard en brainstorm tools
-- Boardroom voor 12 personen
-
-### Voorzieningen
-- **Koffie & Thee:** Premium koffie, diverse theesoorten (inbegrepen)
-- **Lunch:** Gezonde lunch tegen kostprijs, vegetarisch/vegan opties
-- **Print/Scan:** €0,15 zwart-wit, €0,50 kleur
-- **Wellness:** E-gym met douches
-- **Overig:** Kolf- en gebedsruimte, lockers
-
-### Amsterdam-specifieke faciliteiten
-- Dakterras met uitzicht over de stad
-- Event space voor 50 personen
-- Podcast/video recording studio
-- Internationale kranten en tijdschriften
-
 ## 👥 Flexibel werken
 
 ### Voor Kroescontrol medewerkers
@@ -131,28 +102,6 @@ Voor vragen over faciliteiten, problemen of assistentie:
 Voor Kroescontrol-specifieke vragen:
 - Neem contact op met je Kroescontrol contactpersoon
 - Of mail naar: info@kroescontrol.nl
-
-## 🗺️ Routebeschrijving
-
-### Vanuit Zuid (A10)
-1. Neem afslag S116 richting Centrum
-2. Volg de s116 (Wibautstraat) richting Centrum
-3. Ga rechtdoor over het Mr. Visserplein
-4. Sla rechtsaf naar de Prins Hendrikkade
-5. Parkeergarage Oosterdok aan je rechterhand
-
-### Vanuit Noord (A10)
-1. Neem de IJ-tunnel richting Centrum
-2. Na tunnel direct rechts (De Ruijterkade)
-3. Volg borden Centraal Station
-4. Parkeergarage Station Noord aan het einde
-
-### Tips voor eerste bezoek
-- Het gebouw heeft een moderne glazen gevel
-- Ingang naast de Starbucks
-- Meld je bij de receptie op de begane grond
-- Lift naar Mr. Green op de 4e verdieping
-- Bij drukte: bel je contactpersoon voor snelle toegang
 
 ---
 

@@ -1,0 +1,47 @@
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { getToken } from 'next-auth/jwt'
+
+export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
+  // Define protected routes
+  const protectedPaths = ['/internal', '/operations', '/finance']
+  const isProtectedRoute = protectedPaths.some(path => pathname.startsWith(path))
+
+  // Only check auth for protected routes
+  if (isProtectedRoute) {
+    console.log("🔒 Checking auth for protected route:", pathname)
+    
+    const token = await getToken({ 
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET 
+    })
+    
+    if (!token) {
+      console.log("❌ No auth token, redirecting to login")
+      const url = new URL('/api/auth/signin', request.url)
+      url.searchParams.set('callbackUrl', pathname)
+      return NextResponse.redirect(url)
+    }
+    
+    console.log("✅ Auth token valid for user:", token.email)
+  }
+
+  // For all other routes (including public), continue normally
+  return NextResponse.next()
+}
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api/auth (auth endpoints themselves)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public (public assets)
+     */
+    '/((?!api/auth|_next/static|_next/image|favicon.ico|public).*)',
+  ],
+}

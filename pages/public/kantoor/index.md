@@ -37,8 +37,8 @@ Bij Kroescontrol gebruiken we kantoor zoals het hoort - fantastische mooie locat
 ## Onze kantoorlocaties
 
 Onze hoofdlocaties met volledige faciliteiten:
-- **[Amsterdam](/kantoor/locaties/amsterdam)** - Centraal gelegen met excellente OV-verbindingen
-- **[Klarenbeek](/kantoor/locaties/klarenbeek)** - Natuurrijke omgeving, ideaal voor geconcentreerd werken
+- **[Amsterdam](/public/kantoor/locaties/amsterdam)** - Centraal gelegen met excellente OV-verbindingen
+- **[Klarenbeek](/public/kantoor/locaties/klarenbeek)** - Natuurrijke omgeving, ideaal voor geconcentreerd werken
 
 Daarnaast hebben we flexwerkplekken in:
 - **Apeldoorn** - Flexibele werkplekken in de Veluwe regio
@@ -46,7 +46,7 @@ Daarnaast hebben we flexwerkplekken in:
 - **Utrecht** - Centrale ligging in Nederland
 - **Eindhoven** - Tech en innovatie hub
 
-[Bekijk alle locaties →](/kantoor/locaties/)
+[Bekijk alle locaties →](/public/kantoor/locaties/)
 
 ## Voor wie?
 
@@ -61,11 +61,21 @@ Onze kantoren zijn toegankelijk voor:
 
 Voor vragen over kantoorvoorzieningen:
 - Neem contact op met je Kroescontrol contactpersoon
-- Raadpleeg de [specifieke locatie pagina's](/kantoor/locaties/) voor gedetailleerde informatie
+- Raadpleeg de [specifieke locatie pagina's](/public/kantoor/locaties/) voor gedetailleerde informatie
 - **Mr. Green Support:** 055-301 1082 of info@mrgreenoffices.nl
 
 ## Meer informatie
 
-Meer informatie over specifieke onderwerpen vind je in de andere pagina's van deze sectie.
+### Faciliteiten & Services
+- **[Alle faciliteiten](/public/kantoor/faciliteiten)** - Overzicht van alle beschikbare voorzieningen
+- **[Vergaderruimtes](/public/kantoor/vergaderruimtes)** - Informatie over boeken en gebruik van vergaderfaciliteiten
+- **[Productief werken](/public/kantoor/productief-werken)** - Tips voor effectief kantoorgebruik
+- **[Bezoekersregeling](/public/kantoor/bezoekers)** - Informatie voor gasten en bezoekers
+- **[Kantoorgebruik](/public/kantoor/gebruik)** - Praktische informatie over toegang en gebruik
 
-**Voor Kroescontrol medewerkers**: Interne procedures voor WiFi toegang, Salto sleutelsysteem, print faciliteiten en andere gevoelige informatie vind je in de [Mr. Green interne procedures](/internal/mrgreen/).
+### Locaties
+- **[Overzicht alle locaties](/public/kantoor/locaties)** - Detailinformatie per kantoorlocatie
+- **[Amsterdam](/public/kantoor/locaties/amsterdam)** - Hoofdlocatie met excellente OV-verbindingen
+- **[Klarenbeek](/public/kantoor/locaties/klarenbeek)** - Natuurrijke omgeving voor geconcentreerd werken
+
+**Voor Kroescontrol medewerkers**: Interne procedures voor WiFi toegang, Salto sleutelsysteem, print faciliteiten en andere gevoelige informatie vind je in de [Mr. Green interne procedures](/public/internal/mrgreen/).

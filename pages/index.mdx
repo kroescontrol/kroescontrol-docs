@@ -1,88 +1,111 @@
 ---
 title: Kroescontrol Docs
-description: Centraal documentatieportaal voor Kroescontrol medewerkers en klanten
+description: Welkom bij het documentatieportaal van Kroescontrol
 ---
 
-# 📖 Kroescontrol Documentatieportaal
+import { Cards, Card } from 'nextra/components'
+import { useSession } from 'next-auth/react'
 
-Welkom bij het centrale documentatieportaal van Kroescontrol. Kies de juiste sectie voor de informatie die je zoekt.
+# Welkom bij Kroescontrol Docs 👋
 
-## 📂 Documentatie Secties
+Dit is het centrale documentatieportaal van Kroescontrol, waar alle informatie samenkomt voor onze engineers, klanten en partners.
 
-### 🌐 [Publieke Documentatie](/public)
-**Toegankelijk voor iedereen**
-- Bedrijfsinformatie en dienstverlening
-- Kennismaking en onboarding
-- Branding en contactgegevens
+## 🧭 Kies jouw bestemming
 
-### 🔒 [Interne Documentatie](/internal)
-**Alleen voor Kroescontrol medewerkers**
-- Development procedures en guidelines  
-- Interne processen en workflows
-- Technische specificaties
-
-### 📊 [Operations](/operation) 
-**Voor Operations team**
-- Monitoring en metrics
-- Resource management
-- Infrastructure procedures
-
-### 💰 [Finance](/finance)
-**Voor Finance team**  
-- Financial procedures
-- Compliance workflows
-- Budgeting en reporting
-
----
-
-## 🔐 Toegang tot Beschermde Secties
-
-Voor toegang tot interne documentatie:
-
-import { useSession, signIn } from 'next-auth/react'
-
-export function LoginStatus() {
-  const { data: session, status } = useSession()
+<Cards>
+  <Card title="🌐 Publieke Documentatie" href="/public">
+    **Voor iedereen toegankelijk**
+    
+    Ontdek wie we zijn, wat we doen en hoe je met ons kunt werken. Van bedrijfsinformatie tot carrièremogelijkheden.
+  </Card>
   
-  if (status === 'loading') {
-    return <div style={{padding: '16px', background: '#f3f4f6', borderRadius: '8px', margin: '16px 0'}}>
-      <p>🔄 Sessie wordt geladen...</p>
-    </div>
-  }
+  <Card title="🔒 Interne Documentatie" href="/internal">
+    **Voor Kroescontrol medewerkers**
+    
+    Interne processen, werkwijzen en bedrijfsspecifieke documentatie. Login vereist.
+  </Card>
+  
+  <Card title="📊 Operations" href="/operation">
+    **Operationele documentatie**
+    
+    Deployment guides, monitoring, incident response en technische runbooks. Login vereist.
+  </Card>
+  
+  <Card title="💰 Finance" href="/finance">
+    **Financiële documentatie**
+    
+    Budgetten, rapportages en financiële processen. Login vereist.
+  </Card>
+</Cards>
+
+## 🚀 Populaire pagina's
+
+### Voor nieuwe bezoekers
+- **[Over Kroescontrol](/public/over-kroescontrol)** - Maak kennis met ons bedrijf en onze visie
+- **[Voor Engineers](/public/kennismaking)** - Informatie voor engineers die willen aansluiten
+- **[Werken bij Kroescontrol](/public/werken-bij)** - Ontdek de mogelijkheden binnen ons team
+
+### Voor medewerkers
+- **[Engineer Hub](/public/kennismaking/engineer-hub)** - Jouw persoonlijke dashboard
+- **[Kantoorlocaties](/public/kantoor)** - Onze werklocaties en faciliteiten
+- **[Tools & Resources](/public/tools)** - Beschikbare tooling en documentatie
+
+export function WelcomeMessage() {
+  const { data: session } = useSession()
   
   if (session) {
-    return <div style={{padding: '16px', background: '#dcfce7', borderRadius: '8px', margin: '16px 0'}}>
-      <p>✅ <strong>Ingelogd als:</strong> {session.user?.name || session.user?.email}</p>
-      <p>Je hebt toegang tot alle beschermde secties!</p>
-    </div>
+    return (
+      <div style={{
+        padding: '20px',
+        background: 'linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%)',
+        borderRadius: '12px',
+        margin: '32px 0',
+        textAlign: 'center'
+      }}>
+        <h3 style={{ margin: '0 0 8px 0' }}>Welkom terug, {session.user?.name || 'Kroescontroller'}! 🎉</h3>
+        <p style={{ margin: 0, opacity: 0.8 }}>Je hebt volledige toegang tot alle documentatie secties.</p>
+      </div>
+    )
   }
   
-  return <div style={{padding: '16px', background: '#fef3c7', borderRadius: '8px', margin: '16px 0'}}>
-    <p>🔑 <strong>Niet ingelogd</strong></p>
-    <p>Voor toegang tot interne documentatie:</p>
-    <button 
-      onClick={() => signIn()} 
-      style={{
-        padding: '8px 16px', 
-        background: '#1e40af', 
-        color: 'white', 
-        border: 'none', 
-        borderRadius: '6px', 
-        cursor: 'pointer',
-        marginTop: '8px'
-      }}
-    >
-      Inloggen met GitHub/Google
-    </button>
-  </div>
+  return (
+    <div style={{
+      padding: '20px',
+      background: 'linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%)',
+      borderRadius: '12px',
+      margin: '32px 0',
+      textAlign: 'center'
+    }}>
+      <h3 style={{ margin: '0 0 8px 0' }}>Welkom bij Kroescontrol Docs! 🌟</h3>
+      <p style={{ margin: 0, opacity: 0.8 }}>
+        Verken onze publieke documentatie of log in voor toegang tot interne secties.
+      </p>
+    </div>
+  )
 }
 
-<LoginStatus />
+<WelcomeMessage />
+
+## 💬 Hulp nodig?
+
+Ons team staat klaar om je te helpen:
+
+- **Algemene vragen**: [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl)
+- **Technische support**: [serge@kroescontrol.nl](mailto:serge@kroescontrol.nl)
+- **Documentatie feedback**: Open een issue op [GitHub](https://github.com/kroescontrol)
 
 ---
 
-## 🔗 Support
-
-- **Technische vragen**: [tech@kroescontrol.nl](mailto:tech@kroescontrol.nl)
-- **Algemene vragen**: [info@kroescontrol.nl](mailto:info@kroescontrol.nl)
-- **Website**: [kroescontrol.nl](https://kroescontrol.nl)
+<div style={{ 
+  textAlign: 'center', 
+  marginTop: '4rem', 
+  paddingTop: '2rem',
+  borderTop: '1px solid #e5e7eb',
+  color: '#6b7280',
+  fontSize: '0.875rem' 
+}}>
+  <p>🏗️ Gebouwd met passie door het Kroescontrol Team</p>
+  <p style={{ marginTop: '8px', fontSize: '0.75rem' }}>
+    Gebruik de navigatie hierboven om door de verschillende secties te bladeren
+  </p>
+</div>

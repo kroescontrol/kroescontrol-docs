@@ -45,53 +45,7 @@ Klarenbeek ligt centraal in Nederland, goed bereikbaar via de A1 en A50. Het kan
 - Vanaf Utrecht: 45 minuten
 - Vanaf Amsterdam: 60 minuten
 
-### Met het openbaar vervoer
-- **Dichtstbijzijnde station:** Apeldoorn (15 km)
-- **Bus:** Lijn 43 (halte Klarenbeek Kerk, 10 min lopen)
-- **Taxi vanaf station:** €25-30
-- **Reistijd vanaf:** 
-  - Amsterdam Centraal: 90 minuten (trein + bus/taxi)
-  - Utrecht Centraal: 75 minuten (trein + bus/taxi)
-  - Arnhem Centraal: 45 minuten (trein + bus/taxi)
 
-**Let op:** OV is beperkt, auto wordt sterk aangeraden
-
-### Duurzaam reizen
-- **Fiets:** Perfecte fietslocatie met knooppuntenroutes
-- **Elektrisch laden:** 2 laadpalen (gratis voor medewerkers)
-- **Carpool mogelijkheden:** Actieve carpool groep vanuit Apeldoorn/Zutphen
-- **E-bike verhuur:** Mogelijk via receptie (€15/dag)
-
-## 🏢 Faciliteiten
-
-### Werkplekken
-- Ergonomische bureaus met sta-zit functie
-- 34" widescreen monitors met laptop docking
-- High-speed WiFi (glasvezel)
-- Concentratieplekken met natuuruitzicht
-- Stiltewerkplekken in aparte vleugel
-
-### Vergaderfaciliteiten
-- 4 vergaderruimtes (2-20 personen)
-- Brainstormruimte met whiteboard walls
-- Presentatieruimte met beamer
-- Videocall studio met professionele setup
-- Buitenvergaderen op het terras (apr-okt)
-
-### Voorzieningen
-- **Koffie & Thee:** Premium koffie, diverse theesoorten (inbegrepen)
-- **Lunch:** Gezonde lunch tegen kostprijs, veel lokale producten
-- **Print/Scan:** €0,15 zwart-wit, €0,50 kleur
-- **Wellness:** E-gym met douches, yogaruimte
-- **Overig:** Kolf- en gebedsruimte, persoonlijke lockers
-
-### Klarenbeek-specifieke faciliteiten
-- **Buitenterras** met werkplekken
-- **Wandelpaden** direct vanuit kantoor
-- **Stilteruimte** voor meditatie/powernaps
-- **Moestuin** met verse kruiden voor lunch
-- **Buitenkeuken** voor BBQ/teamevents
-- **Recreatieruimte** met tafeltennis en darts
 
 ## 👥 Flexibel werken
 

@@ -1,0 +1,168 @@
+/* Mobile Optimalisaties voor Kroescontrol Docs */
+
+/* Grotere tap targets voor mobile */
+@media (max-width: 768px) {
+  /* Minimum 44x44px tap targets */
+  button, 
+  a, 
+  .nx-cursor-pointer,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Sidebar links specifiek */
+  .nextra-sidebar-container a {
+    padding: 12px 16px;
+    margin: 2px 0;
+  }
+
+  /* Search button */
+  button[aria-label="Search"] {
+    padding: 12px;
+  }
+
+  /* Navigation arrows groter maken */
+  .nx-flex-1 + .nx-flex-1 a {
+    padding: 16px;
+  }
+}
+
+/* Responsive tables */
+.nextra-content table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Betere leesbaarheid op mobile */
+@media (max-width: 640px) {
+  .nextra-content {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  .nextra-content h1 {
+    font-size: 28px;
+  }
+  
+  .nextra-content h2 {
+    font-size: 24px;
+  }
+  
+  .nextra-content h3 {
+    font-size: 20px;
+  }
+
+  /* Code blocks horizontaal scrollbaar */
+  .nextra-content pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Floating back-to-top button voor mobile */
+@media (max-width: 768px) {
+  [data-nextra-toc] button[title="Scroll to top"] {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--nextra-primary-hue);
+    color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 40;
+  }
+}
+
+/* Swipe hint voor mobile navigation */
+@media (max-width: 640px) and (hover: none) {
+  .nx-flex-row.nx-mt-8:after {
+    content: '← Swipe voor navigatie →';
+    display: block;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}
+
+/* Collapsible sections voor lange content */
+details.mobile-collapsible {
+  border: 1px solid var(--nextra-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+details.mobile-collapsible summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin: -16px;
+  padding: 16px;
+  user-select: none;
+}
+
+details.mobile-collapsible[open] summary {
+  border-bottom: 1px solid var(--nextra-border);
+  margin-bottom: 16px;
+}
+
+/* PWA install hint (zeer subtiel) */
+.pwa-hint {
+  display: none;
+}
+
+@media (display-mode: browser) {
+  .pwa-hint {
+    display: block;
+    font-size: 12px;
+    opacity: 0.6;
+    text-align: center;
+    margin-top: 8px;
+  }
+}
+
+/* Performance: Reduce animations on mobile */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch-friendly spacing */
+@media (max-width: 768px) {
+  .nextra-toc-content {
+    padding: 8px;
+  }
+  
+  .nextra-toc-content li {
+    margin: 8px 0;
+  }
+  
+  /* Breadcrumbs mobile styling */
+  nav[aria-label="Breadcrumb"] {
+    padding: 12px 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nextra-content a {
+    text-decoration: underline;
+  }
+  
+  button, [role="button"] {
+    border: 2px solid currentColor;
+  }
+}

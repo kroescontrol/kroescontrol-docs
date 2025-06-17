@@ -114,6 +114,6 @@ Onze kantoorlocaties zijn ontworpen om productiviteit te bevorderen. Hier zijn t
 
 ## Zie ook
 
-- [Gebruik faciliteiten](/kantoor/gebruik) - Hoe alles werkt
-- [Extra faciliteiten](/kantoor/faciliteiten) - Alle voorzieningen
-- [Community Days](/cultuur/community-days) - Leer van collega's
+- [Gebruik faciliteiten](/public/kantoor/gebruik) - Hoe alles werkt
+- [Extra faciliteiten](/public/kantoor/faciliteiten) - Alle voorzieningen
+- [Community Days](/public/cultuur/community-days) - Leer van collega's

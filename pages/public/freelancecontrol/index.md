@@ -1,61 +1,44 @@
 ---
-title: Freelancecontrol Model
-sidebar_position: 30
-description: Informatie over het alternatieve model voor zelfstandige professionals
-collapsed: true
-slug: /freelancecontrol
-tags:
-  - freelancecontrol
-  - zelfstandig
-  - model
-keywords:
-  - freelancecontrol
-  - zelfstandig
-  - model
-last_update:
-  date: 2025-05-20T00:00:00.000Z
-  author: Serge Kroes
-image: /img/KC-logo-gradientKLEUR.svg
-docStatus: generated
+title: Freelancecontrol
+description: Freelance arbeidsovereenkomst voor IT professionals
+draft: true
 ---
 
-# Freelancecontrol Engineer
+# Freelancecontrol
 
-Freelancecontrol Engineer is onze naam voor een freelancer die een arbeidsovereenkomst nodig heeft voor het uitvoeren van zijn werk. Het combineert de vrijheid van zelfstandig ondernemerschap met de voordelen en zekerheid van een professionele organisatie.
+<div style={{padding: '1rem', background: '#fff3cd', border: '1px solid #ffeaa7', borderRadius: '4px', marginBottom: '2rem'}}>
+⚠️ **Concept versie** - Deze functionaliteit is nog in ontwikkeling
+</div>
 
-## Belangrijkste punten
+Freelancecontrol is een innovatieve arbeidsovereenkomst specifiek ontwikkeld voor IT-professionals die de voordelen van freelancen willen combineren met de zekerheden van een dienstverband.
 
-- **Beste van twee werelden**: Combineer de vrijheid van freelancen met de voordelen van een ondersteunende organisatie
-- **Transparant financieel model**: Real-time inzicht in opdrachten, omzet en cashflow met volledige transparantie
-- **Zelf de regie**: Jij bepaalt voor wie je werkt, welke projecten je aanneemt en hoe je je budgetten besteedt
-- **Professionele rugdekking**: Facturatie, administratie en juridische zaken worden door ons geregeld
+## Waarom Freelancecontrol?
 
-## De essentie van Freelancecontrol
+Bij Kroescontrol begrijpen we dat de traditionele keuze tussen vast dienstverband en freelancen niet altijd ideaal is. Freelancecontrol biedt het beste van beide werelden.
 
-Bij Kroescontrol werk je **met** ons (Patriek en Serge), niet **voor** ons. Dit principe wordt bij Freelancecontrol Engineer tot het hoogste niveau doorgevoerd. Voor freelancers die administratieve ondersteuning zoeken en juridische zekerheid willen, biedt Freelancecontrol Engineer een oplossing die het beste van twee werelden combineert:
+## Voordelen op een rij
 
-1. **De vrijheid van een zelfstandige**: Jij kiest je projecten, klanten en werkwijze
-2. **De rugdekking van een organisatie**: Wij zorgen voor administratie, facturatie en juridische zekerheid
+- **Flexibiliteit van freelancen** met de zekerheid van een dienstverband
+- **Hogere netto inkomsten** door slimme fiscale optimalisatie
+- **Pensioenopbouw** en sociale zekerheid
+- **Professionele ondersteuning** bij acquisitie en contractonderhandelingen
+- **Toegang tot het Kroescontrol netwerk** en interessante projecten
 
-## Kernprincipes
+## Hoe werkt het?
 
-Freelancecontrol Engineer is opgebouwd rond kernprincipes die de basis vormen van onze samenwerking:
+1. Je komt in dienst bij Kroescontrol met een Freelancecontrol overeenkomst
+2. Je werkt op projectbasis bij verschillende opdrachtgevers
+3. Kroescontrol regelt alle administratieve en fiscale zaken
+4. Jij focust op waar je goed in bent: IT-projecten succesvol maken
 
-1. **Ondernemersvrijheid zonder belemmeringen** - Geen concurrentiebeding of klantenbeperkingen voor jouw eigen relaties
-2. **Contract voor onbepaalde tijd** - Zekerheid en continuïteit in een flexibele structuur
-3. **Omzet-gedreven budgetten** - Je budgetten groeien direct mee met je omzet
-4. **Flexibele besteding** - Besteed je budgetten naar eigen inzicht en prioriteiten
-5. **Volledige transparantie** - Real-time inzicht in alle financiële aspecten
-6. **Professionele ondersteuning** - Administratie, facturatie en juridische zaken worden geregeld
+## Voor wie is Freelancecontrol?
 
-## Meer informatie
+Freelancecontrol is ideaal voor:
+- Ervaren IT-professionals die meer flexibiliteit willen
+- Freelancers die zekerheid zoeken zonder vrijheid op te geven
+- Developers die zich willen focussen op techniek, niet op administratie
+- Consultants die toegang willen tot enterprise klanten
 
-Voor specifieke informatie over het Freelancecontrol Engineer model:
+## Meer weten?
 
-- [Wat is Freelancecontrol](/freelancecontrol/introductie) - Uitgebreide introductie
-- [Voor wie is Freelancecontrol](/freelancecontrol/doelgroep) - Doelgroep en geschiktheid
-- [Verschillen met Kroescontrol](/freelancecontrol/verschillen) - Vergelijking met de standaard arbeidsovereenkomst
-
-## Contact
-
-Voor vragen over Freelancecontrol Engineer kun je direct contact opnemen met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
+Benieuwd of Freelancecontrol iets voor jou is? Neem contact op voor een vrijblijvend gesprek waarin we alle mogelijkheden bespreken.

@@ -87,7 +87,7 @@ Niet alle faciliteiten zijn op elke locatie beschikbaar:
 - **Amsterdam**: Centrale ligging, uitgebreide lunch opties
 - **Klarenbeek**: Natuurrijke omgeving, ideaal voor wandelingen
 
-Voor specifieke faciliteiten per locatie, zie [Kantoorlocaties](/kantoor/locaties).
+Voor specifieke faciliteiten per locatie, zie [Kantoorlocaties](/public/kantoor/locaties).
 
 ## Vragen?
 

@@ -41,13 +41,54 @@ export default {
     }
   },
   primaryHue: {
-    dark: 340, // Kroescontrol pink
-    light: 227  // Kroescontrol navy
+    dark: 340, // Kroescontrol pink (#ff006c)
+    light: 227  // Kroescontrol navy (#222b5b)
   },
-  darkMode: true,
+  colors: {
+    primary: {
+      light: '#222b5b',  // Deep Navy Blue
+      dark: '#ff006c'    // Pure Pink
+    },
+    gray: {
+      light: '#6d8b9e',  // Soft Grey
+      dark: '#e5e5e5'    // Extra light grey
+    }
+  },
+  darkMode: {
+    toggleButton: true  // Voegt een dark/light mode toggle button toe
+  },
   navigation: {
     prev: true,
     next: true
+  },
+  breadcrumb: true,
+  // Mobile optimalisaties
+  search: {
+    placeholder: '🔍 Zoeken...',
+    loading: 'Laden...',
+    error: 'Zoekfout',
+    emptyResult: 'Geen resultaten gevonden'
+  },
+  // Prefetch voor snellere navigatie
+  prefetch: true,
+  // Mobile-friendly table of contents
+  toc: {
+    float: true,
+    backToTop: true,
+    extraContent: null,
+    headingComponent: ({ children }) => <>{children}</>
+  },
+  // Responsive images
+  components: {
+    img: ({ src, alt, ...props }) => (
+      <img 
+        src={src} 
+        alt={alt} 
+        loading="lazy" 
+        style={{ maxWidth: '100%', height: 'auto' }}
+        {...props} 
+      />
+    )
   },
   navbar: {
     extraContent: function NavbarExtra() {
@@ -81,8 +122,9 @@ export default {
     }
   },
   sidebar: {
-    defaultMenuCollapseLevel: 1,
+    defaultMenuCollapseLevel: 2,
     toggleButton: true,
+    autoCollapse: true,  // Klapt andere secties automatisch in
     titleComponent: ({ title, type, route }) => {
       const { data: session } = useSession()
       
@@ -95,7 +137,7 @@ export default {
       }
       
       // Hide protected sections if not authenticated
-      const protectedSections = ['Internal', 'Finance', 'Operations']
+      const protectedSections = ['Intern', 'Fin', 'Ops']
       if (protectedSections.includes(title) && !session) {
         return null
       }
@@ -109,11 +151,17 @@ export default {
         )
       }
       
+      // Make folders clickable by wrapping in link
+      if (type === 'folder' && route) {
+        return (
+          <a href={route} style={{ color: 'inherit', textDecoration: 'none' }}>
+            {title}
+          </a>
+        )
+      }
+      
       return title
     }
-  },
-  toc: {
-    backToTop: true
   },
   editLink: {
     text: 'Bewerk deze pagina op GitHub →'

@@ -78,14 +78,14 @@ Werken als Kroescontrol Engineer betekent opereren op jouw hoogste niveau, met d
 ## Volgende Stappen
 
 **Voor Engineers:**
-- [Budgetstructuren](/kennismaking/budgetten) - Investeer in jouw ontwikkeling
-- [Engineer Hub](/kennismaking/engineer-hub) - Transparant budgetbeheer
-- [Arbeidsvoorwaarden](/kennismaking/voorwaarden) - Complete arbeidsvoorwaarden
+- [Budgetstructuren](/public/kennismaking/budgetten) - Investeer in jouw ontwikkeling
+- [Engineer Hub](/public/kennismaking/engineer-hub) - Transparant budgetbeheer
+- [Arbeidsvoorwaarden](/public/kennismaking/voorwaarden) - Complete arbeidsvoorwaarden
 
 **Voor Klanten:**
-- [Projectvoorbeelden](/kennismaking/projecten) - Resultaten in de praktijk
-- [Klantenportfolio](/klanten) - Wie we bedienen
-- [Contact](/contact) - Start het gesprek
+- [Projectvoorbeelden](/public/kennismaking/projecten) - Resultaten in de praktijk
+- [Klantenportfolio](/public/klanten) - Wie we bedienen
+- [Contact](/public/contact) - Start het gesprek
 
 ---
 

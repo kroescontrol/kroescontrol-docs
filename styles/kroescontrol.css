@@ -1,0 +1,95 @@
+/* Kroescontrol Brand Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans:wght@400;400i;700&display=swap');
+
+/* Typography volgens Kroescontrol huisstijl */
+:root {
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-body: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  
+  /* Kroescontrol kleuren */
+  --kroescontrol-navy: #222b5b;
+  --kroescontrol-pink: #ff006c;
+  --kroescontrol-grey: #6d8b9e;
+  --kroescontrol-light-grey: #e5e5e5;
+  --kroescontrol-extra-light-grey: #fafafa;
+}
+
+/* Headings gebruik Poppins met juiste weights */
+h1, h2, .nx-text-4xl, .nx-text-3xl {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important; /* Bold */
+}
+
+h3, h4, .nx-text-2xl, .nx-text-xl {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important; /* SemiBold */
+}
+
+h5, h6, .nx-text-lg {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important; /* Regular */
+}
+
+/* Body text gebruikt Noto Sans */
+body, p, li, td, th, 
+.nx-text-base, .nx-text-sm {
+  font-family: var(--font-body) !important;
+}
+
+/* Kroescontrol gradient voor accenten */
+.kroescontrol-gradient {
+  background: linear-gradient(45deg, var(--kroescontrol-navy) 0%, var(--kroescontrol-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode kleuren - Kroescontrol Navy als primary */
+html:not(.dark) {
+  --nextra-primary-hue: 227deg;
+  --nextra-primary-saturation: 46%;
+  --nextra-bg: #ffffff;
+  --nextra-text: #222b5b;
+  --nextra-link: #222b5b;
+  --nextra-link-hover: #ff006c;
+  --nextra-selection: rgba(255, 0, 108, 0.1);
+}
+
+/* Dark mode kleuren - Kroescontrol Pink als primary */
+html.dark {
+  --nextra-primary-hue: 340deg;
+  --nextra-primary-saturation: 100%;
+  --nextra-bg: #0a0a0a;
+  --nextra-text: #e5e5e5;
+  --nextra-link: #ff006c;
+  --nextra-link-hover: #ff3385;
+  --nextra-selection: rgba(255, 0, 108, 0.3);
+}
+
+/* Sidebar styling voor beide modes */
+html:not(.dark) .nextra-sidebar {
+  background-color: #fafafa;
+  border-right: 1px solid #e5e5e5;
+}
+
+html.dark .nextra-sidebar {
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+}
+
+/* Button styling volgens huisstijl */
+html:not(.dark) button {
+  --button-primary: #222b5b;
+  --button-hover: #1a2147;
+}
+
+html.dark button {
+  --button-primary: #ff006c;
+  --button-hover: #ff3385;
+}
+
+/* Logo styling volgens huisstijl */
+.nx-flex.nx-items-center img {
+  height: 32px;
+  width: auto;
+}

@@ -95,7 +95,7 @@ Ons sollicitatieproces bestaat voornamelijk uit gesprekken op gelijkwaardig nive
 
 Voor iedere professional is het proces anders, afgestemd op jouw achtergrond en ervaring. Een ervaren specialist die bij andere partijen na een kort gesprek al een aanbod zou krijgen, doorloopt bij ons alsnog meerdere gesprekken - niet omdat we jouw expertise in twijfel trekken, maar omdat we willen dat beide partijen een weloverwogen keuze maken.
 
-We nodigen je graag uit om langs te komen op een van onze [Community Days](/werken-bij/cultuur#community-days) om onze cultuur en teamdynamiek te ervaren voordat je een beslissing neemt.
+We nodigen je graag uit om langs te komen op een van onze [Community Days](/public/werken-bij/cultuur#community-days) om onze cultuur en teamdynamiek te ervaren voordat je een beslissing neemt.
 
 ### Kan ik zelf bepalen bij welke klanten ik werk?
 Ja, er is veel ruimte voor inspraak. We vinden het belangrijk dat er een goede match is tussen jouw ambities en de projecten waar je aan werkt. Patriek en Serge bespreken de mogelijkheden altijd persoonlijk met je.
@@ -104,4 +104,4 @@ Ja, er is veel ruimte voor inspraak. We vinden het belangrijk dat er een goede m
 Onze persoonlijke aanpak, focus op kennisdeling, flexibele budgetstructuren en de combinatie van zekerheid (vast dienstverband) met flexibiliteit (keuze in hoe je werkt) maken ons anders dan traditionele werkgevers of detacheringsbureaus.
 
 ### Waar kan ik meer informatie vinden?
-Bekijk onze pagina's over [cultuur](/werken-bij/cultuur) en [voordelen](/werken-bij/voordelen) voor meer informatie. Voor specifieke vragen kun je direct contact opnemen met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
+Bekijk onze pagina's over [cultuur](/public/werken-bij/cultuur) en [voordelen](/public/werken-bij/voordelen) voor meer informatie. Voor specifieke vragen kun je direct contact opnemen met Patriek via [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).

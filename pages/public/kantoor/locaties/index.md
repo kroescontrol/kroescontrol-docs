@@ -16,14 +16,14 @@ Kroescontrol werkt vanuit moderne kantoorlocaties verspreid door Nederland. Elke
 
 ## 🏢 Onze locaties
 
-### [Amsterdam](/kantoor/locaties/amsterdam)
+### [Amsterdam](/public/kantoor/locaties/amsterdam)
 **Centraal en internationaal**
 - Direct naast Amsterdam Centraal Station
 - Perfect voor (inter)nationale meetings
 - Uitstekende OV-verbindingen
 - Bruisende stedelijke omgeving
 
-### [Klarenbeek](/kantoor/locaties/klarenbeek) 
+### [Klarenbeek](/public/kantoor/locaties/klarenbeek) 
 **Rust en natuur**
 - Midden op de Veluwe
 - Ideaal voor deep work en creativiteit

@@ -25,8 +25,8 @@ Ontdek hoe wij bij Kroescontrol samenwerken en wat onze cultuur kenmerkt.
 
 ## Community & Samenwerking
 
-- **[Community Days](/cultuur/community-days)** - Regelmatige bijeenkomsten voor kennisdeling en netwerken
+- **[Community Days](/public/cultuur/community-days)** - Regelmatige bijeenkomsten voor kennisdeling en netwerken
 
 ## Meer over werken bij Kroescontrol
 
-Voor uitgebreide informatie over onze cultuur en werkwijze, zie onze [werken bij](/werken-bij/) sectie.
+Voor uitgebreide informatie over onze cultuur en werkwijze, zie onze [werken bij](/public/werken-bij/) sectie.

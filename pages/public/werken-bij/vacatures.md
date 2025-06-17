@@ -58,7 +58,7 @@ Als Cloud Native Platform Engineer bij Kroescontrol ga je werken aan het ontwerp
 - 30 vakantiedagen bij een fulltime dienstverband
 - Persoonlijk Engineer Budget en Mobiliteitsbudget
 - Werken in een team van gepassioneerde engineers
-- Zie onze [voordelen](/werken-bij/voordelen) pagina voor het complete pakket
+- Zie onze [voordelen](/public/werken-bij/voordelen) pagina voor het complete pakket
 
 #### Solliciteren
 Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
@@ -84,7 +84,7 @@ Als DevOps/SRE Engineer bij Kroescontrol focus je op het automatiseren en optima
 - 30 vakantiedagen bij een fulltime dienstverband
 - Persoonlijk Engineer Budget en Mobiliteitsbudget
 - Werken in een team van gepassioneerde engineers
-- Zie onze [voordelen](/werken-bij/voordelen) pagina voor het complete pakket
+- Zie onze [voordelen](/public/werken-bij/voordelen) pagina voor het complete pakket
 
 #### Solliciteren
 Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).

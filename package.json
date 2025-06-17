@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "next dev -p 3003",
     "capture-git": "node ./scripts/capture-git-info.js",
-    "prebuild": "npm run capture-git && node ./scripts/generate-build-id.js",
+    "sync-internal": "node ./scripts/sync-internal-content.js",
+    "prebuild": "npm run capture-git && node ./scripts/generate-build-id.js && npm run sync-internal",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup-symlinks": "./scripts/setup-local-symlinks.sh",
-    "dev-full": "./scripts/setup-local-symlinks.sh && npm run dev"
+    "setup-vault-symlinks": "./scripts/setup-vault-symlinks.sh"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",

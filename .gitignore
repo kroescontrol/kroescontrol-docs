@@ -47,6 +47,11 @@ next-env.d.ts
 /pages/operation
 /pages/finance
 
+# Synced content (copied during build from apphub)
+/pages/internal/*
+!/pages/internal/_meta.json
+!/pages/internal/index.mdx
+
 # Legacy Docusaurus
 .docusaurus
 .cache-loader
@@ -74,3 +79,4 @@ _hintsdocs
 
 # Temporary git info cache
 .git-info.json
+input

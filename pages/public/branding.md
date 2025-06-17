@@ -23,9 +23,9 @@ last_update:
 docStatus: live
 ---
 
-# Huisstijl & Branding
+# Branding
 
-Op deze pagina's vind je alle informatie over de huisstijl en branding van Kroescontrol. Een consistente toepassing van onze visuele identiteit helpt ons een herkenbaar en professioneel beeld neer te zetten.
+Kroescontrol's visuele identiteit is zorgvuldig ontwikkeld om onze professionele en innovatieve aanpak te weerspiegelen. Op deze pagina vind je alle essentiële branding elementen voor consistent gebruik.
 
 ## Belangrijkste punten
 
@@ -35,14 +35,19 @@ Op deze pagina's vind je alle informatie over de huisstijl en branding van Kroes
 - Er zijn duidelijke richtlijnen voor het gebruik van ons logo en beeldmerk op verschillende achtergronden
 - Alle branding materialen zijn gemakkelijk te downloaden voor gebruikers die met onze merk-identiteit werken
 
-## Sectie overzicht
+## Branding Elementen
 
-In deze branding sectie vind je de volgende informatie:
+### 🎨 [Kleurenpalet](/public/branding/kleuren)
+Ontdek ons zorgvuldig samengestelde kleurenpalet met Deep Navy Blue, Pure Pink en ondersteunende kleuren. Inclusief hex-codes, RGB en CMYK waarden voor digitaal en print gebruik.
 
-- [**Kleuren**](./kleuren.md) - Ons kleurenpalet met specifieke kleurcodes en voorbeelden van gebruik
-- [**Logo**](./logo.md) - Het Kroescontrol logo in verschillende varianten en formaten, met richtlijnen voor gebruik
-- [**Beeldmerk**](./beeldmerk.md) - Ons beeldmerk in verschillende varianten en formaten
-- [**Downloads**](./downloads.md) - Een overzicht van alle downloadbare branding materialen
+### 🏷️ [Logo Gebruik](/public/branding/logo)
+Het Kroescontrol logo in verschillende varianten: gradient, effen kleuren en zwart-wit versies. Met duidelijke richtlijnen voor correct gebruik op verschillende achtergronden.
+
+### ✨ [Beeldmerk](/public/branding/beeldmerk)
+Ons kenmerkende beeldmerk dat de verbindende rol van Kroescontrol symboliseert. Beschikbaar in meerdere formaten voor diverse toepassingen.
+
+### 📥 [Downloads](/public/branding/downloads)
+Centrale downloadpagina voor alle branding materialen in hoogwaardige formaten (SVG, PNG, EPS). Direct klaar voor gebruik in jouw projecten.
 
 ## Typografie
 

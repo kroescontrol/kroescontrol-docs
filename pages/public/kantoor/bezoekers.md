@@ -30,7 +30,7 @@ Wil je de Kroescontrol manier van werken ervaren en andere professionals ontmoet
 - **Open voor professionals**: Engineers, designers, product managers en andere IT-professionals
 - **Informele sfeer**: Netwerken, kennisdeling en samenwerking
 - **Volledige faciliteiten**: Werkplekken, lunch, koffie/thee en toegang tot alle voorzieningen
-- **Meer informatie**: Bekijk onze [Community Days](/cultuur/community-days) pagina voor data en aanmelding
+- **Meer informatie**: Bekijk onze [Community Days](/public/cultuur/community-days) pagina voor data en aanmelding
 
 ## Wat kun je verwachten?
 
@@ -56,7 +56,7 @@ Afhankelijk van je type afspraak heb je toegang tot:
 ### Voor je bezoek
 - **Afspraak maken**: Altijd via je Kroescontrol contactpersoon
 - **Bevestiging**: Je ontvangt locatie-instructies en praktische informatie
-- **Locatie-info**: Bekijk de [specifieke locatiepagina](/kantoor/locaties/) voor gedetailleerde bereikbaarheid en parkeertips
+- **Locatie-info**: Bekijk de [specifieke locatiepagina](/public/kantoor/locaties/) voor gedetailleerde bereikbaarheid en parkeertips
 
 ### Op de dag zelf
 - **Kom op tijd**: Zo hebben we meer tijd voor een goed gesprek
@@ -68,7 +68,7 @@ Afhankelijk van je type afspraak heb je toegang tot:
 Heb je nog vragen over je bezoek? 
 
 **Voor gedetailleerde locatie-informatie:**
-- Bekijk onze [kantoorlocaties](/kantoor/locaties/) met routebeschrijvingen en parkeertips
+- Bekijk onze [kantoorlocaties](/public/kantoor/locaties/) met routebeschrijvingen en parkeertips
 
 **Voor persoonlijke vragen:**
 - Neem contact op met je Kroescontrol contactpersoon over:

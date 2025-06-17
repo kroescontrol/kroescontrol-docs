@@ -71,13 +71,13 @@ Naast de primaire arbeidsvoorwaarden bieden we aantrekkelijke secundaire arbeids
 
 - Persoonlijk budget voor **professionele ontwikkeling** en **werkgerelateerde uitgaven**
 - Volledige transparantie via het Engineer Hub dashboard
-- Meer details vind je op de pagina [Budgetstructuren](/kennismaking/budgetten)
+- Meer details vind je op de pagina [Budgetstructuren](/public/kennismaking/budgetten)
 
 ### Mobiliteitsbudget
 
 - Flexibel budget voor **reiskosten** en **vervoersmiddelen**
 - Keuzevrijheid in hoe je reist: openbaar vervoer, lease, privéauto of anders
-- Meer details vind je op de pagina [Budgetstructuren](/kennismaking/budgetten)
+- Meer details vind je op de pagina [Budgetstructuren](/public/kennismaking/budgetten)
 
 ### Professionele ontwikkeling
 
