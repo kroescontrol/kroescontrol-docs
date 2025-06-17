@@ -13,7 +13,32 @@ export default {
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/kroescontrol-docs',
   footer: {
-    text: '© 2025 Kroescontrol B.V. - Public Documentation',
+    component: function Footer() {
+      const buildId = process.env.NEXT_PUBLIC_BUILD_ID || 'dev-local';
+      const buildTime = process.env.NEXT_PUBLIC_BUILD_TIME || new Date().toISOString();
+      const buildEnv = process.env.NEXT_PUBLIC_BUILD_ENV || 'dev';
+      
+      return (
+        <div style={{ 
+          borderTop: '1px solid #e5e7eb', 
+          padding: '2rem 0',
+          fontSize: '14px',
+          color: '#6b7280'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            © 2025 Kroescontrol B.V. - Public Documentation
+          </div>
+          <div style={{ 
+            textAlign: 'center', 
+            fontSize: '12px',
+            fontFamily: 'monospace',
+            opacity: 0.7
+          }}>
+            Build: {buildId} | {new Date(buildTime).toLocaleString('nl-NL')} | {buildEnv}
+          </div>
+        </div>
+      )
+    }
   },
   primaryHue: {
     dark: 340, // Kroescontrol pink

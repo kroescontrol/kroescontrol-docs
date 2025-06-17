@@ -63,3 +63,6 @@ contextCollector.js
 post-build.js
 _hints
 _hintsdocs
+
+# Build metadata
+/public/api/build.json
