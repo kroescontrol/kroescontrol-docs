@@ -1,0 +1,11 @@
+{
+  "index": "Internal Overview",
+  "*": {
+    "type": "page",
+    "theme": {
+      "breadcrumb": true,
+      "sidebar": true,
+      "toc": true
+    }
+  }
+}
