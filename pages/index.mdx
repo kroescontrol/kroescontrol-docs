@@ -63,7 +63,7 @@ export function WelcomeMessage() {
         textAlign: 'center'
       }}>
         <h3 style={{ margin: '0 0 8px 0' }}>Welkom terug, {session.user?.name || 'Kroescontroller'}! 🎉</h3>
-        <p style={{ margin: 0, opacity: 0.8 }}>Je hebt volledige toegang tot alle documentatie secties.</p>
+        <div style={{ margin: 0, opacity: 0.8 }}>Je hebt volledige toegang tot alle documentatie secties.</div>
       </div>
     )
   }
@@ -77,9 +77,9 @@ export function WelcomeMessage() {
       textAlign: 'center'
     }}>
       <h3 style={{ margin: '0 0 8px 0' }}>Welkom bij Kroescontrol Docs! 🌟</h3>
-      <p style={{ margin: 0, opacity: 0.8 }}>
+      <div style={{ margin: 0, opacity: 0.8 }}>
         Verken onze publieke documentatie of log in voor toegang tot interne secties.
-      </p>
+      </div>
     </div>
   )
 }
@@ -104,8 +104,8 @@ Ons team staat klaar om je te helpen:
   color: '#6b7280',
   fontSize: '0.875rem' 
 }}>
-  <p>🏗️ Gebouwd met passie door het Kroescontrol Team</p>
-  <p style={{ marginTop: '8px', fontSize: '0.75rem' }}>
+  <div>🏗️ Gebouwd met passie door het Kroescontrol Team</div>
+  <div style={{ marginTop: '8px', fontSize: '0.75rem' }}>
     Gebruik de navigatie hierboven om door de verschillende secties te bladeren
-  </p>
+  </div>
 </div>

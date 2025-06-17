@@ -16,7 +16,7 @@ docStatus: generated
 
 # Wat is Freelancecontrol Engineer
 
-Freelancecontrol Engineer is onze naam voor een freelancer die een arbeidsovereenkomst nodig heeft voor het uitvoeren van zijn werk. Het combineert de vrijheid van zelfstandig ondernemerschap met de voordelen en zekerheid van een professionele organisatie.
+Freelancecontrol is onze naam voor een arbeidsrelatie gebaseerd op midlance met hele heldere afspraken over marge, budget en je inzet.
 
 ## Belangrijkste punten
 

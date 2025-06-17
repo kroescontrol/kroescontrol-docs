@@ -122,7 +122,7 @@ export default {
     }
   },
   sidebar: {
-    defaultMenuCollapseLevel: 2,
+    defaultMenuCollapseLevel: 1,  // Klapt alle menu's standaard in
     toggleButton: true,
     autoCollapse: true,  // Klapt andere secties automatisch in
     titleComponent: ({ title, type, route }) => {
