@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3003",
-    "prebuild": "node ./scripts/generate-build-id.js",
+    "capture-git": "node ./scripts/capture-git-info.js",
+    "prebuild": "npm run capture-git && node ./scripts/generate-build-id.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

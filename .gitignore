@@ -67,3 +67,6 @@ _hintsdocs
 
 # Build metadata
 /public/api/build.json
+
+# Temporary git info cache
+.git-info.json

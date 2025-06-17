@@ -6,10 +6,34 @@ const { execSync } = require('child_process');
 
 // Get git commit SHA (short version)
 let gitCommit = 'unknown';
-try {
-  gitCommit = execSync('git rev-parse --short HEAD', { encoding: 'utf-8' }).trim();
-} catch (error) {
-  console.warn('Warning: Could not get git commit SHA');
+
+// First try to read from cached git info file
+const projectRoot = process.cwd();
+const gitInfoPath = path.join(projectRoot, '.git-info.json');
+if (fs.existsSync(gitInfoPath)) {
+  try {
+    const gitInfo = JSON.parse(fs.readFileSync(gitInfoPath, 'utf-8'));
+    if (gitInfo.commit && gitInfo.commit !== 'unknown') {
+      gitCommit = gitInfo.commit;
+      console.log('Using cached git commit from .git-info.json');
+    }
+  } catch (error) {
+    console.warn('Warning: Could not read .git-info.json');
+  }
+}
+
+// If no cached info, try Vercel environment variable
+if (gitCommit === 'unknown' && process.env.VERCEL_GIT_COMMIT_SHA) {
+  gitCommit = process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7);
+}
+
+// Final fallback to local git
+if (gitCommit === 'unknown') {
+  try {
+    gitCommit = execSync('git rev-parse --short HEAD', { encoding: 'utf-8' }).trim();
+  } catch (error) {
+    console.warn('Warning: Could not get git commit SHA');
+  }
 }
 
 // Get current date and time
@@ -30,16 +54,40 @@ if (process.env.VERCEL_ENV === 'production') {
   environment = 'ci';
 }
 
-// Format: gitsha-YYYYMMDD-HHMM-env
-const buildId = `${gitCommit}-${year}${month}${day}-${hours}${minutes}-${environment}`;
+// Format: YYYYMMDD-HHMM-env (timestamp based) or gitsha-YYYYMMDD-HHMM-env if git available
+const buildId = gitCommit !== 'unknown' 
+  ? `${gitCommit}-${year}${month}${day}-${hours}${minutes}-${environment}`
+  : `${year}${month}${day}-${hours}${minutes}-${environment}`;
 const buildTime = now.toISOString();
 
 // Get git branch
 let gitBranch = 'unknown';
-try {
-  gitBranch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).trim();
-} catch (error) {
-  console.warn('Warning: Could not get git branch');
+
+// First try to read from cached git info file
+if (fs.existsSync(gitInfoPath)) {
+  try {
+    const gitInfo = JSON.parse(fs.readFileSync(gitInfoPath, 'utf-8'));
+    if (gitInfo.branch && gitInfo.branch !== 'unknown') {
+      gitBranch = gitInfo.branch;
+      console.log('Using cached git branch from .git-info.json');
+    }
+  } catch (error) {
+    console.warn('Warning: Could not read .git-info.json for branch');
+  }
+}
+
+// If no cached info, try Vercel environment variable
+if (gitBranch === 'unknown' && process.env.VERCEL_GIT_COMMIT_REF) {
+  gitBranch = process.env.VERCEL_GIT_COMMIT_REF;
+}
+
+// Final fallback to local git
+if (gitBranch === 'unknown') {
+  try {
+    gitBranch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).trim();
+  } catch (error) {
+    console.warn('Warning: Could not get git branch');
+  }
 }
 
 // Write to .env.local for local development
@@ -51,8 +99,7 @@ NEXT_PUBLIC_GIT_BRANCH=${gitBranch}
 NEXT_PUBLIC_BUILD_ENV=${environment}
 `;
 
-// Determine project root (where package.json is located)
-const projectRoot = process.cwd();
+// Determine path for .env.local
 const envPath = path.join(projectRoot, '.env.local');
 
 // Read existing .env.local if it exists
