@@ -54,11 +54,12 @@ docusaurus.config.js.bak
 *.md.bak
 
 # Scripts and utilities that shouldn't be in public repo
-/scripts
+/scripts/setup-local-symlinks.sh
+/scripts/contextCollector.js
+/scripts/post-build.js
 /sensitive
 /_hints
 /backup-output
-*.sh
 contextCollector.js
 post-build.js
 _hints
