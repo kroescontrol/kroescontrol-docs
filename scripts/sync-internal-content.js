@@ -54,7 +54,7 @@ function copyRecursive(src, dest) {
 
 // Clean target directory but preserve specific files
 // This ensures that deleted files in source are also removed from target
-const filesToPreserve = ['_meta.json', 'index.mdx', '_status.md'];
+const filesToPreserve = ['_meta.json', 'index.mdx'];
 if (fs.existsSync(TARGET_DIR)) {
   // Save files to preserve
   const preserved = {};
