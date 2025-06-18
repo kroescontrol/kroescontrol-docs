@@ -27,7 +27,7 @@ Bij Kroescontrol werken we anders. Geen 9-tot-5 kantoorplicht, maar wel geweldig
 - **Pro tip**: Hier krijg je shit done
 
 ### Flexplekken
-Ook werkplekken in **Apeldoorn**, **Rotterdam**, **Utrecht** en **Eindhoven** voor als je daar in de buurt bent.
+Ook werkplekken in **Apeldoorn**, **Rotterdam**, **Utrecht**, **Eindhoven**, **Ede** en **Vianen** voor als je daar in de buurt bent.
 
 ## 💻 Faciliteiten (de goede stuff)
 
