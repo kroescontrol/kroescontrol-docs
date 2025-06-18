@@ -1,7 +1,13 @@
 {
-  "index": "🏠 Home",
+  "index": "🏠 Startpagina",
+  "over-deze-site": "📖 Over deze site",
+  "navigatie-uitleg": "🧭 Navigatie uitleg", 
+  "contact": "💬 Contact",
+  "---": {
+    "type": "separator"
+  },
   "public": {
-    "title": "🌐 Public",
+    "title": "🌐 Publiek",
     "type": "page"
   },
   "internal": {

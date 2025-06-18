@@ -93,3 +93,50 @@ html.dark button {
   height: 32px;
   width: auto;
 }
+
+/* Navigation items styling - meer specifieke selectors voor Nextra */
+.nextra-nav-container nav a,
+nav.nx-flex.nx-gap-1 a,
+.nx-flex.nx-items-center.nx-justify-end nav a {
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  margin: 0 2px !important;
+  transition: all 0.2s ease !important;
+  color: #6b7280 !important; /* Grijs voor niet-actieve items */
+}
+
+/* Active navigation item highlighting - gebruik aria-current voor Nextra */
+.nextra-nav-container nav a[aria-current="page"],
+nav.nx-flex.nx-gap-1 a[aria-current="page"],
+.nx-flex.nx-items-center.nx-justify-end nav a[aria-current="page"],
+nav a.nx-text-primary-600 {
+  background-color: #222b5b !important;
+  color: white !important;
+  border-bottom: none !important;
+  font-weight: 500 !important;
+}
+
+html.dark .nextra-nav-container nav a[aria-current="page"],
+html.dark nav.nx-flex.nx-gap-1 a[aria-current="page"],
+html.dark .nx-flex.nx-items-center.nx-justify-end nav a[aria-current="page"],
+html.dark nav a.nx-text-primary-600 {
+  background-color: #ff006c !important;
+  color: white !important;
+  border-bottom: none !important;
+  font-weight: 500 !important;
+}
+
+/* Hover state for navigation items */
+.nextra-nav-container nav a:hover:not([aria-current="page"]),
+nav.nx-flex.nx-gap-1 a:hover:not([aria-current="page"]),
+.nx-flex.nx-items-center.nx-justify-end nav a:hover:not([aria-current="page"]) {
+  background-color: rgba(34, 43, 91, 0.08) !important;
+  color: #222b5b !important;
+}
+
+html.dark .nextra-nav-container nav a:hover:not([aria-current="page"]),
+html.dark nav.nx-flex.nx-gap-1 a:hover:not([aria-current="page"]),
+html.dark .nx-flex.nx-items-center.nx-justify-end nav a:hover:not([aria-current="page"]) {
+  background-color: rgba(255, 0, 108, 0.10) !important;
+  color: #ff006c !important;
+}
