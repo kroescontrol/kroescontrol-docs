@@ -26,7 +26,7 @@ export default {
           color: '#6b7280'
         }}>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            © 2025 Kroescontrol B.V. - Public Documentation
+            © 2025 Kroescontrol B.V.
           </div>
           <div style={{ 
             textAlign: 'center', 
