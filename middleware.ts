@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { getToken } from 'next-auth/jwt'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -16,29 +15,51 @@ export async function middleware(request: NextRequest) {
   const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
   
   if (isProtectedRoute) {
-    // Only check auth for protected routes
-    const token = await getToken({ 
-      req: request,
-      secret: process.env.NEXTAUTH_SECRET
-    })
-    
-    if (!token) {
-      console.log(`🔒 Unauthorized access attempt to protected route: ${pathname}`)
+    // Verify auth via hub API
+    try {
+      const hubUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://hub.kroescontrol.nl'
+        : 'http://localhost:3002' // apphub local port
+        
+      const authResponse = await fetch(`${hubUrl}/api/auth/verify`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cookie': request.headers.get('cookie') || '',
+          'Origin': request.headers.get('origin') || request.nextUrl.origin
+        },
+        body: JSON.stringify({ path: pathname }),
+        credentials: 'include'
+      })
       
-      // In productie: redirect naar hub.kroescontrol.nl voor login
-      if (process.env.NODE_ENV === 'production') {
-        const hubLoginUrl = new URL('https://hub.kroescontrol.nl/login')
+      if (!authResponse.ok) {
+        throw new Error(`Auth verification failed: ${authResponse.status}`)
+      }
+      
+      const auth = await authResponse.json()
+      
+      if (!auth.authenticated || !auth.hasAccess) {
+        console.log(`🔒 Unauthorized access attempt to protected route: ${pathname}`)
+        
+        // Redirect naar hub voor login
+        const hubLoginUrl = new URL(`${hubUrl}/login`)
         hubLoginUrl.searchParams.set('redirect', request.url)
         return NextResponse.redirect(hubLoginUrl)
       }
       
-      // In development: gebruik lokale signin
-      const signInUrl = new URL('/api/auth/signin', request.url)
-      signInUrl.searchParams.set('callbackUrl', request.url)
-      return NextResponse.redirect(signInUrl)
+      console.log(`✅ Authorized access to protected route: ${pathname} by ${auth.user?.email}`)
+    } catch (error) {
+      console.error('Auth verification error:', error)
+      
+      // Bij error, redirect naar login voor veiligheid
+      const hubUrl = process.env.NODE_ENV === 'production'
+        ? 'https://hub.kroescontrol.nl'
+        : 'http://localhost:3002'
+        
+      const hubLoginUrl = new URL(`${hubUrl}/login`)
+      hubLoginUrl.searchParams.set('redirect', request.url)
+      return NextResponse.redirect(hubLoginUrl)
     }
-    
-    console.log(`✅ Authorized access to protected route: ${pathname} by ${token.email}`)
   }
   
   // Allow all other requests to continue
