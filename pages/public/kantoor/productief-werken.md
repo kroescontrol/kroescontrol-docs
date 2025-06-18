@@ -23,7 +23,7 @@ Amsterdam is chaos, en dat is precies waarom het werkt voor:
 - Klantmeetings (centrale locatie)
 - Die ene collega die je alleen daar ziet
 
-**Stephan's regel**: "Plan nooit deep work in Amsterdam op dinsdag. Dat is marktdag op de Ceintuurbaan."
+**Marc's regel**: "Plan nooit deep work in Amsterdam op dinsdag. Dat is marktdag op de Ceintuurbaan."
 
 ## 🕐 De Realistische Werkdag
 
@@ -32,7 +32,6 @@ Amsterdam is chaos, en dat is precies waarom het werkt voor:
 **9:00-10:00**: Iedereen druppelt binnen, eerste "goedemorgen" rituelen
 **10:00-11:30**: Peak performance window - plan hier je moeilijkste werk
 
-**Wist je dat?** Patriek is er altijd om 8:00. Als je vroeg hulp nodig hebt, hij heeft al 3 koppen koffie op.
 
 ### De Middag Reality Check
 **12:30-13:30**: Lunch is heilig. Echt. Niet storen.
@@ -61,7 +60,7 @@ Geen productiviteitstips na 16:00 op vrijdag. Dan zijn we aan het netwerken. Met
 Niemand gebruikt het voor een "productiviteitsboost". We gebruiken het omdat:
 - Het rechtvaardigt die extra croissant bij de lunch
 - "Ik was in de gym" klinkt beter dan "ik was bugs aan het fixen"
-- Stephan heeft een fitness app en we moeten solidarity tonen
+- Marc heeft een fitness app en we moeten solidarity tonen
 
 ## 🤝 Samenwerken: De Kroescontrol Way
 

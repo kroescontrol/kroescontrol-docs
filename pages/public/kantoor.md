@@ -1,59 +1,128 @@
 ---
 title: Kantoor
 sidebar_position: 6
-description: Kroescontrol werkt met moderne kantoorlocaties met luxe faciliteiten
+description: Waar en hoe we werken bij Kroescontrol - geen 9-tot-5 kantoorplicht, wel geweldige plekken
 ---
 
-# Kantoor
+# Kantoorlocaties & Werkplekken
 
-## Onze filosofie
+Bij Kroescontrol werken we anders. Geen 9-tot-5 kantoorplicht, maar wel geweldige plekken waar je écht wilt werken.
 
-Bij Kroescontrol gebruiken we kantoor zoals het hoort - fantastische mooie locaties met luxe faciliteiten en fijne lunch, maar we zijn niet de gehele week aanwezig op locatie. We geloven in flexibel werken waarbij je zelf bepaalt waar je het meest productief bent.
+## 🏢 Onze Locaties
 
-## Wat bieden wij?
+### Amsterdam - De Bruisende
+**Ceintuurbaan 101, 1072 EW Amsterdam**
+- **Vibe**: Levendig, creatief, veel koffietentjes in de buurt
+- **Perfect voor**: Meetings, brainstorms, klantafspraken
+- **OV**: Top bereikbaar (tram/metro op 5 min)
+- **Parkeren**: €4,50/uur (welkom in Amsterdam!)
+- **Pro tip**: Dinsdag = marktdag = gezellige chaos
 
-### Moderne werkplekken
-- Volledig ingerichte werkplekken met hoogwaardige bureaus en stoelen
-- Moderne IT-infrastructuur met snelle internetverbindingen
-- Flexibele werkplekken die je kunt reserveren wanneer je wilt
+### Klarenbeek - De Zen Master
+**Woudweg 5, 7381 BA Klarenbeek**
+- **Vibe**: Rust, natuur, ultieme focus
+- **Perfect voor**: Deep work, complexe problemen oplossen
+- **Trein**: Station Klarenbeek + 10 min fietsen
+- **Parkeren**: GRATIS! (ja, echt waar)
+- **Pro tip**: Hier krijg je shit done
 
-### Vergaderfaciliteiten
-- Diverse vergaderruimtes voor elk type overleg
-- Moderne AV-apparatuur voor presentaties en videocalls
-- Rustige ruimtes voor geconcentreerd werken
+### Flexplekken
+Ook werkplekken in **Apeldoorn**, **Rotterdam**, **Utrecht** en **Eindhoven** voor als je daar in de buurt bent.
 
-### Luxe faciliteiten
-- Ergonomische werkplekken met sta-zit bureaus
-- 34" widescreen monitors met laptop docking
-- High-speed WiFi en beveiligde netwerken
-- Print/scan faciliteiten
-- Uitgebreide lunchfaciliteiten met gezonde opties
-- Koffie, thee en andere versnaperingen
-- Ontspanningsruimtes en wellness voorzieningen
-- Goede bereikbaarheid met OV en auto
+## 💻 Faciliteiten (de goede stuff)
 
-## Onze kantoorlocaties
+### Werkplek Setup
+- **34" curved monitors** (omdat code op een klein scherm pijn doet)
+- **Sta-zit bureaus** (90% staat op zit-stand)
+- **Herman Miller stoelen** (je rug zal je dankbaar zijn)
+- **Gigabit internet** (voor al je npm installs)
 
-Onze hoofdlocaties met volledige faciliteiten:
-- **[Amsterdam](/public/kantoor/locaties/amsterdam)** - Centraal gelegen met excellente OV-verbindingen
-- **[Klarenbeek](/public/kantoor/locaties/klarenbeek)** - Natuurrijke omgeving, ideaal voor geconcentreerd werken
+### De Essentials
+- **Koffie**: Barista-level espresso (geen Senseo nonsens)
+- **Lunch**: Vers, gezond, vega-opties (Mr. Green regelt)
+- **Gym**: Voor als je code niet compileert
+- **Phone booths**: Voor die "kunnen we even bellen?" momenten
 
-Daarnaast hebben we flexwerkplekken in:
-- **Apeldoorn** - Flexibele werkplekken in de Veluwe regio
-- **Rotterdam** - Dynamische zakelijke omgeving
-- **Utrecht** - Centrale ligging in Nederland
-- **Eindhoven** - Tech en innovatie hub
+### Meeting Spaces
+- **Brainstorm ruimtes**: Met whiteboards tot het plafond
+- **Video call rooms**: Met goede camera's en audio
+- **Chill zones**: Voor informele catches-ups
+- **Vrijdagmiddag borrel spot**: Geen uitleg nodig
 
-## Meer informatie
+## 🎯 Toegang & Reserveren
 
-- [Alle locaties →](/public/kantoor/locaties/)
-- [Faciliteiten overzicht →](/public/kantoor/faciliteiten)
-- [Vergaderruimtes →](/public/kantoor/vergaderruimtes)
-- [Voor bezoekers →](/public/kantoor/bezoekers)
-- [Productief werken tips →](/public/kantoor/productief-werken)
+### Voor Kroescontrol Engineers
+- **Salto app**: Toegang tot alle locaties
+- **Desk booking**: Via Mr. Green app (of gewoon komen)
+- **24/7 toegang**: Voor die late night coding sessions
 
-## Contact
+### Voor Bezoekers
+- **Always welcome**: Maar wel even aanmelden
+- **Guest WiFi**: Direct beschikbaar
+- **Lunch included**: Bij dagbezoek
+- Meer info: [Bezoekers Guide →](/public/bezoekers)
 
-Voor vragen over onze kantoorlocaties of het reserveren van werkplekken kun je contact opnemen met:
-- **Algemeen**: [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl)
-- **Faciliteiten**: [serge@kroescontrol.nl](mailto:serge@kroescontrol.nl)
+## 📱 Slim Kantoorgebruik
+
+### De Ongeschreven Regels
+- **Koptelefoon op** = Niet storen (tenzij het gebouw in brand staat)
+- **Koffieautomaat** = Beste plek voor architectuur discussies
+- **Vrijdag na 16:00** = Borrel > Bug fixes
+- **Clean desk** = Optional (we zijn developers, geen accountants)
+
+### Pro Tips van het Team
+- **Serge**: "Klarenbeek voor complexe problemen, Amsterdam voor energie"
+- **Patriek**: "Eerste koffie om 8:00 is het lekkerst"
+- **Marc**: "Meeting rooms zijn ook prima voor powernaps"
+
+### Productiviteit Hacks
+- **Golden hour**: 8:00-9:00 (kantoor leeg, koffie vers)
+- **Lunch walk**: Reset je brein (en stap counter)
+- **Desk hopping**: Wissel van plek voor nieuwe inspiratie
+- **4PM rule**: Deploy niks belangrijks na 16:00
+
+## 🚀 Community Days
+
+Elke maand openen we onze deuren voor tech professionals:
+- **Netwerken** met andere developers
+- **Knowledge sharing** sessions
+- **Free lunch** (always a winner)
+- **Borrel** met het team
+
+Check [Community Days →](/public/cultuur/community-days) voor data.
+
+## 🤝 Hybride Werken
+
+### Onze Filosofie
+- **Kantoor**: Voor samenwerken, sparren, socializen
+- **Thuis**: Voor deep focus, online meetings, eigen flow
+- **Balans**: Jij bepaalt wat werkt
+
+### In de Praktijk
+- Geen verplichte kantoordagen
+- Teams stemmen onderling af
+- Belangrijke meetings liefst on-site
+- Vrijdagmiddag borrel is holy
+
+## 📞 Contact & Support
+
+### Kantoor Support
+**Mr. Green Offices**: 055-301 1082
+- WiFi problemen
+- Toegang issues  
+- Facility vragen
+
+### Intern
+- **Desk booking**: Via Mr. Green app
+- **Hardware**: Check met IT
+- **Koffie op**: Panic! (of nieuwe zetten)
+
+## ⚡ Quick Links
+
+- [Community Days](/public/cultuur/community-days) - Kom kennismaken
+- [Werken bij](/public/werken-bij) - Join ons team
+- [Bezoekers](/public/bezoekers) - Info voor gasten
+
+---
+
+*"Het beste kantoor is waar je het beste werk levert. Soms is dat Klarenbeek, soms Amsterdam, soms je keukentafel." - Kroescontrol wijsheid*
