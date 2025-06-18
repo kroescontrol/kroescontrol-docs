@@ -2,10 +2,11 @@
 
 ## Project Overzicht
 
-**Repository:** `kroescontrol/kroescontrol-docs`  
+**Repository:** `kroescontrol/kroescontrol-docs` (PUBLIEK op GitHub)  
 **Framework:** Nextra (Next.js-gebaseerde documentatie)  
 **URL:** https://docs.kroescontrol.nl  
-**Doel:** Publieke documentatie voor Kroescontrol engineers en klanten
+**Doel:** Publieke documentatie voor Kroescontrol engineers en klanten  
+**Deployment:** Via vault repository die alle documentatie secties combineert
 
 ## Directory Structuur
 
@@ -58,11 +59,13 @@ npm run lint    # Controleer code kwaliteit
 4. Test lokaal met `npm run dev`
 
 ### Deployment
-- **Platform:** Vercel
-- **Branch:** main
-- **Auto-deploy:** Via GitHub Actions workflow
-- **Build commando:** `npm run build`
-- **Output directory:** `.next`
+- **Development:** Lokaal via `npm run dev`
+- **Production:** Via vault repository build process
+- **Live site:** Combineert 4 documentatie secties:
+  - `/public/` - Deze repository (publiek toegankelijk)
+  - `/internal/` - Van apphub/docs-internal (auth required)
+  - `/operation/` - Van vault/docs-operation (auth required)
+  - `/finance/` - Van vault/docs-finance (auth required)
 
 ## Belangrijke Bestanden
 
@@ -82,12 +85,29 @@ npm run lint    # Controleer code kwaliteit
 - Bepaalt volgorde
 - Kan weergavenamen overschrijven
 
+## Repository Scope
+
+### Wat hoort in deze repo
+- ✅ Publieke bedrijfsinformatie
+- ✅ Branding en marketing content
+- ✅ Vacatures en werken-bij info
+- ✅ Kantoor en faciliteiten info
+- ✅ Algemene tool documentatie
+
+### Wat hoort NIET in deze repo
+- ❌ Interne procedures → apphub/docs-internal
+- ❌ HR documenten → apphub/docs-internal
+- ❌ Financiële info → vault/docs-finance
+- ❌ Operationele docs → vault/docs-operation
+- ❌ Gevoelige data → vault repository
+
 ## Migratie Notities
 
 Dit project is gemigreerd van Docusaurus naar Nextra:
 - Git-crypt is volledig verwijderd
 - Beschermde content wordt niet meer in deze repo beheerd
 - Focus op publieke documentatie
+- Deze repo is publiek toegankelijk op GitHub
 
 ## Beste Praktijken
 

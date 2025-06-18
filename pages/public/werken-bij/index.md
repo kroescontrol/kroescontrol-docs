@@ -75,15 +75,13 @@ Als je bij Kroescontrol komt werken, mag je het volgende verwachten:
 Bij Kroescontrol vormen we één team met een gedeelde cultuur en visie - een coöperatie van gemeenschappelijke tech-savvy sociale nerds die gedreven worden door passie voor technologie. Binnen dit team bieden we verschillende manieren aan om je arbeidsrelatie vorm te geven:
 
 - **Kroescontrol**: Arbeidsrelatie met meer vaste afspraken en een duidelijke wederzijdse betrokkenheid
-- **Freelancecontrol variant**: Arbeidsrelatie specifiek gericht op ondernemende professionals die als zelfstandige willen werken, waarbij je zelf bepaalt hoe ver je betrokkenheid bij Kroescontrol reikt
+- **Freelance samenwerking**: Voor zelfstandige professionals die graag met ons samenwerken op projectbasis
 
 De Kroescontrol vibe kenmerkt zich door een unieke combinatie van technische excellentie en een informele, sociale teamsfeer. We werken aan serieuze platformen in kritische omgevingen, maar plezier en passie staan centraal in onze cultuur. We zijn professionals die genieten van hun werk, diepgaande technische discussies afwisselen met humor, en geloven dat de beste resultaten ontstaan in een omgeving waar je jezelf kunt zijn.
 
 Freelancers passen soms perfect in dit plaatje. We erkennen dat de zelfstandige professional een andere balans zoekt, maar nog steeds kan aansluiten bij onze coöperatie. Als freelancer bepaal je zelf hoeveel je deelneemt aan teamactiviteiten en bedrijfsprocessen, terwijl je wel profiteert van het netwerk en de ondersteuning die Kroescontrol biedt.
 
-Freelancecontrol Engineer is in de markt ook bekend als een "midlance" structuur: het biedt de volledige zelfstandigheid van freelancen waarbij je zelf kiest welke opdrachten je aanneemt, gecombineerd met de faciliteiten en ondersteuning van onze organisatie zonder eisen te stellen. Je beloning is deels gebaseerd op omzetprestatie, waarbij de marge afhankelijk is van je gekozen niveau van betrokkenheid. Hoe actiever je zelf bent, hoe meer voordeel je zelf neemt.
-
-Het gaat niet om verschillende werkmodellen, maar om één team Kroescontrol, waarbij Freelancecontrol Engineer geen apart team is maar een arbeidsovereenkomst optie voor ondernemende professionals die als zelfstandige willen werken, passend bij jouw persoonlijke voorkeuren en ambities.
+Het gaat niet om verschillende werkmodellen, maar om één team Kroescontrol. Freelance samenwerking is een optie voor ondernemende professionals die als zelfstandige willen werken, passend bij jouw persoonlijke voorkeuren en ambities.
 
 ## Veelgestelde vragen
 

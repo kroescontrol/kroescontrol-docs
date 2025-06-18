@@ -7,4 +7,4 @@ export const isProduction = process.env.NODE_ENV === 'production';
 export const showDevelopmentContent = isDevelopment || process.env.SHOW_DEV_CONTENT === 'true';
 
 // Specific feature flags
-export const showFreelanceControl = showDevelopmentContent;
+// Freelancecontrol temporarily removed - will be added back later

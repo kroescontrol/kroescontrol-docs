@@ -115,8 +115,8 @@ Bij Kroescontrol werken we in een informele maar professionele sfeer, waar kenni
 
 ## Veelgestelde vragen
 
-**Is er een verschil tussen de Kroescontrol en Freelancecontrol arbeidsvoorwaarden?**
-Ja, bij Kroescontrol heb je vaste voorwaarden en budgetten, terwijl Freelancecontrol gericht is op de freelance-georiënteerde professional met een vergoeding die gedeeltelijk gekoppeld is aan omzetprestatie. Je kunt in overleg wisselen tussen beide structuren.
+**Werkt Kroescontrol ook samen met freelancers?**
+Ja, we werken regelmatig samen met freelance professionals op projectbasis. De exacte voorwaarden en samenwerkingsvorm bespreken we graag in een persoonlijk gesprek.
 
 **Zijn er doorgroeimogelijkheden binnen Kroescontrol?**
 Zeker, we stimuleren persoonlijke en professionele groei. Dit kan zowel technisch inhoudelijk zijn door het verdiepen van je expertise, als in je rol en verantwoordelijkheden.

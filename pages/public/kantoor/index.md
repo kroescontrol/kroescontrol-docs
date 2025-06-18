@@ -53,7 +53,7 @@ Daarnaast hebben we flexwerkplekken in:
 Onze kantoren zijn toegankelijk voor:
 - Alle Kroescontrol medewerkers
 - Kroescontrol engineers met kantoor membership (afhankelijk van individuele afspraken)
-- Freelancecontrol professionals die daar zelf voor kiezen en gebruik van willen maken
+- Freelance partners met wie we samenwerken
 - Bezoekers op afspraak
 - Klanten voor meetings en presentaties
 
