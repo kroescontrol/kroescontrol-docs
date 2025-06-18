@@ -6,67 +6,88 @@ sidebar_position: 8
 description: Praktische tips om het meeste uit je kantoortijd te halen
 ---
 
-# Tips voor Productief Werken
+# De Kroescontrol Productiviteits Filosofie
 
-Onze kantoorlocaties zijn ontworpen om productiviteit te bevorderen. Hier zijn tips om het meeste uit je werkdag te halen.
+Bij Kroescontrol geloven we niet in "productiviteitshacks" of "10x engineers". We geloven in slimmer werken, niet harder. Hier is hoe wij dat doen.
 
-## Kies de juiste werkplek
+## 🧠 De Kroescontrol Flow State
 
-### Voor verschillende taken
-- **Deep work**: Boek een office desk in een rustig kantoor
-- **Creatief werk**: Gebruik de loungeruimtes of werk bij het raam
-- **Calls & meetings**: Reserveer een phone booth of kleine meeting room
-- **Samenwerken**: Kies open werkplekken dicht bij collega's
+### Het geheim van Klarenbeek
+Waarom gaan engineers naar Klarenbeek? Niet alleen voor de rust. Het is wetenschappelijk bewezen: natuur + focus = 40% betere code quality. Plus, de koffie is er gewoon beter.
 
-### Locatie keuze
-- **Amsterdam**: Ideaal voor klantafspraken en netwerken
-- **Klarenbeek**: Perfect voor geconcentreerd werken in de natuur
+**Pro tip van Serge**: "Als je echt iets complex moet oplossen, boek een dag Klarenbeek. Geen meetings, geen Slack, alleen jij en het probleem."
 
-## Plan je werkdag slim
+### Amsterdam voor de energie
+Amsterdam is chaos, en dat is precies waarom het werkt voor:
+- Brainstorms (de drukte stimuleert creativiteit)
+- Klantmeetings (centrale locatie)
+- Die ene collega die je alleen daar ziet
 
-### Ochtend routine
-- Kom vroeg voor rustige start (8:00-9:00)
-- Begin met prioriteiten wanneer je energie hoog is
-- Gebruik eerste uur voor deep work
+**Stephan's regel**: "Plan nooit deep work in Amsterdam op dinsdag. Dat is marktdag op de Ceintuurbaan."
 
-### Middag optimalisatie
-- Plan meetings na de lunch
-- Wissel zware taken af met lichtere activiteiten
-- Gebruik de e-gym voor een energie boost
+## 🕐 De Realistische Werkdag
 
-### Einde werkdag
-- Rond belangrijke taken af voor 16:00
-- Gebruik laatste uur voor planning volgende dag
-- Netwerk met collega's tijdens borrel
+### De Kroescontrol Ochtend
+**8:00-9:00**: De "Golden Hour" - kantoor is leeg, koffie is vers, Slack is stil
+**9:00-10:00**: Iedereen druppelt binnen, eerste "goedemorgen" rituelen
+**10:00-11:30**: Peak performance window - plan hier je moeilijkste werk
 
-## Gebruik faciliteiten effectief
+**Wist je dat?** Patriek is er altijd om 8:00. Als je vroeg hulp nodig hebt, hij heeft al 3 koppen koffie op.
 
-### Technologie
-- **Dubbel scherm setup**: Verhoogt productiviteit met 20-30%
-- **Sta-zit bureau**: Wissel elk uur van positie
-- **Goede WiFi**: Download grote bestanden 's ochtends vroeg
+### De Middag Reality Check
+**12:30-13:30**: Lunch is heilig. Echt. Niet storen.
+**14:00-15:00**: Post-lunch dip? Perfect voor:
+  - Code reviews (kritisch maar niet te complex)
+  - Documentatie schrijven
+  - Die vervelende admin taken
 
-### Welzijn
-- **Lunch pauze**: Neem echt pauze, eet niet achter je bureau
-- **Wandelingen**: 5 minuten buiten = 30 minuten extra focus
-- **E-gym**: 15 minuten workout = rest van de dag alerter
+**15:00-16:00**: Tweede wind! Ideaal voor pairing of brainstorms
+**16:00-17:00**: Wrap-up tijd (of die ene bug die "5 minuutjes" duurt)
 
-### Samenwerking
-- **Spontane ontmoetingen**: Koffie corner voor informeel overleg
-- **Geplande sessies**: Boek vergaderruimte voor belangrijke discussies
-- **Community Days**: Ideaal voor kennisdeling en netwerken
+### De Vrijdagmiddag Borrel
+Geen productiviteitstips na 16:00 op vrijdag. Dan zijn we aan het netwerken. Met bier.
 
-## Voorkom afleiding
+## 💻 De Kroescontrol Tech Stack (voor productiviteit)
 
-### Focus tips
-- Gebruik noise-cancelling headphones
-- Zet notificaties uit tijdens deep work
-- Boek stilteruimte voor ultieme concentratie
+### Hardware hacks van onze engineers
+**Dubbel scherm?** Dat is voor beginners. De pros hebben:
+- Laptop scherm voor Slack (zodat je het kan negeren)
+- Monitor 1 voor je IDE
+- Monitor 2 voor Stack Overflow (wees eerlijk)
 
-### Energie management
-- Hydrateer regelmatig (water stations overal)
-- Gezonde snacks voor stabiele energie
-- Vermijd te veel koffie na 14:00
+**Het sta-zit bureau mysterie**: 90% staat op "zit". Die 10% die staat? Dat zijn de mensen in een meeting call die willen ontsnappen.
+
+### De waarheid over de E-Gym
+Niemand gebruikt het voor een "productiviteitsboost". We gebruiken het omdat:
+- Het rechtvaardigt die extra croissant bij de lunch
+- "Ik was in de gym" klinkt beter dan "ik was bugs aan het fixen"
+- Stephan heeft een fitness app en we moeten solidarity tonen
+
+## 🤝 Samenwerken: De Kroescontrol Way
+
+### De koffie corner conversations
+Waar de echte beslissingen worden genomen. Vergeet die meeting room - bij de koffieautomaat gebeurt het:
+- "Oh trouwens, die API..." (begin van 3 uur durende architectuur discussie)
+- "Heb je X al geprobeerd?" (oplossing voor probleem waar je 2 dagen mee zit)
+- "Wie heeft de melk opgemaakt?" (begin van kantoorrevolutie)
+
+## 🎧 Afleiding Management (eerlijke versie)
+
+### De headphone regel
+Headphones op = "Stoor me niet tenzij het gebouw in brand staat"
+Headphones half op = "Je mag storen maar het moet belangrijk zijn"
+Geen headphones = "Help, ik verveel me, kom praten"
+
+### Notificatie realiteit
+**Wat we zeggen**: "Ik zet alle notificaties uit voor deep work"
+**Wat we doen**: Check Slack elke 5 minuten "voor het geval dat"
+
+### De energie curve
+**09:00**: "Ik ga vandaag alleen water drinken!"
+**10:30**: Eerste koffie
+**11:00**: "Oké, één koffie is gezond"
+**14:00**: "Is 5 koppen koffie te veel?"
+**16:00**: "Koffie is basically water, toch?"
 
 ## Maak het persoonlijk
 
@@ -104,13 +125,22 @@ Onze kantoorlocaties zijn ontworpen om productiviteit te bevorderen. Hier zijn t
 - Online meetings
 - Administratieve taken
 
-## Quick wins
+## 🚀 De Echte Kroescontrol Quick Wins
 
-1. **Start direct**: Eerste 30 minuten geen email/Slack
-2. **Pomodoro techniek**: 25 min focus, 5 min pauze
-3. **Clean desk**: Opgeruimd bureau = helder hoofd
-4. **Lunch & Learn**: Combineer lunch met kennissessie
-5. **End strong**: Laatste 15 min: plan morgen
+### De Morning Routine die echt werkt
+1. **Koffie first, Slack later**: Cafeïne voor communicatie
+2. **Check je PR's**: Voor je collega's wakker zijn en gaan reviewen
+3. **Plan je ontsnapping**: Boek alvast Klarenbeek voor volgende week
+
+### De Middag Survival Guide
+1. **Lunch walk**: Niet voor je gezondheid, maar om even weg te zijn
+2. **Pair programming**: Gedeelde smart is halve smart (of dubbele bugs)
+3. **4PM push**: Deploy niks belangrijks na 16:00 (tenzij je van spanning houdt)
+
+### End of Day Ritual
+1. **Git commit**: "WIP" is een valide commit message om 17:30
+2. **Slack status**: 🏠 (universeel voor "ik ben weg, bel me niet")
+3. **Morgen-mij probleem**: Die bug kan echt wel tot morgen wachten
 
 ## Zie ook
 

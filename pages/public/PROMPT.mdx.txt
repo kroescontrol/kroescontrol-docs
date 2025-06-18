@@ -1,0 +1,283 @@
+{/* BELANGRIJK: PUBLIEKE DOCUMENTATIE - OPEN SOURCE */}
+
+# PROMPT: Public Documentatie
+
+## Sectie Context
+**Directory**: `./docs/pages/public/`  
+**Doel**: Publieke informatie over Kroescontrol voor externe bezoekers  
+**Doelgroep**: Potentiële klanten, partners, sollicitanten, algemeen publiek  
+**Toegang**: Volledig open, geen authenticatie vereist
+
+## Content Routing - PETRA Migratie
+
+### Legacy Bronnen
+- **Bedrijfsinformatie**: `/docs/input/legacy/blok-branding-cultuur/`
+  - Over Kroescontrol
+  - Missie en visie
+  - Bedrijfscultuur
+  
+- **Werken bij**: Delen uit `/docs/input/legacy/blok-hr/`
+  - Vacatures
+  - Sollicitatie proces
+  - Waarom werken bij Kroescontrol
+
+- **Kantoor & Contact**: `/docs/input/legacy/blok-branding-cultuur/`
+  - Kantoor informatie
+  - Contact gegevens
+  - Bereikbaarheid
+
+### Doelstructuur
+```
+public/
+├── index.mdx                    # Homepage
+├── over-kroescontrol/
+│   ├── index.mdx               # Bedrijfsoverzicht
+│   ├── missie-visie.mdx        # Mission statement
+│   ├── geschiedenis.mdx        # Company history
+│   └── team.mdx                # Team introductie (geen details)
+├── diensten/
+│   ├── index.mdx               # Services overzicht
+│   ├── software-development.mdx # Development services
+│   ├── consultancy.mdx         # Advisory services
+│   └── partnerships.mdx        # Partner program
+├── klanten/
+│   ├── index.mdx               # Client overzicht
+│   ├── cases/                  # Success stories
+│   │   ├── index.mdx          # Cases overzicht
+│   │   └── [client-name].mdx  # Specifieke cases
+│   └── testimonials.mdx        # Client quotes
+├── werken-bij/
+│   ├── index.mdx               # Careers overview
+│   ├── vacatures/              # Job openings
+│   │   ├── index.mdx          # Current openings
+│   │   └── [role].mdx         # Specific vacancies
+│   ├── cultuur.mdx             # Company culture
+│   ├── benefits.mdx            # Why work here
+│   └── solliciteren.mdx        # Application process
+├── kantoor/
+│   ├── index.mdx               # Office info
+│   ├── locatie.mdx             # Location & route
+│   ├── faciliteiten.mdx        # Office facilities
+│   └── huisregels.mdx          # Visitor guidelines
+├── branding/
+│   ├── index.mdx               # Brand guidelines
+│   ├── logo-gebruik.mdx        # Logo usage
+│   ├── kleuren-fonts.mdx       # Colors & typography
+│   └── downloads.mdx           # Brand assets
+├── sna-keurmerk/
+│   ├── index.mdx               # SNA certification
+│   └── waarom-sna.mdx          # Why SNA matters
+├── contact/
+│   ├── index.mdx               # Contact page
+│   └── route.mdx               # Directions
+└── _meta.json                  # Navigation config
+```
+
+## Documentatie Richtlijnen
+
+### 1. **Professioneel & Toegankelijk**
+- Professionele maar warme toon
+- Geen interne jargon
+- Inclusief taalgebruik
+- SEO-geoptimaliseerd
+
+### 2. **Marketing-Ready Content**
+```markdown
+## [Onderwerp]
+
+### Introductie
+[Pakkende opening die interesse wekt]
+
+### Waarom Kroescontrol?
+- ✨ [Unique selling point 1]
+- 🚀 [Unique selling point 2]
+- 💡 [Unique selling point 3]
+
+### Onze Aanpak
+[Beschrijf methode zonder trade secrets]
+
+### Resultaten
+[Concrete maar algemene voorbeelden]
+```
+
+### 3. **Vacature Template**
+```markdown
+## [Functietitel]
+
+### Wat ga je doen?
+[Inspirerende beschrijving van de rol]
+
+### Wat zoeken wij?
+- [Must-have skill]
+- [Important skill]
+- [Nice-to-have]
+
+### Wat bieden wij?
+- 💰 [Salaris range]
+- 📚 [Development mogelijkheden]
+- 🏖️ [Vakantiedagen]
+- 🎯 [Andere benefits]
+
+### Interesse?
+[Call-to-action met sollicitatie link]
+```
+
+### 4. **Case Study Format**
+```markdown
+## Case: [Client Name]
+
+### De Uitdaging
+[Probleem beschrijving zonder vertrouwelijke details]
+
+### Onze Oplossing
+[Aanpak op hoog niveau]
+
+### Het Resultaat
+- [Meetbaar resultaat 1]
+- [Meetbaar resultaat 2]
+
+> "Quote van tevreden klant" - Naam, Functie
+```
+
+## Content Principes
+
+### SEO Optimalisatie
+- Meta descriptions op elke pagina
+- Relevante keywords natuurlijk verwerkt
+- Alt teksten voor alle afbeeldingen
+- Structured data waar mogelijk
+
+### Brand Voice
+1. **Professioneel**: Betrouwbaar en competent
+2. **Menselijk**: Warm en benaderbaar
+3. **Innovatief**: Vooruitstrevend denken
+4. **Transparant**: Open en eerlijk
+
+### Visual Guidelines
+- Gebruik brand kleuren consistent
+- Professional photography alleen
+- Infographics voor complexe concepten
+- Responsive design prioriteit
+
+## Kritieke Pagina's
+
+### Homepage Structuur
+```
+1. Hero: Missie statement + CTA
+2. Services: Wat we doen
+3. Clients: Wie we helpen
+4. Culture: Hoe we werken
+5. Contact: Start gesprek
+```
+
+### Vacature Flow
+```
+Overzicht → Specifieke rol → 
+Cultuur pagina → Sollicitatie form →
+Bevestiging met timeline
+```
+
+## Cross-References
+
+### Naar Internal (achter login)
+```markdown
+Medewerkers: [Login voor meer info](https://hub.kroescontrol.nl)
+```
+
+### Externe Links
+```markdown
+- [LinkedIn](https://linkedin.com/company/kroescontrol)
+- [GitHub](https://github.com/kroescontrol)
+- [SNA Keurmerk](https://sna.nl/kroescontrol)
+```
+
+## AI Instructies voor Content Creatie
+
+### Bij Migratie uit Legacy
+1. **Filter vertrouwelijke info**: Geen interne processen
+2. **Upgrade content quality**: Professioneler maken
+3. **Add visual elements**: Suggest waar images helpen
+4. **SEO enhancement**: Keywords natuurlijk toevoegen
+5. **Update all dates**: Ensure actuele informatie
+
+### Schrijfstijl Guidelines
+- **Toon**: Professioneel maar warm
+- **Perspectief**: "Wij" voor bedrijf, "je" voor lezer
+- **Zinlengte**: Varieer voor leesritme
+- **Actieve stem**: Vermijd passieve constructies
+- **Call-to-actions**: Duidelijk en uitnodigend
+
+### Content Dos & Don'ts
+#### DO ✅
+- Concrete voorbeelden geven
+- Benefits benadrukken
+- Social proof tonen
+- Contact makkelijk maken
+
+#### DON'T ❌
+- Technisch jargon overload
+- Vertrouwelijke klantinfo
+- Interne processen delen
+- Overdreven claims maken
+
+## Meta Configuratie
+```json
+{
+  "public": {
+    "title": "Kroescontrol - Software Development & Consultancy",
+    "access": "public",
+    "seo": {
+      "sitemap": true,
+      "robots": "index,follow",
+      "ogImage": "/og-kroescontrol.png"
+    },
+    "theme": {
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false,
+      "search": true,
+      "darkMode": false
+    }
+  }
+}
+```
+
+## Analytics & Tracking
+```javascript
+// Toegestaan voor public site
+- Google Analytics 4
+- Hotjar voor UX insights
+- LinkedIn Insights
+- Cookie consent vereist
+```
+
+## Notities voor PETRA Implementatie
+- **Focus**: Werken-bij sectie heeft prioriteit
+- **Review**: Marketing manager final check
+- **Fotografie**: Professional shots needed
+- **Vertalingen**: Engels versie planned voor Q3
+- **Updates**: Monthly content refresh cyclus
+- **A/B Testing**: Test CTAs en headlines
+
+## Legal Compliance
+- GDPR compliant cookie banner
+- Privacy policy link in footer
+- Terms of service beschikbaar
+- Accessibility WCAG 2.1 AA
+- Disclaimer waar nodig
+
+## Content Calendar Topics
+1. **Blog posts**: Industry insights
+2. **News**: Company updates
+3. **Events**: Meetups & conferences
+4. **Tech talks**: Knowledge sharing
+5. **Culture**: Team stories
+
+## Performance Requirements
+- Page load < 3 seconds
+- Mobile-first design
+- Core Web Vitals green
+- Images optimized (WebP)
+- CDN voor static assets
