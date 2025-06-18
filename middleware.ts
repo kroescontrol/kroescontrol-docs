@@ -24,7 +24,15 @@ export async function middleware(request: NextRequest) {
     
     if (!token) {
       console.log(`🔒 Unauthorized access attempt to protected route: ${pathname}`)
-      // Redirect to sign in page
+      
+      // In productie: redirect naar hub.kroescontrol.nl voor login
+      if (process.env.NODE_ENV === 'production') {
+        const hubLoginUrl = new URL('https://hub.kroescontrol.nl/login')
+        hubLoginUrl.searchParams.set('redirect', request.url)
+        return NextResponse.redirect(hubLoginUrl)
+      }
+      
+      // In development: gebruik lokale signin
       const signInUrl = new URL('/api/auth/signin', request.url)
       signInUrl.searchParams.set('callbackUrl', request.url)
       return NextResponse.redirect(signInUrl)

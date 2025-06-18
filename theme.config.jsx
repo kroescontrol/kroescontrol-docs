@@ -100,6 +100,19 @@ export default {
         return (
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
             <span style={{ color: '#10b981' }}>✓ Ingelogd als {session.user?.name || session.user?.email}</span>
+            <a 
+              href="/api/auth/signout"
+              style={{ 
+                padding: '4px 8px', 
+                background: '#dc2626', 
+                color: 'white', 
+                borderRadius: '4px', 
+                textDecoration: 'none',
+                fontSize: '12px'
+              }}
+            >
+              Uitloggen
+            </a>
           </div>
         )
       }

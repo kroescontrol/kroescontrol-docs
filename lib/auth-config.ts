@@ -1,35 +1,8 @@
 import { NextAuthOptions } from "next-auth"
-import GitHubProvider from "next-auth/providers/github"
-import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    // GitHub provider only if real credentials available (not dummy)
-    ...(process.env.GITHUB_ID && 
-        process.env.GITHUB_SECRET && 
-        !process.env.GITHUB_ID.includes('dummy') ? [
-      GitHubProvider({
-        clientId: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
-        authorization: {
-          params: {
-            scope: 'read:user read:org'
-          }
-        }
-      })
-    ] : []),
-    
-    // Google provider only if real credentials available (not dummy)
-    ...(process.env.GOOGLE_CLIENT_ID && 
-        process.env.GOOGLE_CLIENT_SECRET && 
-        !process.env.GOOGLE_CLIENT_ID.includes('dummy') ? [
-      GoogleProvider({
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      })
-    ] : []),
-    
     // Development fallback credentials provider
     ...(process.env.NODE_ENV === 'development' ? [
       CredentialsProvider({
@@ -60,6 +33,7 @@ export const authOptions: NextAuthOptions = {
         }
       })
     ] : []),
+    // In productie: geen providers, alles via hub.kroescontrol.nl
   ],
   
   // Cookie configuratie voor cross-subdomain SSO
@@ -104,7 +78,7 @@ export const authOptions: NextAuthOptions = {
   },
   
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account }) {
       console.log('=== DOCS SIGN IN CALLBACK ===')
       console.log('Provider:', account?.provider)
       console.log('User email:', user?.email)
@@ -115,78 +89,19 @@ export const authOptions: NextAuthOptions = {
         return true
       }
       
-      if (account?.provider === 'github') {
-        if (!account?.access_token) {
-          console.log('❌ No access token')
-          return false
-        }
-
-        try {
-          const githubUsername = (profile as any)?.login
-          console.log('GitHub username:', githubUsername)
-          
-          if (!githubUsername) {
-            console.log('❌ No GitHub username')
-            return false
-          }
-
-          // Check GitHub org membership (same as hub/vault)
-          const orgsResponse = await fetch(`https://api.github.com/orgs/kroescontrol/members/${githubUsername}`, {
-            headers: {
-              'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          })
-
-          console.log('Org check status:', orgsResponse.status)
-          const isKroescontrolMember = orgsResponse.status === 204
-          
-          if (!isKroescontrolMember) {
-            console.log('❌ Not a kroescontrol member')
-            return false
-          }
-
-          console.log('✅ Kroescontrol member verified')
-          return true
-        } catch (error) {
-          console.log('❌ GitHub auth error:', error)
-          return false
-        }
-      }
-
-      if (account?.provider === 'google') {
-        // For Google, check if email domain is kroescontrol.nl
-        const email = user.email || ''
-        const isKroescontrolEmail = email.endsWith('@kroescontrol.nl')
-
-        if (!isKroescontrolEmail) {
-          console.log(`❌ User ${email} is not using a kroescontrol.nl email`)
-          return false
-        }
-
-        console.log('✅ Kroescontrol Google user verified')
-        return true
-      }
-
+      // In productie komt niemand hier, alles gaat via hub
       return false
     },
     
-    async jwt({ token, user, account, profile }) {
+    async jwt({ token, user, account }) {
       if (user && account) {
-        if (account.provider === 'github') {
-          token.username = (profile as any)?.login
-          token.roles = ['internal']
-          token.role = 'member'
-        } else if (account.provider === 'google') {
-          token.username = user.email?.split('@')[0] || ''
-          token.roles = ['internal']
-          token.role = 'member'
-        } else if (account.provider === 'development') {
+        if (account.provider === 'development') {
           token.username = 'dev'
           token.roles = ['internal', 'operation', 'finance'] // Full access in dev
           token.role = 'admin'
+          token.provider = account.provider
         }
-        token.provider = account.provider
+        // In productie komt de sessie van hub met alle data al ingevuld
       }
       return token
     },
