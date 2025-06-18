@@ -58,6 +58,20 @@ npm run lint    # Controleer code kwaliteit
 3. Update `_meta.json` voor navigatie
 4. Test lokaal met `npm run dev`
 
+### Internal Content Sync
+
+**BELANGRIJK:** De `/pages/internal/` directory wordt tijdens build gevuld vanuit `apphub/docs-internal/`:
+- Deze content staat **NIET** in git (zie .gitignore)
+- Wordt alleen gekopieerd tijdens build via `npm run sync-internal`
+- In development: run `npm run sync-internal` na wijzigingen in apphub
+- Het sync script bewaart lokale `_meta.json` en `index.mdx`
+
+**Workflow voor internal docs:**
+1. Wijzig content in `apphub/docs-internal/`
+2. Run `npm run sync-internal` in docs repo
+3. Test lokaal met `npm run dev`
+4. Content wordt NIET gecommit (alleen _meta.json wijzigingen)
+
 ### Deployment
 - **Development:** Lokaal via `npm run dev`
 - **Production:** Via vault repository build process

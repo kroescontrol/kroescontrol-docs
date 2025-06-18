@@ -15,6 +15,10 @@ console.log('📦 Syncing internal documentation content...');
 console.log(`   Source: ${SOURCE_DIR}`);
 console.log(`   Target: ${TARGET_DIR}`);
 console.log('   Method: Full directory sync (clean copy)');
+console.log('');
+console.log('⚠️  BELANGRIJK: Deze content wordt NIET in git gecommit!');
+console.log('   .gitignore zorgt ervoor dat pages/internal/* genegeerd wordt');
+console.log('');
 
 // Check if source exists
 if (!fs.existsSync(SOURCE_DIR)) {
@@ -33,6 +37,11 @@ function copyRecursive(src, dest) {
       fs.mkdirSync(dest, { recursive: true });
     }
     fs.readdirSync(src).forEach(childItemName => {
+      // Skip _meta.json in root to preserve local navigation
+      if (childItemName === '_meta.json' && src === SOURCE_DIR) {
+        console.log('   Skipping _meta.json (preserving local navigation)');
+        return;
+      }
       copyRecursive(
         path.join(src, childItemName),
         path.join(dest, childItemName)
@@ -43,14 +52,33 @@ function copyRecursive(src, dest) {
   }
 }
 
-// Clean target directory completely to remove stale content
+// Clean target directory but preserve specific files
 // This ensures that deleted files in source are also removed from target
+const filesToPreserve = ['_meta.json', 'index.mdx', '_status.md'];
 if (fs.existsSync(TARGET_DIR)) {
+  // Save files to preserve
+  const preserved = {};
+  filesToPreserve.forEach(file => {
+    const filePath = path.join(TARGET_DIR, file);
+    if (fs.existsSync(filePath)) {
+      preserved[file] = fs.readFileSync(filePath, 'utf8');
+    }
+  });
+  
   // Remove everything in the target directory
   fs.rmSync(TARGET_DIR, { recursive: true, force: true });
+  
+  // Recreate the target directory
+  fs.mkdirSync(TARGET_DIR, { recursive: true });
+  
+  // Restore preserved files
+  Object.entries(preserved).forEach(([file, content]) => {
+    fs.writeFileSync(path.join(TARGET_DIR, file), content);
+  });
+} else {
+  // Create the target directory if it doesn't exist
+  fs.mkdirSync(TARGET_DIR, { recursive: true });
 }
-// Recreate the target directory
-fs.mkdirSync(TARGET_DIR, { recursive: true });
 
 // Copy content
 try {
