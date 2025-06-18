@@ -38,6 +38,8 @@ Naast onze hoofdlocaties hebben Kroescontrol medewerkers toegang tot flexwerkple
 - **Rotterdam** - Haven en handel
 - **Utrecht** - Centraal in Nederland
 - **Eindhoven** - Tech en innovatie hub
+- **Ede** - Food Valley regio
+- **Vianen** - Strategisch tussen Utrecht en Den Bosch
 - **Zwolle** - Netwerkstad van het noorden
 - **Den Haag** - Overheid en internationale organisaties
 
