@@ -41,9 +41,16 @@ export async function middleware(request: NextRequest) {
       if (!auth.authenticated || !auth.hasAccess) {
         console.log(`🔒 Unauthorized access attempt to protected route: ${pathname}`)
         
-        // Redirect naar hub voor login
+        // Redirect naar hub voor login met loop detectie
         const hubLoginUrl = new URL(`${hubUrl}/login`)
         hubLoginUrl.searchParams.set('redirect', request.url)
+        
+        // Add loop detection
+        const referer = request.headers.get('referer')
+        if (referer && referer.includes('hub.kroescontrol.nl')) {
+          hubLoginUrl.searchParams.set('loop', 'detected')
+        }
+        
         return NextResponse.redirect(hubLoginUrl)
       }
       
@@ -58,6 +65,13 @@ export async function middleware(request: NextRequest) {
         
       const hubLoginUrl = new URL(`${hubUrl}/login`)
       hubLoginUrl.searchParams.set('redirect', request.url)
+      
+      // Add loop detection on error
+      const referer = request.headers.get('referer')
+      if (referer && referer.includes('hub.kroescontrol.nl')) {
+        hubLoginUrl.searchParams.set('loop', 'detected')
+      }
+      
       return NextResponse.redirect(hubLoginUrl)
     }
   }
