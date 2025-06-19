@@ -135,9 +135,9 @@ export default {
     }
   },
   sidebar: {
-    defaultMenuCollapseLevel: 1,  // Klapt alle menu's standaard in
+    defaultMenuCollapseLevel: 2,  // Toont hoofdsecties uitgeklapt
     toggleButton: true,
-    autoCollapse: true,  // Klapt andere secties automatisch in
+    autoCollapse: false,  // Houdt meerdere secties open
     titleComponent: ({ title, type, route }) => {
       const { data: session } = useSession()
       
