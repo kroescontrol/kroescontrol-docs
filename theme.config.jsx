@@ -150,18 +150,9 @@ export default {
       }
       
       // Hide protected sections if not authenticated
-      const protectedSections = ['Intern', 'Fin', 'Ops']
+      const protectedSections = ['🔒 Intern', '💰 Fin', '📊 Ops']
       if (protectedSections.includes(title) && !session) {
         return null
-      }
-      
-      // Add lock icon for protected sections
-      if (protectedSections.includes(title) && session) {
-        return (
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            🔒 {title}
-          </span>
-        )
       }
       
       // Make folders clickable by wrapping in link

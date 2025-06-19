@@ -7,19 +7,15 @@
     "type": "separator"
   },
   "public": {
-    "title": "🌐 Publiek",
-    "type": "page"
+    "title": "🌐 Publiek"
   },
   "internal": {
-    "title": "🔒 Intern", 
-    "type": "page"
+    "title": "🔒 Intern"
   },
   "operation": {
-    "title": "📊 Ops",
-    "type": "page"
+    "title": "📊 Ops"
   },
   "finance": {
-    "title": "💰 Fin",
-    "type": "page"
+    "title": "💰 Fin"
   }
 }

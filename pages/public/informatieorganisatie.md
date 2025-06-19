@@ -81,5 +81,5 @@ We hanteren een systeem van regelmatige reviews en updates. Belangrijke informat
 ## Meer informatie
 
 Voor specifieke vragen over onze informatieorganisatie kun je terecht bij:
-- **Algemeen**: [info@kroescontrol.nl](mailto:info@kroescontrol.nl)
+- **Algemeen**: [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl)
 - **Technisch**: [s.kroes@kroescontrol.nl](mailto:s.kroes@kroescontrol.nl)
