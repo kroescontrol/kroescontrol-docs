@@ -36,13 +36,14 @@ if (gitCommit === 'unknown') {
   }
 }
 
-// Get current date and time
+// Get current date and time in Dutch timezone (Europe/Amsterdam)
 const now = new Date();
-const year = now.getFullYear();
-const month = String(now.getMonth() + 1).padStart(2, '0');
-const day = String(now.getDate()).padStart(2, '0');
-const hours = String(now.getHours()).padStart(2, '0');
-const minutes = String(now.getMinutes()).padStart(2, '0');
+const dutchTime = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Amsterdam"}));
+const year = dutchTime.getFullYear();
+const month = String(dutchTime.getMonth() + 1).padStart(2, '0');
+const day = String(dutchTime.getDate()).padStart(2, '0');
+const hours = String(dutchTime.getHours()).padStart(2, '0');
+const minutes = String(dutchTime.getMinutes()).padStart(2, '0');
 
 // Determine environment
 let environment = 'dev'; // default for local development
@@ -55,6 +56,7 @@ if (process.env.VERCEL_ENV === 'production') {
 }
 
 // Format: YYYYMMDD-HHMM-env (timestamp based) or gitsha-YYYYMMDD-HHMM-env if git available
+// Note: HHMM is in Dutch timezone (Europe/Amsterdam)
 const buildId = gitCommit !== 'unknown' 
   ? `${gitCommit}-${year}${month}${day}-${hours}${minutes}-${environment}`
   : `${year}${month}${day}-${hours}${minutes}-${environment}`;
@@ -159,5 +161,6 @@ fs.writeFileSync(buildJsonPath, JSON.stringify(buildJson, null, 2));
 
 console.log(`Build ID generated: ${buildId}`);
 console.log(`Environment: ${environment}`);
+console.log(`Timestamp: Dutch time (Europe/Amsterdam)`);
 console.log(`Build info written to: ${envPath}`);
 console.log(`Build JSON written to: ${buildJsonPath}`);
