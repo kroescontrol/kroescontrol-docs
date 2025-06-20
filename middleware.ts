@@ -4,6 +4,12 @@ import type { NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   
+  // Skip auth checks in development
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(`🔓 Development mode: allowing access to ${pathname}`)
+    return NextResponse.next()
+  }
+  
   // Define protected routes that require authentication
   const protectedRoutes = [
     '/internal',
@@ -17,9 +23,7 @@ export async function middleware(request: NextRequest) {
   if (isProtectedRoute) {
     // Verify auth via hub API
     try {
-      const hubUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://hub.kroescontrol.nl'
-        : 'http://localhost:3002' // apphub local port
+      const hubUrl = 'https://hub.kroescontrol.nl'
         
       const authResponse = await fetch(`${hubUrl}/api/auth/verify`, {
         method: 'POST',
@@ -42,7 +46,7 @@ export async function middleware(request: NextRequest) {
         console.log(`🔒 Unauthorized access attempt to protected route: ${pathname}`)
         
         // Redirect naar hub voor login met loop detectie
-        const hubLoginUrl = new URL(`${hubUrl}/login`)
+        const hubLoginUrl = new URL('https://hub.kroescontrol.nl/login')
         hubLoginUrl.searchParams.set('redirect', request.url)
         
         // Add loop detection
@@ -59,11 +63,7 @@ export async function middleware(request: NextRequest) {
       console.error('Auth verification error:', error)
       
       // Bij error, redirect naar login voor veiligheid
-      const hubUrl = process.env.NODE_ENV === 'production'
-        ? 'https://hub.kroescontrol.nl'
-        : 'http://localhost:3002'
-        
-      const hubLoginUrl = new URL(`${hubUrl}/login`)
+      const hubLoginUrl = new URL('https://hub.kroescontrol.nl/login')
       hubLoginUrl.searchParams.set('redirect', request.url)
       
       // Add loop detection on error

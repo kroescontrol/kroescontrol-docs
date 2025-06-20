@@ -1,6 +1,6 @@
 # Kroescontrol Documentation 📚
 
-**Officiële documentatie voor Kroescontrol - gebouwd met Nextra en NextAuth**
+**Officiële documentatie voor Kroescontrol - gebouwd met Nextra**
 
 ## 📂 Content Structure
 
@@ -37,9 +37,10 @@ ln -s ../../vault/docs-finance pages/finance
 
 ## 🔐 Authentication
 
-- **NextAuth.js** met GitHub/Google OAuth
-- **Cross-domain SSO** met hub.kroescontrol.nl
-- **Role-based access** voor protected sections
+- **Development**: Alle content toegankelijk zonder login (auth checks disabled)
+- **Production**: Authenticatie via hub.kroescontrol.nl
+- **Cross-domain SSO**: Cookies gedeeld op `.kroescontrol.nl` domein
+- **Protected routes**: Middleware redirect naar hub voor login
 
 ## 🏗️ Deployment
 
@@ -68,7 +69,7 @@ docs/
 
 - 🔗 **Symlink strategy** - No content duplication
 - ⚡ **Real-time updates** - Edit source repos, see changes instantly
-- 🔐 **OAuth protection** - GitHub org + Google domain verification  
+- 🔐 **Centralized auth** - Via hub.kroescontrol.nl in productie  
 - 📱 **Responsive design** - Mobile-friendly documentation
 - 🔍 **Search integration** - Full-text search across all content
 

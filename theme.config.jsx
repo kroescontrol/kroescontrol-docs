@@ -1,5 +1,3 @@
-import { useSession } from 'next-auth/react'
-
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 export default {
   logo: (
@@ -92,34 +90,35 @@ export default {
   },
   navbar: {
     extraContent: function NavbarExtra() {
-      const { data: session, status } = useSession()
-      
-      if (status === 'loading') return null
-      
-      if (session) {
+      // In development, show development mode indicator
+      if (process.env.NODE_ENV !== 'production') {
         return (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px' }}>
-            <span style={{ color: '#10b981' }}>✓ Ingelogd als {session.user?.name || session.user?.email}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ color: '#f59e0b', fontSize: '14px' }}>🔓 Development Mode</span>
             <a 
-              href="/api/auth/signout"
+              href="http://localhost:3002/login"
               style={{ 
-                padding: '4px 8px', 
-                background: '#dc2626', 
+                padding: '6px 12px', 
+                background: '#1e40af', 
                 color: 'white', 
-                borderRadius: '4px', 
+                borderRadius: '6px', 
                 textDecoration: 'none',
-                fontSize: '12px'
+                fontSize: '14px'
               }}
             >
-              Uitloggen
+              Inloggen (hub)
             </a>
           </div>
         )
       }
       
+      // In production, simple login button
+      const hubUrl = 'https://hub.kroescontrol.nl'
+      const docsUrl = 'https://docs.kroescontrol.nl'
+      
       return (
         <a 
-          href="https://hub.kroescontrol.nl/login?redirect=https://docs.kroescontrol.nl" 
+          href={`${hubUrl}/login?redirect=${encodeURIComponent(docsUrl)}`}
           style={{ 
             padding: '6px 12px', 
             background: '#1e40af', 
@@ -139,8 +138,6 @@ export default {
     toggleButton: true,
     autoCollapse: false,  // Houdt meerdere secties open
     titleComponent: ({ title, type, route }) => {
-      const { data: session } = useSession()
-      
       // Hide FreelanceControl in production
       if (
         (process.env.NODE_ENV === 'production' || process.env.HIDE_FREELANCECONTROL === 'true') &&
@@ -149,10 +146,11 @@ export default {
         return null
       }
       
-      // Hide protected sections if not authenticated
+      // Hide protected sections in production (they are handled by middleware)
       const protectedSections = ['🔒 Intern', '💰 Fin', '📊 Ops']
-      if (protectedSections.includes(title) && !session) {
-        return null
+      if (protectedSections.includes(title) && process.env.NODE_ENV === 'production') {
+        // In production, these sections are protected by middleware
+        // Let them show - if user can't access, middleware will redirect
       }
       
       // Make folders clickable by wrapping in link

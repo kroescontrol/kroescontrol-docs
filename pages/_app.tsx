@@ -1,15 +1,14 @@
 import type { AppProps } from 'next/app'
-import { SessionProvider } from 'next-auth/react'
 import Head from 'next/head'
 import '../styles/mobile.css'
 import '../styles/kroescontrol.css'
 
 export default function App({ 
   Component, 
-  pageProps: { session, ...pageProps } 
+  pageProps 
 }: AppProps) {
   return (
-    <SessionProvider session={session}>
+    <>
       <Head>
         {/* PWA manifest - werkt maar wordt niet opdringerig aangeboden */}
         <link rel="manifest" href="/manifest.json" />
@@ -26,6 +25,6 @@ export default function App({
         <link rel="apple-touch-icon" href="/img/KC-beeldmerk-gradientKLEUR.svg" />
       </Head>
       <Component {...pageProps} />
-    </SessionProvider>
+    </>
   )
 }

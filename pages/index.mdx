@@ -4,7 +4,6 @@ description: Welkom bij het documentatieportaal van Kroescontrol
 ---
 
 import { Cards, Card } from 'nextra/components'
-import { useSession } from 'next-auth/react'
 
 # Welkom bij Kroescontrol Docs 👋
 
@@ -28,9 +27,8 @@ Dit is het centrale documentatieportaal van Kroescontrol, waar alle informatie s
 
 
 export function WelcomeMessage() {
-  const { data: session } = useSession()
-  
-  if (session) {
+  // In development, show special message
+  if (process.env.NODE_ENV !== 'production') {
     return (
       <div style={{
         padding: '20px',
@@ -39,12 +37,13 @@ export function WelcomeMessage() {
         margin: '32px 0',
         textAlign: 'center'
       }}>
-        <h3 style={{ margin: '0 0 8px 0' }}>Welkom terug, {session.user?.name || 'Kroescontroller'}! 🎉</h3>
-        <div style={{ margin: 0, opacity: 0.8 }}>Je hebt volledige toegang tot alle documentatie secties.</div>
+        <h3 style={{ margin: '0 0 8px 0' }}>🔓 Development Mode - Alle secties toegankelijk</h3>
+        <div style={{ margin: 0, opacity: 0.8 }}>In development mode heb je toegang tot alle documentatie zonder in te loggen.</div>
       </div>
     )
   }
   
+  // In production, show default welcome
   return (
     <div style={{
       padding: '20px',

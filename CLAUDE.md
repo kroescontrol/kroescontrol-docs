@@ -47,10 +47,15 @@ docs/
 
 ### Lokale Ontwikkeling
 ```bash
-npm run dev     # Start development server op http://localhost:3000
+npm run dev     # Start development server op http://localhost:3003
 npm run build   # Bouw voor productie
 npm run lint    # Controleer code kwaliteit
 ```
+
+**Development Mode:**
+- Alle content is toegankelijk zonder in te loggen
+- Auth checks zijn uitgeschakeld in middleware
+- UI toont "🔓 Development Mode" indicator
 
 ### Content Toevoegen
 1. Maak nieuwe `.mdx` bestand in juiste directory
@@ -115,10 +120,31 @@ npm run lint    # Controleer code kwaliteit
 - ❌ Operationele docs → vault/docs-operation
 - ❌ Gevoelige data → vault repository
 
+## Authenticatie
+
+### Development
+- **Geen authenticatie vereist** - alle content toegankelijk
+- Middleware skipt auth checks wanneer `NODE_ENV !== 'production'`
+- Login knop verwijst naar apphub op localhost:3002 (werkt niet voor cross-port cookies)
+
+### Production/Preview
+- **Centralized auth** via hub.kroescontrol.nl
+- Middleware checkt toegang via `https://hub.kroescontrol.nl/api/auth/verify`
+- Bij geen toegang: redirect naar hub login pagina
+- Na succesvolle login: cookie op `.kroescontrol.nl` domein wordt gedeeld
+- Protected routes: `/internal`, `/operations`, `/finance`
+
+### Belangrijke Wijziging (2025-06-20)
+- NextAuth volledig verwijderd uit docs repository
+- Alle OAuth afhandeling gebeurt nu via centrale hub
+- Simpelere setup, minder dependencies
+- Development mode voor makkelijk lokaal werken
+
 ## Migratie Notities
 
 Dit project is gemigreerd van Docusaurus naar Nextra:
 - Git-crypt is volledig verwijderd
+- NextAuth is verwijderd - auth via centrale hub
 - Beschermde content wordt niet meer in deze repo beheerd
 - Focus op publieke documentatie
 - Deze repo is publiek toegankelijk op GitHub
