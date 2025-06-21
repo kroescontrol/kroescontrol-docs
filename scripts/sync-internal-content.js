@@ -37,11 +37,8 @@ function copyRecursive(src, dest) {
       fs.mkdirSync(dest, { recursive: true });
     }
     fs.readdirSync(src).forEach(childItemName => {
-      // Skip _meta.json in root to preserve local navigation
-      if (childItemName === '_meta.json' && src === SOURCE_DIR) {
-        console.log('   Skipping _meta.json (preserving local navigation)');
-        return;
-      }
+      // Don't skip _meta.json anymore - always sync from source
+      // This ensures navigation stays in sync with apphub
       copyRecursive(
         path.join(src, childItemName),
         path.join(dest, childItemName)
@@ -54,7 +51,7 @@ function copyRecursive(src, dest) {
 
 // Clean target directory but preserve specific files
 // This ensures that deleted files in source are also removed from target
-const filesToPreserve = ['_meta.json', 'index.mdx'];
+const filesToPreserve = ['index.mdx']; // _meta.json wordt nu ook gesynchroniseerd
 if (fs.existsSync(TARGET_DIR)) {
   // Save files to preserve
   const preserved = {};

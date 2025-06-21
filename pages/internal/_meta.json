@@ -1,12 +1,9 @@
 {
   "index": "Overzicht",
-  "platform": "Platform Docs",
   "hr": "HR & Personeelszaken",
   "onboarding": "Onboarding",
   "budgetten": "Budgetten",
   "verzekeringen": "Verzekeringen",
-  "administratie": "Administratie",
-  "compliance": "Compliance",
-  "mobility": "Mobility",
-  "tools": "Tools & Systemen"
+  "tools": "Tools & Systemen",
+  "engineering": "Engineering"
 }

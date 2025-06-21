@@ -2,12 +2,12 @@
 title: Werkmethode Kroescontrol
 sidebar_position: 1
 description: Overzicht van onze open en transparante werkmethode en filosofie.
-slug: /tools/documentatie/werkmethode
+slug: /cultuur/werkmethode
 tags:
   - werkmethode
   - filosofie
+  - cultuur
   - open-source
-  - documentatie
   - samenwerking
 keywords:
   - werkwijze

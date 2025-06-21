@@ -6,14 +6,7 @@
   "werken-bij": "Werken bij",
   "kantoor": "Kantoor",
   "bezoekers": "Bezoekers",
-  "cultuur": {
-    "title": "Cultuur & Community",
-    "display": "hidden"
-  },
-  "tools": {
-    "title": "Tools & Diensten",
-    "display": "hidden"
-  },
+  "cultuur": "Cultuur & Community",
   "klanten": {
     "title": "Onze Klanten",
     "display": "hidden"

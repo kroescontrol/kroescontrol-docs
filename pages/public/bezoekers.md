@@ -44,16 +44,16 @@ Leuk dat je langskomt! Of je nu komt voor koffie, een meeting of een dagje meewe
 
 ### Amsterdam
 **De bruisende hoofdlocatie**
-- Ceintuurbaan 101, 1072 EW Amsterdam
-- **Met OV**: 5 min lopen vanaf tram/metro
-- **Met auto**: Betaald parkeren (€4,50/uur - ja, welkom in Amsterdam)
-- **Insider tip**: Dinsdag is marktdag = drukte
+- Stationsplein 9, 1012 AB Amsterdam
+- **Met OV**: 30 seconden nadat je uitgecheckt hebt bij de NS
+- **Met auto**: Betaald parkeren (€5-7/uur - ja, welkom in Amsterdam)
+- **Insider tip**: Direct naast Amsterdam Centraal!
 
 ### Klarenbeek
 **De zen locatie**
-- Woudweg 5, 7381 BA Klarenbeek
+- Oudhuizerstraat 31, 7382 BS Klarenbeek
 - **Met auto**: Gratis parkeren! (ja, echt)
-- **Met OV**: Station Klarenbeek + 10 min fietsen
+- **Met OV**: 10 min vanaf station Apeldoorn
 - **Waarschuwing**: Hier werken we écht geconcentreerd
 
 [Alle locaties & routes →](/public/kantoor)

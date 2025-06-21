@@ -1,8 +1,8 @@
 ---
-title: Onze Cultuur & Waarden
+title: Bedrijfscultuur
 sidebar_position: 2
 description: Informatie over de cultuur en waarden van Kroescontrol.
-slug: /werken-bij/cultuur
+slug: /werken-bij/bedrijfscultuur
 tags:
   - kroescontrol
   - cultuur
@@ -24,7 +24,7 @@ last_update:
 docStatus: live
 ---
 
-# Onze Cultuur & Waarden
+# Bedrijfscultuur
 
 Bij Kroescontrol geloven we dat onze cultuur en waarden de basis vormen voor ons succes. Ze bepalen hoe we samenwerken, hoe we omgaan met uitdagingen en hoe we groeien als team en als individuen.
 

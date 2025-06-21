@@ -22,6 +22,8 @@ Ons Klarenbeek kantoor ligt in het hart van de Veluwe, omgeven door natuur en ru
 Oudhuizerstraat 31  
 7382 BS Klarenbeek  
 
+[📍 Bekijk op Google Maps](https://www.google.com/maps/search/?api=1&query=Oudhuizerstraat+31,+7382+BS+Klarenbeek)
+
 **Contact:**  
 Telefoon: 055-301 1082  
 Email: info@mrgreenoffices.nl  
@@ -79,17 +81,17 @@ Klarenbeek ligt centraal in Nederland, goed bereikbaar via de A1 en A50. Het kan
 
 ## 📞 Support & Assistentie
 
+### Kroescontrol Support
+Voor Kroescontrol-specifieke vragen:
+- Neem contact op met je Kroescontrol contactpersoon
+- Of mail naar: info@kroescontrol.nl
+
 ### Mr. Green Office Support
 Voor vragen over faciliteiten, problemen of assistentie:
 - **Telefoon:** 055-301 1082
 - **WhatsApp:** +31 55 799 8765
 - **Email:** info@mrgreenoffices.nl
 - **On-site support:** Ma-Vr 8:00-17:00
-
-### Kroescontrol Support
-Voor Kroescontrol-specifieke vragen:
-- Neem contact op met je Kroescontrol contactpersoon
-- Of mail naar: info@kroescontrol.nl
 
 ## 🗺️ Routebeschrijving
 

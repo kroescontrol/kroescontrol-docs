@@ -3,7 +3,7 @@ title: Kroescontrol Engineer
 sidebar_position: 20
 description: Meer gedetailleerde informatie voor engineers in de oriëntatiefase
 collapsed: true
-slug: /kroescontrol-engineer
+slug: /kennismaking
 tags:
   - kroescontrol
   - engineer

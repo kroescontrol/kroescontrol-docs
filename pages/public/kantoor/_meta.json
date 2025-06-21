@@ -2,10 +2,15 @@
   "index": {
     "display": "hidden"
   },
-  "locaties": {
+  "amsterdam": {
     "display": "hidden"
   },
-  "faciliteiten": "Faciliteiten",
+  "klarenbeek": {
+    "display": "hidden"
+  },
+  "faciliteiten": {
+    "display": "hidden"
+  },
   "vergaderruimtes": {
     "display": "hidden"
   },
