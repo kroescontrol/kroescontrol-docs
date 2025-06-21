@@ -13,7 +13,7 @@ export async function middleware(request: NextRequest) {
   // Define protected routes that require authentication
   const protectedRoutes = [
     '/internal',
-    '/operations', 
+    '/operation',   // Fixed: was '/operations' with an 's'
     '/finance'
   ]
   
