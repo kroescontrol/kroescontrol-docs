@@ -5,9 +5,7 @@
   "locaties": {
     "display": "hidden"
   },
-  "faciliteiten": {
-    "display": "hidden"
-  },
+  "faciliteiten": "Faciliteiten",
   "vergaderruimtes": {
     "display": "hidden"
   },

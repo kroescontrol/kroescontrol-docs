@@ -53,6 +53,14 @@ Het Engineer Budget is een maandelijks budget dat je kunt gebruiken voor profess
 4. Bij hardware worden afschrijvingen automatisch berekend en inzichtelijk gemaakt
 5. Kostenbewust werken wordt beloond met bonussen
 
+### Aankoopopties
+
+Je kunt op verschillende manieren aankopen doen binnen je Engineer Budget:
+
+- **Privé-declaratie**: Via HoorayHR kun je uitgaven declareren
+- **Zakelijke creditcard**: We werken met Bunq voor directe zakelijke aankopen
+- **Centrale aankoopprocedure**: Voor grotere aankopen of specifieke leveranciers
+
 ### Belangrijke kenmerken
 
 - **Transparantie**: Alle uitgaven en het beschikbare saldo zijn altijd inzichtelijk
@@ -93,6 +101,15 @@ Bij Kroescontrol stimuleren we een kostenbewuste aanpak. Dit betekent niet dat j
 - **Bespaarbonus**: Als je minder uitgeeft dan je beschikbare Mobiliteitsbudget, kun je tot 20% van dat budget overhevelen naar je Engineer Budget
 - **Financiële gezondheid**: Kostenbewust werken draagt bij aan de gezonde financiële basis van Kroescontrol
 - **Win-win situatie**: Jij krijgt meer bestedingsruimte voor professionele ontwikkeling, en Kroescontrol kan investeren in verdere groei
+
+## Verwerking en administratie
+
+Alle declaraties en budgetten worden centraal gecontroleerd en verwerkt:
+
+- **Real-time inzicht**: Via de Engineer Hub heb je altijd actueel inzicht in de status van jouw budgetten
+- **Duidelijke procedures**: We werken met heldere afspraken om overschrijdingen of misverstanden te voorkomen
+- **Centrale controle**: Alle uitgaven worden gecontroleerd op juistheid en conformiteit
+- **Transparante communicatie**: Bij vragen of onduidelijkheden nemen we direct contact op
 
 ## Veelgestelde vragen
 

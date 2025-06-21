@@ -37,57 +37,106 @@ Bij Kroescontrol zijn we altijd op zoek naar getalenteerde professionals die ons
 
 ## Huidige vacatures
 
-### Cloud Native Platform Engineer
+Vanwege onze groeiambities zijn wij op zoek naar:
+
+### Cloud Native Engineer
 
 **Locatie:** Nederland (mix van thuiswerken en klantlocaties)
-**Type:** Fulltime
+**Type:** Fulltime (40 uur per week)
 
 #### Functieomschrijving
-Als Cloud Native Platform Engineer bij Kroescontrol ga je werken aan het ontwerpen, implementeren en beheren van moderne, schaalbare infrastructuur op basis van Kubernetes en andere Cloud Native technologieën. Je werkt bij toonaangevende organisaties aan uitdagende projecten die een verschil maken.
+Als Cloud Native Engineer bij Kroescontrol ga je werken aan het ontwerpen, implementeren en beheren van moderne, schaalbare infrastructuur op basis van Kubernetes en andere Cloud Native technologieën. Je werkt bij toonaangevende organisaties aan uitdagende projecten die een verschil maken.
 
-#### Wat we zoeken
-- Minimaal 3 jaar ervaring met Linux systeembeheer en infrastructuur-automatisering
-- Hands-on ervaring met Kubernetes en containerisatie
-- Kennis van tenminste één public cloud platform (AWS, Azure, GCP)
-- Ervaring met Infrastructure as Code tools (Terraform, Ansible, etc.)
-- Affiniteit met DevOps-principes en CI/CD-processen
-- Goede communicatieve vaardigheden in Nederlands en Engels
+#### Jouw profiel
+- Je beschikt over een professioneel werk- en denkniveau
+- Je hebt ervaring als Cloud Engineer of DevOps Engineer
+- Je bent bekend met ten minste één van de drie grote public cloud providers
+- Je hebt kennis en ervaring met:
+  - Containerisatie (bijv. Docker, Kubernetes)
+  - Configuratiebeheer (bijv. Ansible)
+  - Infrastructure as Code (bijv. Terraform)
+  - CI/CD-processen en automatisering
+  - Beveiliging en observatie van cloudomgevingen
+  - Pakketbeheer en applicatie-implementatie (bijv. Helm)
+  - Continuous Deployment en GitOps-tools (bijv. Argo CD)
+- Je blijft actief op de hoogte van ontwikkelingen in het cloud-native landschap
+- Je beschikt over uitstekende communicatieve vaardigheden
+- Je kunt management adviseren en ondersteunen
+- Je bent vaardig in het opstellen van duidelijke documentatie
+
+#### Verantwoordelijkheden
+- Uitvoeren van opdrachten, architectuur- of analysewerkzaamheden voor klanten
+- Samenwerken in taakgerichte teams met andere engineers
+- Implementeren van verbeteringen en oplossingen voor een groot aantal gebruikers
+- Installeren, updaten en configureren van cloud-native omgevingen
+- Oplossen van technische problemen
+- Integreren van CI/CD-pipelines
+- Meedenken over de ontwikkeling van IT-oplossingen en processen
 
 #### Wat we bieden
-- Een uitdagende functie met veel autonomie en ontwikkelmogelijkheden
-- 30 vakantiedagen bij een fulltime dienstverband
-- Persoonlijk Engineer Budget en Mobiliteitsbudget
-- Werken in een team van gepassioneerde engineers
-- Zie onze [voordelen](/public/werken-bij/voordelen) pagina voor het complete pakket
+- Salaris afhankelijk van ervaring
+- Mogelijkheid om te werken vanuit huis of vanuit onze boutique kantoren in Amsterdam, Rotterdam of Klarenbeek (regio Arnhem)
+- Flexibele werkuren
+- Bonus/winstdeling
+- Reiskostenvergoeding
+- Bedrijfsauto
+- Budget voor professionele ontwikkeling (zonder financiële beperking)
+- 30 vakantiedagen
+- Pensioenregeling
+- Zie onze [voordelen](/werken-bij/voordelen) pagina voor het complete pakket
 
 #### Solliciteren
-Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
+Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl) of bel +31 6 3411 6494.
 
-### DevOps Engineer / Site Reliability Engineer
+### Platform Engineer
 
 **Locatie:** Nederland (mix van thuiswerken en klantlocaties)
-**Type:** Fulltime
+**Type:** Fulltime (40 uur per week)
 
-#### Functieomschrijving
-Als DevOps/SRE Engineer bij Kroescontrol focus je op het automatiseren en optimaliseren van infrastructuur om betrouwbare, schaalbare en hoog-beschikbare systemen te realiseren. Je werkt samen met ontwikkelteams om hen te helpen sneller en met meer vertrouwen te leveren.
+#### Jouw profiel
+- Je draagt actief bij aan de architectuur van state-of-the-art cloud platforms
+- Je ontwikkelt cloud-native applicaties en tooling met technologieën zoals Golang en Kubernetes
+- Je zorgt voor beveiliging met moderne technieken zoals Services Meshes en API Gateways
+- Je kunt kennisdelingssessies leiden en workshops geven
+- Je hebt ervaring met:
+  - CI/CD Tools: Ansible, Helm, Jenkins, ArgoCD
+  - Programming Languages: Golang voor cloud native applicatieontwikkeling
+  - Kubernetes: ontwikkeling voor Kubernetes cloud omgeving (kennis van Kubernetes API is een pré)
+  - Security: Identity Providers (ADFS), Security (Oauth2/OpenId)
+  - Monitoring en Logging in een cloud omgeving
+  - Operating Systems: CentOS/RHEL/Debian/Alma Linux en Docker
+  - Networking (DNS/BGP/etc), HAProxy/NGINX, OpenSSL
+  - DevOps en Agile methodologieën, MVP denkwijze
+  - Diverse tools zoals ArgoCD, Elasticsearch, Kibana, Prometheus, Grafana, Sonatype Nexus
 
-#### Wat we zoeken
-- Minimaal 2 jaar ervaring in een DevOps of SRE rol
-- Ervaring met monitoring- en observability-tools (Prometheus, Grafana, ELK)
-- Kennis van CI/CD-pipelines en GitOps
-- Affiniteit met automatisering en scripting (Python, Go, Bash)
-- Ervaring met incident management en troubleshooting
-- Goede communicatieve vaardigheden in Nederlands en Engels
+#### Vaardigheden
+- Sterke analytische vaardigheden
+- Goede communicatieve en sociale vaardigheden
+- Security awareness
+- Agile mindset met DevOps verantwoordelijkheidsgevoel
 
 #### Wat we bieden
-- Een uitdagende functie met veel autonomie en ontwikkelmogelijkheden
-- 30 vakantiedagen bij een fulltime dienstverband
-- Persoonlijk Engineer Budget en Mobiliteitsbudget
-- Werken in een team van gepassioneerde engineers
-- Zie onze [voordelen](/public/werken-bij/voordelen) pagina voor het complete pakket
+- Salaris afhankelijk van ervaring
+- Mogelijkheid om te werken vanuit huis of vanuit onze boutique kantoren in Amsterdam, Rotterdam of Klarenbeek (regio Arnhem)
+- Flexibele werkuren
+- Bonus/winstdeling
+- Reiskostenvergoeding
+- Bedrijfsauto
+- Budget voor professionele ontwikkeling (zonder financiële beperking)
+- 30 vakantiedagen
+- Pensioenregeling
+- Zie onze [voordelen](/werken-bij/voordelen) pagina voor het complete pakket
 
 #### Solliciteren
-Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl).
+Om te solliciteren, stuur je CV en een korte motivatie naar [patriek@kroescontrol.nl](mailto:patriek@kroescontrol.nl) of bel +31 6 3411 6494.
+
+## Certificeringen en opleidingen
+
+Bij Kroescontrol is "the sky the limit" als het gaat om professionele ontwikkeling. We leggen geen financiële beperking op het studiebudget en hechten veel waarde aan certificaten. In overleg is veel mogelijk. Passie voor techniek staat bij ons altijd voorop!
+
+## Onze cultuur
+
+Naast het werk organiseren we maandelijks leuke activiteiten zoals karten of snowboarden, gevolgd door een etentje. In onze vrije tijd houden we ons bezig met Tesla's, domotica en techniek in het algemeen. We geloven in een cultuur waarin we elkaar inspireren tot vindingrijke developer en engineering activiteiten, waardoor innovatie en creativiteit kunnen floreren.
 
 ## Open sollicitatie
 

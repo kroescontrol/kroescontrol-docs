@@ -48,6 +48,10 @@ start_server() {
         npm install
     fi
     
+    # Sync internal content first
+    echo -e "${YELLOW}Syncing internal documentation content...${NC}"
+    npm run sync-internal
+    
     echo -e "${YELLOW}Starting Docs dev server on port $PORT...${NC}"
     echo "Log file: $LOG_FILE"
     
