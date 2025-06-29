@@ -1,0 +1,55 @@
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.statusTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.statusTable th {
+  white-space: nowrap;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+.statusTable th:first-child {
+  width: 35%;
+}
+
+.statusTable th:nth-child(2) {
+  width: 10%;
+}
+
+.statusTable th:nth-child(3) {
+  width: 15%;
+}
+
+.statusTable td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.statusTable td a {
+  text-decoration: none;
+}
+
+.statusTable td.wrap {
+  white-space: normal;
+}
+
+.statusTable td.center {
+  text-align: center;
+}
+
+.sectionHeader {
+  background-color: #f0f0f0;
+}
+
+.subsectionHeader {
+  background-color: #f8f8f8;
+}

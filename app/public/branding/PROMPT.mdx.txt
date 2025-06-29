@@ -1,0 +1,34 @@
+# PROMPT voor Branding Sectie
+
+## Doel
+Deze directory bevat alle publieke informatie over de Kroescontrol huisstijl en visuele identiteit.
+
+## Content Richtlijnen
+
+### WEL in deze sectie:
+- Logo gebruik en downloads
+- Kleurenschema's met exacte specificaties (HEX, RGB, CMYK)
+- Typografie richtlijnen
+- Ontwerpfilosofie en merkwaarden
+- Algemene gebruiksrichtlijnen voor externe partners
+- Publiek toegankelijke brand assets
+
+### NIET in deze sectie:
+- Interne marketing strategieën
+- Confidentiële merkplannen
+- Financiële informatie over branding kosten
+- Niet-gepubliceerde logo varianten of concepten
+- Leveranciersinformatie van drukkers/designers
+
+## Structuur
+- `index.mdx` - Hoofdpagina met filosofie en overzicht
+- `kleuren.md` - Kleurenpalet met specificaties
+- `logo.md` - Logo varianten en gebruiksrichtlijnen
+- `beeldmerk.md` - Standalone beeldmerk informatie
+- `downloads.md` - Downloadbare assets
+
+## Schrijfstijl
+- Professioneel maar toegankelijk
+- Focus op praktische toepassing
+- Inclusief voor zowel interne als externe gebruikers
+- Duidelijke do's en don'ts waar relevant

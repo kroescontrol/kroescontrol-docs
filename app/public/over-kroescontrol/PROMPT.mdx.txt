@@ -1,0 +1,33 @@
+# PROMPT: Over Kroescontrol
+
+## Sectie Context
+**Directory**: `./docs/pages/public/over-kroescontrol/`  
+**Doel**: Publieke informatie over Kroescontrol als bedrijf
+
+## Documentatie Richtlijnen
+
+Deze sectie bevat alleen publiek toegankelijke informatie over Kroescontrol:
+- Bedrijfsgegevens (KvK, contactinfo, vestigingen)
+- Het ontstaan en de visie van het bedrijf
+- Specialisaties en dienstverlening
+- Algemene bedrijfscultuur (geen interne details)
+
+### Wat hoort hier WEL:
+- Publieke bedrijfsinformatie
+- Marketing/sales informatie
+- Algemene visie en missie
+- Publieke klantlijst
+- Certificeringen (SNA, WAADI)
+
+### Wat hoort hier NIET:
+- Interne werkprocessen
+- Financiële details
+- Personeelsinformatie
+- Klantspecifieke projectdetails
+- Interne strategische plannen
+
+## Schrijfstijl
+- Professioneel maar toegankelijk
+- Focus op wat Kroescontrol uniek maakt
+- Vermijd technisch jargon waar mogelijk
+- Schrijf vanuit "wij" perspectief

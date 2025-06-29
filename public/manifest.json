@@ -1,0 +1,28 @@
+{
+  "name": "Kroescontrol Documentation",
+  "short_name": "KC Docs",
+  "description": "Officiële documentatie voor Kroescontrol engineers en partners",
+  "theme_color": "#E4007C",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/logo-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "developer", "productivity"],
+  "lang": "nl-NL",
+  "dir": "ltr"
+}

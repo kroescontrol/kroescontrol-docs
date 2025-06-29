@@ -1,0 +1,50 @@
+{
+  "name": "Kroescontrol Documentation",
+  "short_name": "KC Docs",
+  "description": "Kroescontrol technische documentatie en kennisbank",
+  "theme_color": "#1a1a2e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/KC-beeldmerk-gradientKLEUR.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "education", "developer"],
+  "lang": "nl-NL",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Werken bij",
+      "url": "/public/werken-bij",
+      "description": "Carrière mogelijkheden"
+    },
+    {
+      "name": "Kantoor",
+      "url": "/public/kantoor",
+      "description": "Kantoorlocaties"
+    },
+    {
+      "name": "Tools",
+      "url": "/public/tools",
+      "description": "Tools & diensten"
+    }
+  ]
+}

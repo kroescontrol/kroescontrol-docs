@@ -1,0 +1,31 @@
+{
+  "index": "Public Home",
+  "over-kroescontrol": "Over Kroescontrol",
+  "informatieorganisatie": "Informatieorganisatie",
+  "kennismaking": "Kennismaking",
+  "werken-bij": "Werken bij",
+  "kantoor": "Kantoor",
+  "bezoekers": "Bezoekers",
+  "cultuur": "Cultuur & Community",
+  "klanten": {
+    "title": "Onze Klanten",
+    "display": "hidden"
+  },
+  "welkom": {
+    "title": "Welkom",
+    "display": "hidden"
+  },
+  "branding": "Branding",
+  "sna-keurmerk": {
+    "title": "Certificering",
+    "display": "hidden"
+  },
+  "contact": {
+    "title": "Contact",
+    "display": "hidden"
+  },
+  "_status": {
+    "title": "Status",
+    "display": "hidden"
+  }
+}
