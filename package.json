@@ -1,0 +1,31 @@
+{
+  "name": "kroescontrol-docs",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3003",
+    "dev:sync": "./scripts/sync-content.sh && next dev -p 3003",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sync": "./scripts/sync-content.sh",
+    "migrate": "./scripts/migrate-content.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Kroescontrol public documentation - Nextra v4",
+  "dependencies": {
+    "@types/node": "^24.0.7",
+    "@types/react": "^19.1.8",
+    "autoprefixer": "^10.4.21",
+    "next": "^15.3.4",
+    "nextra": "^4.2.17",
+    "nextra-theme-docs": "^4.2.17",
+    "postcss": "^8.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  }
+}
