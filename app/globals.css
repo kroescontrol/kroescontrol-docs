@@ -1,0 +1,49 @@
+/* Basic CSS reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Kroescontrol brand colors */
+:root {
+  --kroescontrol-pink: #E4007C;
+  --kroescontrol-pink-light: #f33d9a;
+  --kroescontrol-pink-dark: #c00069;
+}
+
+/* Override Nextra primary color */
+.nx-text-primary-600 {
+  color: var(--kroescontrol-pink) !important;
+}
+
+.nx-bg-primary-100 {
+  background-color: rgba(228, 0, 124, 0.1) !important;
+}
+
+/* Links */
+a {
+  color: var(--kroescontrol-pink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--kroescontrol-pink-dark);
+  text-decoration: underline;
+}
+
+/* Selected sidebar item */
+.nx-bg-primary-100.dark\:nx-bg-primary-300\/10 {
+  background-color: rgba(228, 0, 124, 0.1) !important;
+}
+
+/* Active sidebar text */
+.nx-text-primary-600.dark\:nx-text-primary-500 {
+  color: var(--kroescontrol-pink) !important;
+}

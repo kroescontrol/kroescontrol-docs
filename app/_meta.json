@@ -1,0 +1,10 @@
+{
+  "index": {
+    "title": "Home",
+    "display": "hidden"
+  },
+  "public": "Publiek",
+  "internal": "Intern",
+  "operation": "Operatie",
+  "finance": "Finance"
+}
