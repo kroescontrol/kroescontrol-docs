@@ -15,7 +15,9 @@
     "type-check": "tsc --noEmit",
     "validate:mdx": "node scripts/validate-mdx.js",
     "fix:mdx": "node scripts/fix-nextra-components.js",
-    "fix:mdx:dry": "node scripts/fix-nextra-components.js --dry-run"
+    "fix:mdx:dry": "node scripts/fix-nextra-components.js --dry-run",
+    "validate:pre-build": "node ../scripts/pre-build-validate.js",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -33,5 +35,8 @@
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }
