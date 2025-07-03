@@ -11,7 +11,7 @@
     "lint": "next lint",
     "sync": "./scripts/sync-content.sh",
     "migrate": "./scripts/migrate-content.sh",
-    "pre-push": "./scripts/pre-push-check.sh",
+    "pre-push": "./scripts/validate-before-push.sh",
     "type-check": "tsc --noEmit",
     "validate:mdx": "node scripts/validate-mdx.js",
     "validate:mdx:sources": "node scripts/validate-mdx-with-sources.js",
@@ -19,7 +19,6 @@
     "fix:mdx:dry": "node scripts/fix-nextra-components.js --dry-run",
     "validate:pre-build": "node ../scripts/pre-build-validate.js",
     "validate:push": "./scripts/validate-before-push.sh",
-    "pre-push": "./scripts/validate-before-push.sh",
     "prepare": "husky"
   },
   "keywords": [],
@@ -40,6 +39,10 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "husky": "^9.1.7"
+    "eslint": "^8",
+    "eslint-config-next": "15.3.3",
+    "eslint-plugin-mdx": "^3.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2"
   }
 }

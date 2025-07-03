@@ -1,16 +1,9 @@
-echo "🔍 Running MDX validation before commit..."
-node ../scripts/validate-mdx-content.js
+
+echo "🔍 Running pre-commit checks on staged files..."
+npx lint-staged
 
 if [ $? -ne 0 ]; then
-  echo "❌ MDX validation failed! Please fix the errors before committing."
-  exit 1
-fi
-
-echo "🔍 Running TypeScript type check..."
-npm run type-check
-
-if [ $? -ne 0 ]; then
-  echo "❌ TypeScript type check failed! Please fix the errors before committing."
+  echo "❌ Pre-commit checks failed! Please fix the errors before committing."
   exit 1
 fi
 
