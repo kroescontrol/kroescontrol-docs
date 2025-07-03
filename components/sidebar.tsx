@@ -3,7 +3,14 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Session } from 'next-auth'
+// Session type definition (next-auth is removed from this repo)
+interface Session {
+  user?: {
+    name?: string
+    email?: string
+    roles?: string[]
+  }
+}
 
 interface NavigationItem {
   name: string
@@ -44,9 +51,27 @@ const navigation: NavigationItem[] = [
     icon: '🔐',
     roles: ['engineer', 'operation', 'finance'],
     children: [
-      { name: 'Procedures', href: '/internal/procedures' },
-      { name: 'Tools', href: '/internal/tools' },
-      { name: 'Resources', href: '/internal/resources' },
+      { name: 'HR & Personeelszaken', href: '/internal/hr' },
+      { name: 'Onboarding', href: '/internal/onboarding' },
+      { name: 'Budgetten', href: '/internal/budgetten' },
+      { name: 'Verzekeringen', href: '/internal/verzekeringen' },
+      { 
+        name: 'Tools & Systemen', 
+        href: '/internal/tools',
+        children: [
+          { name: 'HoorayHR', href: '/internal/tools/hoorayhr' },
+          { name: 'Clockify', href: '/internal/tools/clockify' },
+          { name: 'Mr. Green', href: '/internal/tools/mr-green' },
+          { name: '1Password', href: '/internal/tools/1password' },
+          { name: 'Google Workspace', href: '/internal/tools/google-workspace' },
+          { name: 'HubSpot', href: '/internal/tools/hubspot' },
+          { name: 'Engineer Hub', href: '/internal/tools/engineer-hub' },
+          { name: 'Claude Code', href: '/internal/tools/claudecode' },
+          { name: 'Control Hub', href: '/internal/tools/controlhub' },
+          { name: 'Documentatie', href: '/internal/tools/documentatie' },
+        ]
+      },
+      { name: 'Engineering', href: '/internal/engineering' },
     ]
   },
   { 
@@ -77,7 +102,7 @@ const navigation: NavigationItem[] = [
 
 export function Sidebar() {
   const pathname = usePathname()
-  const [expandedItems, setExpandedItems] = useState<string[]>(['Publiek'])
+  const [expandedItems, setExpandedItems] = useState<string[]>(['Publiek', 'Intern', 'Tools & Systemen'])
   const [session, setSession] = useState<Session | null>(null)
   const [loading, setLoading] = useState(true)
   
@@ -88,7 +113,9 @@ export function Sidebar() {
         setSession(data)
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch((err) => {
+        setLoading(false)
+      })
   }, [])
   
   const toggleExpand = (name: string) => {
@@ -100,9 +127,12 @@ export function Sidebar() {
   }
   
   const hasAccess = (item: NavigationItem): boolean => {
+    // In development mode, allow access to all sections
+    if (process.env.NODE_ENV === 'development') return true
+    
     if (!item.roles || item.roles.length === 0) return true
     if (!session?.user?.roles) return false
-    return item.roles.some(role => session.user.roles?.includes(role))
+    return item.roles.some(role => session.user?.roles?.includes(role) || false)
   }
   
   const getSectionItems = (section: string) => {
@@ -127,18 +157,22 @@ export function Sidebar() {
             return (
               <li key={item.href}>
                 <div className="nav-item">
-                  {hasChildren && (
-                    <button 
-                      onClick={() => toggleExpand(item.name)}
-                      className="expand-btn"
-                    >
-                      {isExpanded ? '▼' : '▶'}
-                    </button>
-                  )}
                   <Link 
                     href={item.href}
                     className={`nav-link ${isActive ? 'active' : ''}`}
+                    style={{ paddingLeft: hasChildren ? '8px' : '12px' }}
                   >
+                    {hasChildren && (
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault()
+                          toggleExpand(item.name)
+                        }}
+                        className="expand-btn"
+                      >
+                        {isExpanded ? '▼' : '▶'}
+                      </button>
+                    )}
                     <span className="nav-icon">{item.icon}</span>
                     <span>{item.name}</span>
                   </Link>
@@ -146,7 +180,7 @@ export function Sidebar() {
                 
                 {hasChildren && isExpanded && (
                   <ul className="sub-menu">
-                    {item.children.map((child) => {
+                    {item.children?.map((child) => {
                       const isChildActive = pathname === child.href
                       return (
                         <li key={child.href}>
@@ -190,157 +224,6 @@ export function Sidebar() {
         {renderSection('Financieel', 'finance')}
       </nav>
       
-      <style jsx>{`
-        .sidebar {
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 280px;
-          height: 100vh;
-          background: #ffffff;
-          border-right: 1px solid #e5e7eb;
-          overflow-y: auto;
-          display: flex;
-          flex-direction: column;
-        }
-        
-        .sidebar-header {
-          padding: 24px 20px;
-          border-bottom: 1px solid #f3f4f6;
-          background: #fafafa;
-        }
-        
-        .sidebar-header h2 {
-          margin: 0;
-          font-size: 18px;
-          font-weight: 700;
-          color: #111827;
-          letter-spacing: -0.025em;
-        }
-        
-        nav {
-          flex: 1;
-          padding: 16px 0;
-        }
-        
-        .section {
-          margin-bottom: 24px;
-          padding: 0 12px;
-        }
-        
-        .section-title {
-          font-size: 11px;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #6b7280;
-          margin: 0 0 8px 12px;
-          padding: 8px 0 4px 0;
-        }
-        
-        nav ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        
-        nav li {
-          margin-bottom: 2px;
-        }
-        
-        .nav-item {
-          display: flex;
-          align-items: center;
-          position: relative;
-        }
-        
-        .nav-link {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 8px 12px;
-          color: #4b5563;
-          text-decoration: none;
-          border-radius: 8px;
-          transition: all 0.15s ease;
-          font-size: 14px;
-          font-weight: 500;
-        }
-        
-        .nav-link:hover {
-          background: #f3f4f6;
-          color: #111827;
-        }
-        
-        .nav-link.active {
-          background: #fce7f3;
-          color: #E4007C;
-          font-weight: 600;
-        }
-        
-        .nav-icon {
-          font-size: 16px;
-          width: 20px;
-          text-align: center;
-        }
-        
-        .expand-btn {
-          position: absolute;
-          left: -4px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 4px 6px;
-          font-size: 10px;
-          color: #9ca3af;
-          transition: color 0.15s ease;
-        }
-        
-        .expand-btn:hover {
-          color: #6b7280;
-        }
-        
-        .sub-menu {
-          list-style: none;
-          padding-left: 46px;
-          margin: 2px 0 8px 0;
-        }
-        
-        .sub-menu li {
-          margin-bottom: 1px;
-        }
-        
-        .sub-link {
-          display: block;
-          padding: 6px 12px;
-          font-size: 13px;
-          color: #6b7280;
-          text-decoration: none;
-          border-radius: 6px;
-          transition: all 0.15s ease;
-        }
-        
-        .sub-link:hover {
-          background: #f9fafb;
-          color: #374151;
-        }
-        
-        .sub-link.active {
-          background: #fce7f3;
-          color: #E4007C;
-          font-weight: 500;
-        }
-        
-        .loading {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          color: #6b7280;
-          font-size: 14px;
-        }
-      `}</style>
     </div>
   )
 }

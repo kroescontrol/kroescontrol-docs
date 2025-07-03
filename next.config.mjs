@@ -1,7 +1,12 @@
 import nextra from 'nextra'
 
 const withNextra = nextra({
-  // Lege config object voor Nextra v4
+  defaultShowCopyCode: true,
+  codeHighlight: true,
+  mdxOptions: {
+    remarkPlugins: [],
+    rehypePlugins: []
+  }
 })
 
 export default withNextra({

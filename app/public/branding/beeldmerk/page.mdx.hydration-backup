@@ -97,7 +97,7 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
     <div style={{padding: '20px', backgroundColor: 'white', textAlign: 'center', borderRadius: '5px', border: '1px solid #eee', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientkleur.png" alt="Gradient Kleur op wit" style={{maxWidth: '60px', width: '100%'}} />
     </div>
-    Gradient Kleur
+    <p>Gradient Kleur</p>
   </div>
 
   <div style={{flex: '1 1 120px', minWidth: '120px', maxWidth: '150px'}}>

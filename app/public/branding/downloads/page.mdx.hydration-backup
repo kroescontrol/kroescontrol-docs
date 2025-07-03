@@ -120,7 +120,7 @@ Op deze pagina vind je alle downloadbare Kroescontrol branding materialen. Deze 
   <div style={{flex: '1 1 280px', minWidth: '280px'}}>
     <div style={{minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
       <h3>Gradient Zwart-Wit Beeldmerk</h3>
-      Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.
+      <p>Voor donkere achtergronden waar geen kleur nodig is maar wel onderscheiding gewenst is.</p>
     </div>
     <div style={{backgroundColor: 'rgb(51, 51, 51)', padding: '20px', borderRadius: '5px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" alt="Kroescontrol Beeldmerk - Gradient Zwart-Wit" style={{maxWidth: '80px', width: '100%'}} />

@@ -1,0 +1,23 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page",
+    "display": "hidden"
+  },
+  "public": {
+    "title": "Publieke Docs",
+    "type": "page"
+  },
+  "internal": {
+    "title": "Interne Docs",
+    "type": "page"
+  },
+  "finance": {
+    "title": "Finance",
+    "type": "page"
+  },
+  "operation": {
+    "title": "Operations",
+    "type": "page"
+  }
+}

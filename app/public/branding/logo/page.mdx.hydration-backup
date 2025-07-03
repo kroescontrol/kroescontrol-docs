@@ -92,7 +92,7 @@ Het Kroescontrol logo is de primaire visuele vertegenwoordiging van ons merk. De
     <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/logo/png/kc-logo-gradientkleur.png" alt="Gradient Kleur op zwart" style={{maxWidth: '140px', width: '100%'}} />
     </div>
-    Gradient Kleur
+    <p>Gradient Kleur</p>
   </div>
 
   <div style={{flex: '1 1 160px', minWidth: '160px', maxWidth: '200px'}}>

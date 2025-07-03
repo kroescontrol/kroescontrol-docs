@@ -1,0 +1,10 @@
+echo "🚀 Running pre-push validation..."
+npm run validate:push
+
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-push validation failed!"
+  echo "Fix the issues before pushing to prevent deployment failures."
+  exit 1
+fi
+
+echo "✅ Pre-push validation passed!"

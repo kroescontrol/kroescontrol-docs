@@ -81,7 +81,7 @@ Onze typografie is een belangrijk onderdeel van onze visuele identiteit. We gebr
 
 <div style={{fontFamily: 'Noto Sans, sans-serif', fontSize: '16px', marginBottom: '20px'}}>
   <h3 style={{fontFamily: 'Noto Sans, sans-serif', fontWeight: '600', fontSize: '24px', marginBottom: '16px'}}>Noto Sans</h3>
-  Noto Sans wordt gebruikt voor alle bodytekst en biedt uitstekende leesbaarheid.
+  <p>Noto Sans wordt gebruikt voor alle bodytekst en biedt uitstekende leesbaarheid.</p>
   <span style={{fontWeight: 'bold'}}>Noto Sans Bold</span> - Voor nadruk in tekst
   <span style={{fontFamily: 'Noto Sans, sans-serif'}}><span style={{fontStyle: 'italic'}}>Noto Sans Italic</span> - Voor subtiele accenten</span>
   <div style={{fontFamily: 'Noto Sans, sans-serif'}}><span style={{fontWeight: 'normal'}}>Noto Sans Regular</span> - Voor standaard bodytekst</div>
