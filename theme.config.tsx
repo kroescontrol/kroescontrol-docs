@@ -26,11 +26,13 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/kroescontrol',
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/docs',
-  footer: (
-    <span>
-      {new Date().getFullYear()} © Kroescontrol. Interne documentatie.
-    </span>
-  ),
+  footer: {
+    component: () => (
+      <span>
+        {new Date().getFullYear()} © Kroescontrol. Interne documentatie.
+      </span>
+    ),
+  },
   editLink: {
     text: 'Bewerk deze pagina →',
   },
@@ -41,10 +43,6 @@ const config: DocsThemeConfig = {
   primaryHue: {
     dark: 330,
     light: 330,
-  },
-  primarySaturation: {
-    dark: 80,
-    light: 73,
   },
   sidebar: {
     titleComponent({ title, type }) {
@@ -57,28 +55,16 @@ const config: DocsThemeConfig = {
     toggleButton: true,
   },
   toc: {
-    title: 'Op deze pagina',
     backToTop: true,
   },
   navigation: {
     prev: true,
     next: true,
   },
-  darkMode: true,
-  nextThemes: {
-    defaultTheme: 'system',
-  },
+  darkMode: {},
   search: {
     placeholder: 'Zoek in documentatie...',
   },
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Kroescontrol Internal Docs" />
-      <meta property="og:description" content="Interne documentatie voor Kroescontrol medewerkers" />
-      <link rel="icon" href="/favicon.ico" />
-    </>
-  ),
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {
@@ -87,23 +73,4 @@ const config: DocsThemeConfig = {
       }
     }
   },
-  banner: {
-    key: 'internal-docs-beta',
-    text: (
-      <a href="/internal" target="_self">
-        📍 Dit is de interne documentatie. Voor publieke docs → 
-        <span style={{ marginLeft: '0.5rem', textDecoration: 'underline' }}>ga naar /public</span>
-      </a>
-    ),
-  },
-  gitTimestamp: ({ timestamp }) => (
-    <>
-      Laatst bijgewerkt op{' '}
-      {timestamp.toLocaleDateString('nl-NL', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })}
-    </>
-  ),
 }
