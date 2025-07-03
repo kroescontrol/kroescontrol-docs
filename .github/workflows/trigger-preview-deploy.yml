@@ -1,0 +1,18 @@
+name: Trigger Preview Deployment
+
+on:
+  push:
+    branches:
+      - preview
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger vault deployment workflow
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.VAULT_TRIGGER_TOKEN }}
+          repository: kroescontrol/kroescontrol-vault
+          event-type: docs-preview-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

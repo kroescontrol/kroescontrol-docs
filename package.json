@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "sync": "./scripts/sync-content.sh",
-    "migrate": "./scripts/migrate-content.sh"
+    "migrate": "./scripts/migrate-content.sh",
+    "pre-push": "./scripts/pre-push-check.sh",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",

@@ -153,7 +153,7 @@ export function Sidebar() {
                 
                 {hasChildren && isExpanded && (
                   <ul className="sub-menu">
-                    {item.children.map((child) => {
+                    {item.children?.map((child) => {
                       const isChildActive = pathname === child.href
                       return (
                         <li key={child.href}>
