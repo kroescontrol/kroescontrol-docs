@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 echo "🚀 Running pre-push validation..."
 npm run validate:push
 

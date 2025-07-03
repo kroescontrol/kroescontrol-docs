@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 echo "🔍 Running MDX validation before commit..."
 node ../scripts/validate-mdx-content.js
 
