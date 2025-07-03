@@ -3,7 +3,14 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Session } from 'next-auth'
+// Session type definition (next-auth is removed from this repo)
+interface Session {
+  user?: {
+    name?: string
+    email?: string
+    roles?: string[]
+  }
+}
 
 interface NavigationItem {
   name: string
