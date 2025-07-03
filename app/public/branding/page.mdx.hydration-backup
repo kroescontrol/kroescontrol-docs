@@ -66,7 +66,7 @@ Onze typografie is een belangrijk onderdeel van onze visuele identiteit. We gebr
   <p>Poppins wordt gebruikt voor alle koppen (h1, h2, h3) en biedt een moderne, toegankelijke uitstraling.</p>
   <span style={{fontFamily: 'Poppins, sans-serif'}}><span style={{fontWeight: '700'}}>Poppins Bold (700)</span> - Voor h1 en h2 koppen</span>
   <span style={{fontWeight: '600'}}>Poppins SemiBold (600)</span> - Voor h3 en h4 koppen
-  <span style={{fontWeight: '400'}}>Poppins Regular (400)</span> - Voor h5 en h6 koppen
+  <p style={{fontFamily: 'Poppins, sans-serif'}}><span style={{fontWeight: '400'}}>Poppins Regular (400)</span> - Voor h5 en h6 koppen</p>
 
   <span style={{fontFamily: 'Poppins, sans-serif'}}>
     A B C D E F G H I J K L M<br/>
@@ -84,7 +84,7 @@ Onze typografie is een belangrijk onderdeel van onze visuele identiteit. We gebr
   <p>Noto Sans wordt gebruikt voor alle bodytekst en biedt uitstekende leesbaarheid.</p>
   <span style={{fontWeight: 'bold'}}>Noto Sans Bold</span> - Voor nadruk in tekst
   <span style={{fontFamily: 'Noto Sans, sans-serif'}}><span style={{fontStyle: 'italic'}}>Noto Sans Italic</span> - Voor subtiele accenten</span>
-  <div style={{fontFamily: 'Noto Sans, sans-serif'}}><span style={{fontWeight: 'normal'}}>Noto Sans Regular</span> - Voor standaard bodytekst</div>
+  <p style={{fontFamily: 'Noto Sans, sans-serif'}}><span style={{fontWeight: 'normal'}}>Noto Sans Regular</span> - Voor standaard bodytekst</p>
 
   <p style={{fontFamily: 'Noto Sans, sans-serif'}}>
     A B C D E F G H I J K L M<br/>

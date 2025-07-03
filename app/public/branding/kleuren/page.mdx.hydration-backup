@@ -92,7 +92,7 @@ Het kleurenpalet van Kroescontrol bestaat uit zorgvuldig geselecteerde kleuren d
 
 ## Uitgebreide kleuren
 
-Deze kleuren vullen de primaire kleuren aan en bieden meer flexibiliteit in ontwerp. Ze worden gebruikt voor accenten, illustraties en secundaire elementen.
+<p>Deze kleuren vullen de primaire kleuren aan en bieden meer flexibiliteit in ontwerp. Ze worden gebruikt voor accenten, illustraties en secundaire elementen.</p>
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginBottom: '30px'}}>
   <div>

@@ -72,7 +72,7 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
 
   <div style={{flex: '1 1 250px', minWidth: '250px'}}>
     <h3>Gradient Zwart-Wit op donkere achtergrond</h3>
-    De zwart-wit gradient versie kan ook worden gebruikt op donkere achtergronden voor een uniek effect.
+    <p>De zwart-wit gradient versie kan ook worden gebruikt op donkere achtergronden voor een uniek effect.</p>
     <div style={{padding: '30px', backgroundColor: '#222b5b', textAlign: 'center', borderRadius: '5px'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" alt="Kroescontrol Beeldmerk - Gradient Zwart-Wit op donkere achtergrond" style={{maxWidth: '80px'}} />
     </div>
@@ -121,14 +121,14 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
     <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientkleur.png" alt="Gradient Kleur op zwart" style={{maxWidth: '60px', width: '100%'}} />
     </div>
-    <p>Gradient Kleur</p>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Kleur</p>
   </div>
 
   <div style={{flex: '1 1 120px', minWidth: '120px', maxWidth: '150px'}}>
     <div style={{padding: '20px', backgroundColor: 'black', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" alt="Gradient BW op zwart" style={{maxWidth: '60px', width: '100%'}} />
     </div>
-    Gradient Z/W
+    <p>Gradient Z/W</p>
   </div>
 
   <div style={{flex: '1 1 120px', minWidth: '120px', maxWidth: '150px'}}>
@@ -152,7 +152,7 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
     <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-gradientbw.png" alt="Gradient BW op blauw" style={{maxWidth: '60px', width: '100%'}} />
     </div>
-    <div style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Gradient Z/W</p>
   </div>
 
   <div style={{flex: '1 1 120px', minWidth: '120px', maxWidth: '150px'}}>
@@ -166,7 +166,7 @@ Het Kroescontrol beeldmerk is een herkenbaar visueel element dat op zichzelf kan
     <div style={{padding: '20px', backgroundColor: '#0057B8', textAlign: 'center', borderRadius: '5px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <img src="/public/branding/beeldmerk/png/kc-beeldmerk-zwart.png" alt="Zwart op blauw" style={{maxWidth: '60px', width: '100%'}} />
     </div>
-    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Zwart</div>
+    <p style={{fontSize: '0.9em', textAlign: 'center', margin: '8px 0 0 0', color: 'var(--ifm-font-color-base)'}}>Zwart</p>
   </div>
 </div>
 
