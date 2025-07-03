@@ -47,3 +47,15 @@ a:hover {
 .nx-text-primary-600.dark\:nx-text-primary-500 {
   color: var(--kroescontrol-pink) !important;
 }
+
+/* Custom sidebar adjustments - overwrite main content left margin */
+main.nx-w-full {
+  margin-left: 280px !important;
+}
+
+/* Adjust Nextra's layout */
+@media (min-width: 768px) {
+  .nextra-content {
+    margin-left: 280px !important;
+  }
+}
