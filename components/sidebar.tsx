@@ -109,7 +109,7 @@ export function Sidebar() {
   const hasAccess = (item: NavigationItem): boolean => {
     if (!item.roles || item.roles.length === 0) return true
     if (!session?.user?.roles) return false
-    return item.roles.some(role => session.user.roles?.includes(role))
+    return item.roles.some(role => session.user?.roles?.includes(role) || false)
   }
   
   const getSectionItems = (section: string) => {
