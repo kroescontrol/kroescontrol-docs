@@ -26,13 +26,11 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/kroescontrol',
   },
   docsRepositoryBase: 'https://github.com/kroescontrol/docs',
-  footer: {
-    text: (
-      <span>
-        {new Date().getFullYear()} © Kroescontrol. Interne documentatie.
-      </span>
-    ),
-  },
+  footer: (
+    <span>
+      {new Date().getFullYear()} © Kroescontrol. Interne documentatie.
+    </span>
+  ),
   editLink: {
     text: 'Bewerk deze pagina →',
   },
