@@ -11,7 +11,10 @@
     "sync": "./scripts/sync-content.sh",
     "migrate": "./scripts/migrate-content.sh",
     "pre-push": "./scripts/pre-push-check.sh",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "validate:mdx": "node scripts/validate-mdx.js",
+    "fix:mdx": "node scripts/fix-nextra-components.js",
+    "fix:mdx:dry": "node scripts/fix-nextra-components.js --dry-run"
   },
   "keywords": [],
   "author": "",
