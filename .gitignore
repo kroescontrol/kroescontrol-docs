@@ -46,3 +46,4 @@ input
 app/internal/
 app/operation/
 app/finance/
+_temp*/*
