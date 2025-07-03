@@ -22,8 +22,10 @@ export default function RootLayout({
       </head>
       <body>
         <Sidebar />
-        <main style={{ marginLeft: '280px', padding: '40px 20px', minHeight: '100vh' }}>
-          {children}
+        <main style={{ marginLeft: '280px', minHeight: '100vh', background: '#ffffff' }}>
+          <div className="content-wrapper">
+            {children}
+          </div>
         </main>
       </body>
     </html>
