@@ -8,6 +8,12 @@
 **Doel:** Publieke documentatie voor Kroescontrol engineers en klanten  
 **Deployment:** Via vault repository die alle documentatie secties combineert
 
+### Deployment Proces
+- **GEEN automatische Vercel deployment** - deze repository heeft geen eigen Vercel project
+- **GitHub hook:** Vault repository heeft een periodieke check die wijzigingen detecteert
+- **Build trigger:** Vault bouwt en deployed de gecombineerde documentatie site
+- **Preview deployments:** Moeten handmatig getriggerd worden via vault
+
 ## Directory Structuur
 
 ```
@@ -116,6 +122,8 @@ npm run dev           # Start dev server
 ### Deployment
 - **Development:** Lokaal via `npm run dev`
 - **Production:** Via vault repository build process
+- **Build trigger:** Vault detecteert wijzigingen via periodieke GitHub hook
+- **Manual trigger:** Voor preview deployments, trigger build in vault repository
 - **Live site:** Combineert 4 documentatie secties:
   - `/public/` - Deze repository (publiek toegankelijk)
   - `/internal/` - Van apphub/docs-internal (auth required)
