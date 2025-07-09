@@ -10,6 +10,7 @@ interface Session {
     email?: string
     roles?: string[]
   }
+  hasInternalAccess?: boolean
 }
 
 interface NavigationItem {
@@ -113,7 +114,7 @@ export function Sidebar() {
         setSession(data)
         setLoading(false)
       })
-      .catch((err) => {
+      .catch((_err) => {
         setLoading(false)
       })
   }, [])
@@ -130,6 +131,12 @@ export function Sidebar() {
     // In development mode, allow access to all sections
     if (process.env.NODE_ENV === 'development') return true
     
+    // For internal section, check hasInternalAccess flag
+    if (item.section === 'internal') {
+      return session?.hasInternalAccess || false
+    }
+    
+    // For other sections, check roles
     if (!item.roles || item.roles.length === 0) return true
     if (!session?.user?.roles) return false
     return item.roles.some(role => session.user?.roles?.includes(role) || false)
@@ -218,8 +225,11 @@ export function Sidebar() {
       </div>
       
       <nav>
+        {/* Show Internal first if user has access */}
+        {session?.hasInternalAccess && renderSection('Intern', 'internal')}
         {renderSection('Algemeen', 'public')}
-        {renderSection('Intern', 'internal')}
+        {/* Show Internal here if user doesn't have access (it won't render) */}
+        {!session?.hasInternalAccess && renderSection('Intern', 'internal')}
         {renderSection('Operations', 'operation')}
         {renderSection('Financieel', 'finance')}
       </nav>
