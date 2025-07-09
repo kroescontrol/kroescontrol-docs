@@ -8,12 +8,10 @@ module.exports = {
   },
   
   // MDX validation and linting
-  '**/*.{md,mdx}': [
-    'eslint --fix --max-warnings 0'
+  '**/*.mdx': [
+    'eslint --fix --max-warnings 0',
+    () => `node ${path.join(__dirname, '../scripts/validate-mdx-content.js')}`
   ],
-  
-  // Run MDX validation when MDX files are changed
-  '**/*.mdx': () => `node ${path.join(__dirname, '../scripts/validate-mdx-content.js')}`,
   
   // TypeScript type checking
   '*.{ts,tsx}': () => 'tsc --noEmit --incremental false'

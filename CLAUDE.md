@@ -220,6 +220,28 @@ Dit project is gemigreerd van Docusaurus naar Nextra:
 - Controleer of afbeeldingen in `/public` staan
 - Vermijd spaties in bestandsnamen
 
+## Belangrijke Ontwikkelingsregels
+
+### Build Validatie
+**ALTIJD eerst lokaal builden en testen voordat je pusht!**
+
+```bash
+# Voor elke push:
+npm run build        # Test production build
+npm run type-check   # TypeScript validatie
+npm run lint         # Code kwaliteit
+
+# Als alles slaagt, dan pas:
+git push
+```
+
+**De pre-push hooks zijn er met een reden** - ze voorkomen dat gebroken code naar productie gaat. Als een pre-push hook faalt:
+1. Fix het probleem lokaal
+2. Test opnieuw met `npm run build`
+3. Push pas als alles groen is
+
+Gebruik NOOIT `--no-verify` tenzij je exact weet wat je doet en waarom.
+
 ## Contact
 
 Voor vragen over de docs infrastructuur:

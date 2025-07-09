@@ -49,6 +49,22 @@ Voor lokale development met alle content:
 npm run dev:sync
 ```
 
+### Belangrijke Regel: Build Validatie
+
+**ALTIJD eerst lokaal builden en testen voordat je pusht!**
+
+```bash
+# Voor elke push:
+npm run build        # Test production build
+npm run type-check   # TypeScript validatie
+npm run lint         # Code kwaliteit
+
+# Als alles slaagt, dan pas:
+git push
+```
+
+**De pre-push hooks zijn er met een reden** - ze voorkomen dat gebroken code naar productie gaat. Build failures in productie kosten veel meer tijd om te fixen dan lokaal.
+
 Dit simuleert wat de vault build process doet in productie.
 
 ## Deployment
