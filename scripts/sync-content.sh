@@ -13,8 +13,16 @@ if [ -d "../apphub/docs-internal" ]; then
   rsync -av --delete ../apphub/docs-internal/ app/internal/ \
     --exclude 'PROMPT.mdx.txt' \
     --exclude '*.md' \
-    --exclude 'docs-internal-old'
+    --exclude 'docs-internal-old' \
+    --exclude 'public'
   echo "✓ Internal content synced"
+  
+  # Sync internal public assets to Next.js public directory
+  if [ -d "../apphub/docs-internal/public" ]; then
+    echo "Syncing internal public assets..."
+    rsync -av ../apphub/docs-internal/public/ public/internal/
+    echo "✓ Internal public assets synced"
+  fi
 fi
 
 # Operation content from vault  

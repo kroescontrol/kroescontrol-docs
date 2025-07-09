@@ -29,18 +29,28 @@ export async function GET(
 
   // Verify with hub
   try {
+    // Build cookie header correctly
+    const cookieHeader = sessionCookie 
+      ? `${sessionCookie.name}=${sessionCookie.value}`
+      : '';
+    
+    // Check if user has access to internal section
+    const verifyPath = '/internal';
+    console.log('Verifying access to internal section');
+    
     const authResponse = await fetch('https://hub.kroescontrol.nl/api/auth/verify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Cookie': cookieStore.toString()
+        'Cookie': cookieHeader
       },
       body: JSON.stringify({ 
-        path: `/internal/${imagePath}` 
+        path: verifyPath
       })
     })
 
     const auth = await authResponse.json()
+    console.log('Auth response:', { authenticated: auth.authenticated, hasAccess: auth.hasAccess });
 
     if (!auth.authenticated || !auth.hasAccess) {
       return new NextResponse('Forbidden', { status: 403 })
