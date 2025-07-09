@@ -20,8 +20,8 @@ export async function GET(
 
   // In production, check authentication via hub
   const cookieStore = await cookies()
-  const sessionCookie = cookieStore.get('authjs.session-token') || 
-                       cookieStore.get('__Secure-authjs.session-token')
+  const sessionCookie = cookieStore.get('kroescontrol-session') || 
+                       cookieStore.get('__Secure-kroescontrol-session')
 
   if (!sessionCookie) {
     return new NextResponse('Unauthorized', { status: 401 })
