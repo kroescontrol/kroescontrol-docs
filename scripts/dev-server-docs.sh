@@ -48,6 +48,13 @@ start_server() {
         npm install
     fi
     
+    # Sync content before starting
+    if [ -f "./scripts/sync-content.sh" ]; then
+        echo -e "${YELLOW}Syncing content from apphub and vault...${NC}"
+        ./scripts/sync-content.sh
+        echo ""
+    fi
+    
     echo -e "${YELLOW}Starting Docs dev server on port $PORT...${NC}"
     echo "Log file: $LOG_FILE"
     
