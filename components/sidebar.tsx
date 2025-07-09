@@ -24,13 +24,7 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { 
-    name: 'Home', 
-    href: '/',
-    section: 'public',
-    icon: '🏠'
-  },
-  { 
-    name: 'Publiek', 
+    name: 'Documentatie', 
     href: '/public',
     section: 'public',
     icon: '📚',
@@ -46,7 +40,7 @@ const navigation: NavigationItem[] = [
     ]
   },
   { 
-    name: 'Intern', 
+    name: 'Interne documentatie', 
     href: '/internal',
     section: 'internal',
     icon: '🔐',
@@ -225,13 +219,25 @@ export function Sidebar() {
       </div>
       
       <nav>
-        {/* Show Internal first if user has access */}
-        {session?.hasInternalAccess && renderSection('Intern', 'internal')}
-        {renderSection('Algemeen', 'public')}
-        {/* Show Internal here if user doesn't have access (it won't render) */}
-        {!session?.hasInternalAccess && renderSection('Intern', 'internal')}
-        {renderSection('Operations', 'operation')}
-        {renderSection('Financieel', 'finance')}
+        {/* Home always first */}
+        <ul>
+          <li>
+            <Link 
+              href="/"
+              className={`nav-link ${pathname === '/' ? 'active' : ''}`}
+              style={{ paddingLeft: '12px' }}
+            >
+              <span className="nav-icon">🏠</span>
+              <span>Home</span>
+            </Link>
+          </li>
+        </ul>
+        
+        {/* Internal documentation second if user has access */}
+        {renderSection('Interne documentatie', 'internal')}
+        
+        {/* Public documentation always visible */}
+        {renderSection('Documentatie', 'public')}
       </nav>
       
     </div>
