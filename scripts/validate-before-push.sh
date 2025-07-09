@@ -50,7 +50,7 @@ fi
 
 # 4. Internal Content Sync
 echo -e "${BLUE}4. Syncing Internal Content...${NC}"
-if npm run sync-internal; then
+if npm run sync; then
     echo -e "${GREEN}✓ Internal content synced${NC}\n"
 else
     echo -e "${RED}✗ Internal content sync failed${NC}\n"
